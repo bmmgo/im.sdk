@@ -174,6 +174,14 @@ public class SocketClient {
         send(ImProto.PackageCategory.JoinChannel, channel);
     }
 
+    public void leaveChannel(String channelId) {
+        ImProto.Channel channel = ImProto.Channel
+                .newBuilder()
+                .setChannelID(channelId)
+                .build();
+        send(ImProto.PackageCategory.LeaveChannel, channel);
+    }
+
     public boolean sendToChannel(String channel, String content, int type) {
         ImProto.SendChannelMessage sendChannelMessage = ImProto.SendChannelMessage
                 .newBuilder()
@@ -182,5 +190,15 @@ public class SocketClient {
                 .setType(type)
                 .build();
         return send(ImProto.PackageCategory.SendToChannel, sendChannelMessage);
+    }
+
+    public boolean sendToUser(String user, String content, int type) {
+        ImProto.SendUserMessage sendUserMessage = ImProto.SendUserMessage
+                .newBuilder()
+                .setReceiver(user)
+                .setContent(content)
+                .setType(type)
+                .build();
+        return send(ImProto.PackageCategory.SendToUser, sendUserMessage);
     }
 }

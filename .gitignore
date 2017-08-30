@@ -1,3 +1,10 @@
 .vs
 /java/im.sdk/*.iml
 *.user
+/csharp/im.protocol/bin
+/csharp/im.protocol/obj
+/csharp/im.sdk/bin
+/csharp/im.sdk/obj
+/csharp/im.test.console/bin
+/csharp/im.test.console/obj
+/csharp/packages
