@@ -55,6 +55,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\im.protocol\im.protocol.csproj">
+      <Project>{64f4847b-69a8-4821-a92c-5cb26f574b7f}</Project>
+      <Name>im.protocol</Name>
+    </ProjectReference>
     <ProjectReference Include="..\im.sdk\im.sdk.csproj">
       <Project>{694c52e2-67c7-4c35-a037-5c9178f7be11}</Project>
       <Name>im.sdk</Name>
