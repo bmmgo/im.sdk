@@ -11,8 +11,12 @@ namespace im.sdk
 {
     public class ImClient
     {
+        private Thread _heartThread;
         private bool _autoReconnect;
         private SimpleSocket _socket;
+
+        public string Ip { get; set; } = "www.bmmgo.com";
+        public int Port { get; set; } = 16666;
 
         /// <summary>
         /// 
@@ -31,7 +35,7 @@ namespace im.sdk
             _socket.OnDisconnected += _socket_OnDisconnected;
             try
             {
-                _socket.Connect("www.bmmgo.com", 16666);
+                _socket.Connect(Ip, Port);
                 OnConnected?.Invoke(this);
                 return;
             }
@@ -41,6 +45,13 @@ namespace im.sdk
                 OnConnectedFailed?.Invoke(this);
             }
             ReconnectIfNeed();
+        }
+
+        public void Stop()
+        {
+            _heartThread.Abort();
+            _heartThread.Join();
+            _socket.Dispose();
         }
 
         private void _socket_OnDisconnected(SimpleSocket obj)
@@ -69,7 +80,41 @@ namespace im.sdk
                 case PackageCategory.ReceivedChannelMsg:
                     ReceivedChannelMessage(package);
                     break;
+                case PackageCategory.Result:
+                    ProcessSocketResult(package);
+                    break;
             }
+        }
+
+        private void ProcessSocketResult(SocketPackage package)
+        {
+            var result = SocketResult.Parser.ParseFrom(package.Content);
+            switch (result.Category)
+            {
+                case PackageCategory.Login:
+                    if (result.Code == ResultCode.Success)
+                    {
+                        StartHeart();
+                        OnLogin?.Invoke(this, true, null);
+                    }
+                    else
+                    {
+                        OnLogin?.Invoke(this, false, result.Message);
+                    }
+                    break;
+            }
+        }
+
+        private void StartHeart()
+        {
+            _heartThread = new Thread(obj =>
+            {
+                while (true)
+                {
+                    Send(PackageCategory.Ping);
+                    Thread.Sleep(60 * 1000);
+                }
+            });
         }
 
         private void ReceivedChannelMessage(SocketPackage package)
@@ -78,12 +123,12 @@ namespace im.sdk
             OnReceivedChannelMessage?.Invoke(this, message);
         }
 
-        private void Send(PackageCategory category, IMessage msg)
+        private void Send(PackageCategory category, IMessage msg = null)
         {
             //var seq = Interlocked.Increment(ref _seq);
             //var completionSource = new TaskCompletionSource<SocketResult>();
             //_taskCompletionSources.TryAdd(seq, completionSource);
-            _socket.Send(new SocketPackage { Seq = 0, Category = category, Content = msg.ToByteString() }.ToByteArray());
+            _socket.Send(new SocketPackage { Seq = 0, Category = category, Content = msg == null ? ByteString.Empty : msg.ToByteString() }.ToByteArray());
             //completionSource.Task.ContinueWith(t =>
             //{
             //    //var res = t.Result;
@@ -91,11 +136,18 @@ namespace im.sdk
             //});
         }
 
-        public void Login(string userId)
+        public void Login(string appkey, string userId, string secrect)
         {
             var loginToken = new LoginToken();
-            loginToken.UserID = Guid.NewGuid().ToString("N");
+            loginToken.Appkey = appkey;
+            loginToken.UserID = userId;
+            loginToken.Token = Md5(loginToken.Appkey + loginToken.UserID + secrect).ToLower();
             Send(PackageCategory.Login, loginToken);
+        }
+
+        private string Md5(string from)
+        {
+            return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(from, "MD5");
         }
 
         public void JoinChannel(string channel)
@@ -130,5 +182,6 @@ namespace im.sdk
         public event Action<ImClient> OnDisconnected;
         public event Action<ImClient> OnConnectedFailed;
         public event Action<ImClient, Exception> OnError;
+        public event Action<ImClient, bool, string> OnLogin;
     }
 }

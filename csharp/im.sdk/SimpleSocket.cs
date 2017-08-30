@@ -22,7 +22,15 @@ namespace im.sdk
                 var buffer = new byte[1460];
                 while (true)
                 {
-                    var len = _socket.Receive(buffer, SocketFlags.None);
+                    var len = 0;
+                    try
+                    {
+                        len = _socket.Receive(buffer, SocketFlags.None);
+                    }
+                    catch (Exception)
+                    {
+                        //ignore
+                    }
                     if (len == 0)
                     {
                         OnDisconnected?.Invoke(this);
