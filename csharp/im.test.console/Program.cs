@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using im.sdk;
+using IM.Test;
 
 namespace im.test.console
 {
@@ -35,6 +36,10 @@ namespace im.test.console
 
         private static void ImClient_OnReceivedChannelMessage(ImClient im, IM.Protocol.ReceivedChannelMessage msg)
         {
+            if (msg.Type != -1)
+            {
+                im.SendToChannel("1", ReplayTxt.GetTxt(), -1);
+            }
             Console.WriteLine("received channel message:{0}", msg.Content);
         }
 
