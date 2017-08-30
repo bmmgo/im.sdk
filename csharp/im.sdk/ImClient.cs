@@ -19,7 +19,7 @@ namespace im.sdk
         public int Port { get; set; } = 16666;
 
         /// <summary>
-        /// 
+        /// 初始化
         /// </summary>
         /// <param name="autoReconnect">自动重连</param>
         public ImClient(bool autoReconnect = false)
@@ -74,15 +74,22 @@ namespace im.sdk
 
         private void _socket_OnReceived(byte[] obj)
         {
-            var package = SocketPackage.Parser.ParseFrom(obj);
-            switch (package.Category)
+            try
             {
-                case PackageCategory.ReceivedChannelMsg:
-                    ReceivedChannelMessage(package);
-                    break;
-                case PackageCategory.Result:
-                    ProcessSocketResult(package);
-                    break;
+                var package = SocketPackage.Parser.ParseFrom(obj);
+                switch (package.Category)
+                {
+                    case PackageCategory.ReceivedChannelMsg:
+                        ReceivedChannelMessage(package);
+                        break;
+                    case PackageCategory.Result:
+                        ProcessSocketResult(package);
+                        break;
+                }
+            }
+            catch (Exception ex)
+            {
+                OnError?.Invoke(this, ex);
             }
         }
 
@@ -102,9 +109,9 @@ namespace im.sdk
                         OnLogin?.Invoke(this, false, result.Message);
                     }
                     break;
-                //case PackageCategory.Ping:
-                //    Console.WriteLine("心跳成功");
-                //    break;
+                    //case PackageCategory.Ping:
+                    //    Console.WriteLine("心跳成功");
+                    //    break;
             }
         }
 
@@ -179,6 +186,11 @@ namespace im.sdk
 
         public void SendToUser(string user, string content, int type)
         {
+            var sendUserMsg = new SendUserMessage();
+            sendUserMsg.Content = content;
+            sendUserMsg.Receiver = user;
+            sendUserMsg.Type = type;
+            Send(PackageCategory.SendToUser, sendUserMsg);
         }
 
         public event Action<ImClient, ReceivedChannelMessage> OnReceivedChannelMessage;

@@ -31,23 +31,24 @@ namespace im.sdk
                     {
                         //ignore
                     }
-                    if (len == 0)
+                    if (len != 0)
                     {
-                        OnDisconnected?.Invoke(this);
-                        break;
-                    }
-                    try
-                    {
-                        foreach (var bytese in _convert.DecodeFrame(buffer.Take(len).ToArray()))
+                        try
                         {
-                            OnReceived?.Invoke(bytese);
+                            foreach (var bytese in _convert.DecodeFrame(buffer.Take(len).ToArray()))
+                            {
+                                OnReceived?.Invoke(bytese);
+                            }
+                            continue;
+                        }
+                        catch (Exception)
+                        {
+                            //ignore
                         }
                     }
-                    catch (Exception ex)
-                    {
-                        _socket.Close();
-                        OnDisconnected?.Invoke(this);
-                    }
+                    _socket.Dispose();
+                    OnDisconnected?.Invoke(this);
+                    return;
                 }
             });
             _readThread.Start();
