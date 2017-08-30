@@ -102,6 +102,9 @@ namespace im.sdk
                         OnLogin?.Invoke(this, false, result.Message);
                     }
                     break;
+                //case PackageCategory.Ping:
+                //    Console.WriteLine("心跳成功");
+                //    break;
             }
         }
 
@@ -115,6 +118,7 @@ namespace im.sdk
                     Thread.Sleep(60 * 1000);
                 }
             });
+            _heartThread.Start();
         }
 
         private void ReceivedChannelMessage(SocketPackage package)
