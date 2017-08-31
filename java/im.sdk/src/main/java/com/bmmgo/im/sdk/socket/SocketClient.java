@@ -6,6 +6,8 @@ import com.google.protobuf.GeneratedMessage;
 
 import java.io.IOException;
 import java.net.Socket;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 import IM.Protocol.ImProto;
@@ -182,12 +184,13 @@ public class SocketClient {
         send(ImProto.PackageCategory.LeaveChannel, channel);
     }
 
-    public boolean sendToChannel(String channel, String content, int type) {
+    public boolean sendToChannel(String channel, String content, int type, Map<String, String> tags) {
         ImProto.SendChannelMessage sendChannelMessage = ImProto.SendChannelMessage
                 .newBuilder()
                 .setChannelID(channel)
                 .setContent(content)
                 .setType(type)
+                .putAllUserTags(tags == null ? new HashMap<String, String>() : tags)
                 .build();
         return send(ImProto.PackageCategory.SendToChannel, sendChannelMessage);
     }
