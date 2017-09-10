@@ -93,7 +93,18 @@ public class SocketClient {
         new Thread(connector).start();
     }
 
-    private boolean send(byte[] bytes) {
+    private boolean send(final byte[] bytes) {
+        boolean flag = true;
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                sendInternal(bytes);
+            }
+        }).start();
+        return flag;
+    }
+
+    private void sendInternal(byte[] bytes) {
         boolean flag = true;
         try {
             mWriter.Write(mSocket.getOutputStream(), bytes);
@@ -106,7 +117,6 @@ public class SocketClient {
                 mSocketListener.onDisconnected(this);
             new Thread(connector).start();
         }
-        return flag;
     }
 
     private void StartRead() {
