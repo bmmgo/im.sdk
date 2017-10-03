@@ -30,28 +30,28 @@ namespace IM.Protocol {
             "Q2F0ZWdvcnkSJQoEQ29kZRgCIAEoDjIXLklNLlByb3RvY29sLlJlc3VsdENv",
             "ZGUSDwoHTWVzc2FnZRgDIAEoCRI5CghVc2VyVGFncxgEIAMoCzInLklNLlBy",
             "b3RvY29sLlNvY2tldFJlc3VsdC5Vc2VyVGFnc0VudHJ5Gi8KDVVzZXJUYWdz",
-            "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASJdCgpMb2dp",
+            "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4ASJdCgpMb2dp",
             "blRva2VuEg4KBlVzZXJJRBgBIAEoCRINCgVUb2tlbhgCIAEoCRIPCgdWZXJz",
             "aW9uGAMgASgFEg4KBkFwcGtleRgEIAEoCRIPCgdJc0FkbWluGAUgASgIIsEB",
             "Cg9TZW5kVXNlck1lc3NhZ2USEAoIUmVjZWl2ZXIYASABKAkSDAoEVHlwZRgC",
             "IAEoBRIPCgdDb250ZW50GAMgASgJEjwKCFVzZXJUYWdzGAQgAygLMiouSU0u",
             "UHJvdG9jb2wuU2VuZFVzZXJNZXNzYWdlLlVzZXJUYWdzRW50cnkSDgoGU2Vu",
             "ZGVyGAUgASgJGi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZh",
-            "bHVlGAIgASgJOgI4ASLGAQoTUmVjZWl2ZWRVc2VyTWVzc2FnZRINCgVNc2dJ",
+            "bHVlGAIgASgMOgI4ASLGAQoTUmVjZWl2ZWRVc2VyTWVzc2FnZRINCgVNc2dJ",
             "RBgBIAEoCRIOCgZTZW5kZXIYAiABKAkSDAoEVHlwZRgDIAEoBRIPCgdDb250",
             "ZW50GAQgASgJEkAKCFVzZXJUYWdzGAUgAygLMi4uSU0uUHJvdG9jb2wuUmVj",
             "ZWl2ZWRVc2VyTWVzc2FnZS5Vc2VyVGFnc0VudHJ5Gi8KDVVzZXJUYWdzRW50",
-            "cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASLIAQoSU2VuZENo",
+            "cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4ASLIAQoSU2VuZENo",
             "YW5uZWxNZXNzYWdlEhEKCUNoYW5uZWxJRBgBIAEoCRIMCgRUeXBlGAIgASgF",
             "Eg8KB0NvbnRlbnQYAyABKAkSPwoIVXNlclRhZ3MYBCADKAsyLS5JTS5Qcm90",
             "b2NvbC5TZW5kQ2hhbm5lbE1lc3NhZ2UuVXNlclRhZ3NFbnRyeRIOCgZTZW5k",
             "ZXIYBSABKAkaLwoNVXNlclRhZ3NFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
-            "dWUYAiABKAk6AjgBIt8BChZSZWNlaXZlZENoYW5uZWxNZXNzYWdlEg0KBU1z",
+            "dWUYAiABKAw6AjgBIt8BChZSZWNlaXZlZENoYW5uZWxNZXNzYWdlEg0KBU1z",
             "Z0lEGAEgASgJEg4KBlNlbmRlchgCIAEoCRIRCglDaGFubmVsSUQYAyABKAkS",
             "DAoEVHlwZRgEIAEoBRIPCgdDb250ZW50GAUgASgJEkMKCFVzZXJUYWdzGAYg",
             "AygLMjEuSU0uUHJvdG9jb2wuUmVjZWl2ZWRDaGFubmVsTWVzc2FnZS5Vc2Vy",
             "VGFnc0VudHJ5Gi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZh",
-            "bHVlGAIgASgJOgI4ASIcCgdDaGFubmVsEhEKCUNoYW5uZWxJRBgBIAEoCSqx",
+            "bHVlGAIgASgMOgI4ASIcCgdDaGFubmVsEhEKCUNoYW5uZWxJRBgBIAEoCSqx",
             "AQoPUGFja2FnZUNhdGVnb3J5EggKBFBpbmcQABIJCgVMb2dpbhABEgoKBkxv",
             "Z291dBACEg4KClNlbmRUb1VzZXIQAxIRCg1TZW5kVG9DaGFubmVsEAQSEwoP",
             "UmVjZWl2ZWRVc2VyTXNnEAUSFgoSUmVjZWl2ZWRDaGFubmVsTXNnEAYSDwoL",
@@ -316,10 +316,10 @@ namespace IM.Protocol {
 
     /// <summary>Field number for the "UserTags" field.</summary>
     public const int UserTagsFieldNumber = 4;
-    private static readonly pbc::MapField<string, string>.Codec _map_userTags_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 34);
-    private readonly pbc::MapField<string, string> userTags_ = new pbc::MapField<string, string>();
-    public pbc::MapField<string, string> UserTags {
+    private static readonly pbc::MapField<string, pb::ByteString>.Codec _map_userTags_codec
+        = new pbc::MapField<string, pb::ByteString>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForBytes(18), 34);
+    private readonly pbc::MapField<string, pb::ByteString> userTags_ = new pbc::MapField<string, pb::ByteString>();
+    public pbc::MapField<string, pb::ByteString> UserTags {
       get { return userTags_; }
     }
 
@@ -704,10 +704,10 @@ namespace IM.Protocol {
 
     /// <summary>Field number for the "UserTags" field.</summary>
     public const int UserTagsFieldNumber = 4;
-    private static readonly pbc::MapField<string, string>.Codec _map_userTags_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 34);
-    private readonly pbc::MapField<string, string> userTags_ = new pbc::MapField<string, string>();
-    public pbc::MapField<string, string> UserTags {
+    private static readonly pbc::MapField<string, pb::ByteString>.Codec _map_userTags_codec
+        = new pbc::MapField<string, pb::ByteString>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForBytes(18), 34);
+    private readonly pbc::MapField<string, pb::ByteString> userTags_ = new pbc::MapField<string, pb::ByteString>();
+    public pbc::MapField<string, pb::ByteString> UserTags {
       get { return userTags_; }
     }
 
@@ -920,10 +920,10 @@ namespace IM.Protocol {
 
     /// <summary>Field number for the "UserTags" field.</summary>
     public const int UserTagsFieldNumber = 5;
-    private static readonly pbc::MapField<string, string>.Codec _map_userTags_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 42);
-    private readonly pbc::MapField<string, string> userTags_ = new pbc::MapField<string, string>();
-    public pbc::MapField<string, string> UserTags {
+    private static readonly pbc::MapField<string, pb::ByteString>.Codec _map_userTags_codec
+        = new pbc::MapField<string, pb::ByteString>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForBytes(18), 42);
+    private readonly pbc::MapField<string, pb::ByteString> userTags_ = new pbc::MapField<string, pb::ByteString>();
+    public pbc::MapField<string, pb::ByteString> UserTags {
       get { return userTags_; }
     }
 
@@ -1113,10 +1113,10 @@ namespace IM.Protocol {
 
     /// <summary>Field number for the "UserTags" field.</summary>
     public const int UserTagsFieldNumber = 4;
-    private static readonly pbc::MapField<string, string>.Codec _map_userTags_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 34);
-    private readonly pbc::MapField<string, string> userTags_ = new pbc::MapField<string, string>();
-    public pbc::MapField<string, string> UserTags {
+    private static readonly pbc::MapField<string, pb::ByteString>.Codec _map_userTags_codec
+        = new pbc::MapField<string, pb::ByteString>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForBytes(18), 34);
+    private readonly pbc::MapField<string, pb::ByteString> userTags_ = new pbc::MapField<string, pb::ByteString>();
+    public pbc::MapField<string, pb::ByteString> UserTags {
       get { return userTags_; }
     }
 
@@ -1340,10 +1340,10 @@ namespace IM.Protocol {
 
     /// <summary>Field number for the "UserTags" field.</summary>
     public const int UserTagsFieldNumber = 6;
-    private static readonly pbc::MapField<string, string>.Codec _map_userTags_codec
-        = new pbc::MapField<string, string>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForString(18), 50);
-    private readonly pbc::MapField<string, string> userTags_ = new pbc::MapField<string, string>();
-    public pbc::MapField<string, string> UserTags {
+    private static readonly pbc::MapField<string, pb::ByteString>.Codec _map_userTags_codec
+        = new pbc::MapField<string, pb::ByteString>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForBytes(18), 50);
+    private readonly pbc::MapField<string, pb::ByteString> userTags_ = new pbc::MapField<string, pb::ByteString>();
+    public pbc::MapField<string, pb::ByteString> UserTags {
       get { return userTags_; }
     }
 

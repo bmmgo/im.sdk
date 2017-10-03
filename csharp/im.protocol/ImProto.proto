@@ -28,7 +28,7 @@ message SocketResult{
 	PackageCategory Category = 1;
 	ResultCode Code = 2;
 	string Message = 3;
-	map<string,string> UserTags = 4;
+	map<string,bytes> UserTags = 4;
 }
 message LoginToken{
 	string UserID = 1;
@@ -41,7 +41,7 @@ message SendUserMessage{
 	string Receiver = 1;
 	int32 Type = 2;
 	string Content = 3;
-	map<string,string> UserTags = 4;
+	map<string,bytes> UserTags = 4;
 	string Sender = 5; //  used for admin
 }
 message ReceivedUserMessage{
@@ -49,13 +49,13 @@ message ReceivedUserMessage{
 	string Sender = 2;
 	int32 Type = 3;
 	string Content = 4;
-	map<string,string> UserTags = 5;
+	map<string,bytes> UserTags = 5;
 }
 message SendChannelMessage{
 	string ChannelID = 1;
 	int32 Type = 2;
 	string Content = 3;
-	map<string,string> UserTags = 4;
+	map<string,bytes> UserTags = 4;
 	string Sender = 5; //  used for admin
 }
 message ReceivedChannelMessage{
@@ -64,7 +64,7 @@ message ReceivedChannelMessage{
 	string ChannelID = 3;
 	int32 Type = 4;
 	string Content = 5;
-	map<string,string> UserTags = 6;
+	map<string,bytes> UserTags = 6;
 }
 message Channel{
 	string ChannelID = 1;
