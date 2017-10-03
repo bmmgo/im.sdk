@@ -43,6 +43,9 @@
         <member name="F:IM.Protocol.LoginToken.AppkeyFieldNumber">
             <summary>Field number for the "Appkey" field.</summary>
         </member>
+        <member name="F:IM.Protocol.LoginToken.IsAdminFieldNumber">
+            <summary>Field number for the "IsAdmin" field.</summary>
+        </member>
         <member name="F:IM.Protocol.SendUserMessage.ReceiverFieldNumber">
             <summary>Field number for the "Receiver" field.</summary>
         </member>
@@ -54,6 +57,14 @@
         </member>
         <member name="F:IM.Protocol.SendUserMessage.UserTagsFieldNumber">
             <summary>Field number for the "UserTags" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.SendUserMessage.SenderFieldNumber">
+            <summary>Field number for the "Sender" field.</summary>
+        </member>
+        <member name="P:IM.Protocol.SendUserMessage.Sender">
+            <summary>
+              used for admin
+            </summary>
         </member>
         <member name="F:IM.Protocol.ReceivedUserMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
@@ -81,6 +92,14 @@
         </member>
         <member name="F:IM.Protocol.SendChannelMessage.UserTagsFieldNumber">
             <summary>Field number for the "UserTags" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.SendChannelMessage.SenderFieldNumber">
+            <summary>Field number for the "Sender" field.</summary>
+        </member>
+        <member name="P:IM.Protocol.SendChannelMessage.Sender">
+            <summary>
+              used for admin
+            </summary>
         </member>
         <member name="F:IM.Protocol.ReceivedChannelMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>

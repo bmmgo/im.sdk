@@ -30,42 +30,43 @@ namespace IM.Protocol {
             "Q2F0ZWdvcnkSJQoEQ29kZRgCIAEoDjIXLklNLlByb3RvY29sLlJlc3VsdENv",
             "ZGUSDwoHTWVzc2FnZRgDIAEoCRI5CghVc2VyVGFncxgEIAMoCzInLklNLlBy",
             "b3RvY29sLlNvY2tldFJlc3VsdC5Vc2VyVGFnc0VudHJ5Gi8KDVVzZXJUYWdz",
-            "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASJMCgpMb2dp",
+            "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASJdCgpMb2dp",
             "blRva2VuEg4KBlVzZXJJRBgBIAEoCRINCgVUb2tlbhgCIAEoCRIPCgdWZXJz",
-            "aW9uGAMgASgFEg4KBkFwcGtleRgEIAEoCSKxAQoPU2VuZFVzZXJNZXNzYWdl",
-            "EhAKCFJlY2VpdmVyGAEgASgJEgwKBFR5cGUYAiABKAUSDwoHQ29udGVudBgD",
-            "IAEoCRI8CghVc2VyVGFncxgEIAMoCzIqLklNLlByb3RvY29sLlNlbmRVc2Vy",
-            "TWVzc2FnZS5Vc2VyVGFnc0VudHJ5Gi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5",
-            "GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASLGAQoTUmVjZWl2ZWRVc2VyTWVz",
-            "c2FnZRINCgVNc2dJRBgBIAEoCRIOCgZTZW5kZXIYAiABKAkSDAoEVHlwZRgD",
-            "IAEoBRIPCgdDb250ZW50GAQgASgJEkAKCFVzZXJUYWdzGAUgAygLMi4uSU0u",
-            "UHJvdG9jb2wuUmVjZWl2ZWRVc2VyTWVzc2FnZS5Vc2VyVGFnc0VudHJ5Gi8K",
-            "DVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4",
-            "ASK4AQoSU2VuZENoYW5uZWxNZXNzYWdlEhEKCUNoYW5uZWxJRBgBIAEoCRIM",
-            "CgRUeXBlGAIgASgFEg8KB0NvbnRlbnQYAyABKAkSPwoIVXNlclRhZ3MYBCAD",
-            "KAsyLS5JTS5Qcm90b2NvbC5TZW5kQ2hhbm5lbE1lc3NhZ2UuVXNlclRhZ3NF",
-            "bnRyeRovCg1Vc2VyVGFnc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgC",
-            "IAEoCToCOAEi3wEKFlJlY2VpdmVkQ2hhbm5lbE1lc3NhZ2USDQoFTXNnSUQY",
-            "ASABKAkSDgoGU2VuZGVyGAIgASgJEhEKCUNoYW5uZWxJRBgDIAEoCRIMCgRU",
-            "eXBlGAQgASgFEg8KB0NvbnRlbnQYBSABKAkSQwoIVXNlclRhZ3MYBiADKAsy",
-            "MS5JTS5Qcm90b2NvbC5SZWNlaXZlZENoYW5uZWxNZXNzYWdlLlVzZXJUYWdz",
-            "RW50cnkaLwoNVXNlclRhZ3NFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUY",
-            "AiABKAk6AjgBIhwKB0NoYW5uZWwSEQoJQ2hhbm5lbElEGAEgASgJKrEBCg9Q",
-            "YWNrYWdlQ2F0ZWdvcnkSCAoEUGluZxAAEgkKBUxvZ2luEAESCgoGTG9nb3V0",
-            "EAISDgoKU2VuZFRvVXNlchADEhEKDVNlbmRUb0NoYW5uZWwQBBITCg9SZWNl",
-            "aXZlZFVzZXJNc2cQBRIWChJSZWNlaXZlZENoYW5uZWxNc2cQBhIPCgtKb2lu",
-            "Q2hhbm5lbBAHEhAKDExlYXZlQ2hhbm5lbBAIEgoKBlJlc3VsdBBjKjgKClJl",
-            "c3VsdENvZGUSCwoHU3VjY2VzcxAAEg0KCU5lZWRMb2dpbhABEg4KCkF1dGhG",
-            "YWlsZWQQAmIGcHJvdG8z"));
+            "aW9uGAMgASgFEg4KBkFwcGtleRgEIAEoCRIPCgdJc0FkbWluGAUgASgIIsEB",
+            "Cg9TZW5kVXNlck1lc3NhZ2USEAoIUmVjZWl2ZXIYASABKAkSDAoEVHlwZRgC",
+            "IAEoBRIPCgdDb250ZW50GAMgASgJEjwKCFVzZXJUYWdzGAQgAygLMiouSU0u",
+            "UHJvdG9jb2wuU2VuZFVzZXJNZXNzYWdlLlVzZXJUYWdzRW50cnkSDgoGU2Vu",
+            "ZGVyGAUgASgJGi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZh",
+            "bHVlGAIgASgJOgI4ASLGAQoTUmVjZWl2ZWRVc2VyTWVzc2FnZRINCgVNc2dJ",
+            "RBgBIAEoCRIOCgZTZW5kZXIYAiABKAkSDAoEVHlwZRgDIAEoBRIPCgdDb250",
+            "ZW50GAQgASgJEkAKCFVzZXJUYWdzGAUgAygLMi4uSU0uUHJvdG9jb2wuUmVj",
+            "ZWl2ZWRVc2VyTWVzc2FnZS5Vc2VyVGFnc0VudHJ5Gi8KDVVzZXJUYWdzRW50",
+            "cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgJOgI4ASLIAQoSU2VuZENo",
+            "YW5uZWxNZXNzYWdlEhEKCUNoYW5uZWxJRBgBIAEoCRIMCgRUeXBlGAIgASgF",
+            "Eg8KB0NvbnRlbnQYAyABKAkSPwoIVXNlclRhZ3MYBCADKAsyLS5JTS5Qcm90",
+            "b2NvbC5TZW5kQ2hhbm5lbE1lc3NhZ2UuVXNlclRhZ3NFbnRyeRIOCgZTZW5k",
+            "ZXIYBSABKAkaLwoNVXNlclRhZ3NFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
+            "dWUYAiABKAk6AjgBIt8BChZSZWNlaXZlZENoYW5uZWxNZXNzYWdlEg0KBU1z",
+            "Z0lEGAEgASgJEg4KBlNlbmRlchgCIAEoCRIRCglDaGFubmVsSUQYAyABKAkS",
+            "DAoEVHlwZRgEIAEoBRIPCgdDb250ZW50GAUgASgJEkMKCFVzZXJUYWdzGAYg",
+            "AygLMjEuSU0uUHJvdG9jb2wuUmVjZWl2ZWRDaGFubmVsTWVzc2FnZS5Vc2Vy",
+            "VGFnc0VudHJ5Gi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZh",
+            "bHVlGAIgASgJOgI4ASIcCgdDaGFubmVsEhEKCUNoYW5uZWxJRBgBIAEoCSqx",
+            "AQoPUGFja2FnZUNhdGVnb3J5EggKBFBpbmcQABIJCgVMb2dpbhABEgoKBkxv",
+            "Z291dBACEg4KClNlbmRUb1VzZXIQAxIRCg1TZW5kVG9DaGFubmVsEAQSEwoP",
+            "UmVjZWl2ZWRVc2VyTXNnEAUSFgoSUmVjZWl2ZWRDaGFubmVsTXNnEAYSDwoL",
+            "Sm9pbkNoYW5uZWwQBxIQCgxMZWF2ZUNoYW5uZWwQCBIKCgZSZXN1bHQQYyo4",
+            "CgpSZXN1bHRDb2RlEgsKB1N1Y2Nlc3MQABINCglOZWVkTG9naW4QARIOCgpB",
+            "dXRoRmFpbGVkEAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::IM.Protocol.PackageCategory), typeof(global::IM.Protocol.ResultCode), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SocketPackage), global::IM.Protocol.SocketPackage.Parser, new[]{ "Seq", "Category", "Content" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SocketResult), global::IM.Protocol.SocketResult.Parser, new[]{ "Category", "Code", "Message", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.LoginToken), global::IM.Protocol.LoginToken.Parser, new[]{ "UserID", "Token", "Version", "Appkey" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendUserMessage), global::IM.Protocol.SendUserMessage.Parser, new[]{ "Receiver", "Type", "Content", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.LoginToken), global::IM.Protocol.LoginToken.Parser, new[]{ "UserID", "Token", "Version", "Appkey", "IsAdmin" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendUserMessage), global::IM.Protocol.SendUserMessage.Parser, new[]{ "Receiver", "Type", "Content", "UserTags", "Sender" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedUserMessage), global::IM.Protocol.ReceivedUserMessage.Parser, new[]{ "MsgID", "Sender", "Type", "Content", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendChannelMessage), global::IM.Protocol.SendChannelMessage.Parser, new[]{ "ChannelID", "Type", "Content", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendChannelMessage), global::IM.Protocol.SendChannelMessage.Parser, new[]{ "ChannelID", "Type", "Content", "UserTags", "Sender" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedChannelMessage), global::IM.Protocol.ReceivedChannelMessage.Parser, new[]{ "MsgID", "Sender", "ChannelID", "Type", "Content", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.Channel), global::IM.Protocol.Channel.Parser, new[]{ "ChannelID" }, null, null, null)
           }));
@@ -453,6 +454,7 @@ namespace IM.Protocol {
       token_ = other.token_;
       version_ = other.version_;
       appkey_ = other.appkey_;
+      isAdmin_ = other.isAdmin_;
     }
 
     public LoginToken Clone() {
@@ -499,6 +501,16 @@ namespace IM.Protocol {
       }
     }
 
+    /// <summary>Field number for the "IsAdmin" field.</summary>
+    public const int IsAdminFieldNumber = 5;
+    private bool isAdmin_;
+    public bool IsAdmin {
+      get { return isAdmin_; }
+      set {
+        isAdmin_ = value;
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as LoginToken);
     }
@@ -514,6 +526,7 @@ namespace IM.Protocol {
       if (Token != other.Token) return false;
       if (Version != other.Version) return false;
       if (Appkey != other.Appkey) return false;
+      if (IsAdmin != other.IsAdmin) return false;
       return true;
     }
 
@@ -523,6 +536,7 @@ namespace IM.Protocol {
       if (Token.Length != 0) hash ^= Token.GetHashCode();
       if (Version != 0) hash ^= Version.GetHashCode();
       if (Appkey.Length != 0) hash ^= Appkey.GetHashCode();
+      if (IsAdmin != false) hash ^= IsAdmin.GetHashCode();
       return hash;
     }
 
@@ -547,6 +561,10 @@ namespace IM.Protocol {
         output.WriteRawTag(34);
         output.WriteString(Appkey);
       }
+      if (IsAdmin != false) {
+        output.WriteRawTag(40);
+        output.WriteBool(IsAdmin);
+      }
     }
 
     public int CalculateSize() {
@@ -562,6 +580,9 @@ namespace IM.Protocol {
       }
       if (Appkey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Appkey);
+      }
+      if (IsAdmin != false) {
+        size += 1 + 1;
       }
       return size;
     }
@@ -581,6 +602,9 @@ namespace IM.Protocol {
       }
       if (other.Appkey.Length != 0) {
         Appkey = other.Appkey;
+      }
+      if (other.IsAdmin != false) {
+        IsAdmin = other.IsAdmin;
       }
     }
 
@@ -605,6 +629,10 @@ namespace IM.Protocol {
           }
           case 34: {
             Appkey = input.ReadString();
+            break;
+          }
+          case 40: {
+            IsAdmin = input.ReadBool();
             break;
           }
         }
@@ -637,6 +665,7 @@ namespace IM.Protocol {
       type_ = other.type_;
       content_ = other.content_;
       userTags_ = other.userTags_.Clone();
+      sender_ = other.sender_;
     }
 
     public SendUserMessage Clone() {
@@ -682,6 +711,19 @@ namespace IM.Protocol {
       get { return userTags_; }
     }
 
+    /// <summary>Field number for the "Sender" field.</summary>
+    public const int SenderFieldNumber = 5;
+    private string sender_ = "";
+    /// <summary>
+    ///   used for admin
+    /// </summary>
+    public string Sender {
+      get { return sender_; }
+      set {
+        sender_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as SendUserMessage);
     }
@@ -697,6 +739,7 @@ namespace IM.Protocol {
       if (Type != other.Type) return false;
       if (Content != other.Content) return false;
       if (!UserTags.Equals(other.UserTags)) return false;
+      if (Sender != other.Sender) return false;
       return true;
     }
 
@@ -706,6 +749,7 @@ namespace IM.Protocol {
       if (Type != 0) hash ^= Type.GetHashCode();
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       hash ^= UserTags.GetHashCode();
+      if (Sender.Length != 0) hash ^= Sender.GetHashCode();
       return hash;
     }
 
@@ -727,6 +771,10 @@ namespace IM.Protocol {
         output.WriteString(Content);
       }
       userTags_.WriteTo(output, _map_userTags_codec);
+      if (Sender.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Sender);
+      }
     }
 
     public int CalculateSize() {
@@ -741,6 +789,9 @@ namespace IM.Protocol {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
       }
       size += userTags_.CalculateSize(_map_userTags_codec);
+      if (Sender.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sender);
+      }
       return size;
     }
 
@@ -758,6 +809,9 @@ namespace IM.Protocol {
         Content = other.Content;
       }
       userTags_.Add(other.userTags_);
+      if (other.Sender.Length != 0) {
+        Sender = other.Sender;
+      }
     }
 
     public void MergeFrom(pb::CodedInputStream input) {
@@ -781,6 +835,10 @@ namespace IM.Protocol {
           }
           case 34: {
             userTags_.AddEntriesFrom(input, _map_userTags_codec);
+            break;
+          }
+          case 42: {
+            Sender = input.ReadString();
             break;
           }
         }
@@ -1016,6 +1074,7 @@ namespace IM.Protocol {
       type_ = other.type_;
       content_ = other.content_;
       userTags_ = other.userTags_.Clone();
+      sender_ = other.sender_;
     }
 
     public SendChannelMessage Clone() {
@@ -1061,6 +1120,19 @@ namespace IM.Protocol {
       get { return userTags_; }
     }
 
+    /// <summary>Field number for the "Sender" field.</summary>
+    public const int SenderFieldNumber = 5;
+    private string sender_ = "";
+    /// <summary>
+    ///   used for admin
+    /// </summary>
+    public string Sender {
+      get { return sender_; }
+      set {
+        sender_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as SendChannelMessage);
     }
@@ -1076,6 +1148,7 @@ namespace IM.Protocol {
       if (Type != other.Type) return false;
       if (Content != other.Content) return false;
       if (!UserTags.Equals(other.UserTags)) return false;
+      if (Sender != other.Sender) return false;
       return true;
     }
 
@@ -1085,6 +1158,7 @@ namespace IM.Protocol {
       if (Type != 0) hash ^= Type.GetHashCode();
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       hash ^= UserTags.GetHashCode();
+      if (Sender.Length != 0) hash ^= Sender.GetHashCode();
       return hash;
     }
 
@@ -1106,6 +1180,10 @@ namespace IM.Protocol {
         output.WriteString(Content);
       }
       userTags_.WriteTo(output, _map_userTags_codec);
+      if (Sender.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Sender);
+      }
     }
 
     public int CalculateSize() {
@@ -1120,6 +1198,9 @@ namespace IM.Protocol {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
       }
       size += userTags_.CalculateSize(_map_userTags_codec);
+      if (Sender.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sender);
+      }
       return size;
     }
 
@@ -1137,6 +1218,9 @@ namespace IM.Protocol {
         Content = other.Content;
       }
       userTags_.Add(other.userTags_);
+      if (other.Sender.Length != 0) {
+        Sender = other.Sender;
+      }
     }
 
     public void MergeFrom(pb::CodedInputStream input) {
@@ -1160,6 +1244,10 @@ namespace IM.Protocol {
           }
           case 34: {
             userTags_.AddEntriesFrom(input, _map_userTags_codec);
+            break;
+          }
+          case 42: {
+            Sender = input.ReadString();
             break;
           }
         }

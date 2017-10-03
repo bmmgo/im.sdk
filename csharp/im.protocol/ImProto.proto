@@ -35,12 +35,14 @@ message LoginToken{
 	string Token = 2;
 	int32 Version = 3;
 	string Appkey = 4;
+	bool IsAdmin = 5;
 }
 message SendUserMessage{
 	string Receiver = 1;
 	int32 Type = 2;
 	string Content = 3;
 	map<string,string> UserTags = 4;
+	string Sender = 5; //  used for admin
 }
 message ReceivedUserMessage{
 	string MsgID = 1;
@@ -54,6 +56,7 @@ message SendChannelMessage{
 	int32 Type = 2;
 	string Content = 3;
 	map<string,string> UserTags = 4;
+	string Sender = 5; //  used for admin
 }
 message ReceivedChannelMessage{
 	string MsgID = 1;
