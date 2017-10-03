@@ -147,12 +147,13 @@ namespace im.sdk
             //});
         }
 
-        public void Login(string appkey, string userId, string secrect)
+        public void Login(string appkey, string userId, string secrect, bool isAdmin = false)
         {
             var loginToken = new LoginToken();
             loginToken.Appkey = appkey;
             loginToken.UserID = userId;
             loginToken.Token = Md5(loginToken.Appkey + loginToken.UserID + secrect).ToLower();
+            loginToken.IsAdmin = isAdmin;
             Send(PackageCategory.Login, loginToken);
         }
 
@@ -184,13 +185,14 @@ namespace im.sdk
             Send(PackageCategory.SendToChannel, sendChannelMsg);
         }
 
-        public void SendToUser(string user, string content, int type)
+        public void SendToChannel(SendChannelMessage message)
         {
-            var sendUserMsg = new SendUserMessage();
-            sendUserMsg.Content = content;
-            sendUserMsg.Receiver = user;
-            sendUserMsg.Type = type;
-            Send(PackageCategory.SendToUser, sendUserMsg);
+            Send(PackageCategory.SendToChannel, message);
+        }
+
+        public void SendToUser(SendUserMessage message)
+        {
+            Send(PackageCategory.SendToUser, message);
         }
 
         public event Action<ImClient, ReceivedChannelMessage> OnReceivedChannelMessage;
