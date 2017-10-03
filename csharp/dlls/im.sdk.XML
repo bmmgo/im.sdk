@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>im.sdk</name>
+    </assembly>
+    <members>
+        <member name="F:im.sdk.FixLengthConvert._left">
+            <summary>
+            cache中剩余字节长度
+            </summary>
+        </member>
+        <member name="M:im.sdk.FixLengthConvert.ToFrame(System.Byte[])">
+            <summary>
+            转换数据
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:im.sdk.FixLengthConvert.DecodeFrame(System.Byte[])">
+            <summary>
+            解析数据
+            </summary>
+            <param name="buffer"></param>
+            <returns></returns>
+        </member>
+        <member name="M:im.sdk.ImClient.#ctor(System.Boolean)">
+            <summary>
+            初始化
+            </summary>
+            <param name="autoReconnect">自动重连</param>
+        </member>
+    </members>
+</doc>
