@@ -841,9 +841,9 @@ public final class ImProto {
         getMessageBytes();
 
     /**
-     * <code>map&lt;string, string&gt; UserTags = 4;</code>
+     * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
-    java.util.Map<String, String>
+    java.util.Map<String, com.google.protobuf.ByteString>
     getUserTags();
   }
   /**
@@ -912,7 +912,7 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000008;
               }
-              com.google.protobuf.MapEntry<String, String>
+              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
@@ -1022,18 +1022,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 4;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, String> defaultEntry =
+          String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, String>newDefaultInstance(
+              .<String, com.google.protobuf.ByteString>newDefaultInstance(
                   ImProto.internal_static_IM_Protocol_SocketResult_UserTagsEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+                  com.google.protobuf.WireFormat.FieldType.BYTES,
+                  com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, String> userTags_;
-    private com.google.protobuf.MapField<String, String>
+        String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -1042,10 +1042,10 @@ public final class ImProto {
       return userTags_;
     }
     /**
-     * <code>map&lt;string, string&gt; UserTags = 4;</code>
+     * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
 
-    public java.util.Map<String, String> getUserTags() {
+    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
     }
 
@@ -1070,9 +1070,9 @@ public final class ImProto {
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, message_);
       }
-      for (java.util.Map.Entry<String, String> entry
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, String>
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -1097,9 +1097,9 @@ public final class ImProto {
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, message_);
       }
-      for (java.util.Map.Entry<String, String> entry
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, String>
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -1495,8 +1495,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, String> userTags_;
-      private com.google.protobuf.MapField<String, String>
+          String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -1504,7 +1504,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, String>
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -1517,23 +1517,23 @@ public final class ImProto {
         return userTags_;
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 4;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, String> getUserTags() {
+      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 4;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, String>
+      public java.util.Map<String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 4;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, String> values) {
+          java.util.Map<String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
         return this;
       }
@@ -1624,6 +1624,11 @@ public final class ImProto {
      */
     com.google.protobuf.ByteString
         getAppkeyBytes();
+
+    /**
+     * <code>optional bool IsAdmin = 5;</code>
+     */
+    boolean getIsAdmin();
   }
   /**
    * Protobuf type {@code IM.Protocol.LoginToken}
@@ -1641,6 +1646,7 @@ public final class ImProto {
       token_ = "";
       version_ = 0;
       appkey_ = "";
+      isAdmin_ = false;
     }
 
     @Override
@@ -1689,6 +1695,11 @@ public final class ImProto {
               String s = input.readStringRequireUtf8();
 
               appkey_ = s;
+              break;
+            }
+            case 40: {
+
+              isAdmin_ = input.readBool();
               break;
             }
           }
@@ -1825,6 +1836,15 @@ public final class ImProto {
       }
     }
 
+    public static final int ISADMIN_FIELD_NUMBER = 5;
+    private boolean isAdmin_;
+    /**
+     * <code>optional bool IsAdmin = 5;</code>
+     */
+    public boolean getIsAdmin() {
+      return isAdmin_;
+    }
+
     private byte memoizedIsInitialized = -1;
     public final boolean isInitialized() {
       byte isInitialized = memoizedIsInitialized;
@@ -1849,6 +1869,9 @@ public final class ImProto {
       if (!getAppkeyBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 4, appkey_);
       }
+      if (isAdmin_ != false) {
+        output.writeBool(5, isAdmin_);
+      }
     }
 
     public int getSerializedSize() {
@@ -1868,6 +1891,10 @@ public final class ImProto {
       }
       if (!getAppkeyBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(4, appkey_);
+      }
+      if (isAdmin_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(5, isAdmin_);
       }
       memoizedSize = size;
       return size;
@@ -1994,6 +2021,8 @@ public final class ImProto {
 
         appkey_ = "";
 
+        isAdmin_ = false;
+
         return this;
       }
 
@@ -2020,6 +2049,7 @@ public final class ImProto {
         result.token_ = token_;
         result.version_ = version_;
         result.appkey_ = appkey_;
+        result.isAdmin_ = isAdmin_;
         onBuilt();
         return result;
       }
@@ -2049,6 +2079,9 @@ public final class ImProto {
         if (!other.getAppkey().isEmpty()) {
           appkey_ = other.appkey_;
           onChanged();
+        }
+        if (other.getIsAdmin() != false) {
+          setIsAdmin(other.getIsAdmin());
         }
         onChanged();
         return this;
@@ -2308,6 +2341,32 @@ public final class ImProto {
         onChanged();
         return this;
       }
+
+      private boolean isAdmin_ ;
+      /**
+       * <code>optional bool IsAdmin = 5;</code>
+       */
+      public boolean getIsAdmin() {
+        return isAdmin_;
+      }
+      /**
+       * <code>optional bool IsAdmin = 5;</code>
+       */
+      public Builder setIsAdmin(boolean value) {
+        
+        isAdmin_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool IsAdmin = 5;</code>
+       */
+      public Builder clearIsAdmin() {
+        
+        isAdmin_ = false;
+        onChanged();
+        return this;
+      }
       public final Builder setUnknownFields(
           final com.google.protobuf.UnknownFieldSet unknownFields) {
         return this;
@@ -2387,10 +2446,28 @@ public final class ImProto {
         getContentBytes();
 
     /**
-     * <code>map&lt;string, string&gt; UserTags = 4;</code>
+     * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
-    java.util.Map<String, String>
+    java.util.Map<String, com.google.protobuf.ByteString>
     getUserTags();
+
+    /**
+     * <pre>
+     *  used for admin
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    String getSender();
+    /**
+     * <pre>
+     *  used for admin
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getSenderBytes();
   }
   /**
    * Protobuf type {@code IM.Protocol.SendUserMessage}
@@ -2407,6 +2484,7 @@ public final class ImProto {
       receiver_ = "";
       type_ = 0;
       content_ = "";
+      sender_ = "";
     }
 
     @Override
@@ -2457,10 +2535,16 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000008;
               }
-              com.google.protobuf.MapEntry<String, String>
+              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
+              break;
+            }
+            case 42: {
+              String s = input.readStringRequireUtf8();
+
+              sender_ = s;
               break;
             }
           }
@@ -2578,18 +2662,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 4;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, String> defaultEntry =
+          String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, String>newDefaultInstance(
+              .<String, com.google.protobuf.ByteString>newDefaultInstance(
                   ImProto.internal_static_IM_Protocol_SendUserMessage_UserTagsEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+                  com.google.protobuf.WireFormat.FieldType.BYTES,
+                  com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, String> userTags_;
-    private com.google.protobuf.MapField<String, String>
+        String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -2598,11 +2682,53 @@ public final class ImProto {
       return userTags_;
     }
     /**
-     * <code>map&lt;string, string&gt; UserTags = 4;</code>
+     * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
 
-    public java.util.Map<String, String> getUserTags() {
+    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
+    }
+
+    public static final int SENDER_FIELD_NUMBER = 5;
+    private volatile Object sender_;
+    /**
+     * <pre>
+     *  used for admin
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    public String getSender() {
+      Object ref = sender_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        sender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *  used for admin
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSenderBytes() {
+      Object ref = sender_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        sender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -2626,14 +2752,17 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, content_);
       }
-      for (java.util.Map.Entry<String, String> entry
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, String>
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         output.writeMessage(4, userTags);
+      }
+      if (!getSenderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, sender_);
       }
     }
 
@@ -2652,15 +2781,18 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, content_);
       }
-      for (java.util.Map.Entry<String, String> entry
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, String>
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, userTags);
+      }
+      if (!getSenderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, sender_);
       }
       memoizedSize = size;
       return size;
@@ -2808,6 +2940,8 @@ public final class ImProto {
         content_ = "";
 
         internalGetMutableUserTags().clear();
+        sender_ = "";
+
         return this;
       }
 
@@ -2837,6 +2971,7 @@ public final class ImProto {
         result.content_ = content_;
         result.userTags_ = internalGetUserTags();
         result.userTags_.makeImmutable();
+        result.sender_ = sender_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -2866,6 +3001,10 @@ public final class ImProto {
         }
         internalGetMutableUserTags().mergeFrom(
             other.internalGetUserTags());
+        if (!other.getSender().isEmpty()) {
+          sender_ = other.sender_;
+          onChanged();
+        }
         onChanged();
         return this;
       }
@@ -3058,8 +3197,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, String> userTags_;
-      private com.google.protobuf.MapField<String, String>
+          String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -3067,7 +3206,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, String>
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -3080,24 +3219,113 @@ public final class ImProto {
         return userTags_;
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 4;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, String> getUserTags() {
+      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 4;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, String>
+      public java.util.Map<String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 4;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, String> values) {
+          java.util.Map<String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
+        return this;
+      }
+
+      private Object sender_ = "";
+      /**
+       * <pre>
+       *  used for admin
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public String getSender() {
+        Object ref = sender_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          sender_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *  used for admin
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSenderBytes() {
+        Object ref = sender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          sender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *  used for admin
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public Builder setSender(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  used for admin
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public Builder clearSender() {
+        
+        sender_ = getDefaultInstance().getSender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  used for admin
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public Builder setSenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sender_ = value;
+        onChanged();
         return this;
       }
       public final Builder setUnknownFields(
@@ -3189,9 +3417,9 @@ public final class ImProto {
         getContentBytes();
 
     /**
-     * <code>map&lt;string, string&gt; UserTags = 5;</code>
+     * <code>map&lt;string, bytes&gt; UserTags = 5;</code>
      */
-    java.util.Map<String, String>
+    java.util.Map<String, com.google.protobuf.ByteString>
     getUserTags();
   }
   /**
@@ -3266,7 +3494,7 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000010;
               }
-              com.google.protobuf.MapEntry<String, String>
+              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
@@ -3421,18 +3649,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 5;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, String> defaultEntry =
+          String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, String>newDefaultInstance(
+              .<String, com.google.protobuf.ByteString>newDefaultInstance(
                   ImProto.internal_static_IM_Protocol_ReceivedUserMessage_UserTagsEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+                  com.google.protobuf.WireFormat.FieldType.BYTES,
+                  com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, String> userTags_;
-    private com.google.protobuf.MapField<String, String>
+        String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -3441,10 +3669,10 @@ public final class ImProto {
       return userTags_;
     }
     /**
-     * <code>map&lt;string, string&gt; UserTags = 5;</code>
+     * <code>map&lt;string, bytes&gt; UserTags = 5;</code>
      */
 
-    public java.util.Map<String, String> getUserTags() {
+    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
     }
 
@@ -3472,9 +3700,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 4, content_);
       }
-      for (java.util.Map.Entry<String, String> entry
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, String>
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -3501,9 +3729,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(4, content_);
       }
-      for (java.util.Map.Entry<String, String> entry
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, String>
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -3983,8 +4211,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, String> userTags_;
-      private com.google.protobuf.MapField<String, String>
+          String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -3992,7 +4220,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, String>
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -4005,23 +4233,23 @@ public final class ImProto {
         return userTags_;
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 5;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 5;</code>
        */
-      public java.util.Map<String, String> getUserTags() {
+      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 5;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 5;</code>
        */
-      public java.util.Map<String, String>
+      public java.util.Map<String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 5;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 5;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, String> values) {
+          java.util.Map<String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
         return this;
       }
@@ -4104,10 +4332,28 @@ public final class ImProto {
         getContentBytes();
 
     /**
-     * <code>map&lt;string, string&gt; UserTags = 4;</code>
+     * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
-    java.util.Map<String, String>
+    java.util.Map<String, com.google.protobuf.ByteString>
     getUserTags();
+
+    /**
+     * <pre>
+     *  used for admin
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    String getSender();
+    /**
+     * <pre>
+     *  used for admin
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getSenderBytes();
   }
   /**
    * Protobuf type {@code IM.Protocol.SendChannelMessage}
@@ -4124,6 +4370,7 @@ public final class ImProto {
       channelID_ = "";
       type_ = 0;
       content_ = "";
+      sender_ = "";
     }
 
     @Override
@@ -4174,10 +4421,16 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000008;
               }
-              com.google.protobuf.MapEntry<String, String>
+              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
+              break;
+            }
+            case 42: {
+              String s = input.readStringRequireUtf8();
+
+              sender_ = s;
               break;
             }
           }
@@ -4295,18 +4548,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 4;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, String> defaultEntry =
+          String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, String>newDefaultInstance(
+              .<String, com.google.protobuf.ByteString>newDefaultInstance(
                   ImProto.internal_static_IM_Protocol_SendChannelMessage_UserTagsEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+                  com.google.protobuf.WireFormat.FieldType.BYTES,
+                  com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, String> userTags_;
-    private com.google.protobuf.MapField<String, String>
+        String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -4315,11 +4568,53 @@ public final class ImProto {
       return userTags_;
     }
     /**
-     * <code>map&lt;string, string&gt; UserTags = 4;</code>
+     * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
 
-    public java.util.Map<String, String> getUserTags() {
+    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
+    }
+
+    public static final int SENDER_FIELD_NUMBER = 5;
+    private volatile Object sender_;
+    /**
+     * <pre>
+     *  used for admin
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    public String getSender() {
+      Object ref = sender_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        sender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *  used for admin
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSenderBytes() {
+      Object ref = sender_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        sender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
     }
 
     private byte memoizedIsInitialized = -1;
@@ -4343,14 +4638,17 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, content_);
       }
-      for (java.util.Map.Entry<String, String> entry
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, String>
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         output.writeMessage(4, userTags);
+      }
+      if (!getSenderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, sender_);
       }
     }
 
@@ -4369,15 +4667,18 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, content_);
       }
-      for (java.util.Map.Entry<String, String> entry
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, String>
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(4, userTags);
+      }
+      if (!getSenderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, sender_);
       }
       memoizedSize = size;
       return size;
@@ -4525,6 +4826,8 @@ public final class ImProto {
         content_ = "";
 
         internalGetMutableUserTags().clear();
+        sender_ = "";
+
         return this;
       }
 
@@ -4554,6 +4857,7 @@ public final class ImProto {
         result.content_ = content_;
         result.userTags_ = internalGetUserTags();
         result.userTags_.makeImmutable();
+        result.sender_ = sender_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
@@ -4583,6 +4887,10 @@ public final class ImProto {
         }
         internalGetMutableUserTags().mergeFrom(
             other.internalGetUserTags());
+        if (!other.getSender().isEmpty()) {
+          sender_ = other.sender_;
+          onChanged();
+        }
         onChanged();
         return this;
       }
@@ -4775,8 +5083,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, String> userTags_;
-      private com.google.protobuf.MapField<String, String>
+          String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -4784,7 +5092,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, String>
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -4797,24 +5105,113 @@ public final class ImProto {
         return userTags_;
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 4;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, String> getUserTags() {
+      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 4;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, String>
+      public java.util.Map<String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 4;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, String> values) {
+          java.util.Map<String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
+        return this;
+      }
+
+      private Object sender_ = "";
+      /**
+       * <pre>
+       *  used for admin
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public String getSender() {
+        Object ref = sender_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          sender_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *  used for admin
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSenderBytes() {
+        Object ref = sender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          sender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *  used for admin
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public Builder setSender(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  used for admin
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public Builder clearSender() {
+        
+        sender_ = getDefaultInstance().getSender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  used for admin
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public Builder setSenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sender_ = value;
+        onChanged();
         return this;
       }
       public final Builder setUnknownFields(
@@ -4916,9 +5313,9 @@ public final class ImProto {
         getContentBytes();
 
     /**
-     * <code>map&lt;string, string&gt; UserTags = 6;</code>
+     * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
      */
-    java.util.Map<String, String>
+    java.util.Map<String, com.google.protobuf.ByteString>
     getUserTags();
   }
   /**
@@ -5000,7 +5397,7 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000020;
               }
-              com.google.protobuf.MapEntry<String, String>
+              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
@@ -5189,18 +5586,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 6;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, String> defaultEntry =
+          String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, String>newDefaultInstance(
+              .<String, com.google.protobuf.ByteString>newDefaultInstance(
                   ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_UserTagsEntry_descriptor,
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
-                  com.google.protobuf.WireFormat.FieldType.STRING,
-                  "");
+                  com.google.protobuf.WireFormat.FieldType.BYTES,
+                  com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, String> userTags_;
-    private com.google.protobuf.MapField<String, String>
+        String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -5209,10 +5606,10 @@ public final class ImProto {
       return userTags_;
     }
     /**
-     * <code>map&lt;string, string&gt; UserTags = 6;</code>
+     * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
      */
 
-    public java.util.Map<String, String> getUserTags() {
+    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
     }
 
@@ -5243,9 +5640,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, content_);
       }
-      for (java.util.Map.Entry<String, String> entry
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, String>
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -5275,9 +5672,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, content_);
       }
-      for (java.util.Map.Entry<String, String> entry
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, String>
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -5833,8 +6230,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, String> userTags_;
-      private com.google.protobuf.MapField<String, String>
+          String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -5842,7 +6239,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, String>
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -5855,23 +6252,23 @@ public final class ImProto {
         return userTags_;
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 6;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
        */
-      public java.util.Map<String, String> getUserTags() {
+      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 6;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
        */
-      public java.util.Map<String, String>
+      public java.util.Map<String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
       /**
-       * <code>map&lt;string, string&gt; UserTags = 6;</code>
+       * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, String> values) {
+          java.util.Map<String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
         return this;
       }
@@ -6452,36 +6849,37 @@ public final class ImProto {
       "(\0162\027.IM.Protocol.ResultCode\022\017\n\007Message\030\003" +
       " \001(\t\0229\n\010UserTags\030\004 \003(\0132\'.IM.Protocol.Soc" +
       "ketResult.UserTagsEntry\032/\n\rUserTagsEntry" +
-      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"L\n\nLogi" +
+      "\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"]\n\nLogi" +
       "nToken\022\016\n\006UserID\030\001 \001(\t\022\r\n\005Token\030\002 \001(\t\022\017\n",
-      "\007Version\030\003 \001(\005\022\016\n\006Appkey\030\004 \001(\t\"\261\001\n\017SendU" +
-      "serMessage\022\020\n\010Receiver\030\001 \001(\t\022\014\n\004Type\030\002 \001" +
-      "(\005\022\017\n\007Content\030\003 \001(\t\022<\n\010UserTags\030\004 \003(\0132*." +
-      "IM.Protocol.SendUserMessage.UserTagsEntr" +
-      "y\032/\n\rUserTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value" +
-      "\030\002 \001(\t:\0028\001\"\306\001\n\023ReceivedUserMessage\022\r\n\005Ms" +
-      "gID\030\001 \001(\t\022\016\n\006Sender\030\002 \001(\t\022\014\n\004Type\030\003 \001(\005\022" +
-      "\017\n\007Content\030\004 \001(\t\022@\n\010UserTags\030\005 \003(\0132..IM." +
-      "Protocol.ReceivedUserMessage.UserTagsEnt" +
-      "ry\032/\n\rUserTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005valu",
-      "e\030\002 \001(\t:\0028\001\"\270\001\n\022SendChannelMessage\022\021\n\tCh" +
-      "annelID\030\001 \001(\t\022\014\n\004Type\030\002 \001(\005\022\017\n\007Content\030\003" +
-      " \001(\t\022?\n\010UserTags\030\004 \003(\0132-.IM.Protocol.Sen" +
-      "dChannelMessage.UserTagsEntry\032/\n\rUserTag" +
-      "sEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\337" +
-      "\001\n\026ReceivedChannelMessage\022\r\n\005MsgID\030\001 \001(\t" +
-      "\022\016\n\006Sender\030\002 \001(\t\022\021\n\tChannelID\030\003 \001(\t\022\014\n\004T" +
-      "ype\030\004 \001(\005\022\017\n\007Content\030\005 \001(\t\022C\n\010UserTags\030\006" +
-      " \003(\01321.IM.Protocol.ReceivedChannelMessag" +
-      "e.UserTagsEntry\032/\n\rUserTagsEntry\022\013\n\003key\030",
-      "\001 \001(\t\022\r\n\005value\030\002 \001(\t:\0028\001\"\034\n\007Channel\022\021\n\tC" +
-      "hannelID\030\001 \001(\t*\261\001\n\017PackageCategory\022\010\n\004Pi" +
-      "ng\020\000\022\t\n\005Login\020\001\022\n\n\006Logout\020\002\022\016\n\nSendToUse" +
-      "r\020\003\022\021\n\rSendToChannel\020\004\022\023\n\017ReceivedUserMs" +
-      "g\020\005\022\026\n\022ReceivedChannelMsg\020\006\022\017\n\013JoinChann" +
-      "el\020\007\022\020\n\014LeaveChannel\020\010\022\n\n\006Result\020c*8\n\nRe" +
-      "sultCode\022\013\n\007Success\020\000\022\r\n\tNeedLogin\020\001\022\016\n\n" +
-      "AuthFailed\020\002b\006proto3"
+      "\007Version\030\003 \001(\005\022\016\n\006Appkey\030\004 \001(\t\022\017\n\007IsAdmi" +
+      "n\030\005 \001(\010\"\301\001\n\017SendUserMessage\022\020\n\010Receiver\030" +
+      "\001 \001(\t\022\014\n\004Type\030\002 \001(\005\022\017\n\007Content\030\003 \001(\t\022<\n\010" +
+      "UserTags\030\004 \003(\0132*.IM.Protocol.SendUserMes" +
+      "sage.UserTagsEntry\022\016\n\006Sender\030\005 \001(\t\032/\n\rUs" +
+      "erTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:" +
+      "\0028\001\"\306\001\n\023ReceivedUserMessage\022\r\n\005MsgID\030\001 \001" +
+      "(\t\022\016\n\006Sender\030\002 \001(\t\022\014\n\004Type\030\003 \001(\005\022\017\n\007Cont" +
+      "ent\030\004 \001(\t\022@\n\010UserTags\030\005 \003(\0132..IM.Protoco" +
+      "l.ReceivedUserMessage.UserTagsEntry\032/\n\rU",
+      "serTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014" +
+      ":\0028\001\"\310\001\n\022SendChannelMessage\022\021\n\tChannelID" +
+      "\030\001 \001(\t\022\014\n\004Type\030\002 \001(\005\022\017\n\007Content\030\003 \001(\t\022?\n" +
+      "\010UserTags\030\004 \003(\0132-.IM.Protocol.SendChanne" +
+      "lMessage.UserTagsEntry\022\016\n\006Sender\030\005 \001(\t\032/" +
+      "\n\rUserTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
+      "\001(\014:\0028\001\"\337\001\n\026ReceivedChannelMessage\022\r\n\005Ms" +
+      "gID\030\001 \001(\t\022\016\n\006Sender\030\002 \001(\t\022\021\n\tChannelID\030\003" +
+      " \001(\t\022\014\n\004Type\030\004 \001(\005\022\017\n\007Content\030\005 \001(\t\022C\n\010U" +
+      "serTags\030\006 \003(\01321.IM.Protocol.ReceivedChan",
+      "nelMessage.UserTagsEntry\032/\n\rUserTagsEntr" +
+      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"\034\n\007Cha" +
+      "nnel\022\021\n\tChannelID\030\001 \001(\t*\261\001\n\017PackageCateg" +
+      "ory\022\010\n\004Ping\020\000\022\t\n\005Login\020\001\022\n\n\006Logout\020\002\022\016\n\n" +
+      "SendToUser\020\003\022\021\n\rSendToChannel\020\004\022\023\n\017Recei" +
+      "vedUserMsg\020\005\022\026\n\022ReceivedChannelMsg\020\006\022\017\n\013" +
+      "JoinChannel\020\007\022\020\n\014LeaveChannel\020\010\022\n\n\006Resul" +
+      "t\020c*8\n\nResultCode\022\013\n\007Success\020\000\022\r\n\tNeedLo" +
+      "gin\020\001\022\016\n\nAuthFailed\020\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6518,13 +6916,13 @@ public final class ImProto {
     internal_static_IM_Protocol_LoginToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_LoginToken_descriptor,
-        new String[] { "UserID", "Token", "Version", "Appkey", });
+        new String[] { "UserID", "Token", "Version", "Appkey", "IsAdmin", });
     internal_static_IM_Protocol_SendUserMessage_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_IM_Protocol_SendUserMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SendUserMessage_descriptor,
-        new String[] { "Receiver", "Type", "Content", "UserTags", });
+        new String[] { "Receiver", "Type", "Content", "UserTags", "Sender", });
     internal_static_IM_Protocol_SendUserMessage_UserTagsEntry_descriptor =
       internal_static_IM_Protocol_SendUserMessage_descriptor.getNestedTypes().get(0);
     internal_static_IM_Protocol_SendUserMessage_UserTagsEntry_fieldAccessorTable = new
@@ -6548,7 +6946,7 @@ public final class ImProto {
     internal_static_IM_Protocol_SendChannelMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SendChannelMessage_descriptor,
-        new String[] { "ChannelID", "Type", "Content", "UserTags", });
+        new String[] { "ChannelID", "Type", "Content", "UserTags", "Sender", });
     internal_static_IM_Protocol_SendChannelMessage_UserTagsEntry_descriptor =
       internal_static_IM_Protocol_SendChannelMessage_descriptor.getNestedTypes().get(0);
     internal_static_IM_Protocol_SendChannelMessage_UserTagsEntry_fieldAccessorTable = new
