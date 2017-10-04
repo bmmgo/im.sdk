@@ -1,33 +1,38 @@
 package com.bmmgo.im.sdk.socket;
 
+import com.bmmgo.im.sdk.listener.ReceiveListener;
 import com.bmmgo.im.sdk.listener.SocketListener;
 import com.google.protobuf.ByteString;
 import com.google.protobuf.GeneratedMessage;
+import com.google.protobuf.InvalidProtocolBufferException;
 
 import java.io.IOException;
 import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
-import java.util.UUID;
+import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicInteger;
 
 import IM.Protocol.ImProto;
 
 /**
  * Created by Administrator on 2016/7/13.
  */
-public class SocketClient {
+public class SocketClient implements ReceiveListener {
     private boolean mClosed = false;
     private Socket mSocket;
     private ContextWriter mWriter;
     private ContextReader mReader;
     private SocketListener mSocketListener;
+    private AtomicInteger mSeq = new AtomicInteger();
+    private ConcurrentHashMap<Integer, ImProto.SocketPackage> mSendPackages = new ConcurrentHashMap<>();
 
     private String IP;
     private int Port;
 
     public SocketClient() {
         mWriter = new ContextWriter();
-        mReader = new ContextReader(false);
+        mReader = new ContextReader(false, this);
     }
 
     public void Connect(String ip, int port) {
@@ -162,9 +167,11 @@ public class SocketClient {
     private boolean send(ImProto.PackageCategory category, GeneratedMessage message) {
         ImProto.SocketPackage sp = ImProto.SocketPackage
                 .newBuilder()
+                .setSeq(mSeq.getAndIncrement())
                 .setCategory(category)
                 .setContent(message == null ? ByteString.EMPTY : message.toByteString())
                 .build();
+        mSendPackages.put(sp.getSeq(), sp);
         return send(sp.toByteArray());
     }
 
@@ -194,13 +201,13 @@ public class SocketClient {
         send(ImProto.PackageCategory.LeaveChannel, channel);
     }
 
-    public boolean sendToChannel(String channel, String content, int type, Map<String, String> tags) {
+    public boolean sendToChannel(String channel, String content, int type, Map<String, ByteString> tags) {
         ImProto.SendChannelMessage sendChannelMessage = ImProto.SendChannelMessage
                 .newBuilder()
                 .setChannelID(channel)
                 .setContent(content)
                 .setType(type)
-                .putAllUserTags(tags == null ? new HashMap<String, String>() : tags)
+                .putAllUserTags(tags == null ? new HashMap<String, ByteString>() : tags)
                 .build();
         return send(ImProto.PackageCategory.SendToChannel, sendChannelMessage);
     }
@@ -213,5 +220,61 @@ public class SocketClient {
                 .setType(type)
                 .build();
         return send(ImProto.PackageCategory.SendToUser, sendUserMessage);
+    }
+
+    @Override
+    public void onReceived(ImProto.SocketPackage socketPackage) throws InvalidProtocolBufferException {
+        switch (socketPackage.getCategory()) {
+            case Ping:
+                break;
+            case ReceivedUserMsg:
+                break;
+            case ReceivedChannelMsg:
+                onReceivedChannelMessage(socketPackage);
+                break;
+            case Result:
+                onReceivedSocketResult(socketPackage);
+                break;
+            case UNRECOGNIZED:
+                break;
+        }
+    }
+
+    private void onReceivedChannelMessage(ImProto.SocketPackage socketPackage) throws InvalidProtocolBufferException {
+        if (mSocketListener == null) return;
+        ImProto.ReceivedChannelMessage receivedChannelMessage = ImProto.ReceivedChannelMessage
+                .parseFrom(socketPackage.getContent());
+        mSocketListener.onReceivedChannelMessage(receivedChannelMessage);
+    }
+
+    public void onReceivedSocketResult(ImProto.SocketPackage socketPackage) throws InvalidProtocolBufferException {
+        if (mSocketListener == null) return;
+        ImProto.SocketResult socketResult = ImProto.SocketResult
+                .parseFrom(socketPackage.getContent());
+        switch (socketResult.getCategory()) {
+            case Login:
+                if (socketResult.getCode() == ImProto.ResultCode.Success) {
+                    mSocketListener.onLoginSuccess();
+                } else {
+                    mSocketListener.onLoginFailed(socketResult.getMessage());
+                }
+            case Logout:
+                break;
+            case SendToUser:
+                break;
+            case SendToChannel:
+                break;
+            case JoinChannel: {
+                if (!mSendPackages.containsKey(socketPackage.getSeq())) return;
+                ImProto.SocketPackage p = mSendPackages.get(socketPackage.getSeq());
+                mSocketListener.onJoinChannelSuccess(ImProto.Channel.parseFrom(p.getContent()).getChannelID());
+                break;
+            }
+            case LeaveChannel:
+                if (!mSendPackages.containsKey(socketPackage.getSeq())) return;
+                ImProto.SocketPackage p = mSendPackages.get(socketPackage.getSeq());
+                mSocketListener.onLeaveChannelSuccess(ImProto.Channel.parseFrom(p.getContent()).getChannelID());
+                break;
+        }
     }
 }

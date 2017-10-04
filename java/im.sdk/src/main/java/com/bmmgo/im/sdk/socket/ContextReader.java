@@ -1,6 +1,7 @@
 package com.bmmgo.im.sdk.socket;
 
 import com.bmmgo.im.sdk.contact.BufPacket;
+import com.bmmgo.im.sdk.listener.ReceiveListener;
 import com.bmmgo.im.sdk.listener.SocketListener;
 import com.bmmgo.im.sdk.utils.GZipUtil;
 import com.google.protobuf.InvalidProtocolBufferException;
@@ -19,9 +20,11 @@ public class ContextReader {
     private int offset = 0;
     private SocketListener mListener;
     private boolean mDecompress = false;
+    private ReceiveListener mReceiveListener;
 
-    public ContextReader(boolean decompress) {
+    public ContextReader(boolean decompress, ReceiveListener listener) {
         mDecompress = decompress;
+        mReceiveListener = listener;
         ReadBuffer = new byte[Short.MAX_VALUE];
     }
 
@@ -65,52 +68,8 @@ public class ContextReader {
     }
 
     private void OnReceivedPacketInternal(BufPacket packet) throws InvalidProtocolBufferException {
-        if (mListener == null) return;
+        if (mReceiveListener == null) return;
         ImProto.SocketPackage sp = ImProto.SocketPackage.parseFrom(packet.ContentBuf);
-        switch (sp.getCategory()) {
-            case Ping:
-                break;
-            case ReceivedUserMsg:
-                break;
-            case ReceivedChannelMsg:
-                onReceivedChannelMessage(sp);
-                break;
-            case Result:
-                onReceivedSocketResult(sp);
-                break;
-            case UNRECOGNIZED:
-                break;
-        }
-    }
-
-    private void onReceivedChannelMessage(ImProto.SocketPackage socketPackage) throws InvalidProtocolBufferException {
-        ImProto.ReceivedChannelMessage receivedChannelMessage = ImProto.ReceivedChannelMessage
-                .parseFrom(socketPackage.getContent());
-        mListener.onReceivedChannelMessage(receivedChannelMessage);
-    }
-
-    public void onReceivedSocketResult(ImProto.SocketPackage socketPackage) throws InvalidProtocolBufferException {
-        ImProto.SocketResult socketResult = ImProto.SocketResult
-                .parseFrom(socketPackage.getContent());
-        switch (socketResult.getCategory()) {
-            case Login:
-                if (socketResult.getCode() == ImProto.ResultCode.Success) {
-                    mListener.onLoginSuccess();
-                } else {
-                    mListener.onLoginFailed(socketResult.getMessage());
-                }
-            case Logout:
-                break;
-            case SendToUser:
-                break;
-            case SendToChannel:
-                break;
-            case JoinChannel:
-                mListener.onJoinChannelSuccess();
-                break;
-            case LeaveChannel:
-                mListener.onExitChannelSuccess();
-                break;
-        }
+        mReceiveListener.onReceived(sp);
     }
 }
