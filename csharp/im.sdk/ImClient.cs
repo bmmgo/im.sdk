@@ -121,8 +121,15 @@ namespace im.sdk
             {
                 while (true)
                 {
-                    Send(PackageCategory.Ping);
-                    Thread.Sleep(60 * 1000);
+                    try
+                    {
+                        Send(PackageCategory.Ping);
+                        Thread.Sleep(60 * 1000);
+                    }
+                    catch (Exception ex)
+                    {
+                        break;
+                    }
                 }
             });
             _heartThread.Start();
