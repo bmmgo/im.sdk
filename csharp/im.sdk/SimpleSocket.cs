@@ -5,17 +5,27 @@ using System.Threading;
 
 namespace im.sdk
 {
+    /// <inheritdoc />
+    /// <summary>
+    /// socket通讯实现
+    /// </summary>
     public class SimpleSocket : IDisposable
     {
         private Socket _socket;
         private Thread _readThread;
         private FixLengthConvert _convert;
-
+        private bool _connected = false;
+        /// <summary>
+        /// 连接
+        /// </summary>
+        /// <param name="ip"></param>
+        /// <param name="port"></param>
         public void Connect(string ip, int port)
         {
             _convert = new FixLengthConvert();
             var socket = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
             socket.Connect(ip, port);
+            _connected = true;
             _socket = socket;
             _readThread = new Thread(() =>
             {
@@ -46,6 +56,7 @@ namespace im.sdk
                             //ignore
                         }
                     }
+                    _connected = false;
                     _socket.Dispose();
                     OnDisconnected?.Invoke(this);
                     return;
@@ -53,16 +64,37 @@ namespace im.sdk
             });
             _readThread.Start();
         }
-
+        /// <summary>
+        /// 发送数据
+        /// </summary>
+        /// <param name="bytes"></param>
+        /// <returns></returns>
         public bool Send(byte[] bytes)
         {
+            if (!_connected) return false;
             bytes = _convert.ToFrame(bytes);
-            var len = _socket.Send(bytes);
-            return len == bytes.Length;
+            try
+            {
+                var len = _socket.Send(bytes);
+                return len == bytes.Length;
+            }
+            catch (Exception)
+            {
+                //ignore
+            }
+            return false;
         }
-
+        /// <summary>
+        /// 收到数据事件
+        /// </summary>
         public event Action<byte[]> OnReceived;
+        /// <summary>
+        /// 连接断开事件
+        /// </summary>
         public event Action<SimpleSocket> OnDisconnected;
+        /// <inheritdoc />
+        /// <summary>
+        /// </summary>
         public void Dispose()
         {
             _readThread?.Abort();

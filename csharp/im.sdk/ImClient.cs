@@ -9,13 +9,21 @@ using IM.Protocol;
 
 namespace im.sdk
 {
+    /// <summary>
+    /// im 客户端
+    /// </summary>
     public class ImClient
     {
         private Thread _heartThread;
         private bool _autoReconnect;
         private SimpleSocket _socket;
-
+        /// <summary>
+        /// 服务器ip地址
+        /// </summary>
         public string Ip { get; set; } = "www.bmmgo.com";
+        /// <summary>
+        /// 服务器端口
+        /// </summary>
         public int Port { get; set; } = 16666;
 
         /// <summary>
@@ -26,7 +34,9 @@ namespace im.sdk
         {
             _autoReconnect = autoReconnect;
         }
-
+        /// <summary>
+        /// 启动客户端
+        /// </summary>
         public void Start()
         {
             _socket?.Dispose();
@@ -46,7 +56,9 @@ namespace im.sdk
             }
             ReconnectIfNeed();
         }
-
+        /// <summary>
+        /// 停止客户端
+        /// </summary>
         public void Stop()
         {
             _heartThread.Abort();
@@ -153,7 +165,13 @@ namespace im.sdk
             //    //Console.WriteLine("received {0},{1},{2} {3}", res.Category, res.Code, res.Message, DateTime.Now);
             //});
         }
-
+        /// <summary>
+        /// 登陆
+        /// </summary>
+        /// <param name="appkey"></param>
+        /// <param name="userId"></param>
+        /// <param name="secrect"></param>
+        /// <param name="isAdmin"></param>
         public void Login(string appkey, string userId, string secrect, bool isAdmin = false)
         {
             var loginToken = new LoginToken();
@@ -168,21 +186,32 @@ namespace im.sdk
         {
             return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(from, "MD5");
         }
-
+        /// <summary>
+        /// 频道订阅
+        /// </summary>
+        /// <param name="channel"></param>
         public void JoinChannel(string channel)
         {
             var ch = new Channel();
             ch.ChannelID = channel;
             Send(PackageCategory.JoinChannel, ch);
         }
-
+        /// <summary>
+        /// 取消频道订阅
+        /// </summary>
+        /// <param name="channel"></param>
         public void LeaveChannel(string channel)
         {
             var ch = new Channel();
             ch.ChannelID = channel;
             Send(PackageCategory.LeaveChannel, ch);
         }
-
+        /// <summary>
+        /// 发送频道消息
+        /// </summary>
+        /// <param name="channel"></param>
+        /// <param name="content"></param>
+        /// <param name="type"></param>
         public void SendToChannel(string channel, string content, int type)
         {
             var sendChannelMsg = new SendChannelMessage();
@@ -191,22 +220,45 @@ namespace im.sdk
             sendChannelMsg.Type = type;
             Send(PackageCategory.SendToChannel, sendChannelMsg);
         }
-
+        /// <summary>
+        /// 发送频道消息
+        /// </summary>
+        /// <param name="message"></param>
         public void SendToChannel(SendChannelMessage message)
         {
             Send(PackageCategory.SendToChannel, message);
         }
-
+        /// <summary>
+        /// 发送私信
+        /// </summary>
+        /// <param name="message"></param>
         public void SendToUser(SendUserMessage message)
         {
             Send(PackageCategory.SendToUser, message);
         }
-
+        /// <summary>
+        /// 收到频道消息事件
+        /// </summary>
         public event Action<ImClient, ReceivedChannelMessage> OnReceivedChannelMessage;
+        /// <summary>
+        /// 连接成功事件
+        /// </summary>
         public event Action<ImClient> OnConnected;
+        /// <summary>
+        /// 连接断开事件
+        /// </summary>
         public event Action<ImClient> OnDisconnected;
+        /// <summary>
+        /// 连接失败事件
+        /// </summary>
         public event Action<ImClient> OnConnectedFailed;
+        /// <summary>
+        /// 异常事件
+        /// </summary>
         public event Action<ImClient, Exception> OnError;
+        /// <summary>
+        /// 登陆成功事件
+        /// </summary>
         public event Action<ImClient, bool, string> OnLogin;
     }
 }
