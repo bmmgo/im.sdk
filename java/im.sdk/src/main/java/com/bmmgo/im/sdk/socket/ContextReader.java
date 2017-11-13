@@ -17,6 +17,7 @@ import IM.Protocol.ImProto;
  */
 public class ContextReader {
     private byte[] ReadBuffer;
+    // 剩余数据量
     private int offset = 0;
     private SocketListener mListener;
     private boolean mDecompress = false;
@@ -39,16 +40,19 @@ public class ContextReader {
         int length = readLen + offset;
         int start = 0;
         while (true) {
-            if (length == start) {  //  没有剩余数据了
+            if (length == start) {  //  没有剩余数据了,数据解析完毕
                 offset = 0;
                 break;
             }
-            if (length - start < 2) {  //   最小包长度
+            if (length - start < 2) {  //   读取的数据长度小于最小包长度，先放到缓存。
                 offset = length - start;
                 System.arraycopy(ReadBuffer, start, ReadBuffer, 0, offset);
                 break;
             }
             short len = ByteBuffer.wrap(ReadBuffer, start, 2).getShort();
+            if (len < 2) {  // 数据长度小于2，数据流出现异常，需要断开重连。
+                return false;
+            }
             if (len > length - start) {  //  当前包还没有接收完
                 offset = length - start;
                 System.arraycopy(ReadBuffer, start, ReadBuffer, 0, offset);
@@ -71,5 +75,9 @@ public class ContextReader {
         if (mReceiveListener == null) return;
         ImProto.SocketPackage sp = ImProto.SocketPackage.parseFrom(packet.ContentBuf);
         mReceiveListener.onReceived(sp);
+    }
+
+    public void reset() {
+        offset = 0;
     }
 }

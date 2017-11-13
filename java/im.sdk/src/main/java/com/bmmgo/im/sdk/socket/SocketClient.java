@@ -65,6 +65,7 @@ public class SocketClient implements ReceiveListener {
         if (mClosed) return;
         try {
             mSocket = new Socket(IP, Port);
+            mReader.reset();
             StartHeart();
             StartRead();
             if (mSocketListener != null)
