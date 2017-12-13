@@ -1,4 +1,5 @@
 ﻿//protoc --csharp_out=. ImProto.proto
+//protoc --java_out=. ImProto.proto
 syntax = "proto3";
 package IM.Protocol;
 enum PackageCategory{
@@ -18,35 +19,44 @@ message SocketPackage{
 	PackageCategory Category = 2;
 	bytes Content = 3;
 }
+enum ResultCode{
+	Success = 0;
+	NeedLogin = 1;
+	AuthFailed = 2;
+}
 message SocketResult{
 	PackageCategory Category = 1;
-	int32 Code = 2;
+	ResultCode Code = 2;
 	string Message = 3;
-	map<string,string> UserTags = 4;
+	map<string,bytes> UserTags = 4;
 }
 message LoginToken{
 	string UserID = 1;
 	string Token = 2;
 	int32 Version = 3;
+	string Appkey = 4;
+	bool IsAdmin = 5;
 }
 message SendUserMessage{
 	string Receiver = 1;
 	int32 Type = 2;
 	string Content = 3;
-	map<string,string> UserTags = 4;
+	map<string,bytes> UserTags = 4;
+	string Sender = 5; //  used for admin
 }
 message ReceivedUserMessage{
 	string MsgID = 1;
 	string Sender = 2;
 	int32 Type = 3;
 	string Content = 4;
-	map<string,string> UserTags = 5;
+	map<string,bytes> UserTags = 5;
 }
 message SendChannelMessage{
 	string ChannelID = 1;
 	int32 Type = 2;
 	string Content = 3;
-	map<string,string> UserTags = 4;
+	map<string,bytes> UserTags = 4;
+	string Sender = 5; //  used for admin
 }
 message ReceivedChannelMessage{
 	string MsgID = 1;
@@ -54,7 +64,7 @@ message ReceivedChannelMessage{
 	string ChannelID = 3;
 	int32 Type = 4;
 	string Content = 5;
-	map<string,string> UserTags = 6;
+	map<string,bytes> UserTags = 6;
 }
 message Channel{
 	string ChannelID = 1;
