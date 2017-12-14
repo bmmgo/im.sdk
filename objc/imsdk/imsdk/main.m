@@ -17,6 +17,7 @@ int main(int argc, const char * argv[])
     imClient.ip = @"www.bmmgo.com";
     imClient.port = 16666;
     [imClient start];
+    [NSThread sleepForTimeInterval:99999999];
     [pool drain];
     return 0;
 }
