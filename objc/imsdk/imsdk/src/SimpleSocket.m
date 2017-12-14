@@ -1,6 +1,10 @@
 #import <Foundation/Foundation.h>
 
 @interface SimpleSocket : NSObject
+{
+    NSInputStream *inputStream;
+    NSOutputStream *outputStream;
+}
 -(void)connect:(NSString *) ip on:(int) port;
 @end
 
@@ -14,18 +18,15 @@
     CFWriteStreamRef write_s;
     CFStreamCreatePairWithSocketToHost(NULL, (__bridge CFStringRef)ip, port, &read_s, &write_s);
 
-    NSInputStream *_input_s;
-    NSOutputStream *_output_s;
+    inputStream = (__bridge NSInputStream *)(read_s);
+    outputStream = (__bridge NSOutputStream *)(write_s);
+    inputStream.delegate = outputStream.delegate = self;
 
-    _input_s = (__bridge NSInputStream *)(read_s);
-    _output_s = (__bridge NSOutputStream *)(write_s);
-    _input_s.delegate = _output_s.delegate = self;
+    [inputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+    [outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
 
-    [_input_s scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-    [_output_s scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-
-    [_input_s open];
-    [_output_s open];
+    [inputStream open];
+    [outputStream open];
 }
 
 - (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
@@ -36,10 +37,10 @@
     {
         // connect closed
         NSLog(@"关闭输入输出流");
-        [_input_s close];
-        [_output_s close];
-        [_input_s removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-        [_output_s removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+        [inputStream close];
+        [outputStream close];
+        [inputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
+        [outputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
         break;
     }
     case NSStreamEventErrorOccurred:
@@ -63,7 +64,7 @@
 -(void)readData
 {
     uint8_t buf[1024];
-    NSInteger len = [_input_s read:buf maxLength:sizeof(buf)];
+    NSInteger len = [inputStream read:buf maxLength:sizeof(buf)];
 
     NSData *data = [NSData dataWithBytes:buf length:len];
     NSString *msg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
