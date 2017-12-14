@@ -7,11 +7,16 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "src/ImClient.m"
 
-int main(int argc, const char * argv[]) {
-    @autoreleasepool {
-        // insert code here...
-        NSLog(@"Hello imsdk !");
-    }
+int main(int argc, const char * argv[])
+{
+    NSAutoreleasePool *pool = [[NSAutoreleasePool alloc] init];
+    NSLog(@"Hello imsdk !");
+    ImClient *imClient = [ImClient new];
+    imClient.ip = @"www.bmmgo.com";
+    imClient.port = 16666;
+    [imClient start];
+    [pool drain];
     return 0;
 }
