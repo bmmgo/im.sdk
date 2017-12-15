@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using Google.Protobuf;
+using Google.Protobuf.Collections;
 using IM.Protocol;
 
 namespace im.sdk
@@ -97,6 +98,12 @@ namespace im.sdk
                     case PackageCategory.Result:
                         ProcessSocketResult(package);
                         break;
+                    case PackageCategory.ReceivedUserMsg:
+                        ReceivedUserMessage(package);
+                        break;
+                    case PackageCategory.ReceivedGroupMsg:
+                        ReceivedGroupMessage(package);
+                        break;
                 }
             }
             catch (Exception ex)
@@ -138,8 +145,9 @@ namespace im.sdk
                         Send(PackageCategory.Ping);
                         Thread.Sleep(60 * 1000);
                     }
-                    catch (Exception ex)
+                    catch (Exception)
                     {
+                        //ignor
                         break;
                     }
                 }
@@ -151,6 +159,18 @@ namespace im.sdk
         {
             var message = IM.Protocol.ReceivedChannelMessage.Parser.ParseFrom(package.Content);
             OnReceivedChannelMessage?.Invoke(this, message);
+        }
+
+        private void ReceivedUserMessage(SocketPackage package)
+        {
+            var message = IM.Protocol.ReceivedUserMessage.Parser.ParseFrom(package.Content);
+            OnReceivedUserMessage?.Invoke(this, message);
+        }
+
+        private void ReceivedGroupMessage(SocketPackage package)
+        {
+            var message = IM.Protocol.ReceivedGroupMessage.Parser.ParseFrom(package.Content);
+            OnReceivedGroupMessage?.Invoke(this, message);
         }
 
         private void Send(PackageCategory category, IMessage msg = null)
@@ -190,21 +210,21 @@ namespace im.sdk
         /// 频道订阅
         /// </summary>
         /// <param name="channel"></param>
-        public void JoinChannel(string channel)
+        public void BindToChannel(string channel)
         {
             var ch = new Channel();
             ch.ChannelID = channel;
-            Send(PackageCategory.JoinChannel, ch);
+            Send(PackageCategory.BindToChannel, ch);
         }
         /// <summary>
         /// 取消频道订阅
         /// </summary>
         /// <param name="channel"></param>
-        public void LeaveChannel(string channel)
+        public void UnbindToChannel(string channel)
         {
             var ch = new Channel();
             ch.ChannelID = channel;
-            Send(PackageCategory.LeaveChannel, ch);
+            Send(PackageCategory.UnbindToChannel, ch);
         }
         /// <summary>
         /// 发送频道消息
@@ -237,9 +257,47 @@ namespace im.sdk
             Send(PackageCategory.SendToUser, message);
         }
         /// <summary>
+        /// send message to group
+        /// </summary>
+        /// <param name="message"></param>
+        public void SendToGroup(SendGroupMessage message)
+        {
+            Send(PackageCategory.SendToGroup, message);
+        }
+
+        /// <summary>
+        /// bind group to receive group message
+        /// </summary>
+        /// <param name="groupId"></param>
+        public void BindToGroup(string groupId)
+        {
+            var userGroup = new UserGroup();
+            userGroup.GroupIDs.Add(groupId);
+            Send(PackageCategory.BindToGroup, userGroup);
+        }
+        /// <summary>
+        /// unbind group
+        /// </summary>
+        /// <param name="groupId"></param>
+        public void UnbindToGroup(string groupId)
+        {
+            var userGroup = new UserGroup();
+            userGroup.GroupIDs.Add(groupId);
+            Send(PackageCategory.UnbindToGroup, userGroup);
+        }
+
+        /// <summary>
         /// 收到频道消息事件
         /// </summary>
         public event Action<ImClient, ReceivedChannelMessage> OnReceivedChannelMessage;
+        /// <summary>
+        /// receive user message event
+        /// </summary>
+        public event Action<ImClient, ReceivedUserMessage> OnReceivedUserMessage;
+        /// <summary>
+        /// receive group message event
+        /// </summary>
+        public event Action<ImClient, ReceivedGroupMessage> OnReceivedGroupMessage;
         /// <summary>
         /// 连接成功事件
         /// </summary>

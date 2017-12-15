@@ -51,13 +51,25 @@ namespace IM.Protocol {
             "DAoEVHlwZRgEIAEoBRIPCgdDb250ZW50GAUgASgJEkMKCFVzZXJUYWdzGAYg",
             "AygLMjEuSU0uUHJvdG9jb2wuUmVjZWl2ZWRDaGFubmVsTWVzc2FnZS5Vc2Vy",
             "VGFnc0VudHJ5Gi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZh",
-            "bHVlGAIgASgMOgI4ASIcCgdDaGFubmVsEhEKCUNoYW5uZWxJRBgBIAEoCSqx",
-            "AQoPUGFja2FnZUNhdGVnb3J5EggKBFBpbmcQABIJCgVMb2dpbhABEgoKBkxv",
-            "Z291dBACEg4KClNlbmRUb1VzZXIQAxIRCg1TZW5kVG9DaGFubmVsEAQSEwoP",
-            "UmVjZWl2ZWRVc2VyTXNnEAUSFgoSUmVjZWl2ZWRDaGFubmVsTXNnEAYSDwoL",
-            "Sm9pbkNoYW5uZWwQBxIQCgxMZWF2ZUNoYW5uZWwQCBIKCgZSZXN1bHQQYyo4",
-            "CgpSZXN1bHRDb2RlEgsKB1N1Y2Nlc3MQABINCglOZWVkTG9naW4QARIOCgpB",
-            "dXRoRmFpbGVkEAJiBnByb3RvMw=="));
+            "bHVlGAIgASgMOgI4ASIcCgdDaGFubmVsEhEKCUNoYW5uZWxJRBgBIAEoCSIt",
+            "CglVc2VyR3JvdXASDgoGVXNlcklEGAEgASgJEhAKCEdyb3VwSURzGAIgAygJ",
+            "IsIBChBTZW5kR3JvdXBNZXNzYWdlEg8KB0dyb3VwSUQYASABKAkSDAoEVHlw",
+            "ZRgCIAEoBRIPCgdDb250ZW50GAMgASgJEj0KCFVzZXJUYWdzGAQgAygLMisu",
+            "SU0uUHJvdG9jb2wuU2VuZEdyb3VwTWVzc2FnZS5Vc2VyVGFnc0VudHJ5Eg4K",
+            "BlNlbmRlchgFIAEoCRovCg1Vc2VyVGFnc0VudHJ5EgsKA2tleRgBIAEoCRIN",
+            "CgV2YWx1ZRgCIAEoDDoCOAEi2QEKFFJlY2VpdmVkR3JvdXBNZXNzYWdlEg0K",
+            "BU1zZ0lEGAEgASgJEg4KBlNlbmRlchgCIAEoCRIPCgdHcm91cElEGAMgASgJ",
+            "EgwKBFR5cGUYBCABKAUSDwoHQ29udGVudBgFIAEoCRJBCghVc2VyVGFncxgG",
+            "IAMoCzIvLklNLlByb3RvY29sLlJlY2VpdmVkR3JvdXBNZXNzYWdlLlVzZXJU",
+            "YWdzRW50cnkaLwoNVXNlclRhZ3NFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
+            "dWUYAiABKAw6AjgBKoECCg9QYWNrYWdlQ2F0ZWdvcnkSCAoEUGluZxAAEgkK",
+            "BUxvZ2luEAESCgoGTG9nb3V0EAISDgoKU2VuZFRvVXNlchADEhEKDVNlbmRU",
+            "b0NoYW5uZWwQBBITCg9SZWNlaXZlZFVzZXJNc2cQBRIWChJSZWNlaXZlZENo",
+            "YW5uZWxNc2cQBhIRCg1CaW5kVG9DaGFubmVsEAcSEwoPVW5iaW5kVG9DaGFu",
+            "bmVsEAgSDwoLQmluZFRvR3JvdXAQCRIRCg1VbmJpbmRUb0dyb3VwEAoSDwoL",
+            "U2VuZFRvR3JvdXAQCxIUChBSZWNlaXZlZEdyb3VwTXNnEAwSCgoGUmVzdWx0",
+            "EGMqOAoKUmVzdWx0Q29kZRILCgdTdWNjZXNzEAASDQoJTmVlZExvZ2luEAES",
+            "DgoKQXV0aEZhaWxlZBACYgZwcm90bzM="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::IM.Protocol.PackageCategory), typeof(global::IM.Protocol.ResultCode), }, new pbr::GeneratedClrTypeInfo[] {
@@ -68,7 +80,10 @@ namespace IM.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedUserMessage), global::IM.Protocol.ReceivedUserMessage.Parser, new[]{ "MsgID", "Sender", "Type", "Content", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendChannelMessage), global::IM.Protocol.SendChannelMessage.Parser, new[]{ "ChannelID", "Type", "Content", "UserTags", "Sender" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedChannelMessage), global::IM.Protocol.ReceivedChannelMessage.Parser, new[]{ "MsgID", "Sender", "ChannelID", "Type", "Content", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.Channel), global::IM.Protocol.Channel.Parser, new[]{ "ChannelID" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.Channel), global::IM.Protocol.Channel.Parser, new[]{ "ChannelID" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.UserGroup), global::IM.Protocol.UserGroup.Parser, new[]{ "UserID", "GroupIDs" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendGroupMessage), global::IM.Protocol.SendGroupMessage.Parser, new[]{ "GroupID", "Type", "Content", "UserTags", "Sender" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedGroupMessage), global::IM.Protocol.ReceivedGroupMessage.Parser, new[]{ "MsgID", "Sender", "GroupID", "Type", "Content", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
           }));
     }
     #endregion
@@ -83,8 +98,12 @@ namespace IM.Protocol {
     [pbr::OriginalName("SendToChannel")] SendToChannel = 4,
     [pbr::OriginalName("ReceivedUserMsg")] ReceivedUserMsg = 5,
     [pbr::OriginalName("ReceivedChannelMsg")] ReceivedChannelMsg = 6,
-    [pbr::OriginalName("JoinChannel")] JoinChannel = 7,
-    [pbr::OriginalName("LeaveChannel")] LeaveChannel = 8,
+    [pbr::OriginalName("BindToChannel")] BindToChannel = 7,
+    [pbr::OriginalName("UnbindToChannel")] UnbindToChannel = 8,
+    [pbr::OriginalName("BindToGroup")] BindToGroup = 9,
+    [pbr::OriginalName("UnbindToGroup")] UnbindToGroup = 10,
+    [pbr::OriginalName("SendToGroup")] SendToGroup = 11,
+    [pbr::OriginalName("ReceivedGroupMsg")] ReceivedGroupMsg = 12,
     [pbr::OriginalName("Result")] Result = 99,
   }
 
@@ -1581,6 +1600,564 @@ namespace IM.Protocol {
             break;
           case 10: {
             ChannelID = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class UserGroup : pb::IMessage<UserGroup> {
+    private static readonly pb::MessageParser<UserGroup> _parser = new pb::MessageParser<UserGroup>(() => new UserGroup());
+    public static pb::MessageParser<UserGroup> Parser { get { return _parser; } }
+
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::IM.Protocol.ImProtoReflection.Descriptor.MessageTypes[8]; }
+    }
+
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    public UserGroup() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    public UserGroup(UserGroup other) : this() {
+      userID_ = other.userID_;
+      groupIDs_ = other.groupIDs_.Clone();
+    }
+
+    public UserGroup Clone() {
+      return new UserGroup(this);
+    }
+
+    /// <summary>Field number for the "UserID" field.</summary>
+    public const int UserIDFieldNumber = 1;
+    private string userID_ = "";
+    public string UserID {
+      get { return userID_; }
+      set {
+        userID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "GroupIDs" field.</summary>
+    public const int GroupIDsFieldNumber = 2;
+    private static readonly pb::FieldCodec<string> _repeated_groupIDs_codec
+        = pb::FieldCodec.ForString(18);
+    private readonly pbc::RepeatedField<string> groupIDs_ = new pbc::RepeatedField<string>();
+    public pbc::RepeatedField<string> GroupIDs {
+      get { return groupIDs_; }
+    }
+
+    public override bool Equals(object other) {
+      return Equals(other as UserGroup);
+    }
+
+    public bool Equals(UserGroup other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (UserID != other.UserID) return false;
+      if(!groupIDs_.Equals(other.groupIDs_)) return false;
+      return true;
+    }
+
+    public override int GetHashCode() {
+      int hash = 1;
+      if (UserID.Length != 0) hash ^= UserID.GetHashCode();
+      hash ^= groupIDs_.GetHashCode();
+      return hash;
+    }
+
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (UserID.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(UserID);
+      }
+      groupIDs_.WriteTo(output, _repeated_groupIDs_codec);
+    }
+
+    public int CalculateSize() {
+      int size = 0;
+      if (UserID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(UserID);
+      }
+      size += groupIDs_.CalculateSize(_repeated_groupIDs_codec);
+      return size;
+    }
+
+    public void MergeFrom(UserGroup other) {
+      if (other == null) {
+        return;
+      }
+      if (other.UserID.Length != 0) {
+        UserID = other.UserID;
+      }
+      groupIDs_.Add(other.groupIDs_);
+    }
+
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            UserID = input.ReadString();
+            break;
+          }
+          case 18: {
+            groupIDs_.AddEntriesFrom(input, _repeated_groupIDs_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class SendGroupMessage : pb::IMessage<SendGroupMessage> {
+    private static readonly pb::MessageParser<SendGroupMessage> _parser = new pb::MessageParser<SendGroupMessage>(() => new SendGroupMessage());
+    public static pb::MessageParser<SendGroupMessage> Parser { get { return _parser; } }
+
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::IM.Protocol.ImProtoReflection.Descriptor.MessageTypes[9]; }
+    }
+
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    public SendGroupMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    public SendGroupMessage(SendGroupMessage other) : this() {
+      groupID_ = other.groupID_;
+      type_ = other.type_;
+      content_ = other.content_;
+      userTags_ = other.userTags_.Clone();
+      sender_ = other.sender_;
+    }
+
+    public SendGroupMessage Clone() {
+      return new SendGroupMessage(this);
+    }
+
+    /// <summary>Field number for the "GroupID" field.</summary>
+    public const int GroupIDFieldNumber = 1;
+    private string groupID_ = "";
+    public string GroupID {
+      get { return groupID_; }
+      set {
+        groupID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Type" field.</summary>
+    public const int TypeFieldNumber = 2;
+    private int type_;
+    public int Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Content" field.</summary>
+    public const int ContentFieldNumber = 3;
+    private string content_ = "";
+    public string Content {
+      get { return content_; }
+      set {
+        content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "UserTags" field.</summary>
+    public const int UserTagsFieldNumber = 4;
+    private static readonly pbc::MapField<string, pb::ByteString>.Codec _map_userTags_codec
+        = new pbc::MapField<string, pb::ByteString>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForBytes(18), 34);
+    private readonly pbc::MapField<string, pb::ByteString> userTags_ = new pbc::MapField<string, pb::ByteString>();
+    public pbc::MapField<string, pb::ByteString> UserTags {
+      get { return userTags_; }
+    }
+
+    /// <summary>Field number for the "Sender" field.</summary>
+    public const int SenderFieldNumber = 5;
+    private string sender_ = "";
+    /// <summary>
+    ///   used for admin	
+    /// </summary>
+    public string Sender {
+      get { return sender_; }
+      set {
+        sender_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    public override bool Equals(object other) {
+      return Equals(other as SendGroupMessage);
+    }
+
+    public bool Equals(SendGroupMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (GroupID != other.GroupID) return false;
+      if (Type != other.Type) return false;
+      if (Content != other.Content) return false;
+      if (!UserTags.Equals(other.UserTags)) return false;
+      if (Sender != other.Sender) return false;
+      return true;
+    }
+
+    public override int GetHashCode() {
+      int hash = 1;
+      if (GroupID.Length != 0) hash ^= GroupID.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Content.Length != 0) hash ^= Content.GetHashCode();
+      hash ^= UserTags.GetHashCode();
+      if (Sender.Length != 0) hash ^= Sender.GetHashCode();
+      return hash;
+    }
+
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (GroupID.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(GroupID);
+      }
+      if (Type != 0) {
+        output.WriteRawTag(16);
+        output.WriteInt32(Type);
+      }
+      if (Content.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(Content);
+      }
+      userTags_.WriteTo(output, _map_userTags_codec);
+      if (Sender.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Sender);
+      }
+    }
+
+    public int CalculateSize() {
+      int size = 0;
+      if (GroupID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupID);
+      }
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
+      }
+      if (Content.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
+      }
+      size += userTags_.CalculateSize(_map_userTags_codec);
+      if (Sender.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sender);
+      }
+      return size;
+    }
+
+    public void MergeFrom(SendGroupMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.GroupID.Length != 0) {
+        GroupID = other.GroupID;
+      }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
+      if (other.Content.Length != 0) {
+        Content = other.Content;
+      }
+      userTags_.Add(other.userTags_);
+      if (other.Sender.Length != 0) {
+        Sender = other.Sender;
+      }
+    }
+
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            GroupID = input.ReadString();
+            break;
+          }
+          case 16: {
+            Type = input.ReadInt32();
+            break;
+          }
+          case 26: {
+            Content = input.ReadString();
+            break;
+          }
+          case 34: {
+            userTags_.AddEntriesFrom(input, _map_userTags_codec);
+            break;
+          }
+          case 42: {
+            Sender = input.ReadString();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class ReceivedGroupMessage : pb::IMessage<ReceivedGroupMessage> {
+    private static readonly pb::MessageParser<ReceivedGroupMessage> _parser = new pb::MessageParser<ReceivedGroupMessage>(() => new ReceivedGroupMessage());
+    public static pb::MessageParser<ReceivedGroupMessage> Parser { get { return _parser; } }
+
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::IM.Protocol.ImProtoReflection.Descriptor.MessageTypes[10]; }
+    }
+
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    public ReceivedGroupMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    public ReceivedGroupMessage(ReceivedGroupMessage other) : this() {
+      msgID_ = other.msgID_;
+      sender_ = other.sender_;
+      groupID_ = other.groupID_;
+      type_ = other.type_;
+      content_ = other.content_;
+      userTags_ = other.userTags_.Clone();
+    }
+
+    public ReceivedGroupMessage Clone() {
+      return new ReceivedGroupMessage(this);
+    }
+
+    /// <summary>Field number for the "MsgID" field.</summary>
+    public const int MsgIDFieldNumber = 1;
+    private string msgID_ = "";
+    public string MsgID {
+      get { return msgID_; }
+      set {
+        msgID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Sender" field.</summary>
+    public const int SenderFieldNumber = 2;
+    private string sender_ = "";
+    public string Sender {
+      get { return sender_; }
+      set {
+        sender_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "GroupID" field.</summary>
+    public const int GroupIDFieldNumber = 3;
+    private string groupID_ = "";
+    public string GroupID {
+      get { return groupID_; }
+      set {
+        groupID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Type" field.</summary>
+    public const int TypeFieldNumber = 4;
+    private int type_;
+    public int Type {
+      get { return type_; }
+      set {
+        type_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "Content" field.</summary>
+    public const int ContentFieldNumber = 5;
+    private string content_ = "";
+    public string Content {
+      get { return content_; }
+      set {
+        content_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "UserTags" field.</summary>
+    public const int UserTagsFieldNumber = 6;
+    private static readonly pbc::MapField<string, pb::ByteString>.Codec _map_userTags_codec
+        = new pbc::MapField<string, pb::ByteString>.Codec(pb::FieldCodec.ForString(10), pb::FieldCodec.ForBytes(18), 50);
+    private readonly pbc::MapField<string, pb::ByteString> userTags_ = new pbc::MapField<string, pb::ByteString>();
+    public pbc::MapField<string, pb::ByteString> UserTags {
+      get { return userTags_; }
+    }
+
+    public override bool Equals(object other) {
+      return Equals(other as ReceivedGroupMessage);
+    }
+
+    public bool Equals(ReceivedGroupMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (MsgID != other.MsgID) return false;
+      if (Sender != other.Sender) return false;
+      if (GroupID != other.GroupID) return false;
+      if (Type != other.Type) return false;
+      if (Content != other.Content) return false;
+      if (!UserTags.Equals(other.UserTags)) return false;
+      return true;
+    }
+
+    public override int GetHashCode() {
+      int hash = 1;
+      if (MsgID.Length != 0) hash ^= MsgID.GetHashCode();
+      if (Sender.Length != 0) hash ^= Sender.GetHashCode();
+      if (GroupID.Length != 0) hash ^= GroupID.GetHashCode();
+      if (Type != 0) hash ^= Type.GetHashCode();
+      if (Content.Length != 0) hash ^= Content.GetHashCode();
+      hash ^= UserTags.GetHashCode();
+      return hash;
+    }
+
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (MsgID.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(MsgID);
+      }
+      if (Sender.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Sender);
+      }
+      if (GroupID.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteString(GroupID);
+      }
+      if (Type != 0) {
+        output.WriteRawTag(32);
+        output.WriteInt32(Type);
+      }
+      if (Content.Length != 0) {
+        output.WriteRawTag(42);
+        output.WriteString(Content);
+      }
+      userTags_.WriteTo(output, _map_userTags_codec);
+    }
+
+    public int CalculateSize() {
+      int size = 0;
+      if (MsgID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MsgID);
+      }
+      if (Sender.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sender);
+      }
+      if (GroupID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(GroupID);
+      }
+      if (Type != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Type);
+      }
+      if (Content.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Content);
+      }
+      size += userTags_.CalculateSize(_map_userTags_codec);
+      return size;
+    }
+
+    public void MergeFrom(ReceivedGroupMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.MsgID.Length != 0) {
+        MsgID = other.MsgID;
+      }
+      if (other.Sender.Length != 0) {
+        Sender = other.Sender;
+      }
+      if (other.GroupID.Length != 0) {
+        GroupID = other.GroupID;
+      }
+      if (other.Type != 0) {
+        Type = other.Type;
+      }
+      if (other.Content.Length != 0) {
+        Content = other.Content;
+      }
+      userTags_.Add(other.userTags_);
+    }
+
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            MsgID = input.ReadString();
+            break;
+          }
+          case 18: {
+            Sender = input.ReadString();
+            break;
+          }
+          case 26: {
+            GroupID = input.ReadString();
+            break;
+          }
+          case 32: {
+            Type = input.ReadInt32();
+            break;
+          }
+          case 42: {
+            Content = input.ReadString();
+            break;
+          }
+          case 50: {
+            userTags_.AddEntriesFrom(input, _map_userTags_codec);
             break;
           }
         }

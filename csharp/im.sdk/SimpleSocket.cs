@@ -99,7 +99,7 @@ namespace im.sdk
         {
             _readThread?.Abort();
             _readThread?.Join();
-            _socket.Dispose();
+            _socket?.Dispose();
         }
     }
 }

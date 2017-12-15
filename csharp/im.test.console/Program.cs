@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using im.sdk;
+using IM.Protocol;
 using IM.Test;
 
 namespace im.test.console
@@ -14,7 +15,7 @@ namespace im.test.console
         private static Thread _heartThread;
         static void Main(string[] args)
         {
-            var imClient = new ImClient();
+            var imClient = new ImClient(true);
             //imClient.Ip = "127.0.0.1";
             //imClient.Port = 16666;
             imClient.OnConnected += ImClient_OnConnected;
@@ -22,6 +23,8 @@ namespace im.test.console
             imClient.OnDisconnected += ImClient_OnDisconnected;
             imClient.OnError += ImClient_OnError;
             imClient.OnReceivedChannelMessage += ImClient_OnReceivedChannelMessage;
+            imClient.OnReceivedUserMessage += ImClient_OnReceivedUserMessage;
+            imClient.OnReceivedGroupMessage += ImClient_OnReceivedGroupMessage;
             imClient.OnLogin += ImClient_OnLogin;
             imClient.Start();
             while (true)
@@ -30,8 +33,23 @@ namespace im.test.console
                 if (!string.IsNullOrWhiteSpace(s))
                 {
                     imClient.SendToChannel("1", s, 0);
+                    imClient.SendToGroup(new SendGroupMessage
+                    {
+                        Content = "group",
+                        GroupID = "1"
+                    });
                 }
             }
+        }
+
+        private static void ImClient_OnReceivedGroupMessage(ImClient arg1, ReceivedGroupMessage msg)
+        {
+            Console.WriteLine("received group message:{0}", msg.Content);
+        }
+
+        private static void ImClient_OnReceivedUserMessage(ImClient arg1, ReceivedUserMessage msg)
+        {
+            Console.WriteLine("received user message:{0}", msg.Content);
         }
 
         private static void ImClient_OnReceivedChannelMessage(ImClient im, IM.Protocol.ReceivedChannelMessage msg)
@@ -69,7 +87,8 @@ namespace im.test.console
             if (arg2)
             {
                 Console.WriteLine("login success");
-                arg1.JoinChannel("1");
+                arg1.BindToChannel("1");
+                arg1.BindToGroup("1");
             }
             else
             {

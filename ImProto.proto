@@ -10,8 +10,12 @@ enum PackageCategory{
 	SendToChannel = 4;
 	ReceivedUserMsg = 5;
 	ReceivedChannelMsg = 6;
-	JoinChannel = 7;
-	LeaveChannel = 8;
+	BindToChannel = 7;
+	UnbindToChannel = 8;
+	BindToGroup = 9;
+	UnbindToGroup = 10;
+	SendToGroup = 11;
+	ReceivedGroupMsg = 12;
 	Result = 99;
 }
 message SocketPackage{
@@ -68,4 +72,23 @@ message ReceivedChannelMessage{
 }
 message Channel{
 	string ChannelID = 1;
+}
+message UserGroup{
+	string UserID = 1;
+	repeated string GroupIDs = 2;
+}
+message SendGroupMessage{
+	string GroupID = 1;
+	int32 Type = 2;
+	string Content = 3;
+	map<string,bytes> UserTags = 4;
+	string Sender = 5; //  used for admin	
+}
+message ReceivedGroupMessage{
+	string MsgID = 1;
+	string Sender = 2;
+	string GroupID = 3;
+	int32 Type = 4;
+	string Content = 5;
+	map<string,bytes> UserTags = 6;
 }
