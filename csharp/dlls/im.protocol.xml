@@ -122,5 +122,49 @@
         <member name="F:IM.Protocol.Channel.ChannelIDFieldNumber">
             <summary>Field number for the "ChannelID" field.</summary>
         </member>
+        <member name="F:IM.Protocol.UserGroup.UserIDFieldNumber">
+            <summary>Field number for the "UserID" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.UserGroup.GroupIDsFieldNumber">
+            <summary>Field number for the "GroupIDs" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.SendGroupMessage.GroupIDFieldNumber">
+            <summary>Field number for the "GroupID" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.SendGroupMessage.TypeFieldNumber">
+            <summary>Field number for the "Type" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.SendGroupMessage.ContentFieldNumber">
+            <summary>Field number for the "Content" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.SendGroupMessage.UserTagsFieldNumber">
+            <summary>Field number for the "UserTags" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.SendGroupMessage.SenderFieldNumber">
+            <summary>Field number for the "Sender" field.</summary>
+        </member>
+        <member name="P:IM.Protocol.SendGroupMessage.Sender">
+            <summary>
+              used for admin	
+            </summary>
+        </member>
+        <member name="F:IM.Protocol.ReceivedGroupMessage.MsgIDFieldNumber">
+            <summary>Field number for the "MsgID" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.ReceivedGroupMessage.SenderFieldNumber">
+            <summary>Field number for the "Sender" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.ReceivedGroupMessage.GroupIDFieldNumber">
+            <summary>Field number for the "GroupID" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.ReceivedGroupMessage.TypeFieldNumber">
+            <summary>Field number for the "Type" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.ReceivedGroupMessage.ContentFieldNumber">
+            <summary>Field number for the "Content" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.ReceivedGroupMessage.UserTagsFieldNumber">
+            <summary>Field number for the "UserTags" field.</summary>
+        </member>
     </members>
 </doc>

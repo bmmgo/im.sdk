@@ -63,13 +63,13 @@
             <param name="secrect"></param>
             <param name="isAdmin"></param>
         </member>
-        <member name="M:im.sdk.ImClient.JoinChannel(System.String)">
+        <member name="M:im.sdk.ImClient.BindToChannel(System.String)">
             <summary>
             频道订阅
             </summary>
             <param name="channel"></param>
         </member>
-        <member name="M:im.sdk.ImClient.LeaveChannel(System.String)">
+        <member name="M:im.sdk.ImClient.UnbindToChannel(System.String)">
             <summary>
             取消频道订阅
             </summary>
@@ -95,9 +95,37 @@
             </summary>
             <param name="message"></param>
         </member>
+        <member name="M:im.sdk.ImClient.SendToGroup(IM.Protocol.SendGroupMessage)">
+            <summary>
+            send message to group
+            </summary>
+            <param name="message"></param>
+        </member>
+        <member name="M:im.sdk.ImClient.BindToGroup(System.String)">
+            <summary>
+            bind group to receive group message
+            </summary>
+            <param name="groupId"></param>
+        </member>
+        <member name="M:im.sdk.ImClient.UnbindToGroup(System.String)">
+            <summary>
+            unbind group
+            </summary>
+            <param name="groupId"></param>
+        </member>
         <member name="E:im.sdk.ImClient.OnReceivedChannelMessage">
             <summary>
             收到频道消息事件
+            </summary>
+        </member>
+        <member name="E:im.sdk.ImClient.OnReceivedUserMessage">
+            <summary>
+            receive user message event
+            </summary>
+        </member>
+        <member name="E:im.sdk.ImClient.OnReceivedGroupMessage">
+            <summary>
+            receive group message event
             </summary>
         </member>
         <member name="E:im.sdk.ImClient.OnConnected">
