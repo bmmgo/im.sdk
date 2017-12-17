@@ -24,20 +24,20 @@
     [simpleSocket connect:ip on:port];
 }
 
--(void)Receive:(NSData *)data
+-(void)receive:(NSData *)data
 {
     NSLog(@"Receive");
 }
 
--(void)Disconnected
+-(void)disconnected
 {
     NSLog(@"Disconnected");
 }
 
--(void)Connected
+-(void)connected
 {
     NSLog(@"connect success");
-    [self loginWithAppkey:@"1" userId:@"1" secrect:@"1"];
+    [self loginWithAppkey:@"www.bmmgo.com" userId:@"b0086244b5664fbd9501924e6ef98a71" secrect:@"3855d38582d0611a43fd74ecb0e53573"];
 }
 
 -(void)loginWithAppkey:(NSString *)appkey userId:(NSString *)userId secrect:(NSString *)secrect
@@ -60,12 +60,12 @@
     package.seq = 0;
     package.content = data;
     NSData *body = package.data;
-    short len = body.length;
+    short len = body.length + 2;
     //  2字节长度+body
     NSMutableData *mdata=[[NSMutableData alloc] initWithCapacity:body.length+2];
     [mdata appendBytes:&len length:2];
     [mdata appendBytes:body length:body.length];
     
-    [simpleSocket send:mdata.bytes];
+    [simpleSocket send:mdata];
 }
 @end

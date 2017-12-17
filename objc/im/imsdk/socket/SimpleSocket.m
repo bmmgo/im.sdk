@@ -7,8 +7,14 @@
 //
 
 #import "SimpleSocket.h"
+#import "SendLooper.h"
+#import "ReceiveLooper.h"
 
 @implementation SimpleSocket
+{
+    SendLooper *sender;
+    ReceiveLooper *receiver;
+}
 
 @synthesize delegate;
 
@@ -16,9 +22,19 @@
 {
     NSLog(@"%@", [NSString stringWithFormat:@"start connect to ip:%@ port:%d\n", ip, port]);
     
+    NSInputStream *inputStream;
+    NSOutputStream *outputStream;
+    
     [NSStream getStreamsToHostWithName:ip port:port inputStream:&inputStream outputStream:&outputStream];
     
-    inputStream.delegate = outputStream.delegate = self;
+    sender = [[SendLooper alloc] initWithOutputStream:outputStream];
+    receiver = [[ReceiveLooper alloc] initWithOutputStream:inputStream];
+    
+    sender.delegate = self;
+    receiver.delegate = self;
+    
+    inputStream.delegate = receiver;
+    outputStream.delegate = sender;
     
     [inputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
     [outputStream scheduleInRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
@@ -27,52 +43,23 @@
     [outputStream open];
 }
 
-- (void)stream:(NSStream *)aStream handleEvent:(NSStreamEvent)eventCode
-{
-    switch (eventCode)
-    {
-        case NSStreamEventEndEncountered:
-        {
-            NSLog(@"socket closed");
-            [inputStream close];
-            [outputStream close];
-            [inputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-            [outputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-            break;
-        }
-        case NSStreamEventErrorOccurred:
-            NSLog(@"socket error");
-            break;
-        case NSStreamEventHasBytesAvailable:
-            [self receivedData];
-            break;
-        case NSStreamEventOpenCompleted:
-            //NSLog(@"connect success");
-            [self.delegate Connected];
-            break;
-        case NSStreamEventHasSpaceAvailable:
-            NSLog(@"ready for send");
-            break;
-        case NSStreamEventNone:
-        default:
-            NSLog(@"socket event none");
-            break;
-    }
-}
-
--(void)receivedData
-{
-    NSLog(@"socket read data");
-    uint8_t buf[1024];
-    NSInteger len = [inputStream read:buf maxLength:sizeof(buf)];
-    
-    NSData *data = [NSData dataWithBytes:buf length:len];
-    [self.delegate Receive:data];
-    //NSString *msg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-}
-
 -(bool)send:(NSData *)data{
-    [outputStream write:data.bytes maxLength:data.length];
+    [sender send:data];
     return YES;
 }
+
+-(void)error:(NSError *)error{
+    if (!sender.isReady && !receiver.isReady)
+        [[self delegate] disconnected];
+}
+
+-(void)receive:(NSData *)data{
+    [[self delegate] receive:data];
+}
+
+-(void)ready{
+    if (sender.isReady && receiver.isReady)
+        [[self delegate] connected];
+}
+
 @end

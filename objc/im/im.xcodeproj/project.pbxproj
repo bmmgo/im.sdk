@@ -40,6 +40,8 @@
 		340F61311FE4104B009D9D2B /* Timestamp.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 340F61251FE4104B009D9D2B /* Timestamp.pbobjc.m */; };
 		340F61321FE4104B009D9D2B /* Type.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 340F61271FE4104B009D9D2B /* Type.pbobjc.m */; };
 		340F61331FE4104B009D9D2B /* Wrappers.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 340F61291FE4104B009D9D2B /* Wrappers.pbobjc.m */; };
+		340F61361FE42765009D9D2B /* SendLooper.m in Sources */ = {isa = PBXBuildFile; fileRef = 340F61351FE42765009D9D2B /* SendLooper.m */; };
+		340F61391FE42776009D9D2B /* ReceiveLooper.m in Sources */ = {isa = PBXBuildFile; fileRef = 340F61381FE42776009D9D2B /* ReceiveLooper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -121,6 +123,10 @@
 		340F61271FE4104B009D9D2B /* Type.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Type.pbobjc.m; sourceTree = "<group>"; };
 		340F61281FE4104B009D9D2B /* Wrappers.pbobjc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Wrappers.pbobjc.h; sourceTree = "<group>"; };
 		340F61291FE4104B009D9D2B /* Wrappers.pbobjc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Wrappers.pbobjc.m; sourceTree = "<group>"; };
+		340F61341FE42765009D9D2B /* SendLooper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SendLooper.h; sourceTree = "<group>"; };
+		340F61351FE42765009D9D2B /* SendLooper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendLooper.m; sourceTree = "<group>"; };
+		340F61371FE42776009D9D2B /* ReceiveLooper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceiveLooper.h; sourceTree = "<group>"; };
+		340F61381FE42776009D9D2B /* ReceiveLooper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiveLooper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -243,6 +249,10 @@
 				340F60621FE404B4009D9D2B /* ImClient.m */,
 				340F60641FE404B4009D9D2B /* SimpleSocket.h */,
 				340F60631FE404B4009D9D2B /* SimpleSocket.m */,
+				340F61341FE42765009D9D2B /* SendLooper.h */,
+				340F61351FE42765009D9D2B /* SendLooper.m */,
+				340F61371FE42776009D9D2B /* ReceiveLooper.h */,
+				340F61381FE42776009D9D2B /* ReceiveLooper.m */,
 			);
 			path = socket;
 			sourceTree = "<group>";
@@ -364,6 +374,7 @@
 				340F61311FE4104B009D9D2B /* Timestamp.pbobjc.m in Sources */,
 				340F60B51FE404D0009D9D2B /* GPBWellKnownTypes.m in Sources */,
 				340F60B71FE404D0009D9D2B /* GPBExtensionInternals.m in Sources */,
+				340F61361FE42765009D9D2B /* SendLooper.m in Sources */,
 				340F612C1FE4104B009D9D2B /* Duration.pbobjc.m in Sources */,
 				340F60B61FE404D0009D9D2B /* GPBUtilities.m in Sources */,
 				340F60AF1FE404D0009D9D2B /* GPBDictionary.m in Sources */,
@@ -382,6 +393,7 @@
 				340F60B31FE404D0009D9D2B /* GPBArray.m in Sources */,
 				340F60471FE403B6009D9D2B /* AppDelegate.m in Sources */,
 				340F60AD1FE404D0009D9D2B /* GPBCodedInputStream.m in Sources */,
+				340F61391FE42776009D9D2B /* ReceiveLooper.m in Sources */,
 				340F612F1FE4104B009D9D2B /* SourceContext.pbobjc.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

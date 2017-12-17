@@ -7,19 +7,19 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "SendLooper.h"
+#import "ReceiveLooper.h"
 
 @protocol SimpleSocketDelegate <NSObject>
 @required
--(void)Receive:(NSData *)data;
+-(void)receive:(NSData *)data;
 @optional
--(void)Disconnected;
--(void)Connected;
+-(void)disconnected;
+-(void)connected;
 @end
 
-@interface SimpleSocket : NSObject<NSStreamDelegate>
+@interface SimpleSocket : NSObject<NSStreamDelegate,SendLoopDelegate,ReceiveLoopDelegate>
 {
-    NSInputStream *inputStream;
-    NSOutputStream *outputStream;
 @public
     id<SimpleSocketDelegate> delegate;
 }
