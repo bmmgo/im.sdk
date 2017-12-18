@@ -60,7 +60,7 @@
     package.seq = 0;
     package.content = data;
     NSData *body = package.data;
-    short len = body.length + 2;
+    short len = NSSwapHostShortToBig(body.length + 2);
     //  2字节长度+body
     NSMutableData *mdata=[[NSMutableData alloc] initWithCapacity:body.length+2];
     [mdata appendBytes:&len length:2];
