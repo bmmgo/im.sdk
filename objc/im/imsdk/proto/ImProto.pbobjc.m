@@ -46,8 +46,10 @@ GPBEnumDescriptor *PackageCategory_EnumDescriptor(void) {
   if (!descriptor) {
     static const char *valueNames =
         "Ping\000Login\000Logout\000SendToUser\000SendToChann"
-        "el\000ReceivedUserMsg\000ReceivedChannelMsg\000Jo"
-        "inChannel\000LeaveChannel\000Result\000";
+        "el\000ReceivedUserMsg\000ReceivedChannelMsg\000Bi"
+        "ndToChannel\000UnbindToChannel\000BindToGroup\000"
+        "UnbindToGroup\000SendToGroup\000ReceivedGroupM"
+        "sg\000Result\000";
     static const int32_t values[] = {
         PackageCategory_Ping,
         PackageCategory_Login,
@@ -56,11 +58,15 @@ GPBEnumDescriptor *PackageCategory_EnumDescriptor(void) {
         PackageCategory_SendToChannel,
         PackageCategory_ReceivedUserMsg,
         PackageCategory_ReceivedChannelMsg,
-        PackageCategory_JoinChannel,
-        PackageCategory_LeaveChannel,
+        PackageCategory_BindToChannel,
+        PackageCategory_UnbindToChannel,
+        PackageCategory_BindToGroup,
+        PackageCategory_UnbindToGroup,
+        PackageCategory_SendToGroup,
+        PackageCategory_ReceivedGroupMsg,
         PackageCategory_Result,
     };
-    static const char *extraTextFormatInfo = "\n\000\004\000\001\005\000\002\006\000\003\n\000\004\r\000\005\017\000\006\022\000\007\013\000\010\014\000\t\006\000";
+    static const char *extraTextFormatInfo = "\016\000\004\000\001\005\000\002\006\000\003\n\000\004\r\000\005\017\000\006\022\000\007\r\000\010\017\000\t\013\000\n\r\000\013\013\000\014\020\000\r\006\000";
     GPBEnumDescriptor *worker =
         [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(PackageCategory)
                                        valueNames:valueNames
@@ -84,8 +90,12 @@ BOOL PackageCategory_IsValidValue(int32_t value__) {
     case PackageCategory_SendToChannel:
     case PackageCategory_ReceivedUserMsg:
     case PackageCategory_ReceivedChannelMsg:
-    case PackageCategory_JoinChannel:
-    case PackageCategory_LeaveChannel:
+    case PackageCategory_BindToChannel:
+    case PackageCategory_UnbindToChannel:
+    case PackageCategory_BindToGroup:
+    case PackageCategory_UnbindToGroup:
+    case PackageCategory_SendToGroup:
+    case PackageCategory_ReceivedGroupMsg:
     case PackageCategory_Result:
       return YES;
     default:
@@ -826,6 +836,260 @@ typedef struct Channel__storage_ {
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
         "\001\001HA\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - UserGroup
+
+@implementation UserGroup
+
+@dynamic userId;
+@dynamic groupIdsArray, groupIdsArray_Count;
+
+typedef struct UserGroup__storage_ {
+  uint32_t _has_storage_[1];
+  NSString *userId;
+  NSMutableArray *groupIdsArray;
+} UserGroup__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "userId",
+        .dataTypeSpecific.className = NULL,
+        .number = UserGroup_FieldNumber_UserId,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(UserGroup__storage_, userId),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "groupIdsArray",
+        .dataTypeSpecific.className = NULL,
+        .number = UserGroup_FieldNumber_GroupIdsArray,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(UserGroup__storage_, groupIdsArray),
+        .flags = GPBFieldRepeated | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[UserGroup class]
+                                     rootClass:[ImProtoRoot class]
+                                          file:ImProtoRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(UserGroup__storage_)
+                                         flags:0];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\002\001EA\000\002\000GroupIDs\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - SendGroupMessage
+
+@implementation SendGroupMessage
+
+@dynamic groupId;
+@dynamic type;
+@dynamic content;
+@dynamic userTags, userTags_Count;
+@dynamic sender;
+
+typedef struct SendGroupMessage__storage_ {
+  uint32_t _has_storage_[1];
+  int32_t type;
+  NSString *groupId;
+  NSString *content;
+  NSMutableDictionary *userTags;
+  NSString *sender;
+} SendGroupMessage__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "groupId",
+        .dataTypeSpecific.className = NULL,
+        .number = SendGroupMessage_FieldNumber_GroupId,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(SendGroupMessage__storage_, groupId),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "type",
+        .dataTypeSpecific.className = NULL,
+        .number = SendGroupMessage_FieldNumber_Type,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(SendGroupMessage__storage_, type),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "content",
+        .dataTypeSpecific.className = NULL,
+        .number = SendGroupMessage_FieldNumber_Content,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(SendGroupMessage__storage_, content),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "userTags",
+        .dataTypeSpecific.className = NULL,
+        .number = SendGroupMessage_FieldNumber_UserTags,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(SendGroupMessage__storage_, userTags),
+        .flags = GPBFieldMapKeyString | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeBytes,
+      },
+      {
+        .name = "sender",
+        .dataTypeSpecific.className = NULL,
+        .number = SendGroupMessage_FieldNumber_Sender,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(SendGroupMessage__storage_, sender),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[SendGroupMessage class]
+                                     rootClass:[ImProtoRoot class]
+                                          file:ImProtoRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(SendGroupMessage__storage_)
+                                         flags:0];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\005\001FA\000\002D\000\003G\000\004H\000\005F\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+#pragma mark - ReceivedGroupMessage
+
+@implementation ReceivedGroupMessage
+
+@dynamic msgId;
+@dynamic sender;
+@dynamic groupId;
+@dynamic type;
+@dynamic content;
+@dynamic userTags, userTags_Count;
+
+typedef struct ReceivedGroupMessage__storage_ {
+  uint32_t _has_storage_[1];
+  int32_t type;
+  NSString *msgId;
+  NSString *sender;
+  NSString *groupId;
+  NSString *content;
+  NSMutableDictionary *userTags;
+} ReceivedGroupMessage__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "msgId",
+        .dataTypeSpecific.className = NULL,
+        .number = ReceivedGroupMessage_FieldNumber_MsgId,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(ReceivedGroupMessage__storage_, msgId),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "sender",
+        .dataTypeSpecific.className = NULL,
+        .number = ReceivedGroupMessage_FieldNumber_Sender,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(ReceivedGroupMessage__storage_, sender),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "groupId",
+        .dataTypeSpecific.className = NULL,
+        .number = ReceivedGroupMessage_FieldNumber_GroupId,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(ReceivedGroupMessage__storage_, groupId),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "type",
+        .dataTypeSpecific.className = NULL,
+        .number = ReceivedGroupMessage_FieldNumber_Type,
+        .hasIndex = 3,
+        .offset = (uint32_t)offsetof(ReceivedGroupMessage__storage_, type),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeInt32,
+      },
+      {
+        .name = "content",
+        .dataTypeSpecific.className = NULL,
+        .number = ReceivedGroupMessage_FieldNumber_Content,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(ReceivedGroupMessage__storage_, content),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "userTags",
+        .dataTypeSpecific.className = NULL,
+        .number = ReceivedGroupMessage_FieldNumber_UserTags,
+        .hasIndex = GPBNoHasBit,
+        .offset = (uint32_t)offsetof(ReceivedGroupMessage__storage_, userTags),
+        .flags = GPBFieldMapKeyString | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[ReceivedGroupMessage class]
+                                     rootClass:[ImProtoRoot class]
+                                          file:ImProtoRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(ReceivedGroupMessage__storage_)
+                                         flags:0];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\006\001DA\000\002F\000\003FA\000\004D\000\005G\000\006H\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");

@@ -61,7 +61,7 @@
 
 -(void)receivedData
 {
-    NSLog(@"socket read data");
+    NSLog(@"reading data from socket");
     uint8_t buf[1024];
     NSInteger len = [inputStream read:buf maxLength:sizeof(buf)];
     if(len == -1){

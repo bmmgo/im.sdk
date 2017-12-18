@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "ImClient.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController<ImClientDelegate>
 
 
 @end

@@ -40,8 +40,12 @@ typedef GPB_ENUM(PackageCategory) {
   PackageCategory_SendToChannel = 4,
   PackageCategory_ReceivedUserMsg = 5,
   PackageCategory_ReceivedChannelMsg = 6,
-  PackageCategory_JoinChannel = 7,
-  PackageCategory_LeaveChannel = 8,
+  PackageCategory_BindToChannel = 7,
+  PackageCategory_UnbindToChannel = 8,
+  PackageCategory_BindToGroup = 9,
+  PackageCategory_UnbindToGroup = 10,
+  PackageCategory_SendToGroup = 11,
+  PackageCategory_ReceivedGroupMsg = 12,
   PackageCategory_Result = 99,
 };
 
@@ -289,6 +293,79 @@ typedef GPB_ENUM(Channel_FieldNumber) {
 @interface Channel : GPBMessage
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *channelId;
+
+@end
+
+#pragma mark - UserGroup
+
+typedef GPB_ENUM(UserGroup_FieldNumber) {
+  UserGroup_FieldNumber_UserId = 1,
+  UserGroup_FieldNumber_GroupIdsArray = 2,
+};
+
+@interface UserGroup : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *userId;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableArray<NSString*> *groupIdsArray;
+/// The number of items in @c groupIdsArray without causing the array to be created.
+@property(nonatomic, readonly) NSUInteger groupIdsArray_Count;
+
+@end
+
+#pragma mark - SendGroupMessage
+
+typedef GPB_ENUM(SendGroupMessage_FieldNumber) {
+  SendGroupMessage_FieldNumber_GroupId = 1,
+  SendGroupMessage_FieldNumber_Type = 2,
+  SendGroupMessage_FieldNumber_Content = 3,
+  SendGroupMessage_FieldNumber_UserTags = 4,
+  SendGroupMessage_FieldNumber_Sender = 5,
+};
+
+@interface SendGroupMessage : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *groupId;
+
+@property(nonatomic, readwrite) int32_t type;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *content;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSData*> *userTags;
+/// The number of items in @c userTags without causing the array to be created.
+@property(nonatomic, readonly) NSUInteger userTags_Count;
+
+///  used for admin	
+@property(nonatomic, readwrite, copy, null_resettable) NSString *sender;
+
+@end
+
+#pragma mark - ReceivedGroupMessage
+
+typedef GPB_ENUM(ReceivedGroupMessage_FieldNumber) {
+  ReceivedGroupMessage_FieldNumber_MsgId = 1,
+  ReceivedGroupMessage_FieldNumber_Sender = 2,
+  ReceivedGroupMessage_FieldNumber_GroupId = 3,
+  ReceivedGroupMessage_FieldNumber_Type = 4,
+  ReceivedGroupMessage_FieldNumber_Content = 5,
+  ReceivedGroupMessage_FieldNumber_UserTags = 6,
+};
+
+@interface ReceivedGroupMessage : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *msgId;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *sender;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *groupId;
+
+@property(nonatomic, readwrite) int32_t type;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *content;
+
+@property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSData*> *userTags;
+/// The number of items in @c userTags without causing the array to be created.
+@property(nonatomic, readonly) NSUInteger userTags_Count;
 
 @end
 

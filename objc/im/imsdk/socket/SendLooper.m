@@ -66,9 +66,9 @@
     if(!isReady)
         return NO;
     int len = [outputStream write:data.bytes maxLength:data.length];
-    NSString *base64 = [data base64EncodedStringWithOptions:0];
-    NSLog(@"%@", base64);
-    NSLog(@"send %d",len);
+//    NSString *base64 = [data base64EncodedStringWithOptions:0];
+//    NSLog(@"%@", base64);
+//    NSLog(@"send %d",len);
     return data.length == len;
 }
 

@@ -42,6 +42,7 @@
 		340F61331FE4104B009D9D2B /* Wrappers.pbobjc.m in Sources */ = {isa = PBXBuildFile; fileRef = 340F61291FE4104B009D9D2B /* Wrappers.pbobjc.m */; };
 		340F61361FE42765009D9D2B /* SendLooper.m in Sources */ = {isa = PBXBuildFile; fileRef = 340F61351FE42765009D9D2B /* SendLooper.m */; };
 		340F61391FE42776009D9D2B /* ReceiveLooper.m in Sources */ = {isa = PBXBuildFile; fileRef = 340F61381FE42776009D9D2B /* ReceiveLooper.m */; };
+		34FBCB4A1FE7EB5A003BE21B /* FixLengthFrameConverter.m in Sources */ = {isa = PBXBuildFile; fileRef = 34FBCB491FE7EB5A003BE21B /* FixLengthFrameConverter.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -127,6 +128,8 @@
 		340F61351FE42765009D9D2B /* SendLooper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SendLooper.m; sourceTree = "<group>"; };
 		340F61371FE42776009D9D2B /* ReceiveLooper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ReceiveLooper.h; sourceTree = "<group>"; };
 		340F61381FE42776009D9D2B /* ReceiveLooper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ReceiveLooper.m; sourceTree = "<group>"; };
+		34FBCB481FE7EB5A003BE21B /* FixLengthFrameConverter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FixLengthFrameConverter.h; sourceTree = "<group>"; };
+		34FBCB491FE7EB5A003BE21B /* FixLengthFrameConverter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FixLengthFrameConverter.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -253,6 +256,8 @@
 				340F61351FE42765009D9D2B /* SendLooper.m */,
 				340F61371FE42776009D9D2B /* ReceiveLooper.h */,
 				340F61381FE42776009D9D2B /* ReceiveLooper.m */,
+				34FBCB481FE7EB5A003BE21B /* FixLengthFrameConverter.h */,
+				34FBCB491FE7EB5A003BE21B /* FixLengthFrameConverter.m */,
 			);
 			path = socket;
 			sourceTree = "<group>";
@@ -388,6 +393,7 @@
 				340F60C21FE404D0009D9D2B /* GPBExtensionRegistry.m in Sources */,
 				340F60B41FE404D0009D9D2B /* GPBUnknownField.m in Sources */,
 				340F60651FE404B5009D9D2B /* ImClient.m in Sources */,
+				34FBCB4A1FE7EB5A003BE21B /* FixLengthFrameConverter.m in Sources */,
 				340F60B21FE404D0009D9D2B /* GPBRootObject.m in Sources */,
 				340F60AB1FE404D0009D9D2B /* GPBCodedOutputStream.m in Sources */,
 				340F60B31FE404D0009D9D2B /* GPBArray.m in Sources */,

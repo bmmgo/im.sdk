@@ -14,16 +14,26 @@
 @end
 
 @implementation ViewController
+{
+    ImClient *imClient;
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    ImClient *imClient = [ImClient new];
+    imClient = [ImClient new];
+    imClient.delegate = self;
     imClient.ip = @"im.redolphin.cn";
     imClient.port = 16666;
     [imClient start];
 }
 
+-(void)loginResult:(bool)result message:(NSString *)message{
+    if(result){
+        // login success,then bind to channel and send a channel message
+        [imClient bindToChannel:@"1"];
+    }
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
