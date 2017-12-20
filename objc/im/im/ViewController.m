@@ -23,8 +23,12 @@
     // Do any additional setup after loading the view, typically from a nib.
     imClient = [ImClient new];
     imClient.delegate = self;
-    imClient.ip = @"im.redolphin.cn";
+    imClient.ip = @"www.bmmgo.com";
     imClient.port = 16666;
+    imClient.appkey = @"www.bmmgo.com";
+    imClient.userId = @"b0086244b5664fbd9501924e6ef98a71";
+    imClient.token = @"3855d38582d0611a43fd74ecb0e53573";
+    
     [imClient start];
 }
 
@@ -40,5 +44,8 @@
     // Dispose of any resources that can be recreated.
 }
 
+-(void)connected{
+    
+}
 
 @end

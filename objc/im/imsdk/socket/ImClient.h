@@ -24,10 +24,16 @@
 @public
     NSString *ip;
     int port;
+    NSString *appkey;
+    NSString *userId;
+    NSString *token;
     id<ImClientDelegate> delegate;
 }
 @property(copy) NSString *ip;
 @property int port;
+@property(copy) NSString *appkey;
+@property(copy) NSString *userId;
+@property(copy) NSString *token;
 @property(nonatomic,retain) id<ImClientDelegate> delegate;
 -(void)start;
 -(void)stop;
@@ -38,3 +44,4 @@
 -(void)sendToUser:(SendUserMessage *)message;
 
 @end
+

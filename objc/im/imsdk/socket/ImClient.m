@@ -16,6 +16,9 @@
 
 @synthesize ip;
 @synthesize port;
+@synthesize appkey;
+@synthesize userId;
+@synthesize token;
 @synthesize delegate;
 
 - (void)start
@@ -35,7 +38,8 @@
 -(void)connected
 {
     NSLog(@"connect success");
-    [self loginWithAppkey:@"www.bmmgo.com" userId:@"b0086244b5664fbd9501924e6ef98a71" secrect:@"3855d38582d0611a43fd74ecb0e53573"];
+    [[self delegate] connected];
+    [self loginWithAppkey:appkey userId:userId secrect:token];
 }
 
 -(void)loginWithAppkey:(NSString *)appkey userId:(NSString *)userId secrect:(NSString *)secrect
@@ -128,9 +132,9 @@
             [self sendToChannel:msg];
             ///////
             break;
-        case PackageCategory_UnbindToChannel:
-            NSLog(@"unbind to channel success");
-            break;
+            //        case PackageCategory_UnbindToChannel:
+            //            NSLog(@"unbind to channel success");
+            //            break;
     }
 }
 
@@ -148,3 +152,4 @@
     [simpleSocket send:[frameConverter encode:package.data]];
 }
 @end
+
