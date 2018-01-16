@@ -191,7 +191,7 @@ public class SocketClient implements ReceiveListener {
                 .newBuilder()
                 .setChannelID(channelId)
                 .build();
-        send(ImProto.PackageCategory.JoinChannel, channel);
+        send(ImProto.PackageCategory.BindToChannel, channel);
     }
 
     public void leaveChannel(String channelId) {
@@ -199,7 +199,7 @@ public class SocketClient implements ReceiveListener {
                 .newBuilder()
                 .setChannelID(channelId)
                 .build();
-        send(ImProto.PackageCategory.LeaveChannel, channel);
+        send(ImProto.PackageCategory.UnbindToChannel, channel);
     }
 
     public boolean sendToChannel(String channel, String content, int type, Map<String, ByteString> tags) {
@@ -233,6 +233,9 @@ public class SocketClient implements ReceiveListener {
             case ReceivedChannelMsg:
                 onReceivedChannelMessage(socketPackage);
                 break;
+            case ReceivedGroupMsg:
+                onReceivedGroupMessage(socketPackage);
+                break;
             case Result:
                 onReceivedSocketResult(socketPackage);
                 break;
@@ -246,6 +249,13 @@ public class SocketClient implements ReceiveListener {
         ImProto.ReceivedChannelMessage receivedChannelMessage = ImProto.ReceivedChannelMessage
                 .parseFrom(socketPackage.getContent());
         mSocketListener.onReceivedChannelMessage(receivedChannelMessage);
+    }
+
+    private void onReceivedGroupMessage(ImProto.SocketPackage socketPackage) throws InvalidProtocolBufferException {
+        if (mSocketListener == null) return;
+        ImProto.ReceivedGroupMessage receivedGroupMessage = ImProto.ReceivedGroupMessage
+                .parseFrom(socketPackage.getContent());
+        mSocketListener.onReceivedGroupMessage(receivedGroupMessage);
     }
 
     public void onReceivedSocketResult(ImProto.SocketPackage socketPackage) throws InvalidProtocolBufferException {
@@ -265,13 +275,13 @@ public class SocketClient implements ReceiveListener {
                 break;
             case SendToChannel:
                 break;
-            case JoinChannel: {
+            case BindToChannel: {
                 if (!mSendPackages.containsKey(socketPackage.getSeq())) return;
                 ImProto.SocketPackage p = mSendPackages.get(socketPackage.getSeq());
                 mSocketListener.onJoinChannelSuccess(ImProto.Channel.parseFrom(p.getContent()).getChannelID());
                 break;
             }
-            case LeaveChannel:
+            case UnbindToChannel:
                 if (!mSendPackages.containsKey(socketPackage.getSeq())) return;
                 ImProto.SocketPackage p = mSendPackages.get(socketPackage.getSeq());
                 mSocketListener.onLeaveChannelSuccess(ImProto.Channel.parseFrom(p.getContent()).getChannelID());

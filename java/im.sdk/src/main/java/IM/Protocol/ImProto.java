@@ -42,13 +42,29 @@ public final class ImProto {
      */
     ReceivedChannelMsg(6),
     /**
-     * <code>JoinChannel = 7;</code>
+     * <code>BindToChannel = 7;</code>
      */
-    JoinChannel(7),
+    BindToChannel(7),
     /**
-     * <code>LeaveChannel = 8;</code>
+     * <code>UnbindToChannel = 8;</code>
      */
-    LeaveChannel(8),
+    UnbindToChannel(8),
+    /**
+     * <code>BindToGroup = 9;</code>
+     */
+    BindToGroup(9),
+    /**
+     * <code>UnbindToGroup = 10;</code>
+     */
+    UnbindToGroup(10),
+    /**
+     * <code>SendToGroup = 11;</code>
+     */
+    SendToGroup(11),
+    /**
+     * <code>ReceivedGroupMsg = 12;</code>
+     */
+    ReceivedGroupMsg(12),
     /**
      * <code>Result = 99;</code>
      */
@@ -85,13 +101,29 @@ public final class ImProto {
      */
     public static final int ReceivedChannelMsg_VALUE = 6;
     /**
-     * <code>JoinChannel = 7;</code>
+     * <code>BindToChannel = 7;</code>
      */
-    public static final int JoinChannel_VALUE = 7;
+    public static final int BindToChannel_VALUE = 7;
     /**
-     * <code>LeaveChannel = 8;</code>
+     * <code>UnbindToChannel = 8;</code>
      */
-    public static final int LeaveChannel_VALUE = 8;
+    public static final int UnbindToChannel_VALUE = 8;
+    /**
+     * <code>BindToGroup = 9;</code>
+     */
+    public static final int BindToGroup_VALUE = 9;
+    /**
+     * <code>UnbindToGroup = 10;</code>
+     */
+    public static final int UnbindToGroup_VALUE = 10;
+    /**
+     * <code>SendToGroup = 11;</code>
+     */
+    public static final int SendToGroup_VALUE = 11;
+    /**
+     * <code>ReceivedGroupMsg = 12;</code>
+     */
+    public static final int ReceivedGroupMsg_VALUE = 12;
     /**
      * <code>Result = 99;</code>
      */
@@ -123,8 +155,12 @@ public final class ImProto {
         case 4: return SendToChannel;
         case 5: return ReceivedUserMsg;
         case 6: return ReceivedChannelMsg;
-        case 7: return JoinChannel;
-        case 8: return LeaveChannel;
+        case 7: return BindToChannel;
+        case 8: return UnbindToChannel;
+        case 9: return BindToGroup;
+        case 10: return UnbindToGroup;
+        case 11: return SendToGroup;
+        case 12: return ReceivedGroupMsg;
         case 99: return Result;
         default: return null;
       }
@@ -6767,6 +6803,2659 @@ public final class ImProto {
 
   }
 
+  public interface UserGroupOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Protocol.UserGroup)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string UserID = 1;</code>
+     */
+    String getUserID();
+    /**
+     * <code>optional string UserID = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getUserIDBytes();
+
+    /**
+     * <code>repeated string GroupIDs = 2;</code>
+     */
+    com.google.protobuf.ProtocolStringList
+        getGroupIDsList();
+    /**
+     * <code>repeated string GroupIDs = 2;</code>
+     */
+    int getGroupIDsCount();
+    /**
+     * <code>repeated string GroupIDs = 2;</code>
+     */
+    String getGroupIDs(int index);
+    /**
+     * <code>repeated string GroupIDs = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getGroupIDsBytes(int index);
+  }
+  /**
+   * Protobuf type {@code IM.Protocol.UserGroup}
+   */
+  public  static final class UserGroup extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:IM.Protocol.UserGroup)
+      UserGroupOrBuilder {
+    // Use UserGroup.newBuilder() to construct.
+    private UserGroup(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private UserGroup() {
+      userID_ = "";
+      groupIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private UserGroup(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              String s = input.readStringRequireUtf8();
+
+              userID_ = s;
+              break;
+            }
+            case 18: {
+              String s = input.readStringRequireUtf8();
+              if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+                groupIDs_ = new com.google.protobuf.LazyStringArrayList();
+                mutable_bitField0_ |= 0x00000002;
+              }
+              groupIDs_.add(s);
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        if (((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
+          groupIDs_ = groupIDs_.getUnmodifiableView();
+        }
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ImProto.internal_static_IM_Protocol_UserGroup_descriptor;
+    }
+
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ImProto.internal_static_IM_Protocol_UserGroup_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              UserGroup.class, Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int USERID_FIELD_NUMBER = 1;
+    private volatile Object userID_;
+    /**
+     * <code>optional string UserID = 1;</code>
+     */
+    public String getUserID() {
+      Object ref = userID_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        userID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string UserID = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getUserIDBytes() {
+      Object ref = userID_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        userID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GROUPIDS_FIELD_NUMBER = 2;
+    private com.google.protobuf.LazyStringList groupIDs_;
+    /**
+     * <code>repeated string GroupIDs = 2;</code>
+     */
+    public com.google.protobuf.ProtocolStringList
+        getGroupIDsList() {
+      return groupIDs_;
+    }
+    /**
+     * <code>repeated string GroupIDs = 2;</code>
+     */
+    public int getGroupIDsCount() {
+      return groupIDs_.size();
+    }
+    /**
+     * <code>repeated string GroupIDs = 2;</code>
+     */
+    public String getGroupIDs(int index) {
+      return groupIDs_.get(index);
+    }
+    /**
+     * <code>repeated string GroupIDs = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGroupIDsBytes(int index) {
+      return groupIDs_.getByteString(index);
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getUserIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, userID_);
+      }
+      for (int i = 0; i < groupIDs_.size(); i++) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, groupIDs_.getRaw(i));
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getUserIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, userID_);
+      }
+      {
+        int dataSize = 0;
+        for (int i = 0; i < groupIDs_.size(); i++) {
+          dataSize += computeStringSizeNoTag(groupIDs_.getRaw(i));
+        }
+        size += dataSize;
+        size += 1 * getGroupIDsList().size();
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    public static UserGroup parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static UserGroup parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static UserGroup parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static UserGroup parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static UserGroup parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static UserGroup parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static UserGroup parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static UserGroup parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static UserGroup parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static UserGroup parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(UserGroup prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code IM.Protocol.UserGroup}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:IM.Protocol.UserGroup)
+        UserGroupOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ImProto.internal_static_IM_Protocol_UserGroup_descriptor;
+      }
+
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ImProto.internal_static_IM_Protocol_UserGroup_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                UserGroup.class, Builder.class);
+      }
+
+      // Construct using IM.Protocol.ImProto.UserGroup.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        userID_ = "";
+
+        groupIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ImProto.internal_static_IM_Protocol_UserGroup_descriptor;
+      }
+
+      public UserGroup getDefaultInstanceForType() {
+        return UserGroup.getDefaultInstance();
+      }
+
+      public UserGroup build() {
+        UserGroup result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public UserGroup buildPartial() {
+        UserGroup result = new UserGroup(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.userID_ = userID_;
+        if (((bitField0_ & 0x00000002) == 0x00000002)) {
+          groupIDs_ = groupIDs_.getUnmodifiableView();
+          bitField0_ = (bitField0_ & ~0x00000002);
+        }
+        result.groupIDs_ = groupIDs_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof UserGroup) {
+          return mergeFrom((UserGroup)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(UserGroup other) {
+        if (other == UserGroup.getDefaultInstance()) return this;
+        if (!other.getUserID().isEmpty()) {
+          userID_ = other.userID_;
+          onChanged();
+        }
+        if (!other.groupIDs_.isEmpty()) {
+          if (groupIDs_.isEmpty()) {
+            groupIDs_ = other.groupIDs_;
+            bitField0_ = (bitField0_ & ~0x00000002);
+          } else {
+            ensureGroupIDsIsMutable();
+            groupIDs_.addAll(other.groupIDs_);
+          }
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        UserGroup parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (UserGroup) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private Object userID_ = "";
+      /**
+       * <code>optional string UserID = 1;</code>
+       */
+      public String getUserID() {
+        Object ref = userID_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          userID_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>optional string UserID = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getUserIDBytes() {
+        Object ref = userID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          userID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string UserID = 1;</code>
+       */
+      public Builder setUserID(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        userID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string UserID = 1;</code>
+       */
+      public Builder clearUserID() {
+        
+        userID_ = getDefaultInstance().getUserID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string UserID = 1;</code>
+       */
+      public Builder setUserIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        userID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.LazyStringList groupIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+      private void ensureGroupIDsIsMutable() {
+        if (!((bitField0_ & 0x00000002) == 0x00000002)) {
+          groupIDs_ = new com.google.protobuf.LazyStringArrayList(groupIDs_);
+          bitField0_ |= 0x00000002;
+         }
+      }
+      /**
+       * <code>repeated string GroupIDs = 2;</code>
+       */
+      public com.google.protobuf.ProtocolStringList
+          getGroupIDsList() {
+        return groupIDs_.getUnmodifiableView();
+      }
+      /**
+       * <code>repeated string GroupIDs = 2;</code>
+       */
+      public int getGroupIDsCount() {
+        return groupIDs_.size();
+      }
+      /**
+       * <code>repeated string GroupIDs = 2;</code>
+       */
+      public String getGroupIDs(int index) {
+        return groupIDs_.get(index);
+      }
+      /**
+       * <code>repeated string GroupIDs = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getGroupIDsBytes(int index) {
+        return groupIDs_.getByteString(index);
+      }
+      /**
+       * <code>repeated string GroupIDs = 2;</code>
+       */
+      public Builder setGroupIDs(
+          int index, String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureGroupIDsIsMutable();
+        groupIDs_.set(index, value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string GroupIDs = 2;</code>
+       */
+      public Builder addGroupIDs(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  ensureGroupIDsIsMutable();
+        groupIDs_.add(value);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string GroupIDs = 2;</code>
+       */
+      public Builder addAllGroupIDs(
+          Iterable<String> values) {
+        ensureGroupIDsIsMutable();
+        com.google.protobuf.AbstractMessageLite.Builder.addAll(
+            values, groupIDs_);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string GroupIDs = 2;</code>
+       */
+      public Builder clearGroupIDs() {
+        groupIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
+        bitField0_ = (bitField0_ & ~0x00000002);
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>repeated string GroupIDs = 2;</code>
+       */
+      public Builder addGroupIDsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        ensureGroupIDsIsMutable();
+        groupIDs_.add(value);
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:IM.Protocol.UserGroup)
+    }
+
+    // @@protoc_insertion_point(class_scope:IM.Protocol.UserGroup)
+    private static final UserGroup DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new UserGroup();
+    }
+
+    public static UserGroup getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<UserGroup>
+        PARSER = new com.google.protobuf.AbstractParser<UserGroup>() {
+      public UserGroup parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new UserGroup(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<UserGroup> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<UserGroup> getParserForType() {
+      return PARSER;
+    }
+
+    public UserGroup getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface SendGroupMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Protocol.SendGroupMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string GroupID = 1;</code>
+     */
+    String getGroupID();
+    /**
+     * <code>optional string GroupID = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getGroupIDBytes();
+
+    /**
+     * <code>optional int32 Type = 2;</code>
+     */
+    int getType();
+
+    /**
+     * <code>optional string Content = 3;</code>
+     */
+    String getContent();
+    /**
+     * <code>optional string Content = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getContentBytes();
+
+    /**
+     * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
+     */
+    java.util.Map<String, com.google.protobuf.ByteString>
+    getUserTags();
+
+    /**
+     * <pre>
+     *  used for admin	
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    String getSender();
+    /**
+     * <pre>
+     *  used for admin	
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getSenderBytes();
+  }
+  /**
+   * Protobuf type {@code IM.Protocol.SendGroupMessage}
+   */
+  public  static final class SendGroupMessage extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:IM.Protocol.SendGroupMessage)
+      SendGroupMessageOrBuilder {
+    // Use SendGroupMessage.newBuilder() to construct.
+    private SendGroupMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private SendGroupMessage() {
+      groupID_ = "";
+      type_ = 0;
+      content_ = "";
+      sender_ = "";
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private SendGroupMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              String s = input.readStringRequireUtf8();
+
+              groupID_ = s;
+              break;
+            }
+            case 16: {
+
+              type_ = input.readInt32();
+              break;
+            }
+            case 26: {
+              String s = input.readStringRequireUtf8();
+
+              content_ = s;
+              break;
+            }
+            case 34: {
+              if (!((mutable_bitField0_ & 0x00000008) == 0x00000008)) {
+                userTags_ = com.google.protobuf.MapField.newMapField(
+                    UserTagsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000008;
+              }
+              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+              userTags = input.readMessage(
+                  UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
+              break;
+            }
+            case 42: {
+              String s = input.readStringRequireUtf8();
+
+              sender_ = s;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ImProto.internal_static_IM_Protocol_SendGroupMessage_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 4:
+          return internalGetUserTags();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ImProto.internal_static_IM_Protocol_SendGroupMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              SendGroupMessage.class, Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int GROUPID_FIELD_NUMBER = 1;
+    private volatile Object groupID_;
+    /**
+     * <code>optional string GroupID = 1;</code>
+     */
+    public String getGroupID() {
+      Object ref = groupID_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        groupID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string GroupID = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGroupIDBytes() {
+      Object ref = groupID_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        groupID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 2;
+    private int type_;
+    /**
+     * <code>optional int32 Type = 2;</code>
+     */
+    public int getType() {
+      return type_;
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 3;
+    private volatile Object content_;
+    /**
+     * <code>optional string Content = 3;</code>
+     */
+    public String getContent() {
+      Object ref = content_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        content_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string Content = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      Object ref = content_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERTAGS_FIELD_NUMBER = 4;
+    private static final class UserTagsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          String, com.google.protobuf.ByteString> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<String, com.google.protobuf.ByteString>newDefaultInstance(
+                  ImProto.internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_descriptor,
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.BYTES,
+                  com.google.protobuf.ByteString.EMPTY);
+    }
+    private com.google.protobuf.MapField<
+        String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+    internalGetUserTags() {
+      if (userTags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UserTagsDefaultEntryHolder.defaultEntry);
+      }
+      return userTags_;
+    }
+    /**
+     * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
+     */
+
+    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+      return internalGetUserTags().getMap();
+    }
+
+    public static final int SENDER_FIELD_NUMBER = 5;
+    private volatile Object sender_;
+    /**
+     * <pre>
+     *  used for admin	
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    public String getSender() {
+      Object ref = sender_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        sender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <pre>
+     *  used for admin	
+     * </pre>
+     *
+     * <code>optional string Sender = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSenderBytes() {
+      Object ref = sender_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        sender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getGroupIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, groupID_);
+      }
+      if (type_ != 0) {
+        output.writeInt32(2, type_);
+      }
+      if (!getContentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, content_);
+      }
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+           : internalGetUserTags().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        output.writeMessage(4, userTags);
+      }
+      if (!getSenderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, sender_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getGroupIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, groupID_);
+      }
+      if (type_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(2, type_);
+      }
+      if (!getContentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, content_);
+      }
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+           : internalGetUserTags().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(4, userTags);
+      }
+      if (!getSenderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, sender_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    public static SendGroupMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SendGroupMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SendGroupMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static SendGroupMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static SendGroupMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static SendGroupMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SendGroupMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static SendGroupMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static SendGroupMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static SendGroupMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(SendGroupMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code IM.Protocol.SendGroupMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:IM.Protocol.SendGroupMessage)
+        SendGroupMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ImProto.internal_static_IM_Protocol_SendGroupMessage_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetUserTags();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 4:
+            return internalGetMutableUserTags();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ImProto.internal_static_IM_Protocol_SendGroupMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                SendGroupMessage.class, Builder.class);
+      }
+
+      // Construct using IM.Protocol.ImProto.SendGroupMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        groupID_ = "";
+
+        type_ = 0;
+
+        content_ = "";
+
+        internalGetMutableUserTags().clear();
+        sender_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ImProto.internal_static_IM_Protocol_SendGroupMessage_descriptor;
+      }
+
+      public SendGroupMessage getDefaultInstanceForType() {
+        return SendGroupMessage.getDefaultInstance();
+      }
+
+      public SendGroupMessage build() {
+        SendGroupMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public SendGroupMessage buildPartial() {
+        SendGroupMessage result = new SendGroupMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.groupID_ = groupID_;
+        result.type_ = type_;
+        result.content_ = content_;
+        result.userTags_ = internalGetUserTags();
+        result.userTags_.makeImmutable();
+        result.sender_ = sender_;
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof SendGroupMessage) {
+          return mergeFrom((SendGroupMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(SendGroupMessage other) {
+        if (other == SendGroupMessage.getDefaultInstance()) return this;
+        if (!other.getGroupID().isEmpty()) {
+          groupID_ = other.groupID_;
+          onChanged();
+        }
+        if (other.getType() != 0) {
+          setType(other.getType());
+        }
+        if (!other.getContent().isEmpty()) {
+          content_ = other.content_;
+          onChanged();
+        }
+        internalGetMutableUserTags().mergeFrom(
+            other.internalGetUserTags());
+        if (!other.getSender().isEmpty()) {
+          sender_ = other.sender_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        SendGroupMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (SendGroupMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private Object groupID_ = "";
+      /**
+       * <code>optional string GroupID = 1;</code>
+       */
+      public String getGroupID() {
+        Object ref = groupID_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          groupID_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>optional string GroupID = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getGroupIDBytes() {
+        Object ref = groupID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          groupID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string GroupID = 1;</code>
+       */
+      public Builder setGroupID(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        groupID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string GroupID = 1;</code>
+       */
+      public Builder clearGroupID() {
+        
+        groupID_ = getDefaultInstance().getGroupID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string GroupID = 1;</code>
+       */
+      public Builder setGroupIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        groupID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ ;
+      /**
+       * <code>optional int32 Type = 2;</code>
+       */
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>optional int32 Type = 2;</code>
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 Type = 2;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private Object content_ = "";
+      /**
+       * <code>optional string Content = 3;</code>
+       */
+      public String getContent() {
+        Object ref = content_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>optional string Content = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string Content = 3;</code>
+       */
+      public Builder setContent(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string Content = 3;</code>
+       */
+      public Builder clearContent() {
+        
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string Content = 3;</code>
+       */
+      public Builder setContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        content_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      internalGetUserTags() {
+        if (userTags_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              UserTagsDefaultEntryHolder.defaultEntry);
+        }
+        return userTags_;
+      }
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      internalGetMutableUserTags() {
+        onChanged();;
+        if (userTags_ == null) {
+          userTags_ = com.google.protobuf.MapField.newMapField(
+              UserTagsDefaultEntryHolder.defaultEntry);
+        }
+        if (!userTags_.isMutable()) {
+          userTags_ = userTags_.copy();
+        }
+        return userTags_;
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
+       */
+      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+        return internalGetUserTags().getMap();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
+       */
+      public java.util.Map<String, com.google.protobuf.ByteString>
+      getMutableUserTags() {
+        return internalGetMutableUserTags().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
+       */
+      public Builder putAllUserTags(
+          java.util.Map<String, com.google.protobuf.ByteString> values) {
+        getMutableUserTags().putAll(values);
+        return this;
+      }
+
+      private Object sender_ = "";
+      /**
+       * <pre>
+       *  used for admin	
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public String getSender() {
+        Object ref = sender_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          sender_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <pre>
+       *  used for admin	
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSenderBytes() {
+        Object ref = sender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          sender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <pre>
+       *  used for admin	
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public Builder setSender(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  used for admin	
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public Builder clearSender() {
+        
+        sender_ = getDefaultInstance().getSender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <pre>
+       *  used for admin	
+       * </pre>
+       *
+       * <code>optional string Sender = 5;</code>
+       */
+      public Builder setSenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:IM.Protocol.SendGroupMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:IM.Protocol.SendGroupMessage)
+    private static final SendGroupMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new SendGroupMessage();
+    }
+
+    public static SendGroupMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<SendGroupMessage>
+        PARSER = new com.google.protobuf.AbstractParser<SendGroupMessage>() {
+      public SendGroupMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new SendGroupMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<SendGroupMessage> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<SendGroupMessage> getParserForType() {
+      return PARSER;
+    }
+
+    public SendGroupMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface ReceivedGroupMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Protocol.ReceivedGroupMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string MsgID = 1;</code>
+     */
+    String getMsgID();
+    /**
+     * <code>optional string MsgID = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getMsgIDBytes();
+
+    /**
+     * <code>optional string Sender = 2;</code>
+     */
+    String getSender();
+    /**
+     * <code>optional string Sender = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getSenderBytes();
+
+    /**
+     * <code>optional string GroupID = 3;</code>
+     */
+    String getGroupID();
+    /**
+     * <code>optional string GroupID = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getGroupIDBytes();
+
+    /**
+     * <code>optional int32 Type = 4;</code>
+     */
+    int getType();
+
+    /**
+     * <code>optional string Content = 5;</code>
+     */
+    String getContent();
+    /**
+     * <code>optional string Content = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getContentBytes();
+
+    /**
+     * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
+     */
+    java.util.Map<String, com.google.protobuf.ByteString>
+    getUserTags();
+  }
+  /**
+   * Protobuf type {@code IM.Protocol.ReceivedGroupMessage}
+   */
+  public  static final class ReceivedGroupMessage extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:IM.Protocol.ReceivedGroupMessage)
+      ReceivedGroupMessageOrBuilder {
+    // Use ReceivedGroupMessage.newBuilder() to construct.
+    private ReceivedGroupMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private ReceivedGroupMessage() {
+      msgID_ = "";
+      sender_ = "";
+      groupID_ = "";
+      type_ = 0;
+      content_ = "";
+    }
+
+    @Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private ReceivedGroupMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              String s = input.readStringRequireUtf8();
+
+              msgID_ = s;
+              break;
+            }
+            case 18: {
+              String s = input.readStringRequireUtf8();
+
+              sender_ = s;
+              break;
+            }
+            case 26: {
+              String s = input.readStringRequireUtf8();
+
+              groupID_ = s;
+              break;
+            }
+            case 32: {
+
+              type_ = input.readInt32();
+              break;
+            }
+            case 42: {
+              String s = input.readStringRequireUtf8();
+
+              content_ = s;
+              break;
+            }
+            case 50: {
+              if (!((mutable_bitField0_ & 0x00000020) == 0x00000020)) {
+                userTags_ = com.google.protobuf.MapField.newMapField(
+                    UserTagsDefaultEntryHolder.defaultEntry);
+                mutable_bitField0_ |= 0x00000020;
+              }
+              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+              userTags = input.readMessage(
+                  UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
+              userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_descriptor;
+    }
+
+    @SuppressWarnings({"rawtypes"})
+    protected com.google.protobuf.MapField internalGetMapField(
+        int number) {
+      switch (number) {
+        case 6:
+          return internalGetUserTags();
+        default:
+          throw new RuntimeException(
+              "Invalid map field number: " + number);
+      }
+    }
+    protected FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              ReceivedGroupMessage.class, Builder.class);
+    }
+
+    private int bitField0_;
+    public static final int MSGID_FIELD_NUMBER = 1;
+    private volatile Object msgID_;
+    /**
+     * <code>optional string MsgID = 1;</code>
+     */
+    public String getMsgID() {
+      Object ref = msgID_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        msgID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string MsgID = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getMsgIDBytes() {
+      Object ref = msgID_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        msgID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SENDER_FIELD_NUMBER = 2;
+    private volatile Object sender_;
+    /**
+     * <code>optional string Sender = 2;</code>
+     */
+    public String getSender() {
+      Object ref = sender_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        sender_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string Sender = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSenderBytes() {
+      Object ref = sender_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        sender_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int GROUPID_FIELD_NUMBER = 3;
+    private volatile Object groupID_;
+    /**
+     * <code>optional string GroupID = 3;</code>
+     */
+    public String getGroupID() {
+      Object ref = groupID_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        groupID_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string GroupID = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getGroupIDBytes() {
+      Object ref = groupID_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        groupID_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int TYPE_FIELD_NUMBER = 4;
+    private int type_;
+    /**
+     * <code>optional int32 Type = 4;</code>
+     */
+    public int getType() {
+      return type_;
+    }
+
+    public static final int CONTENT_FIELD_NUMBER = 5;
+    private volatile Object content_;
+    /**
+     * <code>optional string Content = 5;</code>
+     */
+    public String getContent() {
+      Object ref = content_;
+      if (ref instanceof String) {
+        return (String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        String s = bs.toStringUtf8();
+        content_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string Content = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getContentBytes() {
+      Object ref = content_;
+      if (ref instanceof String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (String) ref);
+        content_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int USERTAGS_FIELD_NUMBER = 6;
+    private static final class UserTagsDefaultEntryHolder {
+      static final com.google.protobuf.MapEntry<
+          String, com.google.protobuf.ByteString> defaultEntry =
+              com.google.protobuf.MapEntry
+              .<String, com.google.protobuf.ByteString>newDefaultInstance(
+                  ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_descriptor,
+                  com.google.protobuf.WireFormat.FieldType.STRING,
+                  "",
+                  com.google.protobuf.WireFormat.FieldType.BYTES,
+                  com.google.protobuf.ByteString.EMPTY);
+    }
+    private com.google.protobuf.MapField<
+        String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+    internalGetUserTags() {
+      if (userTags_ == null) {
+        return com.google.protobuf.MapField.emptyMapField(
+            UserTagsDefaultEntryHolder.defaultEntry);
+      }
+      return userTags_;
+    }
+    /**
+     * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
+     */
+
+    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+      return internalGetUserTags().getMap();
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getMsgIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, msgID_);
+      }
+      if (!getSenderBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 2, sender_);
+      }
+      if (!getGroupIDBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 3, groupID_);
+      }
+      if (type_ != 0) {
+        output.writeInt32(4, type_);
+      }
+      if (!getContentBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 5, content_);
+      }
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+           : internalGetUserTags().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        output.writeMessage(6, userTags);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getMsgIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, msgID_);
+      }
+      if (!getSenderBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(2, sender_);
+      }
+      if (!getGroupIDBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(3, groupID_);
+      }
+      if (type_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(4, type_);
+      }
+      if (!getContentBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(5, content_);
+      }
+      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+           : internalGetUserTags().getMap().entrySet()) {
+        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
+            .setKey(entry.getKey())
+            .setValue(entry.getValue())
+            .build();
+        size += com.google.protobuf.CodedOutputStream
+            .computeMessageSize(6, userTags);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    public static ReceivedGroupMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ReceivedGroupMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ReceivedGroupMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static ReceivedGroupMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static ReceivedGroupMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static ReceivedGroupMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ReceivedGroupMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static ReceivedGroupMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static ReceivedGroupMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static ReceivedGroupMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(ReceivedGroupMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @Override
+    protected Builder newBuilderForType(
+        BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code IM.Protocol.ReceivedGroupMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:IM.Protocol.ReceivedGroupMessage)
+        ReceivedGroupMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_descriptor;
+      }
+
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMapField(
+          int number) {
+        switch (number) {
+          case 6:
+            return internalGetUserTags();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      @SuppressWarnings({"rawtypes"})
+      protected com.google.protobuf.MapField internalGetMutableMapField(
+          int number) {
+        switch (number) {
+          case 6:
+            return internalGetMutableUserTags();
+          default:
+            throw new RuntimeException(
+                "Invalid map field number: " + number);
+        }
+      }
+      protected FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                ReceivedGroupMessage.class, Builder.class);
+      }
+
+      // Construct using IM.Protocol.ImProto.ReceivedGroupMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        msgID_ = "";
+
+        sender_ = "";
+
+        groupID_ = "";
+
+        type_ = 0;
+
+        content_ = "";
+
+        internalGetMutableUserTags().clear();
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_descriptor;
+      }
+
+      public ReceivedGroupMessage getDefaultInstanceForType() {
+        return ReceivedGroupMessage.getDefaultInstance();
+      }
+
+      public ReceivedGroupMessage build() {
+        ReceivedGroupMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public ReceivedGroupMessage buildPartial() {
+        ReceivedGroupMessage result = new ReceivedGroupMessage(this);
+        int from_bitField0_ = bitField0_;
+        int to_bitField0_ = 0;
+        result.msgID_ = msgID_;
+        result.sender_ = sender_;
+        result.groupID_ = groupID_;
+        result.type_ = type_;
+        result.content_ = content_;
+        result.userTags_ = internalGetUserTags();
+        result.userTags_.makeImmutable();
+        result.bitField0_ = to_bitField0_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof ReceivedGroupMessage) {
+          return mergeFrom((ReceivedGroupMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(ReceivedGroupMessage other) {
+        if (other == ReceivedGroupMessage.getDefaultInstance()) return this;
+        if (!other.getMsgID().isEmpty()) {
+          msgID_ = other.msgID_;
+          onChanged();
+        }
+        if (!other.getSender().isEmpty()) {
+          sender_ = other.sender_;
+          onChanged();
+        }
+        if (!other.getGroupID().isEmpty()) {
+          groupID_ = other.groupID_;
+          onChanged();
+        }
+        if (other.getType() != 0) {
+          setType(other.getType());
+        }
+        if (!other.getContent().isEmpty()) {
+          content_ = other.content_;
+          onChanged();
+        }
+        internalGetMutableUserTags().mergeFrom(
+            other.internalGetUserTags());
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        ReceivedGroupMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (ReceivedGroupMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+      private int bitField0_;
+
+      private Object msgID_ = "";
+      /**
+       * <code>optional string MsgID = 1;</code>
+       */
+      public String getMsgID() {
+        Object ref = msgID_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          msgID_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>optional string MsgID = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getMsgIDBytes() {
+        Object ref = msgID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          msgID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string MsgID = 1;</code>
+       */
+      public Builder setMsgID(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        msgID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string MsgID = 1;</code>
+       */
+      public Builder clearMsgID() {
+        
+        msgID_ = getDefaultInstance().getMsgID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string MsgID = 1;</code>
+       */
+      public Builder setMsgIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        msgID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object sender_ = "";
+      /**
+       * <code>optional string Sender = 2;</code>
+       */
+      public String getSender() {
+        Object ref = sender_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          sender_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>optional string Sender = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSenderBytes() {
+        Object ref = sender_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          sender_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string Sender = 2;</code>
+       */
+      public Builder setSender(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string Sender = 2;</code>
+       */
+      public Builder clearSender() {
+        
+        sender_ = getDefaultInstance().getSender();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string Sender = 2;</code>
+       */
+      public Builder setSenderBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        sender_ = value;
+        onChanged();
+        return this;
+      }
+
+      private Object groupID_ = "";
+      /**
+       * <code>optional string GroupID = 3;</code>
+       */
+      public String getGroupID() {
+        Object ref = groupID_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          groupID_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>optional string GroupID = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getGroupIDBytes() {
+        Object ref = groupID_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          groupID_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string GroupID = 3;</code>
+       */
+      public Builder setGroupID(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        groupID_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string GroupID = 3;</code>
+       */
+      public Builder clearGroupID() {
+        
+        groupID_ = getDefaultInstance().getGroupID();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string GroupID = 3;</code>
+       */
+      public Builder setGroupIDBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        groupID_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int type_ ;
+      /**
+       * <code>optional int32 Type = 4;</code>
+       */
+      public int getType() {
+        return type_;
+      }
+      /**
+       * <code>optional int32 Type = 4;</code>
+       */
+      public Builder setType(int value) {
+        
+        type_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 Type = 4;</code>
+       */
+      public Builder clearType() {
+        
+        type_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private Object content_ = "";
+      /**
+       * <code>optional string Content = 5;</code>
+       */
+      public String getContent() {
+        Object ref = content_;
+        if (!(ref instanceof String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          String s = bs.toStringUtf8();
+          content_ = s;
+          return s;
+        } else {
+          return (String) ref;
+        }
+      }
+      /**
+       * <code>optional string Content = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getContentBytes() {
+        Object ref = content_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (String) ref);
+          content_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string Content = 5;</code>
+       */
+      public Builder setContent(
+          String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        content_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string Content = 5;</code>
+       */
+      public Builder clearContent() {
+        
+        content_ = getDefaultInstance().getContent();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string Content = 5;</code>
+       */
+      public Builder setContentBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        content_ = value;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.MapField<
+          String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      internalGetUserTags() {
+        if (userTags_ == null) {
+          return com.google.protobuf.MapField.emptyMapField(
+              UserTagsDefaultEntryHolder.defaultEntry);
+        }
+        return userTags_;
+      }
+      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      internalGetMutableUserTags() {
+        onChanged();;
+        if (userTags_ == null) {
+          userTags_ = com.google.protobuf.MapField.newMapField(
+              UserTagsDefaultEntryHolder.defaultEntry);
+        }
+        if (!userTags_.isMutable()) {
+          userTags_ = userTags_.copy();
+        }
+        return userTags_;
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
+       */
+      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+        return internalGetUserTags().getMap();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
+       */
+      public java.util.Map<String, com.google.protobuf.ByteString>
+      getMutableUserTags() {
+        return internalGetMutableUserTags().getMutableMap();
+      }
+      /**
+       * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
+       */
+      public Builder putAllUserTags(
+          java.util.Map<String, com.google.protobuf.ByteString> values) {
+        getMutableUserTags().putAll(values);
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:IM.Protocol.ReceivedGroupMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:IM.Protocol.ReceivedGroupMessage)
+    private static final ReceivedGroupMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new ReceivedGroupMessage();
+    }
+
+    public static ReceivedGroupMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<ReceivedGroupMessage>
+        PARSER = new com.google.protobuf.AbstractParser<ReceivedGroupMessage>() {
+      public ReceivedGroupMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new ReceivedGroupMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<ReceivedGroupMessage> parser() {
+      return PARSER;
+    }
+
+    @Override
+    public com.google.protobuf.Parser<ReceivedGroupMessage> getParserForType() {
+      return PARSER;
+    }
+
+    public ReceivedGroupMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   private static final com.google.protobuf.Descriptors.Descriptor
     internal_static_IM_Protocol_SocketPackage_descriptor;
   private static final 
@@ -6832,6 +9521,31 @@ public final class ImProto {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_IM_Protocol_Channel_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_IM_Protocol_UserGroup_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_IM_Protocol_UserGroup_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_IM_Protocol_SendGroupMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_IM_Protocol_SendGroupMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_IM_Protocol_ReceivedGroupMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_IM_Protocol_ReceivedGroupMessage_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -6873,13 +9587,27 @@ public final class ImProto {
       "serTags\030\006 \003(\01321.IM.Protocol.ReceivedChan",
       "nelMessage.UserTagsEntry\032/\n\rUserTagsEntr" +
       "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"\034\n\007Cha" +
-      "nnel\022\021\n\tChannelID\030\001 \001(\t*\261\001\n\017PackageCateg" +
-      "ory\022\010\n\004Ping\020\000\022\t\n\005Login\020\001\022\n\n\006Logout\020\002\022\016\n\n" +
-      "SendToUser\020\003\022\021\n\rSendToChannel\020\004\022\023\n\017Recei" +
-      "vedUserMsg\020\005\022\026\n\022ReceivedChannelMsg\020\006\022\017\n\013" +
-      "JoinChannel\020\007\022\020\n\014LeaveChannel\020\010\022\n\n\006Resul" +
-      "t\020c*8\n\nResultCode\022\013\n\007Success\020\000\022\r\n\tNeedLo" +
-      "gin\020\001\022\016\n\nAuthFailed\020\002b\006proto3"
+      "nnel\022\021\n\tChannelID\030\001 \001(\t\"-\n\tUserGroup\022\016\n\006" +
+      "UserID\030\001 \001(\t\022\020\n\010GroupIDs\030\002 \003(\t\"\302\001\n\020SendG" +
+      "roupMessage\022\017\n\007GroupID\030\001 \001(\t\022\014\n\004Type\030\002 \001" +
+      "(\005\022\017\n\007Content\030\003 \001(\t\022=\n\010UserTags\030\004 \003(\0132+." +
+      "IM.Protocol.SendGroupMessage.UserTagsEnt" +
+      "ry\022\016\n\006Sender\030\005 \001(\t\032/\n\rUserTagsEntry\022\013\n\003k" +
+      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"\331\001\n\024Received" +
+      "GroupMessage\022\r\n\005MsgID\030\001 \001(\t\022\016\n\006Sender\030\002 ",
+      "\001(\t\022\017\n\007GroupID\030\003 \001(\t\022\014\n\004Type\030\004 \001(\005\022\017\n\007Co" +
+      "ntent\030\005 \001(\t\022A\n\010UserTags\030\006 \003(\0132/.IM.Proto" +
+      "col.ReceivedGroupMessage.UserTagsEntry\032/" +
+      "\n\rUserTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
+      "\001(\014:\0028\001*\201\002\n\017PackageCategory\022\010\n\004Ping\020\000\022\t\n" +
+      "\005Login\020\001\022\n\n\006Logout\020\002\022\016\n\nSendToUser\020\003\022\021\n\r" +
+      "SendToChannel\020\004\022\023\n\017ReceivedUserMsg\020\005\022\026\n\022" +
+      "ReceivedChannelMsg\020\006\022\021\n\rBindToChannel\020\007\022" +
+      "\023\n\017UnbindToChannel\020\010\022\017\n\013BindToGroup\020\t\022\021\n" +
+      "\rUnbindToGroup\020\n\022\017\n\013SendToGroup\020\013\022\024\n\020Rec",
+      "eivedGroupMsg\020\014\022\n\n\006Result\020c*8\n\nResultCod" +
+      "e\022\013\n\007Success\020\000\022\r\n\tNeedLogin\020\001\022\016\n\nAuthFai" +
+      "led\020\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -6971,6 +9699,36 @@ public final class ImProto {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_Channel_descriptor,
         new String[] { "ChannelID", });
+    internal_static_IM_Protocol_UserGroup_descriptor =
+      getDescriptor().getMessageTypes().get(8);
+    internal_static_IM_Protocol_UserGroup_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_IM_Protocol_UserGroup_descriptor,
+        new String[] { "UserID", "GroupIDs", });
+    internal_static_IM_Protocol_SendGroupMessage_descriptor =
+      getDescriptor().getMessageTypes().get(9);
+    internal_static_IM_Protocol_SendGroupMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_IM_Protocol_SendGroupMessage_descriptor,
+        new String[] { "GroupID", "Type", "Content", "UserTags", "Sender", });
+    internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_descriptor =
+      internal_static_IM_Protocol_SendGroupMessage_descriptor.getNestedTypes().get(0);
+    internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_descriptor,
+        new String[] { "Key", "Value", });
+    internal_static_IM_Protocol_ReceivedGroupMessage_descriptor =
+      getDescriptor().getMessageTypes().get(10);
+    internal_static_IM_Protocol_ReceivedGroupMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_IM_Protocol_ReceivedGroupMessage_descriptor,
+        new String[] { "MsgID", "Sender", "GroupID", "Type", "Content", "UserTags", });
+    internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_descriptor =
+      internal_static_IM_Protocol_ReceivedGroupMessage_descriptor.getNestedTypes().get(0);
+    internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_descriptor,
+        new String[] { "Key", "Value", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

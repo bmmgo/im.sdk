@@ -25,6 +25,8 @@ public interface SocketListener {
 
     void onReceivedChannelMessage(ImProto.ReceivedChannelMessage receivedChannelMessage);
 
+    void onReceivedGroupMessage(ImProto.ReceivedGroupMessage receivedGroupMessage);
+
     void onJoinChannelSuccess(String channelId);
 
     void onLeaveChannelSuccess(String channelId);
