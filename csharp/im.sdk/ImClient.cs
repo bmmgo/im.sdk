@@ -104,6 +104,9 @@ namespace im.sdk
                     case PackageCategory.ReceivedGroupMsg:
                         ReceivedGroupMessage(package);
                         break;
+                    case PackageCategory.PubUserLogin:
+                        ReceivedUserLogin(package);
+                        break;
                 }
             }
             catch (Exception ex)
@@ -171,6 +174,12 @@ namespace im.sdk
         {
             var message = IM.Protocol.ReceivedGroupMessage.Parser.ParseFrom(package.Content);
             OnReceivedGroupMessage?.Invoke(this, message);
+        }
+
+        private void ReceivedUserLogin(SocketPackage package)
+        {
+            var token = LoginToken.Parser.ParseFrom(package.Content);
+            OnReceivedUserLogin(this, token);
         }
 
         private void Send(PackageCategory category, IMessage msg = null)
@@ -340,5 +349,9 @@ namespace im.sdk
         /// 登陆成功事件
         /// </summary>
         public event Action<ImClient, bool, string> OnLogin;
+        /// <summary>
+        /// 用户登陆事件
+        /// </summary>
+        public event Action<ImClient, LoginToken> OnReceivedUserLogin;
     }
 }

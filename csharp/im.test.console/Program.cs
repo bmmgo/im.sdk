@@ -26,6 +26,7 @@ namespace im.test.console
             imClient.OnReceivedChannelMessage += ImClient_OnReceivedChannelMessage;
             imClient.OnReceivedUserMessage += ImClient_OnReceivedUserMessage;
             imClient.OnReceivedGroupMessage += ImClient_OnReceivedGroupMessage;
+            imClient.OnReceivedUserLogin += ImClient_OnReceivedUserLogin;
             imClient.OnLogin += ImClient_OnLogin;
             imClient.Start();
             while (true)
@@ -49,6 +50,11 @@ namespace im.test.console
                     imClient.AdminSend(message);
                 }
             }
+        }
+
+        private static void ImClient_OnReceivedUserLogin(ImClient arg1, LoginToken arg2)
+        {
+            Console.WriteLine("received user login:{0}", arg2.UserID);
         }
 
         private static void ImClient_OnReceivedGroupMessage(ImClient arg1, ReceivedGroupMessage msg)
@@ -98,6 +104,7 @@ namespace im.test.console
                 Console.WriteLine("login success");
                 arg1.BindToChannel("1");
                 arg1.BindToGroup("1");
+                arg1.SubUserLogin();
             }
             else
             {

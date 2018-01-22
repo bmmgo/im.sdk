@@ -119,6 +119,16 @@
             </summary>
             <param name="message"></param>
         </member>
+        <member name="M:im.sdk.ImClient.SubUserLogin">
+            <summary>
+            订阅用户登陆
+            </summary>
+        </member>
+        <member name="M:im.sdk.ImClient.UnsubUserLogin">
+            <summary>
+            取消订阅用户登陆
+            </summary>
+        </member>
         <member name="E:im.sdk.ImClient.OnReceivedChannelMessage">
             <summary>
             收到频道消息事件
@@ -157,6 +167,11 @@
         <member name="E:im.sdk.ImClient.OnLogin">
             <summary>
             登陆成功事件
+            </summary>
+        </member>
+        <member name="E:im.sdk.ImClient.OnReceivedUserLogin">
+            <summary>
+            用户登陆事件
             </summary>
         </member>
         <member name="T:im.sdk.SimpleSocket">
