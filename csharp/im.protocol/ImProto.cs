@@ -62,14 +62,17 @@ namespace IM.Protocol {
             "EgwKBFR5cGUYBCABKAUSDwoHQ29udGVudBgFIAEoCRJBCghVc2VyVGFncxgG",
             "IAMoCzIvLklNLlByb3RvY29sLlJlY2VpdmVkR3JvdXBNZXNzYWdlLlVzZXJU",
             "YWdzRW50cnkaLwoNVXNlclRhZ3NFbnRyeRILCgNrZXkYASABKAkSDQoFdmFs",
-            "dWUYAiABKAw6AjgBKoECCg9QYWNrYWdlQ2F0ZWdvcnkSCAoEUGluZxAAEgkK",
-            "BUxvZ2luEAESCgoGTG9nb3V0EAISDgoKU2VuZFRvVXNlchADEhEKDVNlbmRU",
-            "b0NoYW5uZWwQBBITCg9SZWNlaXZlZFVzZXJNc2cQBRIWChJSZWNlaXZlZENo",
-            "YW5uZWxNc2cQBhIRCg1CaW5kVG9DaGFubmVsEAcSEwoPVW5iaW5kVG9DaGFu",
-            "bmVsEAgSDwoLQmluZFRvR3JvdXAQCRIRCg1VbmJpbmRUb0dyb3VwEAoSDwoL",
-            "U2VuZFRvR3JvdXAQCxIUChBSZWNlaXZlZEdyb3VwTXNnEAwSCgoGUmVzdWx0",
-            "EGMqOAoKUmVzdWx0Q29kZRILCgdTdWNjZXNzEAASDQoJTmVlZExvZ2luEAES",
-            "DgoKQXV0aEZhaWxlZBACYgZwcm90bzM="));
+            "dWUYAiABKAw6AjgBImgKDEFkbWluTWVzc2FnZRIQCghSZWNlaXZlchgBIAEo",
+            "CRIuCghDYXRlZ29yeRgCIAEoDjIcLklNLlByb3RvY29sLlBhY2thZ2VDYXRl",
+            "Z29yeRIWCg5NZXNzYWdlQ29udGVudBgDIAEoDCqRAgoPUGFja2FnZUNhdGVn",
+            "b3J5EggKBFBpbmcQABIJCgVMb2dpbhABEgoKBkxvZ291dBACEg4KClNlbmRU",
+            "b1VzZXIQAxIRCg1TZW5kVG9DaGFubmVsEAQSEwoPUmVjZWl2ZWRVc2VyTXNn",
+            "EAUSFgoSUmVjZWl2ZWRDaGFubmVsTXNnEAYSEQoNQmluZFRvQ2hhbm5lbBAH",
+            "EhMKD1VuYmluZFRvQ2hhbm5lbBAIEg8KC0JpbmRUb0dyb3VwEAkSEQoNVW5i",
+            "aW5kVG9Hcm91cBAKEg8KC1NlbmRUb0dyb3VwEAsSFAoQUmVjZWl2ZWRHcm91",
+            "cE1zZxAMEgoKBlJlc3VsdBBjEg4KCUFkbWluU2VuZBDHASo4CgpSZXN1bHRD",
+            "b2RlEgsKB1N1Y2Nlc3MQABINCglOZWVkTG9naW4QARIOCgpBdXRoRmFpbGVk",
+            "EAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::IM.Protocol.PackageCategory), typeof(global::IM.Protocol.ResultCode), }, new pbr::GeneratedClrTypeInfo[] {
@@ -83,7 +86,8 @@ namespace IM.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.Channel), global::IM.Protocol.Channel.Parser, new[]{ "ChannelID" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.UserGroup), global::IM.Protocol.UserGroup.Parser, new[]{ "UserID", "GroupIDs" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendGroupMessage), global::IM.Protocol.SendGroupMessage.Parser, new[]{ "GroupID", "Type", "Content", "UserTags", "Sender" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedGroupMessage), global::IM.Protocol.ReceivedGroupMessage.Parser, new[]{ "MsgID", "Sender", "GroupID", "Type", "Content", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, })
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedGroupMessage), global::IM.Protocol.ReceivedGroupMessage.Parser, new[]{ "MsgID", "Sender", "GroupID", "Type", "Content", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.AdminMessage), global::IM.Protocol.AdminMessage.Parser, new[]{ "Receiver", "Category", "MessageContent" }, null, null, null)
           }));
     }
     #endregion
@@ -105,6 +109,7 @@ namespace IM.Protocol {
     [pbr::OriginalName("SendToGroup")] SendToGroup = 11,
     [pbr::OriginalName("ReceivedGroupMsg")] ReceivedGroupMsg = 12,
     [pbr::OriginalName("Result")] Result = 99,
+    [pbr::OriginalName("AdminSend")] AdminSend = 199,
   }
 
   public enum ResultCode {
@@ -2158,6 +2163,163 @@ namespace IM.Protocol {
           }
           case 50: {
             userTags_.AddEntriesFrom(input, _map_userTags_codec);
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class AdminMessage : pb::IMessage<AdminMessage> {
+    private static readonly pb::MessageParser<AdminMessage> _parser = new pb::MessageParser<AdminMessage>(() => new AdminMessage());
+    public static pb::MessageParser<AdminMessage> Parser { get { return _parser; } }
+
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::IM.Protocol.ImProtoReflection.Descriptor.MessageTypes[11]; }
+    }
+
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    public AdminMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    public AdminMessage(AdminMessage other) : this() {
+      receiver_ = other.receiver_;
+      category_ = other.category_;
+      messageContent_ = other.messageContent_;
+    }
+
+    public AdminMessage Clone() {
+      return new AdminMessage(this);
+    }
+
+    /// <summary>Field number for the "Receiver" field.</summary>
+    public const int ReceiverFieldNumber = 1;
+    private string receiver_ = "";
+    public string Receiver {
+      get { return receiver_; }
+      set {
+        receiver_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Category" field.</summary>
+    public const int CategoryFieldNumber = 2;
+    private global::IM.Protocol.PackageCategory category_ = 0;
+    public global::IM.Protocol.PackageCategory Category {
+      get { return category_; }
+      set {
+        category_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "MessageContent" field.</summary>
+    public const int MessageContentFieldNumber = 3;
+    private pb::ByteString messageContent_ = pb::ByteString.Empty;
+    public pb::ByteString MessageContent {
+      get { return messageContent_; }
+      set {
+        messageContent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    public override bool Equals(object other) {
+      return Equals(other as AdminMessage);
+    }
+
+    public bool Equals(AdminMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Receiver != other.Receiver) return false;
+      if (Category != other.Category) return false;
+      if (MessageContent != other.MessageContent) return false;
+      return true;
+    }
+
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Receiver.Length != 0) hash ^= Receiver.GetHashCode();
+      if (Category != 0) hash ^= Category.GetHashCode();
+      if (MessageContent.Length != 0) hash ^= MessageContent.GetHashCode();
+      return hash;
+    }
+
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Receiver.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Receiver);
+      }
+      if (Category != 0) {
+        output.WriteRawTag(16);
+        output.WriteEnum((int) Category);
+      }
+      if (MessageContent.Length != 0) {
+        output.WriteRawTag(26);
+        output.WriteBytes(MessageContent);
+      }
+    }
+
+    public int CalculateSize() {
+      int size = 0;
+      if (Receiver.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Receiver);
+      }
+      if (Category != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Category);
+      }
+      if (MessageContent.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(MessageContent);
+      }
+      return size;
+    }
+
+    public void MergeFrom(AdminMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Receiver.Length != 0) {
+        Receiver = other.Receiver;
+      }
+      if (other.Category != 0) {
+        Category = other.Category;
+      }
+      if (other.MessageContent.Length != 0) {
+        MessageContent = other.MessageContent;
+      }
+    }
+
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Receiver = input.ReadString();
+            break;
+          }
+          case 16: {
+            category_ = (global::IM.Protocol.PackageCategory) input.ReadEnum();
+            break;
+          }
+          case 26: {
+            MessageContent = input.ReadBytes();
             break;
           }
         }

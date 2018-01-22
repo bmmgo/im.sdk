@@ -15,8 +15,9 @@ enum PackageCategory{
 	BindToGroup = 9;
 	UnbindToGroup = 10;
 	SendToGroup = 11;
-	ReceivedGroupMsg = 12;
+	ReceivedGroupMsg = 12;	
 	Result = 99;
+	AdminSend = 199;
 }
 message SocketPackage{
 	int32 Seq = 1;
@@ -91,4 +92,9 @@ message ReceivedGroupMessage{
 	int32 Type = 4;
 	string Content = 5;
 	map<string,bytes> UserTags = 6;
+}
+message AdminMessage{
+	string Receiver = 1;
+	PackageCategory Category = 2;
+	bytes MessageContent = 3;
 }
