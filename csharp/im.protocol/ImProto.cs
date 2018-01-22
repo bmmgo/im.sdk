@@ -65,15 +65,16 @@ namespace IM.Protocol {
             "EAoIU2VuZFRpbWUYByABKAUaLwoNVXNlclRhZ3NFbnRyeRILCgNrZXkYASAB",
             "KAkSDQoFdmFsdWUYAiABKAw6AjgBImgKDEFkbWluTWVzc2FnZRIQCghSZWNl",
             "aXZlchgBIAEoCRIuCghDYXRlZ29yeRgCIAEoDjIcLklNLlByb3RvY29sLlBh",
-            "Y2thZ2VDYXRlZ29yeRIWCg5NZXNzYWdlQ29udGVudBgDIAEoDCqRAgoPUGFj",
+            "Y2thZ2VDYXRlZ29yeRIWCg5NZXNzYWdlQ29udGVudBgDIAEoDCrMAgoPUGFj",
             "a2FnZUNhdGVnb3J5EggKBFBpbmcQABIJCgVMb2dpbhABEgoKBkxvZ291dBAC",
             "Eg4KClNlbmRUb1VzZXIQAxIRCg1TZW5kVG9DaGFubmVsEAQSEwoPUmVjZWl2",
             "ZWRVc2VyTXNnEAUSFgoSUmVjZWl2ZWRDaGFubmVsTXNnEAYSEQoNQmluZFRv",
             "Q2hhbm5lbBAHEhMKD1VuYmluZFRvQ2hhbm5lbBAIEg8KC0JpbmRUb0dyb3Vw",
             "EAkSEQoNVW5iaW5kVG9Hcm91cBAKEg8KC1NlbmRUb0dyb3VwEAsSFAoQUmVj",
-            "ZWl2ZWRHcm91cE1zZxAMEgoKBlJlc3VsdBBjEg4KCUFkbWluU2VuZBDHASo4",
-            "CgpSZXN1bHRDb2RlEgsKB1N1Y2Nlc3MQABINCglOZWVkTG9naW4QARIOCgpB",
-            "dXRoRmFpbGVkEAJiBnByb3RvMw=="));
+            "ZWl2ZWRHcm91cE1zZxAMEgoKBlJlc3VsdBBjEg4KCUFkbWluU2VuZBDHARIR",
+            "CgxTdWJVc2VyTG9naW4QyAESEwoOVW5zdWJVc2VyTG9naW4QyQESEQoMUHVi",
+            "VXNlckxvZ2luEMoBKjgKClJlc3VsdENvZGUSCwoHU3VjY2VzcxAAEg0KCU5l",
+            "ZWRMb2dpbhABEg4KCkF1dGhGYWlsZWQQAmIGcHJvdG8z"));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::IM.Protocol.PackageCategory), typeof(global::IM.Protocol.ResultCode), }, new pbr::GeneratedClrTypeInfo[] {
@@ -111,6 +112,9 @@ namespace IM.Protocol {
     [pbr::OriginalName("ReceivedGroupMsg")] ReceivedGroupMsg = 12,
     [pbr::OriginalName("Result")] Result = 99,
     [pbr::OriginalName("AdminSend")] AdminSend = 199,
+    [pbr::OriginalName("SubUserLogin")] SubUserLogin = 200,
+    [pbr::OriginalName("UnsubUserLogin")] UnsubUserLogin = 201,
+    [pbr::OriginalName("PubUserLogin")] PubUserLogin = 202,
   }
 
   public enum ResultCode {

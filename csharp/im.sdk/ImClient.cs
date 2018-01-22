@@ -293,6 +293,20 @@ namespace im.sdk
         {
             Send(PackageCategory.AdminSend, message);
         }
+        /// <summary>
+        /// 订阅用户登陆
+        /// </summary>
+        public void SubUserLogin()
+        {
+            Send(PackageCategory.SubUserLogin);
+        }
+        /// <summary>
+        /// 取消订阅用户登陆
+        /// </summary>
+        public void UnsubUserLogin()
+        {
+            Send(PackageCategory.UnsubUserLogin);
+        }
 
         /// <summary>
         /// 收到频道消息事件

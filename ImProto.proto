@@ -18,6 +18,9 @@ enum PackageCategory{
 	ReceivedGroupMsg = 12;	
 	Result = 99;
 	AdminSend = 199;
+	SubUserLogin = 200;
+	UnsubUserLogin = 201;
+	PubUserLogin = 202;
 }
 message SocketPackage{
 	int32 Seq = 1;

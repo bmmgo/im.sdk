@@ -69,6 +69,10 @@ public final class ImProto {
      * <code>Result = 99;</code>
      */
     Result(99),
+    /**
+     * <code>AdminSend = 199;</code>
+     */
+    AdminSend(199),
     UNRECOGNIZED(-1),
     ;
 
@@ -128,11 +132,15 @@ public final class ImProto {
      * <code>Result = 99;</code>
      */
     public static final int Result_VALUE = 99;
+    /**
+     * <code>AdminSend = 199;</code>
+     */
+    public static final int AdminSend_VALUE = 199;
 
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new IllegalArgumentException(
+        throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -141,7 +149,7 @@ public final class ImProto {
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @Deprecated
+    @java.lang.Deprecated
     public static PackageCategory valueOf(int value) {
       return forNumber(value);
     }
@@ -162,6 +170,7 @@ public final class ImProto {
         case 11: return SendToGroup;
         case 12: return ReceivedGroupMsg;
         case 99: return Result;
+        case 199: return AdminSend;
         default: return null;
       }
     }
@@ -188,7 +197,7 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return ImProto.getDescriptor().getEnumTypes().get(0);
+      return IM.Protocol.ImProto.getDescriptor().getEnumTypes().get(0);
     }
 
     private static final PackageCategory[] VALUES = values();
@@ -196,7 +205,7 @@ public final class ImProto {
     public static PackageCategory valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new IllegalArgumentException(
+        throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -250,7 +259,7 @@ public final class ImProto {
 
     public final int getNumber() {
       if (this == UNRECOGNIZED) {
-        throw new IllegalArgumentException(
+        throw new java.lang.IllegalArgumentException(
             "Can't get the number of an unknown enum value.");
       }
       return value;
@@ -259,7 +268,7 @@ public final class ImProto {
     /**
      * @deprecated Use {@link #forNumber(int)} instead.
      */
-    @Deprecated
+    @java.lang.Deprecated
     public static ResultCode valueOf(int value) {
       return forNumber(value);
     }
@@ -295,7 +304,7 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.EnumDescriptor
         getDescriptor() {
-      return ImProto.getDescriptor().getEnumTypes().get(1);
+      return IM.Protocol.ImProto.getDescriptor().getEnumTypes().get(1);
     }
 
     private static final ResultCode[] VALUES = values();
@@ -303,7 +312,7 @@ public final class ImProto {
     public static ResultCode valueOf(
         com.google.protobuf.Descriptors.EnumValueDescriptor desc) {
       if (desc.getType() != getDescriptor()) {
-        throw new IllegalArgumentException(
+        throw new java.lang.IllegalArgumentException(
           "EnumValueDescriptor is not for this type.");
       }
       if (desc.getIndex() == -1) {
@@ -337,7 +346,7 @@ public final class ImProto {
     /**
      * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
      */
-    PackageCategory getCategory();
+    IM.Protocol.ImProto.PackageCategory getCategory();
 
     /**
      * <code>optional bytes Content = 3;</code>
@@ -361,7 +370,7 @@ public final class ImProto {
       content_ = com.google.protobuf.ByteString.EMPTY;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -415,14 +424,14 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_SocketPackage_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_SocketPackage_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_SocketPackage_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_SocketPackage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SocketPackage.class, Builder.class);
+              IM.Protocol.ImProto.SocketPackage.class, IM.Protocol.ImProto.SocketPackage.Builder.class);
     }
 
     public static final int SEQ_FIELD_NUMBER = 1;
@@ -445,9 +454,9 @@ public final class ImProto {
     /**
      * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
      */
-    public PackageCategory getCategory() {
-      PackageCategory result = PackageCategory.forNumber(category_);
-      return result == null ? PackageCategory.UNRECOGNIZED : result;
+    public IM.Protocol.ImProto.PackageCategory getCategory() {
+      IM.Protocol.ImProto.PackageCategory result = IM.Protocol.ImProto.PackageCategory.forNumber(category_);
+      return result == null ? IM.Protocol.ImProto.PackageCategory.UNRECOGNIZED : result;
     }
 
     public static final int CONTENT_FIELD_NUMBER = 3;
@@ -474,7 +483,7 @@ public final class ImProto {
       if (seq_ != 0) {
         output.writeInt32(1, seq_);
       }
-      if (category_ != PackageCategory.Ping.getNumber()) {
+      if (category_ != IM.Protocol.ImProto.PackageCategory.Ping.getNumber()) {
         output.writeEnum(2, category_);
       }
       if (!content_.isEmpty()) {
@@ -491,7 +500,7 @@ public final class ImProto {
         size += com.google.protobuf.CodedOutputStream
           .computeInt32Size(1, seq_);
       }
-      if (category_ != PackageCategory.Ping.getNumber()) {
+      if (category_ != IM.Protocol.ImProto.PackageCategory.Ping.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, category_);
       }
@@ -504,58 +513,58 @@ public final class ImProto {
     }
 
     private static final long serialVersionUID = 0L;
-    public static SocketPackage parseFrom(
+    public static IM.Protocol.ImProto.SocketPackage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SocketPackage parseFrom(
+    public static IM.Protocol.ImProto.SocketPackage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SocketPackage parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.SocketPackage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SocketPackage parseFrom(
+    public static IM.Protocol.ImProto.SocketPackage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SocketPackage parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.SocketPackage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static SocketPackage parseFrom(
+    public static IM.Protocol.ImProto.SocketPackage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SocketPackage parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.SocketPackage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SocketPackage parseDelimitedFrom(
+    public static IM.Protocol.ImProto.SocketPackage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SocketPackage parseFrom(
+    public static IM.Protocol.ImProto.SocketPackage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static SocketPackage parseFrom(
+    public static IM.Protocol.ImProto.SocketPackage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -567,7 +576,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SocketPackage prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.SocketPackage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -575,9 +584,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -587,17 +596,17 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.SocketPackage)
-        SocketPackageOrBuilder {
+        IM.Protocol.ImProto.SocketPackageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_SocketPackage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SocketPackage_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_SocketPackage_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SocketPackage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SocketPackage.class, Builder.class);
+                IM.Protocol.ImProto.SocketPackage.class, IM.Protocol.ImProto.SocketPackage.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.SocketPackage.newBuilder()
@@ -606,7 +615,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -627,23 +636,23 @@ public final class ImProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_SocketPackage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SocketPackage_descriptor;
       }
 
-      public SocketPackage getDefaultInstanceForType() {
-        return SocketPackage.getDefaultInstance();
+      public IM.Protocol.ImProto.SocketPackage getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.SocketPackage.getDefaultInstance();
       }
 
-      public SocketPackage build() {
-        SocketPackage result = buildPartial();
+      public IM.Protocol.ImProto.SocketPackage build() {
+        IM.Protocol.ImProto.SocketPackage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SocketPackage buildPartial() {
-        SocketPackage result = new SocketPackage(this);
+      public IM.Protocol.ImProto.SocketPackage buildPartial() {
+        IM.Protocol.ImProto.SocketPackage result = new IM.Protocol.ImProto.SocketPackage(this);
         result.seq_ = seq_;
         result.category_ = category_;
         result.content_ = content_;
@@ -652,16 +661,16 @@ public final class ImProto {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SocketPackage) {
-          return mergeFrom((SocketPackage)other);
+        if (other instanceof IM.Protocol.ImProto.SocketPackage) {
+          return mergeFrom((IM.Protocol.ImProto.SocketPackage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SocketPackage other) {
-        if (other == SocketPackage.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.SocketPackage other) {
+        if (other == IM.Protocol.ImProto.SocketPackage.getDefaultInstance()) return this;
         if (other.getSeq() != 0) {
           setSeq(other.getSeq());
         }
@@ -683,11 +692,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SocketPackage parsedMessage = null;
+        IM.Protocol.ImProto.SocketPackage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SocketPackage) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.SocketPackage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -741,14 +750,14 @@ public final class ImProto {
       /**
        * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
        */
-      public PackageCategory getCategory() {
-        PackageCategory result = PackageCategory.forNumber(category_);
-        return result == null ? PackageCategory.UNRECOGNIZED : result;
+      public IM.Protocol.ImProto.PackageCategory getCategory() {
+        IM.Protocol.ImProto.PackageCategory result = IM.Protocol.ImProto.PackageCategory.forNumber(category_);
+        return result == null ? IM.Protocol.ImProto.PackageCategory.UNRECOGNIZED : result;
       }
       /**
        * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
        */
-      public Builder setCategory(PackageCategory value) {
+      public Builder setCategory(IM.Protocol.ImProto.PackageCategory value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -810,12 +819,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.SocketPackage)
-    private static final SocketPackage DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.SocketPackage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SocketPackage();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.SocketPackage();
     }
 
-    public static SocketPackage getDefaultInstance() {
+    public static IM.Protocol.ImProto.SocketPackage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -833,12 +842,12 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<SocketPackage> getParserForType() {
       return PARSER;
     }
 
-    public SocketPackage getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.SocketPackage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -855,7 +864,7 @@ public final class ImProto {
     /**
      * <code>optional .IM.Protocol.PackageCategory Category = 1;</code>
      */
-    PackageCategory getCategory();
+    IM.Protocol.ImProto.PackageCategory getCategory();
 
     /**
      * <code>optional .IM.Protocol.ResultCode Code = 2;</code>
@@ -864,12 +873,12 @@ public final class ImProto {
     /**
      * <code>optional .IM.Protocol.ResultCode Code = 2;</code>
      */
-    ResultCode getCode();
+    IM.Protocol.ImProto.ResultCode getCode();
 
     /**
      * <code>optional string Message = 3;</code>
      */
-    String getMessage();
+    java.lang.String getMessage();
     /**
      * <code>optional string Message = 3;</code>
      */
@@ -879,7 +888,7 @@ public final class ImProto {
     /**
      * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
-    java.util.Map<String, com.google.protobuf.ByteString>
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
     getUserTags();
   }
   /**
@@ -899,7 +908,7 @@ public final class ImProto {
       message_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -937,7 +946,7 @@ public final class ImProto {
               break;
             }
             case 26: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               message_ = s;
               break;
@@ -948,7 +957,7 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000008;
               }
-              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
@@ -967,7 +976,7 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_SocketResult_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_SocketResult_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -981,11 +990,11 @@ public final class ImProto {
               "Invalid map field number: " + number);
       }
     }
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_SocketResult_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_SocketResult_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SocketResult.class, Builder.class);
+              IM.Protocol.ImProto.SocketResult.class, IM.Protocol.ImProto.SocketResult.Builder.class);
     }
 
     private int bitField0_;
@@ -1000,9 +1009,9 @@ public final class ImProto {
     /**
      * <code>optional .IM.Protocol.PackageCategory Category = 1;</code>
      */
-    public PackageCategory getCategory() {
-      PackageCategory result = PackageCategory.forNumber(category_);
-      return result == null ? PackageCategory.UNRECOGNIZED : result;
+    public IM.Protocol.ImProto.PackageCategory getCategory() {
+      IM.Protocol.ImProto.PackageCategory result = IM.Protocol.ImProto.PackageCategory.forNumber(category_);
+      return result == null ? IM.Protocol.ImProto.PackageCategory.UNRECOGNIZED : result;
     }
 
     public static final int CODE_FIELD_NUMBER = 2;
@@ -1016,24 +1025,24 @@ public final class ImProto {
     /**
      * <code>optional .IM.Protocol.ResultCode Code = 2;</code>
      */
-    public ResultCode getCode() {
-      ResultCode result = ResultCode.forNumber(code_);
-      return result == null ? ResultCode.UNRECOGNIZED : result;
+    public IM.Protocol.ImProto.ResultCode getCode() {
+      IM.Protocol.ImProto.ResultCode result = IM.Protocol.ImProto.ResultCode.forNumber(code_);
+      return result == null ? IM.Protocol.ImProto.ResultCode.UNRECOGNIZED : result;
     }
 
     public static final int MESSAGE_FIELD_NUMBER = 3;
-    private volatile Object message_;
+    private volatile java.lang.Object message_;
     /**
      * <code>optional string Message = 3;</code>
      */
-    public String getMessage() {
-      Object ref = message_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMessage() {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         message_ = s;
         return s;
       }
@@ -1043,11 +1052,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getMessageBytes() {
-      Object ref = message_;
-      if (ref instanceof String) {
+      java.lang.Object ref = message_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         message_ = b;
         return b;
       } else {
@@ -1058,18 +1067,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 4;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, com.google.protobuf.ByteString> defaultEntry =
+          java.lang.String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, com.google.protobuf.ByteString>newDefaultInstance(
-                  ImProto.internal_static_IM_Protocol_SocketResult_UserTagsEntry_descriptor,
+              .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
+                  IM.Protocol.ImProto.internal_static_IM_Protocol_SocketResult_UserTagsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.BYTES,
                   com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, com.google.protobuf.ByteString> userTags_;
-    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+        java.lang.String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -1081,7 +1090,7 @@ public final class ImProto {
      * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
 
-    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
     }
 
@@ -1097,18 +1106,18 @@ public final class ImProto {
 
     public void writeTo(com.google.protobuf.CodedOutputStream output)
                         throws java.io.IOException {
-      if (category_ != PackageCategory.Ping.getNumber()) {
+      if (category_ != IM.Protocol.ImProto.PackageCategory.Ping.getNumber()) {
         output.writeEnum(1, category_);
       }
-      if (code_ != ResultCode.Success.getNumber()) {
+      if (code_ != IM.Protocol.ImProto.ResultCode.Success.getNumber()) {
         output.writeEnum(2, code_);
       }
       if (!getMessageBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, message_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -1122,20 +1131,20 @@ public final class ImProto {
       if (size != -1) return size;
 
       size = 0;
-      if (category_ != PackageCategory.Ping.getNumber()) {
+      if (category_ != IM.Protocol.ImProto.PackageCategory.Ping.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(1, category_);
       }
-      if (code_ != ResultCode.Success.getNumber()) {
+      if (code_ != IM.Protocol.ImProto.ResultCode.Success.getNumber()) {
         size += com.google.protobuf.CodedOutputStream
           .computeEnumSize(2, code_);
       }
       if (!getMessageBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, message_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -1148,58 +1157,58 @@ public final class ImProto {
     }
 
     private static final long serialVersionUID = 0L;
-    public static SocketResult parseFrom(
+    public static IM.Protocol.ImProto.SocketResult parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SocketResult parseFrom(
+    public static IM.Protocol.ImProto.SocketResult parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SocketResult parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.SocketResult parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SocketResult parseFrom(
+    public static IM.Protocol.ImProto.SocketResult parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SocketResult parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.SocketResult parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static SocketResult parseFrom(
+    public static IM.Protocol.ImProto.SocketResult parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SocketResult parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.SocketResult parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SocketResult parseDelimitedFrom(
+    public static IM.Protocol.ImProto.SocketResult parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SocketResult parseFrom(
+    public static IM.Protocol.ImProto.SocketResult parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static SocketResult parseFrom(
+    public static IM.Protocol.ImProto.SocketResult parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -1211,7 +1220,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SocketResult prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.SocketResult prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -1219,9 +1228,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -1231,10 +1240,10 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.SocketResult)
-        SocketResultOrBuilder {
+        IM.Protocol.ImProto.SocketResultOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_SocketResult_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SocketResult_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -1259,11 +1268,11 @@ public final class ImProto {
                 "Invalid map field number: " + number);
         }
       }
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_SocketResult_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SocketResult_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SocketResult.class, Builder.class);
+                IM.Protocol.ImProto.SocketResult.class, IM.Protocol.ImProto.SocketResult.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.SocketResult.newBuilder()
@@ -1272,7 +1281,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -1294,23 +1303,23 @@ public final class ImProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_SocketResult_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SocketResult_descriptor;
       }
 
-      public SocketResult getDefaultInstanceForType() {
-        return SocketResult.getDefaultInstance();
+      public IM.Protocol.ImProto.SocketResult getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.SocketResult.getDefaultInstance();
       }
 
-      public SocketResult build() {
-        SocketResult result = buildPartial();
+      public IM.Protocol.ImProto.SocketResult build() {
+        IM.Protocol.ImProto.SocketResult result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SocketResult buildPartial() {
-        SocketResult result = new SocketResult(this);
+      public IM.Protocol.ImProto.SocketResult buildPartial() {
+        IM.Protocol.ImProto.SocketResult result = new IM.Protocol.ImProto.SocketResult(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.category_ = category_;
@@ -1324,16 +1333,16 @@ public final class ImProto {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SocketResult) {
-          return mergeFrom((SocketResult)other);
+        if (other instanceof IM.Protocol.ImProto.SocketResult) {
+          return mergeFrom((IM.Protocol.ImProto.SocketResult)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SocketResult other) {
-        if (other == SocketResult.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.SocketResult other) {
+        if (other == IM.Protocol.ImProto.SocketResult.getDefaultInstance()) return this;
         if (other.category_ != 0) {
           setCategoryValue(other.getCategoryValue());
         }
@@ -1358,11 +1367,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SocketResult parsedMessage = null;
+        IM.Protocol.ImProto.SocketResult parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SocketResult) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.SocketResult) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -1391,14 +1400,14 @@ public final class ImProto {
       /**
        * <code>optional .IM.Protocol.PackageCategory Category = 1;</code>
        */
-      public PackageCategory getCategory() {
-        PackageCategory result = PackageCategory.forNumber(category_);
-        return result == null ? PackageCategory.UNRECOGNIZED : result;
+      public IM.Protocol.ImProto.PackageCategory getCategory() {
+        IM.Protocol.ImProto.PackageCategory result = IM.Protocol.ImProto.PackageCategory.forNumber(category_);
+        return result == null ? IM.Protocol.ImProto.PackageCategory.UNRECOGNIZED : result;
       }
       /**
        * <code>optional .IM.Protocol.PackageCategory Category = 1;</code>
        */
-      public Builder setCategory(PackageCategory value) {
+      public Builder setCategory(IM.Protocol.ImProto.PackageCategory value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1435,14 +1444,14 @@ public final class ImProto {
       /**
        * <code>optional .IM.Protocol.ResultCode Code = 2;</code>
        */
-      public ResultCode getCode() {
-        ResultCode result = ResultCode.forNumber(code_);
-        return result == null ? ResultCode.UNRECOGNIZED : result;
+      public IM.Protocol.ImProto.ResultCode getCode() {
+        IM.Protocol.ImProto.ResultCode result = IM.Protocol.ImProto.ResultCode.forNumber(code_);
+        return result == null ? IM.Protocol.ImProto.ResultCode.UNRECOGNIZED : result;
       }
       /**
        * <code>optional .IM.Protocol.ResultCode Code = 2;</code>
        */
-      public Builder setCode(ResultCode value) {
+      public Builder setCode(IM.Protocol.ImProto.ResultCode value) {
         if (value == null) {
           throw new NullPointerException();
         }
@@ -1461,20 +1470,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object message_ = "";
+      private java.lang.Object message_ = "";
       /**
        * <code>optional string Message = 3;</code>
        */
-      public String getMessage() {
-        Object ref = message_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMessage() {
+        java.lang.Object ref = message_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           message_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -1482,11 +1491,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getMessageBytes() {
-        Object ref = message_;
+        java.lang.Object ref = message_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           message_ = b;
           return b;
         } else {
@@ -1497,7 +1506,7 @@ public final class ImProto {
        * <code>optional string Message = 3;</code>
        */
       public Builder setMessage(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -1531,8 +1540,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, com.google.protobuf.ByteString> userTags_;
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+          java.lang.String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -1540,7 +1549,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -1555,13 +1564,13 @@ public final class ImProto {
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString>
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
@@ -1569,7 +1578,7 @@ public final class ImProto {
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, com.google.protobuf.ByteString> values) {
+          java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
         return this;
       }
@@ -1588,12 +1597,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.SocketResult)
-    private static final SocketResult DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.SocketResult DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SocketResult();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.SocketResult();
     }
 
-    public static SocketResult getDefaultInstance() {
+    public static IM.Protocol.ImProto.SocketResult getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1611,12 +1620,12 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<SocketResult> getParserForType() {
       return PARSER;
     }
 
-    public SocketResult getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.SocketResult getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -1629,7 +1638,7 @@ public final class ImProto {
     /**
      * <code>optional string UserID = 1;</code>
      */
-    String getUserID();
+    java.lang.String getUserID();
     /**
      * <code>optional string UserID = 1;</code>
      */
@@ -1639,7 +1648,7 @@ public final class ImProto {
     /**
      * <code>optional string Token = 2;</code>
      */
-    String getToken();
+    java.lang.String getToken();
     /**
      * <code>optional string Token = 2;</code>
      */
@@ -1654,7 +1663,7 @@ public final class ImProto {
     /**
      * <code>optional string Appkey = 4;</code>
      */
-    String getAppkey();
+    java.lang.String getAppkey();
     /**
      * <code>optional string Appkey = 4;</code>
      */
@@ -1685,7 +1694,7 @@ public final class ImProto {
       isAdmin_ = false;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -1711,13 +1720,13 @@ public final class ImProto {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               userID_ = s;
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               token_ = s;
               break;
@@ -1728,7 +1737,7 @@ public final class ImProto {
               break;
             }
             case 34: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               appkey_ = s;
               break;
@@ -1751,29 +1760,29 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_LoginToken_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_LoginToken_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_LoginToken_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_LoginToken_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              LoginToken.class, Builder.class);
+              IM.Protocol.ImProto.LoginToken.class, IM.Protocol.ImProto.LoginToken.Builder.class);
     }
 
     public static final int USERID_FIELD_NUMBER = 1;
-    private volatile Object userID_;
+    private volatile java.lang.Object userID_;
     /**
      * <code>optional string UserID = 1;</code>
      */
-    public String getUserID() {
-      Object ref = userID_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getUserID() {
+      java.lang.Object ref = userID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         userID_ = s;
         return s;
       }
@@ -1783,11 +1792,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getUserIDBytes() {
-      Object ref = userID_;
-      if (ref instanceof String) {
+      java.lang.Object ref = userID_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         userID_ = b;
         return b;
       } else {
@@ -1796,18 +1805,18 @@ public final class ImProto {
     }
 
     public static final int TOKEN_FIELD_NUMBER = 2;
-    private volatile Object token_;
+    private volatile java.lang.Object token_;
     /**
      * <code>optional string Token = 2;</code>
      */
-    public String getToken() {
-      Object ref = token_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getToken() {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         token_ = s;
         return s;
       }
@@ -1817,11 +1826,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getTokenBytes() {
-      Object ref = token_;
-      if (ref instanceof String) {
+      java.lang.Object ref = token_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         token_ = b;
         return b;
       } else {
@@ -1839,18 +1848,18 @@ public final class ImProto {
     }
 
     public static final int APPKEY_FIELD_NUMBER = 4;
-    private volatile Object appkey_;
+    private volatile java.lang.Object appkey_;
     /**
      * <code>optional string Appkey = 4;</code>
      */
-    public String getAppkey() {
-      Object ref = appkey_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getAppkey() {
+      java.lang.Object ref = appkey_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         appkey_ = s;
         return s;
       }
@@ -1860,11 +1869,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getAppkeyBytes() {
-      Object ref = appkey_;
-      if (ref instanceof String) {
+      java.lang.Object ref = appkey_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         appkey_ = b;
         return b;
       } else {
@@ -1937,58 +1946,58 @@ public final class ImProto {
     }
 
     private static final long serialVersionUID = 0L;
-    public static LoginToken parseFrom(
+    public static IM.Protocol.ImProto.LoginToken parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginToken parseFrom(
+    public static IM.Protocol.ImProto.LoginToken parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginToken parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.LoginToken parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static LoginToken parseFrom(
+    public static IM.Protocol.ImProto.LoginToken parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static LoginToken parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.LoginToken parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static LoginToken parseFrom(
+    public static IM.Protocol.ImProto.LoginToken parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginToken parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.LoginToken parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static LoginToken parseDelimitedFrom(
+    public static IM.Protocol.ImProto.LoginToken parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static LoginToken parseFrom(
+    public static IM.Protocol.ImProto.LoginToken parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static LoginToken parseFrom(
+    public static IM.Protocol.ImProto.LoginToken parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2000,7 +2009,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(LoginToken prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.LoginToken prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2008,9 +2017,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2020,17 +2029,17 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.LoginToken)
-        LoginTokenOrBuilder {
+        IM.Protocol.ImProto.LoginTokenOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_LoginToken_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_LoginToken_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_LoginToken_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_LoginToken_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                LoginToken.class, Builder.class);
+                IM.Protocol.ImProto.LoginToken.class, IM.Protocol.ImProto.LoginToken.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.LoginToken.newBuilder()
@@ -2039,7 +2048,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2064,23 +2073,23 @@ public final class ImProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_LoginToken_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_LoginToken_descriptor;
       }
 
-      public LoginToken getDefaultInstanceForType() {
-        return LoginToken.getDefaultInstance();
+      public IM.Protocol.ImProto.LoginToken getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.LoginToken.getDefaultInstance();
       }
 
-      public LoginToken build() {
-        LoginToken result = buildPartial();
+      public IM.Protocol.ImProto.LoginToken build() {
+        IM.Protocol.ImProto.LoginToken result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public LoginToken buildPartial() {
-        LoginToken result = new LoginToken(this);
+      public IM.Protocol.ImProto.LoginToken buildPartial() {
+        IM.Protocol.ImProto.LoginToken result = new IM.Protocol.ImProto.LoginToken(this);
         result.userID_ = userID_;
         result.token_ = token_;
         result.version_ = version_;
@@ -2091,16 +2100,16 @@ public final class ImProto {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof LoginToken) {
-          return mergeFrom((LoginToken)other);
+        if (other instanceof IM.Protocol.ImProto.LoginToken) {
+          return mergeFrom((IM.Protocol.ImProto.LoginToken)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(LoginToken other) {
-        if (other == LoginToken.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.LoginToken other) {
+        if (other == IM.Protocol.ImProto.LoginToken.getDefaultInstance()) return this;
         if (!other.getUserID().isEmpty()) {
           userID_ = other.userID_;
           onChanged();
@@ -2131,11 +2140,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        LoginToken parsedMessage = null;
+        IM.Protocol.ImProto.LoginToken parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (LoginToken) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.LoginToken) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -2145,20 +2154,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object userID_ = "";
+      private java.lang.Object userID_ = "";
       /**
        * <code>optional string UserID = 1;</code>
        */
-      public String getUserID() {
-        Object ref = userID_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getUserID() {
+        java.lang.Object ref = userID_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           userID_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2166,11 +2175,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getUserIDBytes() {
-        Object ref = userID_;
+        java.lang.Object ref = userID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           userID_ = b;
           return b;
         } else {
@@ -2181,7 +2190,7 @@ public final class ImProto {
        * <code>optional string UserID = 1;</code>
        */
       public Builder setUserID(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2214,20 +2223,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object token_ = "";
+      private java.lang.Object token_ = "";
       /**
        * <code>optional string Token = 2;</code>
        */
-      public String getToken() {
-        Object ref = token_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getToken() {
+        java.lang.Object ref = token_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           token_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2235,11 +2244,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getTokenBytes() {
-        Object ref = token_;
+        java.lang.Object ref = token_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           token_ = b;
           return b;
         } else {
@@ -2250,7 +2259,7 @@ public final class ImProto {
        * <code>optional string Token = 2;</code>
        */
       public Builder setToken(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2309,20 +2318,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object appkey_ = "";
+      private java.lang.Object appkey_ = "";
       /**
        * <code>optional string Appkey = 4;</code>
        */
-      public String getAppkey() {
-        Object ref = appkey_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getAppkey() {
+        java.lang.Object ref = appkey_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           appkey_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -2330,11 +2339,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getAppkeyBytes() {
-        Object ref = appkey_;
+        java.lang.Object ref = appkey_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           appkey_ = b;
           return b;
         } else {
@@ -2345,7 +2354,7 @@ public final class ImProto {
        * <code>optional string Appkey = 4;</code>
        */
       public Builder setAppkey(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -2418,12 +2427,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.LoginToken)
-    private static final LoginToken DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.LoginToken DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new LoginToken();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.LoginToken();
     }
 
-    public static LoginToken getDefaultInstance() {
+    public static IM.Protocol.ImProto.LoginToken getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2441,12 +2450,12 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<LoginToken> getParserForType() {
       return PARSER;
     }
 
-    public LoginToken getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.LoginToken getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -2459,7 +2468,7 @@ public final class ImProto {
     /**
      * <code>optional string Receiver = 1;</code>
      */
-    String getReceiver();
+    java.lang.String getReceiver();
     /**
      * <code>optional string Receiver = 1;</code>
      */
@@ -2474,7 +2483,7 @@ public final class ImProto {
     /**
      * <code>optional string Content = 3;</code>
      */
-    String getContent();
+    java.lang.String getContent();
     /**
      * <code>optional string Content = 3;</code>
      */
@@ -2484,7 +2493,7 @@ public final class ImProto {
     /**
      * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
-    java.util.Map<String, com.google.protobuf.ByteString>
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
     getUserTags();
 
     /**
@@ -2494,7 +2503,7 @@ public final class ImProto {
      *
      * <code>optional string Sender = 5;</code>
      */
-    String getSender();
+    java.lang.String getSender();
     /**
      * <pre>
      *  used for admin
@@ -2523,7 +2532,7 @@ public final class ImProto {
       sender_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -2549,7 +2558,7 @@ public final class ImProto {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               receiver_ = s;
               break;
@@ -2560,7 +2569,7 @@ public final class ImProto {
               break;
             }
             case 26: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               content_ = s;
               break;
@@ -2571,14 +2580,14 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000008;
               }
-              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
               break;
             }
             case 42: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               sender_ = s;
               break;
@@ -2596,7 +2605,7 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_SendUserMessage_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_SendUserMessage_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -2610,27 +2619,27 @@ public final class ImProto {
               "Invalid map field number: " + number);
       }
     }
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_SendUserMessage_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_SendUserMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SendUserMessage.class, Builder.class);
+              IM.Protocol.ImProto.SendUserMessage.class, IM.Protocol.ImProto.SendUserMessage.Builder.class);
     }
 
     private int bitField0_;
     public static final int RECEIVER_FIELD_NUMBER = 1;
-    private volatile Object receiver_;
+    private volatile java.lang.Object receiver_;
     /**
      * <code>optional string Receiver = 1;</code>
      */
-    public String getReceiver() {
-      Object ref = receiver_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getReceiver() {
+      java.lang.Object ref = receiver_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         receiver_ = s;
         return s;
       }
@@ -2640,11 +2649,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getReceiverBytes() {
-      Object ref = receiver_;
-      if (ref instanceof String) {
+      java.lang.Object ref = receiver_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         receiver_ = b;
         return b;
       } else {
@@ -2662,18 +2671,18 @@ public final class ImProto {
     }
 
     public static final int CONTENT_FIELD_NUMBER = 3;
-    private volatile Object content_;
+    private volatile java.lang.Object content_;
     /**
      * <code>optional string Content = 3;</code>
      */
-    public String getContent() {
-      Object ref = content_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         content_ = s;
         return s;
       }
@@ -2683,11 +2692,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getContentBytes() {
-      Object ref = content_;
-      if (ref instanceof String) {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         content_ = b;
         return b;
       } else {
@@ -2698,18 +2707,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 4;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, com.google.protobuf.ByteString> defaultEntry =
+          java.lang.String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, com.google.protobuf.ByteString>newDefaultInstance(
-                  ImProto.internal_static_IM_Protocol_SendUserMessage_UserTagsEntry_descriptor,
+              .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
+                  IM.Protocol.ImProto.internal_static_IM_Protocol_SendUserMessage_UserTagsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.BYTES,
                   com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, com.google.protobuf.ByteString> userTags_;
-    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+        java.lang.String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -2721,12 +2730,12 @@ public final class ImProto {
      * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
 
-    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
     }
 
     public static final int SENDER_FIELD_NUMBER = 5;
-    private volatile Object sender_;
+    private volatile java.lang.Object sender_;
     /**
      * <pre>
      *  used for admin
@@ -2734,14 +2743,14 @@ public final class ImProto {
      *
      * <code>optional string Sender = 5;</code>
      */
-    public String getSender() {
-      Object ref = sender_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         sender_ = s;
         return s;
       }
@@ -2755,11 +2764,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getSenderBytes() {
-      Object ref = sender_;
-      if (ref instanceof String) {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         sender_ = b;
         return b;
       } else {
@@ -2788,9 +2797,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -2817,9 +2826,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -2835,58 +2844,58 @@ public final class ImProto {
     }
 
     private static final long serialVersionUID = 0L;
-    public static SendUserMessage parseFrom(
+    public static IM.Protocol.ImProto.SendUserMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SendUserMessage parseFrom(
+    public static IM.Protocol.ImProto.SendUserMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SendUserMessage parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.SendUserMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SendUserMessage parseFrom(
+    public static IM.Protocol.ImProto.SendUserMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SendUserMessage parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.SendUserMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static SendUserMessage parseFrom(
+    public static IM.Protocol.ImProto.SendUserMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SendUserMessage parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.SendUserMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SendUserMessage parseDelimitedFrom(
+    public static IM.Protocol.ImProto.SendUserMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SendUserMessage parseFrom(
+    public static IM.Protocol.ImProto.SendUserMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static SendUserMessage parseFrom(
+    public static IM.Protocol.ImProto.SendUserMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -2898,7 +2907,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SendUserMessage prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.SendUserMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -2906,9 +2915,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -2918,10 +2927,10 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.SendUserMessage)
-        SendUserMessageOrBuilder {
+        IM.Protocol.ImProto.SendUserMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_SendUserMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SendUserMessage_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -2946,11 +2955,11 @@ public final class ImProto {
                 "Invalid map field number: " + number);
         }
       }
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_SendUserMessage_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SendUserMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SendUserMessage.class, Builder.class);
+                IM.Protocol.ImProto.SendUserMessage.class, IM.Protocol.ImProto.SendUserMessage.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.SendUserMessage.newBuilder()
@@ -2959,7 +2968,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -2983,23 +2992,23 @@ public final class ImProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_SendUserMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SendUserMessage_descriptor;
       }
 
-      public SendUserMessage getDefaultInstanceForType() {
-        return SendUserMessage.getDefaultInstance();
+      public IM.Protocol.ImProto.SendUserMessage getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.SendUserMessage.getDefaultInstance();
       }
 
-      public SendUserMessage build() {
-        SendUserMessage result = buildPartial();
+      public IM.Protocol.ImProto.SendUserMessage build() {
+        IM.Protocol.ImProto.SendUserMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SendUserMessage buildPartial() {
-        SendUserMessage result = new SendUserMessage(this);
+      public IM.Protocol.ImProto.SendUserMessage buildPartial() {
+        IM.Protocol.ImProto.SendUserMessage result = new IM.Protocol.ImProto.SendUserMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.receiver_ = receiver_;
@@ -3014,16 +3023,16 @@ public final class ImProto {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SendUserMessage) {
-          return mergeFrom((SendUserMessage)other);
+        if (other instanceof IM.Protocol.ImProto.SendUserMessage) {
+          return mergeFrom((IM.Protocol.ImProto.SendUserMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SendUserMessage other) {
-        if (other == SendUserMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.SendUserMessage other) {
+        if (other == IM.Protocol.ImProto.SendUserMessage.getDefaultInstance()) return this;
         if (!other.getReceiver().isEmpty()) {
           receiver_ = other.receiver_;
           onChanged();
@@ -3053,11 +3062,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SendUserMessage parsedMessage = null;
+        IM.Protocol.ImProto.SendUserMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SendUserMessage) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.SendUserMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -3068,20 +3077,20 @@ public final class ImProto {
       }
       private int bitField0_;
 
-      private Object receiver_ = "";
+      private java.lang.Object receiver_ = "";
       /**
        * <code>optional string Receiver = 1;</code>
        */
-      public String getReceiver() {
-        Object ref = receiver_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getReceiver() {
+        java.lang.Object ref = receiver_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           receiver_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -3089,11 +3098,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getReceiverBytes() {
-        Object ref = receiver_;
+        java.lang.Object ref = receiver_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           receiver_ = b;
           return b;
         } else {
@@ -3104,7 +3113,7 @@ public final class ImProto {
        * <code>optional string Receiver = 1;</code>
        */
       public Builder setReceiver(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3163,20 +3172,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object content_ = "";
+      private java.lang.Object content_ = "";
       /**
        * <code>optional string Content = 3;</code>
        */
-      public String getContent() {
-        Object ref = content_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           content_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -3184,11 +3193,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getContentBytes() {
-        Object ref = content_;
+        java.lang.Object ref = content_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           content_ = b;
           return b;
         } else {
@@ -3199,7 +3208,7 @@ public final class ImProto {
        * <code>optional string Content = 3;</code>
        */
       public Builder setContent(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3233,8 +3242,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, com.google.protobuf.ByteString> userTags_;
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+          java.lang.String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -3242,7 +3251,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -3257,13 +3266,13 @@ public final class ImProto {
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString>
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
@@ -3271,12 +3280,12 @@ public final class ImProto {
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, com.google.protobuf.ByteString> values) {
+          java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
         return this;
       }
 
-      private Object sender_ = "";
+      private java.lang.Object sender_ = "";
       /**
        * <pre>
        *  used for admin
@@ -3284,16 +3293,16 @@ public final class ImProto {
        *
        * <code>optional string Sender = 5;</code>
        */
-      public String getSender() {
-        Object ref = sender_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           sender_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -3305,11 +3314,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
-        Object ref = sender_;
+        java.lang.Object ref = sender_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           sender_ = b;
           return b;
         } else {
@@ -3324,7 +3333,7 @@ public final class ImProto {
        * <code>optional string Sender = 5;</code>
        */
       public Builder setSender(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -3379,12 +3388,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.SendUserMessage)
-    private static final SendUserMessage DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.SendUserMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SendUserMessage();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.SendUserMessage();
     }
 
-    public static SendUserMessage getDefaultInstance() {
+    public static IM.Protocol.ImProto.SendUserMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3402,12 +3411,12 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<SendUserMessage> getParserForType() {
       return PARSER;
     }
 
-    public SendUserMessage getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.SendUserMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -3420,7 +3429,7 @@ public final class ImProto {
     /**
      * <code>optional string MsgID = 1;</code>
      */
-    String getMsgID();
+    java.lang.String getMsgID();
     /**
      * <code>optional string MsgID = 1;</code>
      */
@@ -3430,7 +3439,7 @@ public final class ImProto {
     /**
      * <code>optional string Sender = 2;</code>
      */
-    String getSender();
+    java.lang.String getSender();
     /**
      * <code>optional string Sender = 2;</code>
      */
@@ -3445,7 +3454,7 @@ public final class ImProto {
     /**
      * <code>optional string Content = 4;</code>
      */
-    String getContent();
+    java.lang.String getContent();
     /**
      * <code>optional string Content = 4;</code>
      */
@@ -3455,8 +3464,13 @@ public final class ImProto {
     /**
      * <code>map&lt;string, bytes&gt; UserTags = 5;</code>
      */
-    java.util.Map<String, com.google.protobuf.ByteString>
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
     getUserTags();
+
+    /**
+     * <code>optional int32 SendTime = 6;</code>
+     */
+    int getSendTime();
   }
   /**
    * Protobuf type {@code IM.Protocol.ReceivedUserMessage}
@@ -3474,9 +3488,10 @@ public final class ImProto {
       sender_ = "";
       type_ = 0;
       content_ = "";
+      sendTime_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -3502,13 +3517,13 @@ public final class ImProto {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               msgID_ = s;
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               sender_ = s;
               break;
@@ -3519,7 +3534,7 @@ public final class ImProto {
               break;
             }
             case 34: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               content_ = s;
               break;
@@ -3530,10 +3545,15 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000010;
               }
-              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
+              break;
+            }
+            case 48: {
+
+              sendTime_ = input.readInt32();
               break;
             }
           }
@@ -3549,7 +3569,7 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_ReceivedUserMessage_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedUserMessage_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -3563,27 +3583,27 @@ public final class ImProto {
               "Invalid map field number: " + number);
       }
     }
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_ReceivedUserMessage_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedUserMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ReceivedUserMessage.class, Builder.class);
+              IM.Protocol.ImProto.ReceivedUserMessage.class, IM.Protocol.ImProto.ReceivedUserMessage.Builder.class);
     }
 
     private int bitField0_;
     public static final int MSGID_FIELD_NUMBER = 1;
-    private volatile Object msgID_;
+    private volatile java.lang.Object msgID_;
     /**
      * <code>optional string MsgID = 1;</code>
      */
-    public String getMsgID() {
-      Object ref = msgID_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMsgID() {
+      java.lang.Object ref = msgID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         msgID_ = s;
         return s;
       }
@@ -3593,11 +3613,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getMsgIDBytes() {
-      Object ref = msgID_;
-      if (ref instanceof String) {
+      java.lang.Object ref = msgID_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         msgID_ = b;
         return b;
       } else {
@@ -3606,18 +3626,18 @@ public final class ImProto {
     }
 
     public static final int SENDER_FIELD_NUMBER = 2;
-    private volatile Object sender_;
+    private volatile java.lang.Object sender_;
     /**
      * <code>optional string Sender = 2;</code>
      */
-    public String getSender() {
-      Object ref = sender_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         sender_ = s;
         return s;
       }
@@ -3627,11 +3647,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getSenderBytes() {
-      Object ref = sender_;
-      if (ref instanceof String) {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         sender_ = b;
         return b;
       } else {
@@ -3649,18 +3669,18 @@ public final class ImProto {
     }
 
     public static final int CONTENT_FIELD_NUMBER = 4;
-    private volatile Object content_;
+    private volatile java.lang.Object content_;
     /**
      * <code>optional string Content = 4;</code>
      */
-    public String getContent() {
-      Object ref = content_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         content_ = s;
         return s;
       }
@@ -3670,11 +3690,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getContentBytes() {
-      Object ref = content_;
-      if (ref instanceof String) {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         content_ = b;
         return b;
       } else {
@@ -3685,18 +3705,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 5;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, com.google.protobuf.ByteString> defaultEntry =
+          java.lang.String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, com.google.protobuf.ByteString>newDefaultInstance(
-                  ImProto.internal_static_IM_Protocol_ReceivedUserMessage_UserTagsEntry_descriptor,
+              .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
+                  IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedUserMessage_UserTagsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.BYTES,
                   com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, com.google.protobuf.ByteString> userTags_;
-    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+        java.lang.String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -3708,8 +3728,17 @@ public final class ImProto {
      * <code>map&lt;string, bytes&gt; UserTags = 5;</code>
      */
 
-    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
+    }
+
+    public static final int SENDTIME_FIELD_NUMBER = 6;
+    private int sendTime_;
+    /**
+     * <code>optional int32 SendTime = 6;</code>
+     */
+    public int getSendTime() {
+      return sendTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -3736,14 +3765,17 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 4, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         output.writeMessage(5, userTags);
+      }
+      if (sendTime_ != 0) {
+        output.writeInt32(6, sendTime_);
       }
     }
 
@@ -3765,9 +3797,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(4, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -3775,63 +3807,67 @@ public final class ImProto {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(5, userTags);
       }
+      if (sendTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(6, sendTime_);
+      }
       memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
-    public static ReceivedUserMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedUserMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ReceivedUserMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedUserMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ReceivedUserMessage parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.ReceivedUserMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ReceivedUserMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedUserMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ReceivedUserMessage parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.ReceivedUserMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static ReceivedUserMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedUserMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ReceivedUserMessage parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.ReceivedUserMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ReceivedUserMessage parseDelimitedFrom(
+    public static IM.Protocol.ImProto.ReceivedUserMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ReceivedUserMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedUserMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static ReceivedUserMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedUserMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -3843,7 +3879,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ReceivedUserMessage prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.ReceivedUserMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -3851,9 +3887,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -3863,10 +3899,10 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.ReceivedUserMessage)
-        ReceivedUserMessageOrBuilder {
+        IM.Protocol.ImProto.ReceivedUserMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_ReceivedUserMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedUserMessage_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -3891,11 +3927,11 @@ public final class ImProto {
                 "Invalid map field number: " + number);
         }
       }
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_ReceivedUserMessage_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedUserMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ReceivedUserMessage.class, Builder.class);
+                IM.Protocol.ImProto.ReceivedUserMessage.class, IM.Protocol.ImProto.ReceivedUserMessage.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.ReceivedUserMessage.newBuilder()
@@ -3904,7 +3940,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -3923,28 +3959,30 @@ public final class ImProto {
         content_ = "";
 
         internalGetMutableUserTags().clear();
+        sendTime_ = 0;
+
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_ReceivedUserMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedUserMessage_descriptor;
       }
 
-      public ReceivedUserMessage getDefaultInstanceForType() {
-        return ReceivedUserMessage.getDefaultInstance();
+      public IM.Protocol.ImProto.ReceivedUserMessage getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.ReceivedUserMessage.getDefaultInstance();
       }
 
-      public ReceivedUserMessage build() {
-        ReceivedUserMessage result = buildPartial();
+      public IM.Protocol.ImProto.ReceivedUserMessage build() {
+        IM.Protocol.ImProto.ReceivedUserMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public ReceivedUserMessage buildPartial() {
-        ReceivedUserMessage result = new ReceivedUserMessage(this);
+      public IM.Protocol.ImProto.ReceivedUserMessage buildPartial() {
+        IM.Protocol.ImProto.ReceivedUserMessage result = new IM.Protocol.ImProto.ReceivedUserMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.msgID_ = msgID_;
@@ -3953,22 +3991,23 @@ public final class ImProto {
         result.content_ = content_;
         result.userTags_ = internalGetUserTags();
         result.userTags_.makeImmutable();
+        result.sendTime_ = sendTime_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ReceivedUserMessage) {
-          return mergeFrom((ReceivedUserMessage)other);
+        if (other instanceof IM.Protocol.ImProto.ReceivedUserMessage) {
+          return mergeFrom((IM.Protocol.ImProto.ReceivedUserMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ReceivedUserMessage other) {
-        if (other == ReceivedUserMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.ReceivedUserMessage other) {
+        if (other == IM.Protocol.ImProto.ReceivedUserMessage.getDefaultInstance()) return this;
         if (!other.getMsgID().isEmpty()) {
           msgID_ = other.msgID_;
           onChanged();
@@ -3986,6 +4025,9 @@ public final class ImProto {
         }
         internalGetMutableUserTags().mergeFrom(
             other.internalGetUserTags());
+        if (other.getSendTime() != 0) {
+          setSendTime(other.getSendTime());
+        }
         onChanged();
         return this;
       }
@@ -3998,11 +4040,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ReceivedUserMessage parsedMessage = null;
+        IM.Protocol.ImProto.ReceivedUserMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ReceivedUserMessage) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.ReceivedUserMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4013,20 +4055,20 @@ public final class ImProto {
       }
       private int bitField0_;
 
-      private Object msgID_ = "";
+      private java.lang.Object msgID_ = "";
       /**
        * <code>optional string MsgID = 1;</code>
        */
-      public String getMsgID() {
-        Object ref = msgID_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMsgID() {
+        java.lang.Object ref = msgID_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           msgID_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -4034,11 +4076,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getMsgIDBytes() {
-        Object ref = msgID_;
+        java.lang.Object ref = msgID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           msgID_ = b;
           return b;
         } else {
@@ -4049,7 +4091,7 @@ public final class ImProto {
        * <code>optional string MsgID = 1;</code>
        */
       public Builder setMsgID(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4082,20 +4124,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object sender_ = "";
+      private java.lang.Object sender_ = "";
       /**
        * <code>optional string Sender = 2;</code>
        */
-      public String getSender() {
-        Object ref = sender_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           sender_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -4103,11 +4145,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
-        Object ref = sender_;
+        java.lang.Object ref = sender_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           sender_ = b;
           return b;
         } else {
@@ -4118,7 +4160,7 @@ public final class ImProto {
        * <code>optional string Sender = 2;</code>
        */
       public Builder setSender(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4177,20 +4219,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object content_ = "";
+      private java.lang.Object content_ = "";
       /**
        * <code>optional string Content = 4;</code>
        */
-      public String getContent() {
-        Object ref = content_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           content_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -4198,11 +4240,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getContentBytes() {
-        Object ref = content_;
+        java.lang.Object ref = content_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           content_ = b;
           return b;
         } else {
@@ -4213,7 +4255,7 @@ public final class ImProto {
        * <code>optional string Content = 4;</code>
        */
       public Builder setContent(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -4247,8 +4289,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, com.google.protobuf.ByteString> userTags_;
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+          java.lang.String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -4256,7 +4298,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -4271,13 +4313,13 @@ public final class ImProto {
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 5;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 5;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString>
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
@@ -4285,8 +4327,34 @@ public final class ImProto {
        * <code>map&lt;string, bytes&gt; UserTags = 5;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, com.google.protobuf.ByteString> values) {
+          java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
+        return this;
+      }
+
+      private int sendTime_ ;
+      /**
+       * <code>optional int32 SendTime = 6;</code>
+       */
+      public int getSendTime() {
+        return sendTime_;
+      }
+      /**
+       * <code>optional int32 SendTime = 6;</code>
+       */
+      public Builder setSendTime(int value) {
+        
+        sendTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 SendTime = 6;</code>
+       */
+      public Builder clearSendTime() {
+        
+        sendTime_ = 0;
+        onChanged();
         return this;
       }
       public final Builder setUnknownFields(
@@ -4304,12 +4372,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.ReceivedUserMessage)
-    private static final ReceivedUserMessage DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.ReceivedUserMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ReceivedUserMessage();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.ReceivedUserMessage();
     }
 
-    public static ReceivedUserMessage getDefaultInstance() {
+    public static IM.Protocol.ImProto.ReceivedUserMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4327,12 +4395,12 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<ReceivedUserMessage> getParserForType() {
       return PARSER;
     }
 
-    public ReceivedUserMessage getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.ReceivedUserMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -4345,7 +4413,7 @@ public final class ImProto {
     /**
      * <code>optional string ChannelID = 1;</code>
      */
-    String getChannelID();
+    java.lang.String getChannelID();
     /**
      * <code>optional string ChannelID = 1;</code>
      */
@@ -4360,7 +4428,7 @@ public final class ImProto {
     /**
      * <code>optional string Content = 3;</code>
      */
-    String getContent();
+    java.lang.String getContent();
     /**
      * <code>optional string Content = 3;</code>
      */
@@ -4370,7 +4438,7 @@ public final class ImProto {
     /**
      * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
-    java.util.Map<String, com.google.protobuf.ByteString>
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
     getUserTags();
 
     /**
@@ -4380,7 +4448,7 @@ public final class ImProto {
      *
      * <code>optional string Sender = 5;</code>
      */
-    String getSender();
+    java.lang.String getSender();
     /**
      * <pre>
      *  used for admin
@@ -4409,7 +4477,7 @@ public final class ImProto {
       sender_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -4435,7 +4503,7 @@ public final class ImProto {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               channelID_ = s;
               break;
@@ -4446,7 +4514,7 @@ public final class ImProto {
               break;
             }
             case 26: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               content_ = s;
               break;
@@ -4457,14 +4525,14 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000008;
               }
-              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
               break;
             }
             case 42: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               sender_ = s;
               break;
@@ -4482,7 +4550,7 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_SendChannelMessage_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_SendChannelMessage_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -4496,27 +4564,27 @@ public final class ImProto {
               "Invalid map field number: " + number);
       }
     }
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_SendChannelMessage_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_SendChannelMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SendChannelMessage.class, Builder.class);
+              IM.Protocol.ImProto.SendChannelMessage.class, IM.Protocol.ImProto.SendChannelMessage.Builder.class);
     }
 
     private int bitField0_;
     public static final int CHANNELID_FIELD_NUMBER = 1;
-    private volatile Object channelID_;
+    private volatile java.lang.Object channelID_;
     /**
      * <code>optional string ChannelID = 1;</code>
      */
-    public String getChannelID() {
-      Object ref = channelID_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getChannelID() {
+      java.lang.Object ref = channelID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         channelID_ = s;
         return s;
       }
@@ -4526,11 +4594,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getChannelIDBytes() {
-      Object ref = channelID_;
-      if (ref instanceof String) {
+      java.lang.Object ref = channelID_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         channelID_ = b;
         return b;
       } else {
@@ -4548,18 +4616,18 @@ public final class ImProto {
     }
 
     public static final int CONTENT_FIELD_NUMBER = 3;
-    private volatile Object content_;
+    private volatile java.lang.Object content_;
     /**
      * <code>optional string Content = 3;</code>
      */
-    public String getContent() {
-      Object ref = content_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         content_ = s;
         return s;
       }
@@ -4569,11 +4637,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getContentBytes() {
-      Object ref = content_;
-      if (ref instanceof String) {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         content_ = b;
         return b;
       } else {
@@ -4584,18 +4652,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 4;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, com.google.protobuf.ByteString> defaultEntry =
+          java.lang.String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, com.google.protobuf.ByteString>newDefaultInstance(
-                  ImProto.internal_static_IM_Protocol_SendChannelMessage_UserTagsEntry_descriptor,
+              .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
+                  IM.Protocol.ImProto.internal_static_IM_Protocol_SendChannelMessage_UserTagsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.BYTES,
                   com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, com.google.protobuf.ByteString> userTags_;
-    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+        java.lang.String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -4607,12 +4675,12 @@ public final class ImProto {
      * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
 
-    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
     }
 
     public static final int SENDER_FIELD_NUMBER = 5;
-    private volatile Object sender_;
+    private volatile java.lang.Object sender_;
     /**
      * <pre>
      *  used for admin
@@ -4620,14 +4688,14 @@ public final class ImProto {
      *
      * <code>optional string Sender = 5;</code>
      */
-    public String getSender() {
-      Object ref = sender_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         sender_ = s;
         return s;
       }
@@ -4641,11 +4709,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getSenderBytes() {
-      Object ref = sender_;
-      if (ref instanceof String) {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         sender_ = b;
         return b;
       } else {
@@ -4674,9 +4742,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -4703,9 +4771,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -4721,58 +4789,58 @@ public final class ImProto {
     }
 
     private static final long serialVersionUID = 0L;
-    public static SendChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.SendChannelMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SendChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.SendChannelMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SendChannelMessage parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.SendChannelMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SendChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.SendChannelMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SendChannelMessage parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.SendChannelMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static SendChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.SendChannelMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SendChannelMessage parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.SendChannelMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SendChannelMessage parseDelimitedFrom(
+    public static IM.Protocol.ImProto.SendChannelMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SendChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.SendChannelMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static SendChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.SendChannelMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -4784,7 +4852,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SendChannelMessage prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.SendChannelMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -4792,9 +4860,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -4804,10 +4872,10 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.SendChannelMessage)
-        SendChannelMessageOrBuilder {
+        IM.Protocol.ImProto.SendChannelMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_SendChannelMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SendChannelMessage_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -4832,11 +4900,11 @@ public final class ImProto {
                 "Invalid map field number: " + number);
         }
       }
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_SendChannelMessage_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SendChannelMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SendChannelMessage.class, Builder.class);
+                IM.Protocol.ImProto.SendChannelMessage.class, IM.Protocol.ImProto.SendChannelMessage.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.SendChannelMessage.newBuilder()
@@ -4845,7 +4913,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -4869,23 +4937,23 @@ public final class ImProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_SendChannelMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SendChannelMessage_descriptor;
       }
 
-      public SendChannelMessage getDefaultInstanceForType() {
-        return SendChannelMessage.getDefaultInstance();
+      public IM.Protocol.ImProto.SendChannelMessage getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.SendChannelMessage.getDefaultInstance();
       }
 
-      public SendChannelMessage build() {
-        SendChannelMessage result = buildPartial();
+      public IM.Protocol.ImProto.SendChannelMessage build() {
+        IM.Protocol.ImProto.SendChannelMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SendChannelMessage buildPartial() {
-        SendChannelMessage result = new SendChannelMessage(this);
+      public IM.Protocol.ImProto.SendChannelMessage buildPartial() {
+        IM.Protocol.ImProto.SendChannelMessage result = new IM.Protocol.ImProto.SendChannelMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.channelID_ = channelID_;
@@ -4900,16 +4968,16 @@ public final class ImProto {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SendChannelMessage) {
-          return mergeFrom((SendChannelMessage)other);
+        if (other instanceof IM.Protocol.ImProto.SendChannelMessage) {
+          return mergeFrom((IM.Protocol.ImProto.SendChannelMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SendChannelMessage other) {
-        if (other == SendChannelMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.SendChannelMessage other) {
+        if (other == IM.Protocol.ImProto.SendChannelMessage.getDefaultInstance()) return this;
         if (!other.getChannelID().isEmpty()) {
           channelID_ = other.channelID_;
           onChanged();
@@ -4939,11 +5007,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SendChannelMessage parsedMessage = null;
+        IM.Protocol.ImProto.SendChannelMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SendChannelMessage) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.SendChannelMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -4954,20 +5022,20 @@ public final class ImProto {
       }
       private int bitField0_;
 
-      private Object channelID_ = "";
+      private java.lang.Object channelID_ = "";
       /**
        * <code>optional string ChannelID = 1;</code>
        */
-      public String getChannelID() {
-        Object ref = channelID_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getChannelID() {
+        java.lang.Object ref = channelID_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           channelID_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -4975,11 +5043,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getChannelIDBytes() {
-        Object ref = channelID_;
+        java.lang.Object ref = channelID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           channelID_ = b;
           return b;
         } else {
@@ -4990,7 +5058,7 @@ public final class ImProto {
        * <code>optional string ChannelID = 1;</code>
        */
       public Builder setChannelID(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5049,20 +5117,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object content_ = "";
+      private java.lang.Object content_ = "";
       /**
        * <code>optional string Content = 3;</code>
        */
-      public String getContent() {
-        Object ref = content_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           content_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -5070,11 +5138,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getContentBytes() {
-        Object ref = content_;
+        java.lang.Object ref = content_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           content_ = b;
           return b;
         } else {
@@ -5085,7 +5153,7 @@ public final class ImProto {
        * <code>optional string Content = 3;</code>
        */
       public Builder setContent(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5119,8 +5187,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, com.google.protobuf.ByteString> userTags_;
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+          java.lang.String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -5128,7 +5196,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -5143,13 +5211,13 @@ public final class ImProto {
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString>
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
@@ -5157,12 +5225,12 @@ public final class ImProto {
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, com.google.protobuf.ByteString> values) {
+          java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
         return this;
       }
 
-      private Object sender_ = "";
+      private java.lang.Object sender_ = "";
       /**
        * <pre>
        *  used for admin
@@ -5170,16 +5238,16 @@ public final class ImProto {
        *
        * <code>optional string Sender = 5;</code>
        */
-      public String getSender() {
-        Object ref = sender_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           sender_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -5191,11 +5259,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
-        Object ref = sender_;
+        java.lang.Object ref = sender_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           sender_ = b;
           return b;
         } else {
@@ -5210,7 +5278,7 @@ public final class ImProto {
        * <code>optional string Sender = 5;</code>
        */
       public Builder setSender(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -5265,12 +5333,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.SendChannelMessage)
-    private static final SendChannelMessage DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.SendChannelMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SendChannelMessage();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.SendChannelMessage();
     }
 
-    public static SendChannelMessage getDefaultInstance() {
+    public static IM.Protocol.ImProto.SendChannelMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5288,12 +5356,12 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<SendChannelMessage> getParserForType() {
       return PARSER;
     }
 
-    public SendChannelMessage getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.SendChannelMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -5306,7 +5374,7 @@ public final class ImProto {
     /**
      * <code>optional string MsgID = 1;</code>
      */
-    String getMsgID();
+    java.lang.String getMsgID();
     /**
      * <code>optional string MsgID = 1;</code>
      */
@@ -5316,7 +5384,7 @@ public final class ImProto {
     /**
      * <code>optional string Sender = 2;</code>
      */
-    String getSender();
+    java.lang.String getSender();
     /**
      * <code>optional string Sender = 2;</code>
      */
@@ -5326,7 +5394,7 @@ public final class ImProto {
     /**
      * <code>optional string ChannelID = 3;</code>
      */
-    String getChannelID();
+    java.lang.String getChannelID();
     /**
      * <code>optional string ChannelID = 3;</code>
      */
@@ -5341,7 +5409,7 @@ public final class ImProto {
     /**
      * <code>optional string Content = 5;</code>
      */
-    String getContent();
+    java.lang.String getContent();
     /**
      * <code>optional string Content = 5;</code>
      */
@@ -5351,8 +5419,13 @@ public final class ImProto {
     /**
      * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
      */
-    java.util.Map<String, com.google.protobuf.ByteString>
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
     getUserTags();
+
+    /**
+     * <code>optional int32 SendTime = 7;</code>
+     */
+    int getSendTime();
   }
   /**
    * Protobuf type {@code IM.Protocol.ReceivedChannelMessage}
@@ -5371,9 +5444,10 @@ public final class ImProto {
       channelID_ = "";
       type_ = 0;
       content_ = "";
+      sendTime_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -5399,19 +5473,19 @@ public final class ImProto {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               msgID_ = s;
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               sender_ = s;
               break;
             }
             case 26: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               channelID_ = s;
               break;
@@ -5422,7 +5496,7 @@ public final class ImProto {
               break;
             }
             case 42: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               content_ = s;
               break;
@@ -5433,10 +5507,15 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000020;
               }
-              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
+              break;
+            }
+            case 56: {
+
+              sendTime_ = input.readInt32();
               break;
             }
           }
@@ -5452,7 +5531,7 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -5466,27 +5545,27 @@ public final class ImProto {
               "Invalid map field number: " + number);
       }
     }
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ReceivedChannelMessage.class, Builder.class);
+              IM.Protocol.ImProto.ReceivedChannelMessage.class, IM.Protocol.ImProto.ReceivedChannelMessage.Builder.class);
     }
 
     private int bitField0_;
     public static final int MSGID_FIELD_NUMBER = 1;
-    private volatile Object msgID_;
+    private volatile java.lang.Object msgID_;
     /**
      * <code>optional string MsgID = 1;</code>
      */
-    public String getMsgID() {
-      Object ref = msgID_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMsgID() {
+      java.lang.Object ref = msgID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         msgID_ = s;
         return s;
       }
@@ -5496,11 +5575,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getMsgIDBytes() {
-      Object ref = msgID_;
-      if (ref instanceof String) {
+      java.lang.Object ref = msgID_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         msgID_ = b;
         return b;
       } else {
@@ -5509,18 +5588,18 @@ public final class ImProto {
     }
 
     public static final int SENDER_FIELD_NUMBER = 2;
-    private volatile Object sender_;
+    private volatile java.lang.Object sender_;
     /**
      * <code>optional string Sender = 2;</code>
      */
-    public String getSender() {
-      Object ref = sender_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         sender_ = s;
         return s;
       }
@@ -5530,11 +5609,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getSenderBytes() {
-      Object ref = sender_;
-      if (ref instanceof String) {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         sender_ = b;
         return b;
       } else {
@@ -5543,18 +5622,18 @@ public final class ImProto {
     }
 
     public static final int CHANNELID_FIELD_NUMBER = 3;
-    private volatile Object channelID_;
+    private volatile java.lang.Object channelID_;
     /**
      * <code>optional string ChannelID = 3;</code>
      */
-    public String getChannelID() {
-      Object ref = channelID_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getChannelID() {
+      java.lang.Object ref = channelID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         channelID_ = s;
         return s;
       }
@@ -5564,11 +5643,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getChannelIDBytes() {
-      Object ref = channelID_;
-      if (ref instanceof String) {
+      java.lang.Object ref = channelID_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         channelID_ = b;
         return b;
       } else {
@@ -5586,18 +5665,18 @@ public final class ImProto {
     }
 
     public static final int CONTENT_FIELD_NUMBER = 5;
-    private volatile Object content_;
+    private volatile java.lang.Object content_;
     /**
      * <code>optional string Content = 5;</code>
      */
-    public String getContent() {
-      Object ref = content_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         content_ = s;
         return s;
       }
@@ -5607,11 +5686,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getContentBytes() {
-      Object ref = content_;
-      if (ref instanceof String) {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         content_ = b;
         return b;
       } else {
@@ -5622,18 +5701,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 6;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, com.google.protobuf.ByteString> defaultEntry =
+          java.lang.String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, com.google.protobuf.ByteString>newDefaultInstance(
-                  ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_UserTagsEntry_descriptor,
+              .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
+                  IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_UserTagsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.BYTES,
                   com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, com.google.protobuf.ByteString> userTags_;
-    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+        java.lang.String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -5645,8 +5724,17 @@ public final class ImProto {
      * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
      */
 
-    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
+    }
+
+    public static final int SENDTIME_FIELD_NUMBER = 7;
+    private int sendTime_;
+    /**
+     * <code>optional int32 SendTime = 7;</code>
+     */
+    public int getSendTime() {
+      return sendTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -5676,14 +5764,17 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         output.writeMessage(6, userTags);
+      }
+      if (sendTime_ != 0) {
+        output.writeInt32(7, sendTime_);
       }
     }
 
@@ -5708,9 +5799,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -5718,63 +5809,67 @@ public final class ImProto {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, userTags);
       }
+      if (sendTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, sendTime_);
+      }
       memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
-    public static ReceivedChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedChannelMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ReceivedChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedChannelMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ReceivedChannelMessage parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.ReceivedChannelMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ReceivedChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedChannelMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ReceivedChannelMessage parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.ReceivedChannelMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static ReceivedChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedChannelMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ReceivedChannelMessage parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.ReceivedChannelMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ReceivedChannelMessage parseDelimitedFrom(
+    public static IM.Protocol.ImProto.ReceivedChannelMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ReceivedChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedChannelMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static ReceivedChannelMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedChannelMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -5786,7 +5881,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ReceivedChannelMessage prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.ReceivedChannelMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -5794,9 +5889,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -5806,10 +5901,10 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.ReceivedChannelMessage)
-        ReceivedChannelMessageOrBuilder {
+        IM.Protocol.ImProto.ReceivedChannelMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -5834,11 +5929,11 @@ public final class ImProto {
                 "Invalid map field number: " + number);
         }
       }
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ReceivedChannelMessage.class, Builder.class);
+                IM.Protocol.ImProto.ReceivedChannelMessage.class, IM.Protocol.ImProto.ReceivedChannelMessage.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.ReceivedChannelMessage.newBuilder()
@@ -5847,7 +5942,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -5868,28 +5963,30 @@ public final class ImProto {
         content_ = "";
 
         internalGetMutableUserTags().clear();
+        sendTime_ = 0;
+
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedChannelMessage_descriptor;
       }
 
-      public ReceivedChannelMessage getDefaultInstanceForType() {
-        return ReceivedChannelMessage.getDefaultInstance();
+      public IM.Protocol.ImProto.ReceivedChannelMessage getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.ReceivedChannelMessage.getDefaultInstance();
       }
 
-      public ReceivedChannelMessage build() {
-        ReceivedChannelMessage result = buildPartial();
+      public IM.Protocol.ImProto.ReceivedChannelMessage build() {
+        IM.Protocol.ImProto.ReceivedChannelMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public ReceivedChannelMessage buildPartial() {
-        ReceivedChannelMessage result = new ReceivedChannelMessage(this);
+      public IM.Protocol.ImProto.ReceivedChannelMessage buildPartial() {
+        IM.Protocol.ImProto.ReceivedChannelMessage result = new IM.Protocol.ImProto.ReceivedChannelMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.msgID_ = msgID_;
@@ -5899,22 +5996,23 @@ public final class ImProto {
         result.content_ = content_;
         result.userTags_ = internalGetUserTags();
         result.userTags_.makeImmutable();
+        result.sendTime_ = sendTime_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ReceivedChannelMessage) {
-          return mergeFrom((ReceivedChannelMessage)other);
+        if (other instanceof IM.Protocol.ImProto.ReceivedChannelMessage) {
+          return mergeFrom((IM.Protocol.ImProto.ReceivedChannelMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ReceivedChannelMessage other) {
-        if (other == ReceivedChannelMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.ReceivedChannelMessage other) {
+        if (other == IM.Protocol.ImProto.ReceivedChannelMessage.getDefaultInstance()) return this;
         if (!other.getMsgID().isEmpty()) {
           msgID_ = other.msgID_;
           onChanged();
@@ -5936,6 +6034,9 @@ public final class ImProto {
         }
         internalGetMutableUserTags().mergeFrom(
             other.internalGetUserTags());
+        if (other.getSendTime() != 0) {
+          setSendTime(other.getSendTime());
+        }
         onChanged();
         return this;
       }
@@ -5948,11 +6049,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ReceivedChannelMessage parsedMessage = null;
+        IM.Protocol.ImProto.ReceivedChannelMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ReceivedChannelMessage) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.ReceivedChannelMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -5963,20 +6064,20 @@ public final class ImProto {
       }
       private int bitField0_;
 
-      private Object msgID_ = "";
+      private java.lang.Object msgID_ = "";
       /**
        * <code>optional string MsgID = 1;</code>
        */
-      public String getMsgID() {
-        Object ref = msgID_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMsgID() {
+        java.lang.Object ref = msgID_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           msgID_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -5984,11 +6085,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getMsgIDBytes() {
-        Object ref = msgID_;
+        java.lang.Object ref = msgID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           msgID_ = b;
           return b;
         } else {
@@ -5999,7 +6100,7 @@ public final class ImProto {
        * <code>optional string MsgID = 1;</code>
        */
       public Builder setMsgID(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6032,20 +6133,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object sender_ = "";
+      private java.lang.Object sender_ = "";
       /**
        * <code>optional string Sender = 2;</code>
        */
-      public String getSender() {
-        Object ref = sender_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           sender_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -6053,11 +6154,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
-        Object ref = sender_;
+        java.lang.Object ref = sender_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           sender_ = b;
           return b;
         } else {
@@ -6068,7 +6169,7 @@ public final class ImProto {
        * <code>optional string Sender = 2;</code>
        */
       public Builder setSender(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6101,20 +6202,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object channelID_ = "";
+      private java.lang.Object channelID_ = "";
       /**
        * <code>optional string ChannelID = 3;</code>
        */
-      public String getChannelID() {
-        Object ref = channelID_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getChannelID() {
+        java.lang.Object ref = channelID_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           channelID_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -6122,11 +6223,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getChannelIDBytes() {
-        Object ref = channelID_;
+        java.lang.Object ref = channelID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           channelID_ = b;
           return b;
         } else {
@@ -6137,7 +6238,7 @@ public final class ImProto {
        * <code>optional string ChannelID = 3;</code>
        */
       public Builder setChannelID(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6196,20 +6297,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object content_ = "";
+      private java.lang.Object content_ = "";
       /**
        * <code>optional string Content = 5;</code>
        */
-      public String getContent() {
-        Object ref = content_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           content_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -6217,11 +6318,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getContentBytes() {
-        Object ref = content_;
+        java.lang.Object ref = content_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           content_ = b;
           return b;
         } else {
@@ -6232,7 +6333,7 @@ public final class ImProto {
        * <code>optional string Content = 5;</code>
        */
       public Builder setContent(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6266,8 +6367,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, com.google.protobuf.ByteString> userTags_;
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+          java.lang.String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -6275,7 +6376,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -6290,13 +6391,13 @@ public final class ImProto {
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString>
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
@@ -6304,8 +6405,34 @@ public final class ImProto {
        * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, com.google.protobuf.ByteString> values) {
+          java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
+        return this;
+      }
+
+      private int sendTime_ ;
+      /**
+       * <code>optional int32 SendTime = 7;</code>
+       */
+      public int getSendTime() {
+        return sendTime_;
+      }
+      /**
+       * <code>optional int32 SendTime = 7;</code>
+       */
+      public Builder setSendTime(int value) {
+        
+        sendTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 SendTime = 7;</code>
+       */
+      public Builder clearSendTime() {
+        
+        sendTime_ = 0;
+        onChanged();
         return this;
       }
       public final Builder setUnknownFields(
@@ -6323,12 +6450,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.ReceivedChannelMessage)
-    private static final ReceivedChannelMessage DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.ReceivedChannelMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ReceivedChannelMessage();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.ReceivedChannelMessage();
     }
 
-    public static ReceivedChannelMessage getDefaultInstance() {
+    public static IM.Protocol.ImProto.ReceivedChannelMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6346,12 +6473,12 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<ReceivedChannelMessage> getParserForType() {
       return PARSER;
     }
 
-    public ReceivedChannelMessage getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.ReceivedChannelMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6364,7 +6491,7 @@ public final class ImProto {
     /**
      * <code>optional string ChannelID = 1;</code>
      */
-    String getChannelID();
+    java.lang.String getChannelID();
     /**
      * <code>optional string ChannelID = 1;</code>
      */
@@ -6386,7 +6513,7 @@ public final class ImProto {
       channelID_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -6412,7 +6539,7 @@ public final class ImProto {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               channelID_ = s;
               break;
@@ -6430,29 +6557,29 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_Channel_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_Channel_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_Channel_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_Channel_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              Channel.class, Builder.class);
+              IM.Protocol.ImProto.Channel.class, IM.Protocol.ImProto.Channel.Builder.class);
     }
 
     public static final int CHANNELID_FIELD_NUMBER = 1;
-    private volatile Object channelID_;
+    private volatile java.lang.Object channelID_;
     /**
      * <code>optional string ChannelID = 1;</code>
      */
-    public String getChannelID() {
-      Object ref = channelID_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getChannelID() {
+      java.lang.Object ref = channelID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         channelID_ = s;
         return s;
       }
@@ -6462,11 +6589,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getChannelIDBytes() {
-      Object ref = channelID_;
-      if (ref instanceof String) {
+      java.lang.Object ref = channelID_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         channelID_ = b;
         return b;
       } else {
@@ -6504,58 +6631,58 @@ public final class ImProto {
     }
 
     private static final long serialVersionUID = 0L;
-    public static Channel parseFrom(
+    public static IM.Protocol.ImProto.Channel parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Channel parseFrom(
+    public static IM.Protocol.ImProto.Channel parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Channel parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.Channel parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static Channel parseFrom(
+    public static IM.Protocol.ImProto.Channel parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static Channel parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.Channel parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static Channel parseFrom(
+    public static IM.Protocol.ImProto.Channel parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Channel parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.Channel parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static Channel parseDelimitedFrom(
+    public static IM.Protocol.ImProto.Channel parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static Channel parseFrom(
+    public static IM.Protocol.ImProto.Channel parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static Channel parseFrom(
+    public static IM.Protocol.ImProto.Channel parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -6567,7 +6694,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(Channel prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.Channel prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -6575,9 +6702,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -6587,17 +6714,17 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.Channel)
-        ChannelOrBuilder {
+        IM.Protocol.ImProto.ChannelOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_Channel_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_Channel_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_Channel_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_Channel_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                Channel.class, Builder.class);
+                IM.Protocol.ImProto.Channel.class, IM.Protocol.ImProto.Channel.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.Channel.newBuilder()
@@ -6606,7 +6733,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -6623,39 +6750,39 @@ public final class ImProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_Channel_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_Channel_descriptor;
       }
 
-      public Channel getDefaultInstanceForType() {
-        return Channel.getDefaultInstance();
+      public IM.Protocol.ImProto.Channel getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.Channel.getDefaultInstance();
       }
 
-      public Channel build() {
-        Channel result = buildPartial();
+      public IM.Protocol.ImProto.Channel build() {
+        IM.Protocol.ImProto.Channel result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public Channel buildPartial() {
-        Channel result = new Channel(this);
+      public IM.Protocol.ImProto.Channel buildPartial() {
+        IM.Protocol.ImProto.Channel result = new IM.Protocol.ImProto.Channel(this);
         result.channelID_ = channelID_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof Channel) {
-          return mergeFrom((Channel)other);
+        if (other instanceof IM.Protocol.ImProto.Channel) {
+          return mergeFrom((IM.Protocol.ImProto.Channel)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(Channel other) {
-        if (other == Channel.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.Channel other) {
+        if (other == IM.Protocol.ImProto.Channel.getDefaultInstance()) return this;
         if (!other.getChannelID().isEmpty()) {
           channelID_ = other.channelID_;
           onChanged();
@@ -6672,11 +6799,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        Channel parsedMessage = null;
+        IM.Protocol.ImProto.Channel parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (Channel) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.Channel) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -6686,20 +6813,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object channelID_ = "";
+      private java.lang.Object channelID_ = "";
       /**
        * <code>optional string ChannelID = 1;</code>
        */
-      public String getChannelID() {
-        Object ref = channelID_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getChannelID() {
+        java.lang.Object ref = channelID_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           channelID_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -6707,11 +6834,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getChannelIDBytes() {
-        Object ref = channelID_;
+        java.lang.Object ref = channelID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           channelID_ = b;
           return b;
         } else {
@@ -6722,7 +6849,7 @@ public final class ImProto {
        * <code>optional string ChannelID = 1;</code>
        */
       public Builder setChannelID(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -6769,12 +6896,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.Channel)
-    private static final Channel DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.Channel DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new Channel();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.Channel();
     }
 
-    public static Channel getDefaultInstance() {
+    public static IM.Protocol.ImProto.Channel getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6792,12 +6919,12 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<Channel> getParserForType() {
       return PARSER;
     }
 
-    public Channel getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.Channel getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -6810,7 +6937,7 @@ public final class ImProto {
     /**
      * <code>optional string UserID = 1;</code>
      */
-    String getUserID();
+    java.lang.String getUserID();
     /**
      * <code>optional string UserID = 1;</code>
      */
@@ -6829,7 +6956,7 @@ public final class ImProto {
     /**
      * <code>repeated string GroupIDs = 2;</code>
      */
-    String getGroupIDs(int index);
+    java.lang.String getGroupIDs(int index);
     /**
      * <code>repeated string GroupIDs = 2;</code>
      */
@@ -6852,7 +6979,7 @@ public final class ImProto {
       groupIDs_ = com.google.protobuf.LazyStringArrayList.EMPTY;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -6878,13 +7005,13 @@ public final class ImProto {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               userID_ = s;
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
               if (!((mutable_bitField0_ & 0x00000002) == 0x00000002)) {
                 groupIDs_ = new com.google.protobuf.LazyStringArrayList();
                 mutable_bitField0_ |= 0x00000002;
@@ -6908,30 +7035,30 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_UserGroup_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_UserGroup_descriptor;
     }
 
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_UserGroup_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_UserGroup_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              UserGroup.class, Builder.class);
+              IM.Protocol.ImProto.UserGroup.class, IM.Protocol.ImProto.UserGroup.Builder.class);
     }
 
     private int bitField0_;
     public static final int USERID_FIELD_NUMBER = 1;
-    private volatile Object userID_;
+    private volatile java.lang.Object userID_;
     /**
      * <code>optional string UserID = 1;</code>
      */
-    public String getUserID() {
-      Object ref = userID_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getUserID() {
+      java.lang.Object ref = userID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         userID_ = s;
         return s;
       }
@@ -6941,11 +7068,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getUserIDBytes() {
-      Object ref = userID_;
-      if (ref instanceof String) {
+      java.lang.Object ref = userID_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         userID_ = b;
         return b;
       } else {
@@ -6971,7 +7098,7 @@ public final class ImProto {
     /**
      * <code>repeated string GroupIDs = 2;</code>
      */
-    public String getGroupIDs(int index) {
+    public java.lang.String getGroupIDs(int index) {
       return groupIDs_.get(index);
     }
     /**
@@ -7023,58 +7150,58 @@ public final class ImProto {
     }
 
     private static final long serialVersionUID = 0L;
-    public static UserGroup parseFrom(
+    public static IM.Protocol.ImProto.UserGroup parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static UserGroup parseFrom(
+    public static IM.Protocol.ImProto.UserGroup parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static UserGroup parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.UserGroup parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static UserGroup parseFrom(
+    public static IM.Protocol.ImProto.UserGroup parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static UserGroup parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.UserGroup parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static UserGroup parseFrom(
+    public static IM.Protocol.ImProto.UserGroup parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static UserGroup parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.UserGroup parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static UserGroup parseDelimitedFrom(
+    public static IM.Protocol.ImProto.UserGroup parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static UserGroup parseFrom(
+    public static IM.Protocol.ImProto.UserGroup parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static UserGroup parseFrom(
+    public static IM.Protocol.ImProto.UserGroup parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7086,7 +7213,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(UserGroup prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.UserGroup prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -7094,9 +7221,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -7106,17 +7233,17 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.UserGroup)
-        UserGroupOrBuilder {
+        IM.Protocol.ImProto.UserGroupOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_UserGroup_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_UserGroup_descriptor;
       }
 
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_UserGroup_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_UserGroup_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                UserGroup.class, Builder.class);
+                IM.Protocol.ImProto.UserGroup.class, IM.Protocol.ImProto.UserGroup.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.UserGroup.newBuilder()
@@ -7125,7 +7252,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -7144,23 +7271,23 @@ public final class ImProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_UserGroup_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_UserGroup_descriptor;
       }
 
-      public UserGroup getDefaultInstanceForType() {
-        return UserGroup.getDefaultInstance();
+      public IM.Protocol.ImProto.UserGroup getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.UserGroup.getDefaultInstance();
       }
 
-      public UserGroup build() {
-        UserGroup result = buildPartial();
+      public IM.Protocol.ImProto.UserGroup build() {
+        IM.Protocol.ImProto.UserGroup result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public UserGroup buildPartial() {
-        UserGroup result = new UserGroup(this);
+      public IM.Protocol.ImProto.UserGroup buildPartial() {
+        IM.Protocol.ImProto.UserGroup result = new IM.Protocol.ImProto.UserGroup(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.userID_ = userID_;
@@ -7175,16 +7302,16 @@ public final class ImProto {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof UserGroup) {
-          return mergeFrom((UserGroup)other);
+        if (other instanceof IM.Protocol.ImProto.UserGroup) {
+          return mergeFrom((IM.Protocol.ImProto.UserGroup)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(UserGroup other) {
-        if (other == UserGroup.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.UserGroup other) {
+        if (other == IM.Protocol.ImProto.UserGroup.getDefaultInstance()) return this;
         if (!other.getUserID().isEmpty()) {
           userID_ = other.userID_;
           onChanged();
@@ -7211,11 +7338,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        UserGroup parsedMessage = null;
+        IM.Protocol.ImProto.UserGroup parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (UserGroup) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.UserGroup) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -7226,20 +7353,20 @@ public final class ImProto {
       }
       private int bitField0_;
 
-      private Object userID_ = "";
+      private java.lang.Object userID_ = "";
       /**
        * <code>optional string UserID = 1;</code>
        */
-      public String getUserID() {
-        Object ref = userID_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getUserID() {
+        java.lang.Object ref = userID_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           userID_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -7247,11 +7374,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getUserIDBytes() {
-        Object ref = userID_;
+        java.lang.Object ref = userID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           userID_ = b;
           return b;
         } else {
@@ -7262,7 +7389,7 @@ public final class ImProto {
        * <code>optional string UserID = 1;</code>
        */
       public Builder setUserID(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7318,7 +7445,7 @@ public final class ImProto {
       /**
        * <code>repeated string GroupIDs = 2;</code>
        */
-      public String getGroupIDs(int index) {
+      public java.lang.String getGroupIDs(int index) {
         return groupIDs_.get(index);
       }
       /**
@@ -7332,7 +7459,7 @@ public final class ImProto {
        * <code>repeated string GroupIDs = 2;</code>
        */
       public Builder setGroupIDs(
-          int index, String value) {
+          int index, java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7345,7 +7472,7 @@ public final class ImProto {
        * <code>repeated string GroupIDs = 2;</code>
        */
       public Builder addGroupIDs(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -7358,7 +7485,7 @@ public final class ImProto {
        * <code>repeated string GroupIDs = 2;</code>
        */
       public Builder addAllGroupIDs(
-          Iterable<String> values) {
+          java.lang.Iterable<java.lang.String> values) {
         ensureGroupIDsIsMutable();
         com.google.protobuf.AbstractMessageLite.Builder.addAll(
             values, groupIDs_);
@@ -7403,12 +7530,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.UserGroup)
-    private static final UserGroup DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.UserGroup DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new UserGroup();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.UserGroup();
     }
 
-    public static UserGroup getDefaultInstance() {
+    public static IM.Protocol.ImProto.UserGroup getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7426,12 +7553,12 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<UserGroup> getParserForType() {
       return PARSER;
     }
 
-    public UserGroup getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.UserGroup getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -7444,7 +7571,7 @@ public final class ImProto {
     /**
      * <code>optional string GroupID = 1;</code>
      */
-    String getGroupID();
+    java.lang.String getGroupID();
     /**
      * <code>optional string GroupID = 1;</code>
      */
@@ -7459,7 +7586,7 @@ public final class ImProto {
     /**
      * <code>optional string Content = 3;</code>
      */
-    String getContent();
+    java.lang.String getContent();
     /**
      * <code>optional string Content = 3;</code>
      */
@@ -7469,7 +7596,7 @@ public final class ImProto {
     /**
      * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
-    java.util.Map<String, com.google.protobuf.ByteString>
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
     getUserTags();
 
     /**
@@ -7479,7 +7606,7 @@ public final class ImProto {
      *
      * <code>optional string Sender = 5;</code>
      */
-    String getSender();
+    java.lang.String getSender();
     /**
      * <pre>
      *  used for admin	
@@ -7508,7 +7635,7 @@ public final class ImProto {
       sender_ = "";
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -7534,7 +7661,7 @@ public final class ImProto {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               groupID_ = s;
               break;
@@ -7545,7 +7672,7 @@ public final class ImProto {
               break;
             }
             case 26: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               content_ = s;
               break;
@@ -7556,14 +7683,14 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000008;
               }
-              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
               break;
             }
             case 42: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               sender_ = s;
               break;
@@ -7581,7 +7708,7 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_SendGroupMessage_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_SendGroupMessage_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -7595,27 +7722,27 @@ public final class ImProto {
               "Invalid map field number: " + number);
       }
     }
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_SendGroupMessage_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_SendGroupMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              SendGroupMessage.class, Builder.class);
+              IM.Protocol.ImProto.SendGroupMessage.class, IM.Protocol.ImProto.SendGroupMessage.Builder.class);
     }
 
     private int bitField0_;
     public static final int GROUPID_FIELD_NUMBER = 1;
-    private volatile Object groupID_;
+    private volatile java.lang.Object groupID_;
     /**
      * <code>optional string GroupID = 1;</code>
      */
-    public String getGroupID() {
-      Object ref = groupID_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getGroupID() {
+      java.lang.Object ref = groupID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         groupID_ = s;
         return s;
       }
@@ -7625,11 +7752,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getGroupIDBytes() {
-      Object ref = groupID_;
-      if (ref instanceof String) {
+      java.lang.Object ref = groupID_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         groupID_ = b;
         return b;
       } else {
@@ -7647,18 +7774,18 @@ public final class ImProto {
     }
 
     public static final int CONTENT_FIELD_NUMBER = 3;
-    private volatile Object content_;
+    private volatile java.lang.Object content_;
     /**
      * <code>optional string Content = 3;</code>
      */
-    public String getContent() {
-      Object ref = content_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         content_ = s;
         return s;
       }
@@ -7668,11 +7795,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getContentBytes() {
-      Object ref = content_;
-      if (ref instanceof String) {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         content_ = b;
         return b;
       } else {
@@ -7683,18 +7810,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 4;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, com.google.protobuf.ByteString> defaultEntry =
+          java.lang.String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, com.google.protobuf.ByteString>newDefaultInstance(
-                  ImProto.internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_descriptor,
+              .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
+                  IM.Protocol.ImProto.internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.BYTES,
                   com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, com.google.protobuf.ByteString> userTags_;
-    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+        java.lang.String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -7706,12 +7833,12 @@ public final class ImProto {
      * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
      */
 
-    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
     }
 
     public static final int SENDER_FIELD_NUMBER = 5;
-    private volatile Object sender_;
+    private volatile java.lang.Object sender_;
     /**
      * <pre>
      *  used for admin	
@@ -7719,14 +7846,14 @@ public final class ImProto {
      *
      * <code>optional string Sender = 5;</code>
      */
-    public String getSender() {
-      Object ref = sender_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         sender_ = s;
         return s;
       }
@@ -7740,11 +7867,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getSenderBytes() {
-      Object ref = sender_;
-      if (ref instanceof String) {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         sender_ = b;
         return b;
       } else {
@@ -7773,9 +7900,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 3, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -7802,9 +7929,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(3, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -7820,58 +7947,58 @@ public final class ImProto {
     }
 
     private static final long serialVersionUID = 0L;
-    public static SendGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.SendGroupMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SendGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.SendGroupMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SendGroupMessage parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.SendGroupMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static SendGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.SendGroupMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static SendGroupMessage parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.SendGroupMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static SendGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.SendGroupMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SendGroupMessage parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.SendGroupMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static SendGroupMessage parseDelimitedFrom(
+    public static IM.Protocol.ImProto.SendGroupMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static SendGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.SendGroupMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static SendGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.SendGroupMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -7883,7 +8010,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(SendGroupMessage prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.SendGroupMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -7891,9 +8018,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -7903,10 +8030,10 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.SendGroupMessage)
-        SendGroupMessageOrBuilder {
+        IM.Protocol.ImProto.SendGroupMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_SendGroupMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SendGroupMessage_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -7931,11 +8058,11 @@ public final class ImProto {
                 "Invalid map field number: " + number);
         }
       }
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_SendGroupMessage_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SendGroupMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                SendGroupMessage.class, Builder.class);
+                IM.Protocol.ImProto.SendGroupMessage.class, IM.Protocol.ImProto.SendGroupMessage.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.SendGroupMessage.newBuilder()
@@ -7944,7 +8071,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -7968,23 +8095,23 @@ public final class ImProto {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_SendGroupMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_SendGroupMessage_descriptor;
       }
 
-      public SendGroupMessage getDefaultInstanceForType() {
-        return SendGroupMessage.getDefaultInstance();
+      public IM.Protocol.ImProto.SendGroupMessage getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.SendGroupMessage.getDefaultInstance();
       }
 
-      public SendGroupMessage build() {
-        SendGroupMessage result = buildPartial();
+      public IM.Protocol.ImProto.SendGroupMessage build() {
+        IM.Protocol.ImProto.SendGroupMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public SendGroupMessage buildPartial() {
-        SendGroupMessage result = new SendGroupMessage(this);
+      public IM.Protocol.ImProto.SendGroupMessage buildPartial() {
+        IM.Protocol.ImProto.SendGroupMessage result = new IM.Protocol.ImProto.SendGroupMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.groupID_ = groupID_;
@@ -7999,16 +8126,16 @@ public final class ImProto {
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof SendGroupMessage) {
-          return mergeFrom((SendGroupMessage)other);
+        if (other instanceof IM.Protocol.ImProto.SendGroupMessage) {
+          return mergeFrom((IM.Protocol.ImProto.SendGroupMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(SendGroupMessage other) {
-        if (other == SendGroupMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.SendGroupMessage other) {
+        if (other == IM.Protocol.ImProto.SendGroupMessage.getDefaultInstance()) return this;
         if (!other.getGroupID().isEmpty()) {
           groupID_ = other.groupID_;
           onChanged();
@@ -8038,11 +8165,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        SendGroupMessage parsedMessage = null;
+        IM.Protocol.ImProto.SendGroupMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (SendGroupMessage) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.SendGroupMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -8053,20 +8180,20 @@ public final class ImProto {
       }
       private int bitField0_;
 
-      private Object groupID_ = "";
+      private java.lang.Object groupID_ = "";
       /**
        * <code>optional string GroupID = 1;</code>
        */
-      public String getGroupID() {
-        Object ref = groupID_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getGroupID() {
+        java.lang.Object ref = groupID_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           groupID_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -8074,11 +8201,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getGroupIDBytes() {
-        Object ref = groupID_;
+        java.lang.Object ref = groupID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           groupID_ = b;
           return b;
         } else {
@@ -8089,7 +8216,7 @@ public final class ImProto {
        * <code>optional string GroupID = 1;</code>
        */
       public Builder setGroupID(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8148,20 +8275,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object content_ = "";
+      private java.lang.Object content_ = "";
       /**
        * <code>optional string Content = 3;</code>
        */
-      public String getContent() {
-        Object ref = content_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           content_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -8169,11 +8296,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getContentBytes() {
-        Object ref = content_;
+        java.lang.Object ref = content_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           content_ = b;
           return b;
         } else {
@@ -8184,7 +8311,7 @@ public final class ImProto {
        * <code>optional string Content = 3;</code>
        */
       public Builder setContent(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8218,8 +8345,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, com.google.protobuf.ByteString> userTags_;
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+          java.lang.String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -8227,7 +8354,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -8242,13 +8369,13 @@ public final class ImProto {
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString>
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
@@ -8256,12 +8383,12 @@ public final class ImProto {
        * <code>map&lt;string, bytes&gt; UserTags = 4;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, com.google.protobuf.ByteString> values) {
+          java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
         return this;
       }
 
-      private Object sender_ = "";
+      private java.lang.Object sender_ = "";
       /**
        * <pre>
        *  used for admin	
@@ -8269,16 +8396,16 @@ public final class ImProto {
        *
        * <code>optional string Sender = 5;</code>
        */
-      public String getSender() {
-        Object ref = sender_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           sender_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -8290,11 +8417,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
-        Object ref = sender_;
+        java.lang.Object ref = sender_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           sender_ = b;
           return b;
         } else {
@@ -8309,7 +8436,7 @@ public final class ImProto {
        * <code>optional string Sender = 5;</code>
        */
       public Builder setSender(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -8364,12 +8491,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.SendGroupMessage)
-    private static final SendGroupMessage DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.SendGroupMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new SendGroupMessage();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.SendGroupMessage();
     }
 
-    public static SendGroupMessage getDefaultInstance() {
+    public static IM.Protocol.ImProto.SendGroupMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8387,12 +8514,12 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<SendGroupMessage> getParserForType() {
       return PARSER;
     }
 
-    public SendGroupMessage getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.SendGroupMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -8405,7 +8532,7 @@ public final class ImProto {
     /**
      * <code>optional string MsgID = 1;</code>
      */
-    String getMsgID();
+    java.lang.String getMsgID();
     /**
      * <code>optional string MsgID = 1;</code>
      */
@@ -8415,7 +8542,7 @@ public final class ImProto {
     /**
      * <code>optional string Sender = 2;</code>
      */
-    String getSender();
+    java.lang.String getSender();
     /**
      * <code>optional string Sender = 2;</code>
      */
@@ -8425,7 +8552,7 @@ public final class ImProto {
     /**
      * <code>optional string GroupID = 3;</code>
      */
-    String getGroupID();
+    java.lang.String getGroupID();
     /**
      * <code>optional string GroupID = 3;</code>
      */
@@ -8440,7 +8567,7 @@ public final class ImProto {
     /**
      * <code>optional string Content = 5;</code>
      */
-    String getContent();
+    java.lang.String getContent();
     /**
      * <code>optional string Content = 5;</code>
      */
@@ -8450,8 +8577,13 @@ public final class ImProto {
     /**
      * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
      */
-    java.util.Map<String, com.google.protobuf.ByteString>
+    java.util.Map<java.lang.String, com.google.protobuf.ByteString>
     getUserTags();
+
+    /**
+     * <code>optional int32 SendTime = 7;</code>
+     */
+    int getSendTime();
   }
   /**
    * Protobuf type {@code IM.Protocol.ReceivedGroupMessage}
@@ -8470,9 +8602,10 @@ public final class ImProto {
       groupID_ = "";
       type_ = 0;
       content_ = "";
+      sendTime_ = 0;
     }
 
-    @Override
+    @java.lang.Override
     public final com.google.protobuf.UnknownFieldSet
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
@@ -8498,19 +8631,19 @@ public final class ImProto {
               break;
             }
             case 10: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               msgID_ = s;
               break;
             }
             case 18: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               sender_ = s;
               break;
             }
             case 26: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               groupID_ = s;
               break;
@@ -8521,7 +8654,7 @@ public final class ImProto {
               break;
             }
             case 42: {
-              String s = input.readStringRequireUtf8();
+              java.lang.String s = input.readStringRequireUtf8();
 
               content_ = s;
               break;
@@ -8532,10 +8665,15 @@ public final class ImProto {
                     UserTagsDefaultEntryHolder.defaultEntry);
                 mutable_bitField0_ |= 0x00000020;
               }
-              com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+              com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
               userTags = input.readMessage(
                   UserTagsDefaultEntryHolder.defaultEntry.getParserForType(), extensionRegistry);
               userTags_.getMutableMap().put(userTags.getKey(), userTags.getValue());
+              break;
+            }
+            case 56: {
+
+              sendTime_ = input.readInt32();
               break;
             }
           }
@@ -8551,7 +8689,7 @@ public final class ImProto {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_descriptor;
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_descriptor;
     }
 
     @SuppressWarnings({"rawtypes"})
@@ -8565,27 +8703,27 @@ public final class ImProto {
               "Invalid map field number: " + number);
       }
     }
-    protected FieldAccessorTable
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_fieldAccessorTable
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              ReceivedGroupMessage.class, Builder.class);
+              IM.Protocol.ImProto.ReceivedGroupMessage.class, IM.Protocol.ImProto.ReceivedGroupMessage.Builder.class);
     }
 
     private int bitField0_;
     public static final int MSGID_FIELD_NUMBER = 1;
-    private volatile Object msgID_;
+    private volatile java.lang.Object msgID_;
     /**
      * <code>optional string MsgID = 1;</code>
      */
-    public String getMsgID() {
-      Object ref = msgID_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getMsgID() {
+      java.lang.Object ref = msgID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         msgID_ = s;
         return s;
       }
@@ -8595,11 +8733,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getMsgIDBytes() {
-      Object ref = msgID_;
-      if (ref instanceof String) {
+      java.lang.Object ref = msgID_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         msgID_ = b;
         return b;
       } else {
@@ -8608,18 +8746,18 @@ public final class ImProto {
     }
 
     public static final int SENDER_FIELD_NUMBER = 2;
-    private volatile Object sender_;
+    private volatile java.lang.Object sender_;
     /**
      * <code>optional string Sender = 2;</code>
      */
-    public String getSender() {
-      Object ref = sender_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getSender() {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         sender_ = s;
         return s;
       }
@@ -8629,11 +8767,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getSenderBytes() {
-      Object ref = sender_;
-      if (ref instanceof String) {
+      java.lang.Object ref = sender_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         sender_ = b;
         return b;
       } else {
@@ -8642,18 +8780,18 @@ public final class ImProto {
     }
 
     public static final int GROUPID_FIELD_NUMBER = 3;
-    private volatile Object groupID_;
+    private volatile java.lang.Object groupID_;
     /**
      * <code>optional string GroupID = 3;</code>
      */
-    public String getGroupID() {
-      Object ref = groupID_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getGroupID() {
+      java.lang.Object ref = groupID_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         groupID_ = s;
         return s;
       }
@@ -8663,11 +8801,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getGroupIDBytes() {
-      Object ref = groupID_;
-      if (ref instanceof String) {
+      java.lang.Object ref = groupID_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         groupID_ = b;
         return b;
       } else {
@@ -8685,18 +8823,18 @@ public final class ImProto {
     }
 
     public static final int CONTENT_FIELD_NUMBER = 5;
-    private volatile Object content_;
+    private volatile java.lang.Object content_;
     /**
      * <code>optional string Content = 5;</code>
      */
-    public String getContent() {
-      Object ref = content_;
-      if (ref instanceof String) {
-        return (String) ref;
+    public java.lang.String getContent() {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
       } else {
         com.google.protobuf.ByteString bs = 
             (com.google.protobuf.ByteString) ref;
-        String s = bs.toStringUtf8();
+        java.lang.String s = bs.toStringUtf8();
         content_ = s;
         return s;
       }
@@ -8706,11 +8844,11 @@ public final class ImProto {
      */
     public com.google.protobuf.ByteString
         getContentBytes() {
-      Object ref = content_;
-      if (ref instanceof String) {
+      java.lang.Object ref = content_;
+      if (ref instanceof java.lang.String) {
         com.google.protobuf.ByteString b = 
             com.google.protobuf.ByteString.copyFromUtf8(
-                (String) ref);
+                (java.lang.String) ref);
         content_ = b;
         return b;
       } else {
@@ -8721,18 +8859,18 @@ public final class ImProto {
     public static final int USERTAGS_FIELD_NUMBER = 6;
     private static final class UserTagsDefaultEntryHolder {
       static final com.google.protobuf.MapEntry<
-          String, com.google.protobuf.ByteString> defaultEntry =
+          java.lang.String, com.google.protobuf.ByteString> defaultEntry =
               com.google.protobuf.MapEntry
-              .<String, com.google.protobuf.ByteString>newDefaultInstance(
-                  ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_descriptor,
+              .<java.lang.String, com.google.protobuf.ByteString>newDefaultInstance(
+                  IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_descriptor, 
                   com.google.protobuf.WireFormat.FieldType.STRING,
                   "",
                   com.google.protobuf.WireFormat.FieldType.BYTES,
                   com.google.protobuf.ByteString.EMPTY);
     }
     private com.google.protobuf.MapField<
-        String, com.google.protobuf.ByteString> userTags_;
-    private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+        java.lang.String, com.google.protobuf.ByteString> userTags_;
+    private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
     internalGetUserTags() {
       if (userTags_ == null) {
         return com.google.protobuf.MapField.emptyMapField(
@@ -8744,8 +8882,17 @@ public final class ImProto {
      * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
      */
 
-    public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+    public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
       return internalGetUserTags().getMap();
+    }
+
+    public static final int SENDTIME_FIELD_NUMBER = 7;
+    private int sendTime_;
+    /**
+     * <code>optional int32 SendTime = 7;</code>
+     */
+    public int getSendTime() {
+      return sendTime_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -8775,14 +8922,17 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         com.google.protobuf.GeneratedMessage.writeString(output, 5, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
             .build();
         output.writeMessage(6, userTags);
+      }
+      if (sendTime_ != 0) {
+        output.writeInt32(7, sendTime_);
       }
     }
 
@@ -8807,9 +8957,9 @@ public final class ImProto {
       if (!getContentBytes().isEmpty()) {
         size += com.google.protobuf.GeneratedMessage.computeStringSize(5, content_);
       }
-      for (java.util.Map.Entry<String, com.google.protobuf.ByteString> entry
+      for (java.util.Map.Entry<java.lang.String, com.google.protobuf.ByteString> entry
            : internalGetUserTags().getMap().entrySet()) {
-        com.google.protobuf.MapEntry<String, com.google.protobuf.ByteString>
+        com.google.protobuf.MapEntry<java.lang.String, com.google.protobuf.ByteString>
         userTags = UserTagsDefaultEntryHolder.defaultEntry.newBuilderForType()
             .setKey(entry.getKey())
             .setValue(entry.getValue())
@@ -8817,63 +8967,67 @@ public final class ImProto {
         size += com.google.protobuf.CodedOutputStream
             .computeMessageSize(6, userTags);
       }
+      if (sendTime_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(7, sendTime_);
+      }
       memoizedSize = size;
       return size;
     }
 
     private static final long serialVersionUID = 0L;
-    public static ReceivedGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedGroupMessage parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ReceivedGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedGroupMessage parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ReceivedGroupMessage parseFrom(byte[] data)
+    public static IM.Protocol.ImProto.ReceivedGroupMessage parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static ReceivedGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedGroupMessage parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static ReceivedGroupMessage parseFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.ReceivedGroupMessage parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static ReceivedGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedGroupMessage parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ReceivedGroupMessage parseDelimitedFrom(java.io.InputStream input)
+    public static IM.Protocol.ImProto.ReceivedGroupMessage parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input);
     }
-    public static ReceivedGroupMessage parseDelimitedFrom(
+    public static IM.Protocol.ImProto.ReceivedGroupMessage parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
     }
-    public static ReceivedGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedGroupMessage parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return com.google.protobuf.GeneratedMessage
           .parseWithIOException(PARSER, input);
     }
-    public static ReceivedGroupMessage parseFrom(
+    public static IM.Protocol.ImProto.ReceivedGroupMessage parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -8885,7 +9039,7 @@ public final class ImProto {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(ReceivedGroupMessage prototype) {
+    public static Builder newBuilder(IM.Protocol.ImProto.ReceivedGroupMessage prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -8893,9 +9047,9 @@ public final class ImProto {
           ? new Builder() : new Builder().mergeFrom(this);
     }
 
-    @Override
+    @java.lang.Override
     protected Builder newBuilderForType(
-        BuilderParent parent) {
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
       Builder builder = new Builder(parent);
       return builder;
     }
@@ -8905,10 +9059,10 @@ public final class ImProto {
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
         // @@protoc_insertion_point(builder_implements:IM.Protocol.ReceivedGroupMessage)
-        ReceivedGroupMessageOrBuilder {
+        IM.Protocol.ImProto.ReceivedGroupMessageOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_descriptor;
       }
 
       @SuppressWarnings({"rawtypes"})
@@ -8933,11 +9087,11 @@ public final class ImProto {
                 "Invalid map field number: " + number);
         }
       }
-      protected FieldAccessorTable
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_fieldAccessorTable
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                ReceivedGroupMessage.class, Builder.class);
+                IM.Protocol.ImProto.ReceivedGroupMessage.class, IM.Protocol.ImProto.ReceivedGroupMessage.Builder.class);
       }
 
       // Construct using IM.Protocol.ImProto.ReceivedGroupMessage.newBuilder()
@@ -8946,7 +9100,7 @@ public final class ImProto {
       }
 
       private Builder(
-          BuilderParent parent) {
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
         super(parent);
         maybeForceBuilderInitialization();
       }
@@ -8967,28 +9121,30 @@ public final class ImProto {
         content_ = "";
 
         internalGetMutableUserTags().clear();
+        sendTime_ = 0;
+
         return this;
       }
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_descriptor;
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_ReceivedGroupMessage_descriptor;
       }
 
-      public ReceivedGroupMessage getDefaultInstanceForType() {
-        return ReceivedGroupMessage.getDefaultInstance();
+      public IM.Protocol.ImProto.ReceivedGroupMessage getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.ReceivedGroupMessage.getDefaultInstance();
       }
 
-      public ReceivedGroupMessage build() {
-        ReceivedGroupMessage result = buildPartial();
+      public IM.Protocol.ImProto.ReceivedGroupMessage build() {
+        IM.Protocol.ImProto.ReceivedGroupMessage result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public ReceivedGroupMessage buildPartial() {
-        ReceivedGroupMessage result = new ReceivedGroupMessage(this);
+      public IM.Protocol.ImProto.ReceivedGroupMessage buildPartial() {
+        IM.Protocol.ImProto.ReceivedGroupMessage result = new IM.Protocol.ImProto.ReceivedGroupMessage(this);
         int from_bitField0_ = bitField0_;
         int to_bitField0_ = 0;
         result.msgID_ = msgID_;
@@ -8998,22 +9154,23 @@ public final class ImProto {
         result.content_ = content_;
         result.userTags_ = internalGetUserTags();
         result.userTags_.makeImmutable();
+        result.sendTime_ = sendTime_;
         result.bitField0_ = to_bitField0_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof ReceivedGroupMessage) {
-          return mergeFrom((ReceivedGroupMessage)other);
+        if (other instanceof IM.Protocol.ImProto.ReceivedGroupMessage) {
+          return mergeFrom((IM.Protocol.ImProto.ReceivedGroupMessage)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(ReceivedGroupMessage other) {
-        if (other == ReceivedGroupMessage.getDefaultInstance()) return this;
+      public Builder mergeFrom(IM.Protocol.ImProto.ReceivedGroupMessage other) {
+        if (other == IM.Protocol.ImProto.ReceivedGroupMessage.getDefaultInstance()) return this;
         if (!other.getMsgID().isEmpty()) {
           msgID_ = other.msgID_;
           onChanged();
@@ -9035,6 +9192,9 @@ public final class ImProto {
         }
         internalGetMutableUserTags().mergeFrom(
             other.internalGetUserTags());
+        if (other.getSendTime() != 0) {
+          setSendTime(other.getSendTime());
+        }
         onChanged();
         return this;
       }
@@ -9047,11 +9207,11 @@ public final class ImProto {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        ReceivedGroupMessage parsedMessage = null;
+        IM.Protocol.ImProto.ReceivedGroupMessage parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (ReceivedGroupMessage) e.getUnfinishedMessage();
+          parsedMessage = (IM.Protocol.ImProto.ReceivedGroupMessage) e.getUnfinishedMessage();
           throw e.unwrapIOException();
         } finally {
           if (parsedMessage != null) {
@@ -9062,20 +9222,20 @@ public final class ImProto {
       }
       private int bitField0_;
 
-      private Object msgID_ = "";
+      private java.lang.Object msgID_ = "";
       /**
        * <code>optional string MsgID = 1;</code>
        */
-      public String getMsgID() {
-        Object ref = msgID_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getMsgID() {
+        java.lang.Object ref = msgID_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           msgID_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -9083,11 +9243,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getMsgIDBytes() {
-        Object ref = msgID_;
+        java.lang.Object ref = msgID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           msgID_ = b;
           return b;
         } else {
@@ -9098,7 +9258,7 @@ public final class ImProto {
        * <code>optional string MsgID = 1;</code>
        */
       public Builder setMsgID(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -9131,20 +9291,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object sender_ = "";
+      private java.lang.Object sender_ = "";
       /**
        * <code>optional string Sender = 2;</code>
        */
-      public String getSender() {
-        Object ref = sender_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getSender() {
+        java.lang.Object ref = sender_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           sender_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -9152,11 +9312,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getSenderBytes() {
-        Object ref = sender_;
+        java.lang.Object ref = sender_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           sender_ = b;
           return b;
         } else {
@@ -9167,7 +9327,7 @@ public final class ImProto {
        * <code>optional string Sender = 2;</code>
        */
       public Builder setSender(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -9200,20 +9360,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object groupID_ = "";
+      private java.lang.Object groupID_ = "";
       /**
        * <code>optional string GroupID = 3;</code>
        */
-      public String getGroupID() {
-        Object ref = groupID_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getGroupID() {
+        java.lang.Object ref = groupID_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           groupID_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -9221,11 +9381,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getGroupIDBytes() {
-        Object ref = groupID_;
+        java.lang.Object ref = groupID_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           groupID_ = b;
           return b;
         } else {
@@ -9236,7 +9396,7 @@ public final class ImProto {
        * <code>optional string GroupID = 3;</code>
        */
       public Builder setGroupID(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -9295,20 +9455,20 @@ public final class ImProto {
         return this;
       }
 
-      private Object content_ = "";
+      private java.lang.Object content_ = "";
       /**
        * <code>optional string Content = 5;</code>
        */
-      public String getContent() {
-        Object ref = content_;
-        if (!(ref instanceof String)) {
+      public java.lang.String getContent() {
+        java.lang.Object ref = content_;
+        if (!(ref instanceof java.lang.String)) {
           com.google.protobuf.ByteString bs =
               (com.google.protobuf.ByteString) ref;
-          String s = bs.toStringUtf8();
+          java.lang.String s = bs.toStringUtf8();
           content_ = s;
           return s;
         } else {
-          return (String) ref;
+          return (java.lang.String) ref;
         }
       }
       /**
@@ -9316,11 +9476,11 @@ public final class ImProto {
        */
       public com.google.protobuf.ByteString
           getContentBytes() {
-        Object ref = content_;
+        java.lang.Object ref = content_;
         if (ref instanceof String) {
           com.google.protobuf.ByteString b = 
               com.google.protobuf.ByteString.copyFromUtf8(
-                  (String) ref);
+                  (java.lang.String) ref);
           content_ = b;
           return b;
         } else {
@@ -9331,7 +9491,7 @@ public final class ImProto {
        * <code>optional string Content = 5;</code>
        */
       public Builder setContent(
-          String value) {
+          java.lang.String value) {
         if (value == null) {
     throw new NullPointerException();
   }
@@ -9365,8 +9525,8 @@ public final class ImProto {
       }
 
       private com.google.protobuf.MapField<
-          String, com.google.protobuf.ByteString> userTags_;
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+          java.lang.String, com.google.protobuf.ByteString> userTags_;
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetUserTags() {
         if (userTags_ == null) {
           return com.google.protobuf.MapField.emptyMapField(
@@ -9374,7 +9534,7 @@ public final class ImProto {
         }
         return userTags_;
       }
-      private com.google.protobuf.MapField<String, com.google.protobuf.ByteString>
+      private com.google.protobuf.MapField<java.lang.String, com.google.protobuf.ByteString>
       internalGetMutableUserTags() {
         onChanged();;
         if (userTags_ == null) {
@@ -9389,13 +9549,13 @@ public final class ImProto {
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString> getUserTags() {
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString> getUserTags() {
         return internalGetUserTags().getMap();
       }
       /**
        * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
        */
-      public java.util.Map<String, com.google.protobuf.ByteString>
+      public java.util.Map<java.lang.String, com.google.protobuf.ByteString>
       getMutableUserTags() {
         return internalGetMutableUserTags().getMutableMap();
       }
@@ -9403,8 +9563,34 @@ public final class ImProto {
        * <code>map&lt;string, bytes&gt; UserTags = 6;</code>
        */
       public Builder putAllUserTags(
-          java.util.Map<String, com.google.protobuf.ByteString> values) {
+          java.util.Map<java.lang.String, com.google.protobuf.ByteString> values) {
         getMutableUserTags().putAll(values);
+        return this;
+      }
+
+      private int sendTime_ ;
+      /**
+       * <code>optional int32 SendTime = 7;</code>
+       */
+      public int getSendTime() {
+        return sendTime_;
+      }
+      /**
+       * <code>optional int32 SendTime = 7;</code>
+       */
+      public Builder setSendTime(int value) {
+        
+        sendTime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 SendTime = 7;</code>
+       */
+      public Builder clearSendTime() {
+        
+        sendTime_ = 0;
+        onChanged();
         return this;
       }
       public final Builder setUnknownFields(
@@ -9422,12 +9608,12 @@ public final class ImProto {
     }
 
     // @@protoc_insertion_point(class_scope:IM.Protocol.ReceivedGroupMessage)
-    private static final ReceivedGroupMessage DEFAULT_INSTANCE;
+    private static final IM.Protocol.ImProto.ReceivedGroupMessage DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new ReceivedGroupMessage();
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.ReceivedGroupMessage();
     }
 
-    public static ReceivedGroupMessage getDefaultInstance() {
+    public static IM.Protocol.ImProto.ReceivedGroupMessage getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9445,12 +9631,609 @@ public final class ImProto {
       return PARSER;
     }
 
-    @Override
+    @java.lang.Override
     public com.google.protobuf.Parser<ReceivedGroupMessage> getParserForType() {
       return PARSER;
     }
 
-    public ReceivedGroupMessage getDefaultInstanceForType() {
+    public IM.Protocol.ImProto.ReceivedGroupMessage getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface AdminMessageOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:IM.Protocol.AdminMessage)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional string Receiver = 1;</code>
+     */
+    java.lang.String getReceiver();
+    /**
+     * <code>optional string Receiver = 1;</code>
+     */
+    com.google.protobuf.ByteString
+        getReceiverBytes();
+
+    /**
+     * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
+     */
+    int getCategoryValue();
+    /**
+     * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
+     */
+    IM.Protocol.ImProto.PackageCategory getCategory();
+
+    /**
+     * <code>optional bytes MessageContent = 3;</code>
+     */
+    com.google.protobuf.ByteString getMessageContent();
+  }
+  /**
+   * Protobuf type {@code IM.Protocol.AdminMessage}
+   */
+  public  static final class AdminMessage extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:IM.Protocol.AdminMessage)
+      AdminMessageOrBuilder {
+    // Use AdminMessage.newBuilder() to construct.
+    private AdminMessage(com.google.protobuf.GeneratedMessage.Builder<?> builder) {
+      super(builder);
+    }
+    private AdminMessage() {
+      receiver_ = "";
+      category_ = 0;
+      messageContent_ = com.google.protobuf.ByteString.EMPTY;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private AdminMessage(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 10: {
+              java.lang.String s = input.readStringRequireUtf8();
+
+              receiver_ = s;
+              break;
+            }
+            case 16: {
+              int rawValue = input.readEnum();
+
+              category_ = rawValue;
+              break;
+            }
+            case 26: {
+
+              messageContent_ = input.readBytes();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw e.setUnfinishedMessage(this);
+      } catch (java.io.IOException e) {
+        throw new com.google.protobuf.InvalidProtocolBufferException(
+            e).setUnfinishedMessage(this);
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_AdminMessage_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return IM.Protocol.ImProto.internal_static_IM_Protocol_AdminMessage_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              IM.Protocol.ImProto.AdminMessage.class, IM.Protocol.ImProto.AdminMessage.Builder.class);
+    }
+
+    public static final int RECEIVER_FIELD_NUMBER = 1;
+    private volatile java.lang.Object receiver_;
+    /**
+     * <code>optional string Receiver = 1;</code>
+     */
+    public java.lang.String getReceiver() {
+      java.lang.Object ref = receiver_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        receiver_ = s;
+        return s;
+      }
+    }
+    /**
+     * <code>optional string Receiver = 1;</code>
+     */
+    public com.google.protobuf.ByteString
+        getReceiverBytes() {
+      java.lang.Object ref = receiver_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        receiver_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int CATEGORY_FIELD_NUMBER = 2;
+    private int category_;
+    /**
+     * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
+     */
+    public int getCategoryValue() {
+      return category_;
+    }
+    /**
+     * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
+     */
+    public IM.Protocol.ImProto.PackageCategory getCategory() {
+      IM.Protocol.ImProto.PackageCategory result = IM.Protocol.ImProto.PackageCategory.forNumber(category_);
+      return result == null ? IM.Protocol.ImProto.PackageCategory.UNRECOGNIZED : result;
+    }
+
+    public static final int MESSAGECONTENT_FIELD_NUMBER = 3;
+    private com.google.protobuf.ByteString messageContent_;
+    /**
+     * <code>optional bytes MessageContent = 3;</code>
+     */
+    public com.google.protobuf.ByteString getMessageContent() {
+      return messageContent_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (!getReceiverBytes().isEmpty()) {
+        com.google.protobuf.GeneratedMessage.writeString(output, 1, receiver_);
+      }
+      if (category_ != IM.Protocol.ImProto.PackageCategory.Ping.getNumber()) {
+        output.writeEnum(2, category_);
+      }
+      if (!messageContent_.isEmpty()) {
+        output.writeBytes(3, messageContent_);
+      }
+    }
+
+    public int getSerializedSize() {
+      int size = memoizedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (!getReceiverBytes().isEmpty()) {
+        size += com.google.protobuf.GeneratedMessage.computeStringSize(1, receiver_);
+      }
+      if (category_ != IM.Protocol.ImProto.PackageCategory.Ping.getNumber()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeEnumSize(2, category_);
+      }
+      if (!messageContent_.isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, messageContent_);
+      }
+      memoizedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    public static IM.Protocol.ImProto.AdminMessage parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static IM.Protocol.ImProto.AdminMessage parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static IM.Protocol.ImProto.AdminMessage parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static IM.Protocol.ImProto.AdminMessage parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static IM.Protocol.ImProto.AdminMessage parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static IM.Protocol.ImProto.AdminMessage parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static IM.Protocol.ImProto.AdminMessage parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input);
+    }
+    public static IM.Protocol.ImProto.AdminMessage parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseDelimitedWithIOException(PARSER, input, extensionRegistry);
+    }
+    public static IM.Protocol.ImProto.AdminMessage parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input);
+    }
+    public static IM.Protocol.ImProto.AdminMessage parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return com.google.protobuf.GeneratedMessage
+          .parseWithIOException(PARSER, input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(IM.Protocol.ImProto.AdminMessage prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code IM.Protocol.AdminMessage}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:IM.Protocol.AdminMessage)
+        IM.Protocol.ImProto.AdminMessageOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_AdminMessage_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_AdminMessage_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                IM.Protocol.ImProto.AdminMessage.class, IM.Protocol.ImProto.AdminMessage.Builder.class);
+      }
+
+      // Construct using IM.Protocol.ImProto.AdminMessage.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        receiver_ = "";
+
+        category_ = 0;
+
+        messageContent_ = com.google.protobuf.ByteString.EMPTY;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return IM.Protocol.ImProto.internal_static_IM_Protocol_AdminMessage_descriptor;
+      }
+
+      public IM.Protocol.ImProto.AdminMessage getDefaultInstanceForType() {
+        return IM.Protocol.ImProto.AdminMessage.getDefaultInstance();
+      }
+
+      public IM.Protocol.ImProto.AdminMessage build() {
+        IM.Protocol.ImProto.AdminMessage result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public IM.Protocol.ImProto.AdminMessage buildPartial() {
+        IM.Protocol.ImProto.AdminMessage result = new IM.Protocol.ImProto.AdminMessage(this);
+        result.receiver_ = receiver_;
+        result.category_ = category_;
+        result.messageContent_ = messageContent_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof IM.Protocol.ImProto.AdminMessage) {
+          return mergeFrom((IM.Protocol.ImProto.AdminMessage)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(IM.Protocol.ImProto.AdminMessage other) {
+        if (other == IM.Protocol.ImProto.AdminMessage.getDefaultInstance()) return this;
+        if (!other.getReceiver().isEmpty()) {
+          receiver_ = other.receiver_;
+          onChanged();
+        }
+        if (other.category_ != 0) {
+          setCategoryValue(other.getCategoryValue());
+        }
+        if (other.getMessageContent() != com.google.protobuf.ByteString.EMPTY) {
+          setMessageContent(other.getMessageContent());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        IM.Protocol.ImProto.AdminMessage parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (IM.Protocol.ImProto.AdminMessage) e.getUnfinishedMessage();
+          throw e.unwrapIOException();
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private java.lang.Object receiver_ = "";
+      /**
+       * <code>optional string Receiver = 1;</code>
+       */
+      public java.lang.String getReceiver() {
+        java.lang.Object ref = receiver_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          receiver_ = s;
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string Receiver = 1;</code>
+       */
+      public com.google.protobuf.ByteString
+          getReceiverBytes() {
+        java.lang.Object ref = receiver_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          receiver_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string Receiver = 1;</code>
+       */
+      public Builder setReceiver(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        receiver_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string Receiver = 1;</code>
+       */
+      public Builder clearReceiver() {
+        
+        receiver_ = getDefaultInstance().getReceiver();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string Receiver = 1;</code>
+       */
+      public Builder setReceiverBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  checkByteStringIsUtf8(value);
+        
+        receiver_ = value;
+        onChanged();
+        return this;
+      }
+
+      private int category_ = 0;
+      /**
+       * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
+       */
+      public int getCategoryValue() {
+        return category_;
+      }
+      /**
+       * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
+       */
+      public Builder setCategoryValue(int value) {
+        category_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
+       */
+      public IM.Protocol.ImProto.PackageCategory getCategory() {
+        IM.Protocol.ImProto.PackageCategory result = IM.Protocol.ImProto.PackageCategory.forNumber(category_);
+        return result == null ? IM.Protocol.ImProto.PackageCategory.UNRECOGNIZED : result;
+      }
+      /**
+       * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
+       */
+      public Builder setCategory(IM.Protocol.ImProto.PackageCategory value) {
+        if (value == null) {
+          throw new NullPointerException();
+        }
+        
+        category_ = value.getNumber();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional .IM.Protocol.PackageCategory Category = 2;</code>
+       */
+      public Builder clearCategory() {
+        
+        category_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private com.google.protobuf.ByteString messageContent_ = com.google.protobuf.ByteString.EMPTY;
+      /**
+       * <code>optional bytes MessageContent = 3;</code>
+       */
+      public com.google.protobuf.ByteString getMessageContent() {
+        return messageContent_;
+      }
+      /**
+       * <code>optional bytes MessageContent = 3;</code>
+       */
+      public Builder setMessageContent(com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        messageContent_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bytes MessageContent = 3;</code>
+       */
+      public Builder clearMessageContent() {
+        
+        messageContent_ = getDefaultInstance().getMessageContent();
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:IM.Protocol.AdminMessage)
+    }
+
+    // @@protoc_insertion_point(class_scope:IM.Protocol.AdminMessage)
+    private static final IM.Protocol.ImProto.AdminMessage DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new IM.Protocol.ImProto.AdminMessage();
+    }
+
+    public static IM.Protocol.ImProto.AdminMessage getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    private static final com.google.protobuf.Parser<AdminMessage>
+        PARSER = new com.google.protobuf.AbstractParser<AdminMessage>() {
+      public AdminMessage parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+          return new AdminMessage(input, extensionRegistry);
+      }
+    };
+
+    public static com.google.protobuf.Parser<AdminMessage> parser() {
+      return PARSER;
+    }
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<AdminMessage> getParserForType() {
+      return PARSER;
+    }
+
+    public IM.Protocol.ImProto.AdminMessage getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -9546,6 +10329,11 @@ public final class ImProto {
   private static final 
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_fieldAccessorTable;
+  private static final com.google.protobuf.Descriptors.Descriptor
+    internal_static_IM_Protocol_AdminMessage_descriptor;
+  private static final 
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_IM_Protocol_AdminMessage_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -9554,7 +10342,7 @@ public final class ImProto {
   private static  com.google.protobuf.Descriptors.FileDescriptor
       descriptor;
   static {
-    String[] descriptorData = {
+    java.lang.String[] descriptorData = {
       "\n\rImProto.proto\022\013IM.Protocol\"]\n\rSocketPa" +
       "ckage\022\013\n\003Seq\030\001 \001(\005\022.\n\010Category\030\002 \001(\0162\034.I" +
       "M.Protocol.PackageCategory\022\017\n\007Content\030\003 " +
@@ -9571,43 +10359,47 @@ public final class ImProto {
       "UserTags\030\004 \003(\0132*.IM.Protocol.SendUserMes" +
       "sage.UserTagsEntry\022\016\n\006Sender\030\005 \001(\t\032/\n\rUs" +
       "erTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:" +
-      "\0028\001\"\306\001\n\023ReceivedUserMessage\022\r\n\005MsgID\030\001 \001" +
+      "\0028\001\"\330\001\n\023ReceivedUserMessage\022\r\n\005MsgID\030\001 \001" +
       "(\t\022\016\n\006Sender\030\002 \001(\t\022\014\n\004Type\030\003 \001(\005\022\017\n\007Cont" +
       "ent\030\004 \001(\t\022@\n\010UserTags\030\005 \003(\0132..IM.Protoco" +
-      "l.ReceivedUserMessage.UserTagsEntry\032/\n\rU",
-      "serTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014" +
-      ":\0028\001\"\310\001\n\022SendChannelMessage\022\021\n\tChannelID" +
-      "\030\001 \001(\t\022\014\n\004Type\030\002 \001(\005\022\017\n\007Content\030\003 \001(\t\022?\n" +
-      "\010UserTags\030\004 \003(\0132-.IM.Protocol.SendChanne" +
-      "lMessage.UserTagsEntry\022\016\n\006Sender\030\005 \001(\t\032/" +
-      "\n\rUserTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\014:\0028\001\"\337\001\n\026ReceivedChannelMessage\022\r\n\005Ms" +
-      "gID\030\001 \001(\t\022\016\n\006Sender\030\002 \001(\t\022\021\n\tChannelID\030\003" +
-      " \001(\t\022\014\n\004Type\030\004 \001(\005\022\017\n\007Content\030\005 \001(\t\022C\n\010U" +
-      "serTags\030\006 \003(\01321.IM.Protocol.ReceivedChan",
-      "nelMessage.UserTagsEntry\032/\n\rUserTagsEntr" +
-      "y\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"\034\n\007Cha" +
-      "nnel\022\021\n\tChannelID\030\001 \001(\t\"-\n\tUserGroup\022\016\n\006" +
-      "UserID\030\001 \001(\t\022\020\n\010GroupIDs\030\002 \003(\t\"\302\001\n\020SendG" +
-      "roupMessage\022\017\n\007GroupID\030\001 \001(\t\022\014\n\004Type\030\002 \001" +
-      "(\005\022\017\n\007Content\030\003 \001(\t\022=\n\010UserTags\030\004 \003(\0132+." +
-      "IM.Protocol.SendGroupMessage.UserTagsEnt" +
-      "ry\022\016\n\006Sender\030\005 \001(\t\032/\n\rUserTagsEntry\022\013\n\003k" +
-      "ey\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"\331\001\n\024Received" +
-      "GroupMessage\022\r\n\005MsgID\030\001 \001(\t\022\016\n\006Sender\030\002 ",
-      "\001(\t\022\017\n\007GroupID\030\003 \001(\t\022\014\n\004Type\030\004 \001(\005\022\017\n\007Co" +
-      "ntent\030\005 \001(\t\022A\n\010UserTags\030\006 \003(\0132/.IM.Proto" +
-      "col.ReceivedGroupMessage.UserTagsEntry\032/" +
-      "\n\rUserTagsEntry\022\013\n\003key\030\001 \001(\t\022\r\n\005value\030\002 " +
-      "\001(\014:\0028\001*\201\002\n\017PackageCategory\022\010\n\004Ping\020\000\022\t\n" +
-      "\005Login\020\001\022\n\n\006Logout\020\002\022\016\n\nSendToUser\020\003\022\021\n\r" +
+      "l.ReceivedUserMessage.UserTagsEntry\022\020\n\010S",
+      "endTime\030\006 \001(\005\032/\n\rUserTagsEntry\022\013\n\003key\030\001 " +
+      "\001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"\310\001\n\022SendChannelMe" +
+      "ssage\022\021\n\tChannelID\030\001 \001(\t\022\014\n\004Type\030\002 \001(\005\022\017" +
+      "\n\007Content\030\003 \001(\t\022?\n\010UserTags\030\004 \003(\0132-.IM.P" +
+      "rotocol.SendChannelMessage.UserTagsEntry" +
+      "\022\016\n\006Sender\030\005 \001(\t\032/\n\rUserTagsEntry\022\013\n\003key" +
+      "\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"\361\001\n\026ReceivedCh" +
+      "annelMessage\022\r\n\005MsgID\030\001 \001(\t\022\016\n\006Sender\030\002 " +
+      "\001(\t\022\021\n\tChannelID\030\003 \001(\t\022\014\n\004Type\030\004 \001(\005\022\017\n\007" +
+      "Content\030\005 \001(\t\022C\n\010UserTags\030\006 \003(\01321.IM.Pro",
+      "tocol.ReceivedChannelMessage.UserTagsEnt" +
+      "ry\022\020\n\010SendTime\030\007 \001(\005\032/\n\rUserTagsEntry\022\013\n" +
+      "\003key\030\001 \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"\034\n\007Channel" +
+      "\022\021\n\tChannelID\030\001 \001(\t\"-\n\tUserGroup\022\016\n\006User" +
+      "ID\030\001 \001(\t\022\020\n\010GroupIDs\030\002 \003(\t\"\302\001\n\020SendGroup" +
+      "Message\022\017\n\007GroupID\030\001 \001(\t\022\014\n\004Type\030\002 \001(\005\022\017" +
+      "\n\007Content\030\003 \001(\t\022=\n\010UserTags\030\004 \003(\0132+.IM.P" +
+      "rotocol.SendGroupMessage.UserTagsEntry\022\016" +
+      "\n\006Sender\030\005 \001(\t\032/\n\rUserTagsEntry\022\013\n\003key\030\001" +
+      " \001(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"\353\001\n\024ReceivedGrou",
+      "pMessage\022\r\n\005MsgID\030\001 \001(\t\022\016\n\006Sender\030\002 \001(\t\022" +
+      "\017\n\007GroupID\030\003 \001(\t\022\014\n\004Type\030\004 \001(\005\022\017\n\007Conten" +
+      "t\030\005 \001(\t\022A\n\010UserTags\030\006 \003(\0132/.IM.Protocol." +
+      "ReceivedGroupMessage.UserTagsEntry\022\020\n\010Se" +
+      "ndTime\030\007 \001(\005\032/\n\rUserTagsEntry\022\013\n\003key\030\001 \001" +
+      "(\t\022\r\n\005value\030\002 \001(\014:\0028\001\"h\n\014AdminMessage\022\020\n" +
+      "\010Receiver\030\001 \001(\t\022.\n\010Category\030\002 \001(\0162\034.IM.P" +
+      "rotocol.PackageCategory\022\026\n\016MessageConten" +
+      "t\030\003 \001(\014*\221\002\n\017PackageCategory\022\010\n\004Ping\020\000\022\t\n" +
+      "\005Login\020\001\022\n\n\006Logout\020\002\022\016\n\nSendToUser\020\003\022\021\n\r",
       "SendToChannel\020\004\022\023\n\017ReceivedUserMsg\020\005\022\026\n\022" +
       "ReceivedChannelMsg\020\006\022\021\n\rBindToChannel\020\007\022" +
       "\023\n\017UnbindToChannel\020\010\022\017\n\013BindToGroup\020\t\022\021\n" +
-      "\rUnbindToGroup\020\n\022\017\n\013SendToGroup\020\013\022\024\n\020Rec",
-      "eivedGroupMsg\020\014\022\n\n\006Result\020c*8\n\nResultCod" +
-      "e\022\013\n\007Success\020\000\022\r\n\tNeedLogin\020\001\022\016\n\nAuthFai" +
-      "led\020\002b\006proto3"
+      "\rUnbindToGroup\020\n\022\017\n\013SendToGroup\020\013\022\024\n\020Rec" +
+      "eivedGroupMsg\020\014\022\n\n\006Result\020c\022\016\n\tAdminSend" +
+      "\020\307\001*8\n\nResultCode\022\013\n\007Success\020\000\022\r\n\tNeedLo" +
+      "gin\020\001\022\016\n\nAuthFailed\020\002b\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -9626,109 +10418,115 @@ public final class ImProto {
     internal_static_IM_Protocol_SocketPackage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SocketPackage_descriptor,
-        new String[] { "Seq", "Category", "Content", });
+        new java.lang.String[] { "Seq", "Category", "Content", });
     internal_static_IM_Protocol_SocketResult_descriptor =
       getDescriptor().getMessageTypes().get(1);
     internal_static_IM_Protocol_SocketResult_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SocketResult_descriptor,
-        new String[] { "Category", "Code", "Message", "UserTags", });
+        new java.lang.String[] { "Category", "Code", "Message", "UserTags", });
     internal_static_IM_Protocol_SocketResult_UserTagsEntry_descriptor =
       internal_static_IM_Protocol_SocketResult_descriptor.getNestedTypes().get(0);
     internal_static_IM_Protocol_SocketResult_UserTagsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SocketResult_UserTagsEntry_descriptor,
-        new String[] { "Key", "Value", });
+        new java.lang.String[] { "Key", "Value", });
     internal_static_IM_Protocol_LoginToken_descriptor =
       getDescriptor().getMessageTypes().get(2);
     internal_static_IM_Protocol_LoginToken_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_LoginToken_descriptor,
-        new String[] { "UserID", "Token", "Version", "Appkey", "IsAdmin", });
+        new java.lang.String[] { "UserID", "Token", "Version", "Appkey", "IsAdmin", });
     internal_static_IM_Protocol_SendUserMessage_descriptor =
       getDescriptor().getMessageTypes().get(3);
     internal_static_IM_Protocol_SendUserMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SendUserMessage_descriptor,
-        new String[] { "Receiver", "Type", "Content", "UserTags", "Sender", });
+        new java.lang.String[] { "Receiver", "Type", "Content", "UserTags", "Sender", });
     internal_static_IM_Protocol_SendUserMessage_UserTagsEntry_descriptor =
       internal_static_IM_Protocol_SendUserMessage_descriptor.getNestedTypes().get(0);
     internal_static_IM_Protocol_SendUserMessage_UserTagsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SendUserMessage_UserTagsEntry_descriptor,
-        new String[] { "Key", "Value", });
+        new java.lang.String[] { "Key", "Value", });
     internal_static_IM_Protocol_ReceivedUserMessage_descriptor =
       getDescriptor().getMessageTypes().get(4);
     internal_static_IM_Protocol_ReceivedUserMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_ReceivedUserMessage_descriptor,
-        new String[] { "MsgID", "Sender", "Type", "Content", "UserTags", });
+        new java.lang.String[] { "MsgID", "Sender", "Type", "Content", "UserTags", "SendTime", });
     internal_static_IM_Protocol_ReceivedUserMessage_UserTagsEntry_descriptor =
       internal_static_IM_Protocol_ReceivedUserMessage_descriptor.getNestedTypes().get(0);
     internal_static_IM_Protocol_ReceivedUserMessage_UserTagsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_ReceivedUserMessage_UserTagsEntry_descriptor,
-        new String[] { "Key", "Value", });
+        new java.lang.String[] { "Key", "Value", });
     internal_static_IM_Protocol_SendChannelMessage_descriptor =
       getDescriptor().getMessageTypes().get(5);
     internal_static_IM_Protocol_SendChannelMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SendChannelMessage_descriptor,
-        new String[] { "ChannelID", "Type", "Content", "UserTags", "Sender", });
+        new java.lang.String[] { "ChannelID", "Type", "Content", "UserTags", "Sender", });
     internal_static_IM_Protocol_SendChannelMessage_UserTagsEntry_descriptor =
       internal_static_IM_Protocol_SendChannelMessage_descriptor.getNestedTypes().get(0);
     internal_static_IM_Protocol_SendChannelMessage_UserTagsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SendChannelMessage_UserTagsEntry_descriptor,
-        new String[] { "Key", "Value", });
+        new java.lang.String[] { "Key", "Value", });
     internal_static_IM_Protocol_ReceivedChannelMessage_descriptor =
       getDescriptor().getMessageTypes().get(6);
     internal_static_IM_Protocol_ReceivedChannelMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_ReceivedChannelMessage_descriptor,
-        new String[] { "MsgID", "Sender", "ChannelID", "Type", "Content", "UserTags", });
+        new java.lang.String[] { "MsgID", "Sender", "ChannelID", "Type", "Content", "UserTags", "SendTime", });
     internal_static_IM_Protocol_ReceivedChannelMessage_UserTagsEntry_descriptor =
       internal_static_IM_Protocol_ReceivedChannelMessage_descriptor.getNestedTypes().get(0);
     internal_static_IM_Protocol_ReceivedChannelMessage_UserTagsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_ReceivedChannelMessage_UserTagsEntry_descriptor,
-        new String[] { "Key", "Value", });
+        new java.lang.String[] { "Key", "Value", });
     internal_static_IM_Protocol_Channel_descriptor =
       getDescriptor().getMessageTypes().get(7);
     internal_static_IM_Protocol_Channel_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_Channel_descriptor,
-        new String[] { "ChannelID", });
+        new java.lang.String[] { "ChannelID", });
     internal_static_IM_Protocol_UserGroup_descriptor =
       getDescriptor().getMessageTypes().get(8);
     internal_static_IM_Protocol_UserGroup_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_UserGroup_descriptor,
-        new String[] { "UserID", "GroupIDs", });
+        new java.lang.String[] { "UserID", "GroupIDs", });
     internal_static_IM_Protocol_SendGroupMessage_descriptor =
       getDescriptor().getMessageTypes().get(9);
     internal_static_IM_Protocol_SendGroupMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SendGroupMessage_descriptor,
-        new String[] { "GroupID", "Type", "Content", "UserTags", "Sender", });
+        new java.lang.String[] { "GroupID", "Type", "Content", "UserTags", "Sender", });
     internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_descriptor =
       internal_static_IM_Protocol_SendGroupMessage_descriptor.getNestedTypes().get(0);
     internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_SendGroupMessage_UserTagsEntry_descriptor,
-        new String[] { "Key", "Value", });
+        new java.lang.String[] { "Key", "Value", });
     internal_static_IM_Protocol_ReceivedGroupMessage_descriptor =
       getDescriptor().getMessageTypes().get(10);
     internal_static_IM_Protocol_ReceivedGroupMessage_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_ReceivedGroupMessage_descriptor,
-        new String[] { "MsgID", "Sender", "GroupID", "Type", "Content", "UserTags", });
+        new java.lang.String[] { "MsgID", "Sender", "GroupID", "Type", "Content", "UserTags", "SendTime", });
     internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_descriptor =
       internal_static_IM_Protocol_ReceivedGroupMessage_descriptor.getNestedTypes().get(0);
     internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_IM_Protocol_ReceivedGroupMessage_UserTagsEntry_descriptor,
-        new String[] { "Key", "Value", });
+        new java.lang.String[] { "Key", "Value", });
+    internal_static_IM_Protocol_AdminMessage_descriptor =
+      getDescriptor().getMessageTypes().get(11);
+    internal_static_IM_Protocol_AdminMessage_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_IM_Protocol_AdminMessage_descriptor,
+        new java.lang.String[] { "Receiver", "Category", "MessageContent", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
