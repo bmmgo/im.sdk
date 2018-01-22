@@ -55,6 +55,7 @@ message ReceivedUserMessage{
 	int32 Type = 3;
 	string Content = 4;
 	map<string,bytes> UserTags = 5;
+	int32 SendTime = 6;
 }
 message SendChannelMessage{
 	string ChannelID = 1;
@@ -70,6 +71,7 @@ message ReceivedChannelMessage{
 	int32 Type = 4;
 	string Content = 5;
 	map<string,bytes> UserTags = 6;
+	int32 SendTime = 7;
 }
 message Channel{
 	string ChannelID = 1;
@@ -92,6 +94,7 @@ message ReceivedGroupMessage{
 	int32 Type = 4;
 	string Content = 5;
 	map<string,bytes> UserTags = 6;
+	int32 SendTime = 7;
 }
 message AdminMessage{
 	string Receiver = 1;

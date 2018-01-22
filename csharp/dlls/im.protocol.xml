@@ -81,6 +81,9 @@
         <member name="F:IM.Protocol.ReceivedUserMessage.UserTagsFieldNumber">
             <summary>Field number for the "UserTags" field.</summary>
         </member>
+        <member name="F:IM.Protocol.ReceivedUserMessage.SendTimeFieldNumber">
+            <summary>Field number for the "SendTime" field.</summary>
+        </member>
         <member name="F:IM.Protocol.SendChannelMessage.ChannelIDFieldNumber">
             <summary>Field number for the "ChannelID" field.</summary>
         </member>
@@ -118,6 +121,9 @@
         </member>
         <member name="F:IM.Protocol.ReceivedChannelMessage.UserTagsFieldNumber">
             <summary>Field number for the "UserTags" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.ReceivedChannelMessage.SendTimeFieldNumber">
+            <summary>Field number for the "SendTime" field.</summary>
         </member>
         <member name="F:IM.Protocol.Channel.ChannelIDFieldNumber">
             <summary>Field number for the "ChannelID" field.</summary>
@@ -165,6 +171,9 @@
         </member>
         <member name="F:IM.Protocol.ReceivedGroupMessage.UserTagsFieldNumber">
             <summary>Field number for the "UserTags" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.ReceivedGroupMessage.SendTimeFieldNumber">
+            <summary>Field number for the "SendTime" field.</summary>
         </member>
         <member name="F:IM.Protocol.AdminMessage.ReceiverFieldNumber">
             <summary>Field number for the "Receiver" field.</summary>
