@@ -285,6 +285,14 @@ namespace im.sdk
             userGroup.GroupIDs.Add(groupId);
             Send(PackageCategory.UnbindToGroup, userGroup);
         }
+        /// <summary>
+        /// admin send message
+        /// </summary>
+        /// <param name="message"></param>
+        public void AdminSend(AdminMessage message)
+        {
+            Send(PackageCategory.AdminSend, message);
+        }
 
         /// <summary>
         /// 收到频道消息事件

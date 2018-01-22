@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using im.sdk;
 using IM.Protocol;
 using IM.Test;
+using Google.Protobuf;
 
 namespace im.test.console
 {
@@ -16,8 +17,8 @@ namespace im.test.console
         static void Main(string[] args)
         {
             var imClient = new ImClient(true);
-            //imClient.Ip = "127.0.0.1";
-            //imClient.Port = 16666;
+            imClient.Ip = "127.0.0.1";
+            imClient.Port = 16666;
             imClient.OnConnected += ImClient_OnConnected;
             imClient.OnConnectedFailed += ImClient_OnConnectedFailed;
             imClient.OnDisconnected += ImClient_OnDisconnected;
@@ -38,6 +39,14 @@ namespace im.test.console
                         Content = "group",
                         GroupID = "1"
                     });
+
+                    AdminMessage message = new AdminMessage();
+                    message.Receiver = "41f7d5a8942ba6956a9e6e9d70aaf7a8";
+                    message.Category = PackageCategory.ReceivedChannelMsg;
+                    var channelMessage = new ReceivedChannelMessage();
+                    channelMessage.Content = "test";
+                    message.MessageContent = channelMessage.ToByteString();
+                    imClient.AdminSend(message);
                 }
             }
         }
@@ -79,7 +88,7 @@ namespace im.test.console
         private static void ImClient_OnConnected(ImClient obj)
         {
             Console.WriteLine("connected");
-            obj.Login("www.bmmgo.com", Guid.NewGuid().ToString("N"), "41f7d5a8942ba6956a9e6e9d70aaf7a8");
+            obj.Login("www.bmmgo.com", Guid.NewGuid().ToString("N"), "41f7d5a8942ba6956a9e6e9d70aaf7a8", true);
         }
 
         private static void ImClient_OnLogin(ImClient arg1, bool arg2, string arg3)

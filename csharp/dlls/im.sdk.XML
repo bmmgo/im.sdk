@@ -113,6 +113,12 @@
             </summary>
             <param name="groupId"></param>
         </member>
+        <member name="M:im.sdk.ImClient.AdminSend(IM.Protocol.AdminMessage)">
+            <summary>
+            admin send message
+            </summary>
+            <param name="message"></param>
+        </member>
         <member name="E:im.sdk.ImClient.OnReceivedChannelMessage">
             <summary>
             收到频道消息事件

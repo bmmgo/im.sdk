@@ -166,5 +166,14 @@
         <member name="F:IM.Protocol.ReceivedGroupMessage.UserTagsFieldNumber">
             <summary>Field number for the "UserTags" field.</summary>
         </member>
+        <member name="F:IM.Protocol.AdminMessage.ReceiverFieldNumber">
+            <summary>Field number for the "Receiver" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.AdminMessage.CategoryFieldNumber">
+            <summary>Field number for the "Category" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.AdminMessage.MessageContentFieldNumber">
+            <summary>Field number for the "MessageContent" field.</summary>
+        </member>
     </members>
 </doc>
