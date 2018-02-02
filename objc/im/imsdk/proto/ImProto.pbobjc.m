@@ -49,7 +49,8 @@ GPBEnumDescriptor *PackageCategory_EnumDescriptor(void) {
         "el\000ReceivedUserMsg\000ReceivedChannelMsg\000Bi"
         "ndToChannel\000UnbindToChannel\000BindToGroup\000"
         "UnbindToGroup\000SendToGroup\000ReceivedGroupM"
-        "sg\000Result\000";
+        "sg\000Result\000AdminSend\000SubUserLogin\000UnsubUs"
+        "erLogin\000PubUserLogin\000";
     static const int32_t values[] = {
         PackageCategory_Ping,
         PackageCategory_Login,
@@ -65,8 +66,12 @@ GPBEnumDescriptor *PackageCategory_EnumDescriptor(void) {
         PackageCategory_SendToGroup,
         PackageCategory_ReceivedGroupMsg,
         PackageCategory_Result,
+        PackageCategory_AdminSend,
+        PackageCategory_SubUserLogin,
+        PackageCategory_UnsubUserLogin,
+        PackageCategory_PubUserLogin,
     };
-    static const char *extraTextFormatInfo = "\016\000\004\000\001\005\000\002\006\000\003\n\000\004\r\000\005\017\000\006\022\000\007\r\000\010\017\000\t\013\000\n\r\000\013\013\000\014\020\000\r\006\000";
+    static const char *extraTextFormatInfo = "\022\000\004\000\001\005\000\002\006\000\003\n\000\004\r\000\005\017\000\006\022\000\007\r\000\010\017\000\t\013\000\n\r\000\013\013\000\014\020\000\r\006\000\016\t\000\017\014\000\020\016\000\021\014\000";
     GPBEnumDescriptor *worker =
         [GPBEnumDescriptor allocDescriptorForName:GPBNSStringifySymbol(PackageCategory)
                                        valueNames:valueNames
@@ -97,6 +102,10 @@ BOOL PackageCategory_IsValidValue(int32_t value__) {
     case PackageCategory_SendToGroup:
     case PackageCategory_ReceivedGroupMsg:
     case PackageCategory_Result:
+    case PackageCategory_AdminSend:
+    case PackageCategory_SubUserLogin:
+    case PackageCategory_UnsubUserLogin:
+    case PackageCategory_PubUserLogin:
       return YES;
     default:
       return NO;
@@ -334,16 +343,18 @@ void SetSocketResult_Code_RawValue(SocketResult *message, int32_t value) {
 
 @dynamic userId;
 @dynamic token;
-@dynamic version;
+@dynamic versionCode;
 @dynamic appkey;
 @dynamic isAdmin;
+@dynamic versionName;
 
 typedef struct LoginToken__storage_ {
   uint32_t _has_storage_[1];
-  int32_t version;
+  int32_t versionCode;
   NSString *userId;
   NSString *token;
   NSString *appkey;
+  NSString *versionName;
 } LoginToken__storage_;
 
 // This method is threadsafe because it is initially called
@@ -371,11 +382,11 @@ typedef struct LoginToken__storage_ {
         .dataType = GPBDataTypeString,
       },
       {
-        .name = "version",
+        .name = "versionCode",
         .dataTypeSpecific.className = NULL,
-        .number = LoginToken_FieldNumber_Version,
+        .number = LoginToken_FieldNumber_VersionCode,
         .hasIndex = 2,
-        .offset = (uint32_t)offsetof(LoginToken__storage_, version),
+        .offset = (uint32_t)offsetof(LoginToken__storage_, versionCode),
         .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
         .dataType = GPBDataTypeInt32,
       },
@@ -397,6 +408,15 @@ typedef struct LoginToken__storage_ {
         .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
         .dataType = GPBDataTypeBool,
       },
+      {
+        .name = "versionName",
+        .dataTypeSpecific.className = NULL,
+        .number = LoginToken_FieldNumber_VersionName,
+        .hasIndex = 6,
+        .offset = (uint32_t)offsetof(LoginToken__storage_, versionName),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[LoginToken class]
@@ -408,7 +428,7 @@ typedef struct LoginToken__storage_ {
                                          flags:0];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001EA\000\002E\000\003G\000\004F\000\005G\000";
+        "\006\001EA\000\002E\000\003K\000\004F\000\005G\000\006K\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -520,10 +540,12 @@ typedef struct SendUserMessage__storage_ {
 @dynamic type;
 @dynamic content;
 @dynamic userTags, userTags_Count;
+@dynamic sendTime;
 
 typedef struct ReceivedUserMessage__storage_ {
   uint32_t _has_storage_[1];
   int32_t type;
+  int32_t sendTime;
   NSString *msgId;
   NSString *sender;
   NSString *content;
@@ -581,6 +603,15 @@ typedef struct ReceivedUserMessage__storage_ {
         .flags = GPBFieldMapKeyString | GPBFieldTextFormatNameCustom,
         .dataType = GPBDataTypeBytes,
       },
+      {
+        .name = "sendTime",
+        .dataTypeSpecific.className = NULL,
+        .number = ReceivedUserMessage_FieldNumber_SendTime,
+        .hasIndex = 4,
+        .offset = (uint32_t)offsetof(ReceivedUserMessage__storage_, sendTime),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[ReceivedUserMessage class]
@@ -592,7 +623,7 @@ typedef struct ReceivedUserMessage__storage_ {
                                          flags:0];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\005\001DA\000\002F\000\003D\000\004G\000\005H\000";
+        "\006\001DA\000\002F\000\003D\000\004G\000\005H\000\006H\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -705,10 +736,12 @@ typedef struct SendChannelMessage__storage_ {
 @dynamic type;
 @dynamic content;
 @dynamic userTags, userTags_Count;
+@dynamic sendTime;
 
 typedef struct ReceivedChannelMessage__storage_ {
   uint32_t _has_storage_[1];
   int32_t type;
+  int32_t sendTime;
   NSString *msgId;
   NSString *sender;
   NSString *channelId;
@@ -776,6 +809,15 @@ typedef struct ReceivedChannelMessage__storage_ {
         .flags = GPBFieldMapKeyString | GPBFieldTextFormatNameCustom,
         .dataType = GPBDataTypeBytes,
       },
+      {
+        .name = "sendTime",
+        .dataTypeSpecific.className = NULL,
+        .number = ReceivedChannelMessage_FieldNumber_SendTime,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(ReceivedChannelMessage__storage_, sendTime),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[ReceivedChannelMessage class]
@@ -787,7 +829,7 @@ typedef struct ReceivedChannelMessage__storage_ {
                                          flags:0];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\006\001DA\000\002F\000\003HA\000\004D\000\005G\000\006H\000";
+        "\007\001DA\000\002F\000\003HA\000\004D\000\005G\000\006H\000\007H\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -1007,10 +1049,12 @@ typedef struct SendGroupMessage__storage_ {
 @dynamic type;
 @dynamic content;
 @dynamic userTags, userTags_Count;
+@dynamic sendTime;
 
 typedef struct ReceivedGroupMessage__storage_ {
   uint32_t _has_storage_[1];
   int32_t type;
+  int32_t sendTime;
   NSString *msgId;
   NSString *sender;
   NSString *groupId;
@@ -1078,6 +1122,15 @@ typedef struct ReceivedGroupMessage__storage_ {
         .flags = GPBFieldMapKeyString | GPBFieldTextFormatNameCustom,
         .dataType = GPBDataTypeBytes,
       },
+      {
+        .name = "sendTime",
+        .dataTypeSpecific.className = NULL,
+        .number = ReceivedGroupMessage_FieldNumber_SendTime,
+        .hasIndex = 5,
+        .offset = (uint32_t)offsetof(ReceivedGroupMessage__storage_, sendTime),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeInt32,
+      },
     };
     GPBDescriptor *localDescriptor =
         [GPBDescriptor allocDescriptorForClass:[ReceivedGroupMessage class]
@@ -1089,7 +1142,7 @@ typedef struct ReceivedGroupMessage__storage_ {
                                          flags:0];
 #if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     static const char *extraTextFormatInfo =
-        "\006\001DA\000\002F\000\003FA\000\004D\000\005G\000\006H\000";
+        "\007\001DA\000\002F\000\003FA\000\004D\000\005G\000\006H\000\007H\000";
     [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
 #endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
     NSAssert(descriptor == nil, @"Startup recursed!");
@@ -1099,6 +1152,88 @@ typedef struct ReceivedGroupMessage__storage_ {
 }
 
 @end
+
+#pragma mark - AdminMessage
+
+@implementation AdminMessage
+
+@dynamic receiver;
+@dynamic category;
+@dynamic messageContent;
+
+typedef struct AdminMessage__storage_ {
+  uint32_t _has_storage_[1];
+  PackageCategory category;
+  NSString *receiver;
+  NSData *messageContent;
+} AdminMessage__storage_;
+
+// This method is threadsafe because it is initially called
+// in +initialize for each subclass.
++ (GPBDescriptor *)descriptor {
+  static GPBDescriptor *descriptor = nil;
+  if (!descriptor) {
+    static GPBMessageFieldDescription fields[] = {
+      {
+        .name = "receiver",
+        .dataTypeSpecific.className = NULL,
+        .number = AdminMessage_FieldNumber_Receiver,
+        .hasIndex = 0,
+        .offset = (uint32_t)offsetof(AdminMessage__storage_, receiver),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeString,
+      },
+      {
+        .name = "category",
+        .dataTypeSpecific.enumDescFunc = PackageCategory_EnumDescriptor,
+        .number = AdminMessage_FieldNumber_Category,
+        .hasIndex = 1,
+        .offset = (uint32_t)offsetof(AdminMessage__storage_, category),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom | GPBFieldHasEnumDescriptor,
+        .dataType = GPBDataTypeEnum,
+      },
+      {
+        .name = "messageContent",
+        .dataTypeSpecific.className = NULL,
+        .number = AdminMessage_FieldNumber_MessageContent,
+        .hasIndex = 2,
+        .offset = (uint32_t)offsetof(AdminMessage__storage_, messageContent),
+        .flags = GPBFieldOptional | GPBFieldTextFormatNameCustom,
+        .dataType = GPBDataTypeBytes,
+      },
+    };
+    GPBDescriptor *localDescriptor =
+        [GPBDescriptor allocDescriptorForClass:[AdminMessage class]
+                                     rootClass:[ImProtoRoot class]
+                                          file:ImProtoRoot_FileDescriptor()
+                                        fields:fields
+                                    fieldCount:(uint32_t)(sizeof(fields) / sizeof(GPBMessageFieldDescription))
+                                   storageSize:sizeof(AdminMessage__storage_)
+                                         flags:0];
+#if !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    static const char *extraTextFormatInfo =
+        "\003\001H\000\002H\000\003N\000";
+    [localDescriptor setupExtraTextInfo:extraTextFormatInfo];
+#endif  // !GPBOBJC_SKIP_MESSAGE_TEXTFORMAT_EXTRAS
+    NSAssert(descriptor == nil, @"Startup recursed!");
+    descriptor = localDescriptor;
+  }
+  return descriptor;
+}
+
+@end
+
+int32_t AdminMessage_Category_RawValue(AdminMessage *message) {
+  GPBDescriptor *descriptor = [AdminMessage descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:AdminMessage_FieldNumber_Category];
+  return GPBGetMessageInt32Field(message, field);
+}
+
+void SetAdminMessage_Category_RawValue(AdminMessage *message, int32_t value) {
+  GPBDescriptor *descriptor = [AdminMessage descriptor];
+  GPBFieldDescriptor *field = [descriptor fieldWithNumber:AdminMessage_FieldNumber_Category];
+  GPBSetInt32IvarWithFieldInternal(message, field, value, descriptor.file.syntax);
+}
 
 
 #pragma clang diagnostic pop

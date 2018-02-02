@@ -30,57 +30,58 @@ namespace IM.Protocol {
             "Q2F0ZWdvcnkSJQoEQ29kZRgCIAEoDjIXLklNLlByb3RvY29sLlJlc3VsdENv",
             "ZGUSDwoHTWVzc2FnZRgDIAEoCRI5CghVc2VyVGFncxgEIAMoCzInLklNLlBy",
             "b3RvY29sLlNvY2tldFJlc3VsdC5Vc2VyVGFnc0VudHJ5Gi8KDVVzZXJUYWdz",
-            "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4ASJdCgpMb2dp",
-            "blRva2VuEg4KBlVzZXJJRBgBIAEoCRINCgVUb2tlbhgCIAEoCRIPCgdWZXJz",
-            "aW9uGAMgASgFEg4KBkFwcGtleRgEIAEoCRIPCgdJc0FkbWluGAUgASgIIsEB",
-            "Cg9TZW5kVXNlck1lc3NhZ2USEAoIUmVjZWl2ZXIYASABKAkSDAoEVHlwZRgC",
-            "IAEoBRIPCgdDb250ZW50GAMgASgJEjwKCFVzZXJUYWdzGAQgAygLMiouSU0u",
-            "UHJvdG9jb2wuU2VuZFVzZXJNZXNzYWdlLlVzZXJUYWdzRW50cnkSDgoGU2Vu",
-            "ZGVyGAUgASgJGi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZh",
-            "bHVlGAIgASgMOgI4ASLYAQoTUmVjZWl2ZWRVc2VyTWVzc2FnZRINCgVNc2dJ",
-            "RBgBIAEoCRIOCgZTZW5kZXIYAiABKAkSDAoEVHlwZRgDIAEoBRIPCgdDb250",
-            "ZW50GAQgASgJEkAKCFVzZXJUYWdzGAUgAygLMi4uSU0uUHJvdG9jb2wuUmVj",
-            "ZWl2ZWRVc2VyTWVzc2FnZS5Vc2VyVGFnc0VudHJ5EhAKCFNlbmRUaW1lGAYg",
-            "ASgFGi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIg",
-            "ASgMOgI4ASLIAQoSU2VuZENoYW5uZWxNZXNzYWdlEhEKCUNoYW5uZWxJRBgB",
-            "IAEoCRIMCgRUeXBlGAIgASgFEg8KB0NvbnRlbnQYAyABKAkSPwoIVXNlclRh",
-            "Z3MYBCADKAsyLS5JTS5Qcm90b2NvbC5TZW5kQ2hhbm5lbE1lc3NhZ2UuVXNl",
-            "clRhZ3NFbnRyeRIOCgZTZW5kZXIYBSABKAkaLwoNVXNlclRhZ3NFbnRyeRIL",
-            "CgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAw6AjgBIvEBChZSZWNlaXZlZENo",
-            "YW5uZWxNZXNzYWdlEg0KBU1zZ0lEGAEgASgJEg4KBlNlbmRlchgCIAEoCRIR",
-            "CglDaGFubmVsSUQYAyABKAkSDAoEVHlwZRgEIAEoBRIPCgdDb250ZW50GAUg",
-            "ASgJEkMKCFVzZXJUYWdzGAYgAygLMjEuSU0uUHJvdG9jb2wuUmVjZWl2ZWRD",
-            "aGFubmVsTWVzc2FnZS5Vc2VyVGFnc0VudHJ5EhAKCFNlbmRUaW1lGAcgASgF",
-            "Gi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgM",
-            "OgI4ASIcCgdDaGFubmVsEhEKCUNoYW5uZWxJRBgBIAEoCSItCglVc2VyR3Jv",
-            "dXASDgoGVXNlcklEGAEgASgJEhAKCEdyb3VwSURzGAIgAygJIsIBChBTZW5k",
-            "R3JvdXBNZXNzYWdlEg8KB0dyb3VwSUQYASABKAkSDAoEVHlwZRgCIAEoBRIP",
-            "CgdDb250ZW50GAMgASgJEj0KCFVzZXJUYWdzGAQgAygLMisuSU0uUHJvdG9j",
-            "b2wuU2VuZEdyb3VwTWVzc2FnZS5Vc2VyVGFnc0VudHJ5Eg4KBlNlbmRlchgF",
-            "IAEoCRovCg1Vc2VyVGFnc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgC",
-            "IAEoDDoCOAEi6wEKFFJlY2VpdmVkR3JvdXBNZXNzYWdlEg0KBU1zZ0lEGAEg",
-            "ASgJEg4KBlNlbmRlchgCIAEoCRIPCgdHcm91cElEGAMgASgJEgwKBFR5cGUY",
-            "BCABKAUSDwoHQ29udGVudBgFIAEoCRJBCghVc2VyVGFncxgGIAMoCzIvLklN",
-            "LlByb3RvY29sLlJlY2VpdmVkR3JvdXBNZXNzYWdlLlVzZXJUYWdzRW50cnkS",
-            "EAoIU2VuZFRpbWUYByABKAUaLwoNVXNlclRhZ3NFbnRyeRILCgNrZXkYASAB",
-            "KAkSDQoFdmFsdWUYAiABKAw6AjgBImgKDEFkbWluTWVzc2FnZRIQCghSZWNl",
-            "aXZlchgBIAEoCRIuCghDYXRlZ29yeRgCIAEoDjIcLklNLlByb3RvY29sLlBh",
-            "Y2thZ2VDYXRlZ29yeRIWCg5NZXNzYWdlQ29udGVudBgDIAEoDCrMAgoPUGFj",
-            "a2FnZUNhdGVnb3J5EggKBFBpbmcQABIJCgVMb2dpbhABEgoKBkxvZ291dBAC",
-            "Eg4KClNlbmRUb1VzZXIQAxIRCg1TZW5kVG9DaGFubmVsEAQSEwoPUmVjZWl2",
-            "ZWRVc2VyTXNnEAUSFgoSUmVjZWl2ZWRDaGFubmVsTXNnEAYSEQoNQmluZFRv",
-            "Q2hhbm5lbBAHEhMKD1VuYmluZFRvQ2hhbm5lbBAIEg8KC0JpbmRUb0dyb3Vw",
-            "EAkSEQoNVW5iaW5kVG9Hcm91cBAKEg8KC1NlbmRUb0dyb3VwEAsSFAoQUmVj",
-            "ZWl2ZWRHcm91cE1zZxAMEgoKBlJlc3VsdBBjEg4KCUFkbWluU2VuZBDHARIR",
-            "CgxTdWJVc2VyTG9naW4QyAESEwoOVW5zdWJVc2VyTG9naW4QyQESEQoMUHVi",
-            "VXNlckxvZ2luEMoBKjgKClJlc3VsdENvZGUSCwoHU3VjY2VzcxAAEg0KCU5l",
-            "ZWRMb2dpbhABEg4KCkF1dGhGYWlsZWQQAmIGcHJvdG8z"));
+            "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4ASJ2CgpMb2dp",
+            "blRva2VuEg4KBlVzZXJJRBgBIAEoCRINCgVUb2tlbhgCIAEoCRITCgtWZXJz",
+            "aW9uQ29kZRgDIAEoBRIOCgZBcHBrZXkYBCABKAkSDwoHSXNBZG1pbhgFIAEo",
+            "CBITCgtWZXJzaW9uTmFtZRgGIAEoCSLBAQoPU2VuZFVzZXJNZXNzYWdlEhAK",
+            "CFJlY2VpdmVyGAEgASgJEgwKBFR5cGUYAiABKAUSDwoHQ29udGVudBgDIAEo",
+            "CRI8CghVc2VyVGFncxgEIAMoCzIqLklNLlByb3RvY29sLlNlbmRVc2VyTWVz",
+            "c2FnZS5Vc2VyVGFnc0VudHJ5Eg4KBlNlbmRlchgFIAEoCRovCg1Vc2VyVGFn",
+            "c0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoDDoCOAEi2AEKE1Jl",
+            "Y2VpdmVkVXNlck1lc3NhZ2USDQoFTXNnSUQYASABKAkSDgoGU2VuZGVyGAIg",
+            "ASgJEgwKBFR5cGUYAyABKAUSDwoHQ29udGVudBgEIAEoCRJACghVc2VyVGFn",
+            "cxgFIAMoCzIuLklNLlByb3RvY29sLlJlY2VpdmVkVXNlck1lc3NhZ2UuVXNl",
+            "clRhZ3NFbnRyeRIQCghTZW5kVGltZRgGIAEoBRovCg1Vc2VyVGFnc0VudHJ5",
+            "EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoDDoCOAEiyAEKElNlbmRDaGFu",
+            "bmVsTWVzc2FnZRIRCglDaGFubmVsSUQYASABKAkSDAoEVHlwZRgCIAEoBRIP",
+            "CgdDb250ZW50GAMgASgJEj8KCFVzZXJUYWdzGAQgAygLMi0uSU0uUHJvdG9j",
+            "b2wuU2VuZENoYW5uZWxNZXNzYWdlLlVzZXJUYWdzRW50cnkSDgoGU2VuZGVy",
+            "GAUgASgJGi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVl",
+            "GAIgASgMOgI4ASLxAQoWUmVjZWl2ZWRDaGFubmVsTWVzc2FnZRINCgVNc2dJ",
+            "RBgBIAEoCRIOCgZTZW5kZXIYAiABKAkSEQoJQ2hhbm5lbElEGAMgASgJEgwK",
+            "BFR5cGUYBCABKAUSDwoHQ29udGVudBgFIAEoCRJDCghVc2VyVGFncxgGIAMo",
+            "CzIxLklNLlByb3RvY29sLlJlY2VpdmVkQ2hhbm5lbE1lc3NhZ2UuVXNlclRh",
+            "Z3NFbnRyeRIQCghTZW5kVGltZRgHIAEoBRovCg1Vc2VyVGFnc0VudHJ5EgsK",
+            "A2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoDDoCOAEiHAoHQ2hhbm5lbBIRCglD",
+            "aGFubmVsSUQYASABKAkiLQoJVXNlckdyb3VwEg4KBlVzZXJJRBgBIAEoCRIQ",
+            "CghHcm91cElEcxgCIAMoCSLCAQoQU2VuZEdyb3VwTWVzc2FnZRIPCgdHcm91",
+            "cElEGAEgASgJEgwKBFR5cGUYAiABKAUSDwoHQ29udGVudBgDIAEoCRI9CghV",
+            "c2VyVGFncxgEIAMoCzIrLklNLlByb3RvY29sLlNlbmRHcm91cE1lc3NhZ2Uu",
+            "VXNlclRhZ3NFbnRyeRIOCgZTZW5kZXIYBSABKAkaLwoNVXNlclRhZ3NFbnRy",
+            "eRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAw6AjgBIusBChRSZWNlaXZl",
+            "ZEdyb3VwTWVzc2FnZRINCgVNc2dJRBgBIAEoCRIOCgZTZW5kZXIYAiABKAkS",
+            "DwoHR3JvdXBJRBgDIAEoCRIMCgRUeXBlGAQgASgFEg8KB0NvbnRlbnQYBSAB",
+            "KAkSQQoIVXNlclRhZ3MYBiADKAsyLy5JTS5Qcm90b2NvbC5SZWNlaXZlZEdy",
+            "b3VwTWVzc2FnZS5Vc2VyVGFnc0VudHJ5EhAKCFNlbmRUaW1lGAcgASgFGi8K",
+            "DVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4",
+            "ASJoCgxBZG1pbk1lc3NhZ2USEAoIUmVjZWl2ZXIYASABKAkSLgoIQ2F0ZWdv",
+            "cnkYAiABKA4yHC5JTS5Qcm90b2NvbC5QYWNrYWdlQ2F0ZWdvcnkSFgoOTWVz",
+            "c2FnZUNvbnRlbnQYAyABKAwqzAIKD1BhY2thZ2VDYXRlZ29yeRIICgRQaW5n",
+            "EAASCQoFTG9naW4QARIKCgZMb2dvdXQQAhIOCgpTZW5kVG9Vc2VyEAMSEQoN",
+            "U2VuZFRvQ2hhbm5lbBAEEhMKD1JlY2VpdmVkVXNlck1zZxAFEhYKElJlY2Vp",
+            "dmVkQ2hhbm5lbE1zZxAGEhEKDUJpbmRUb0NoYW5uZWwQBxITCg9VbmJpbmRU",
+            "b0NoYW5uZWwQCBIPCgtCaW5kVG9Hcm91cBAJEhEKDVVuYmluZFRvR3JvdXAQ",
+            "ChIPCgtTZW5kVG9Hcm91cBALEhQKEFJlY2VpdmVkR3JvdXBNc2cQDBIKCgZS",
+            "ZXN1bHQQYxIOCglBZG1pblNlbmQQxwESEQoMU3ViVXNlckxvZ2luEMgBEhMK",
+            "DlVuc3ViVXNlckxvZ2luEMkBEhEKDFB1YlVzZXJMb2dpbhDKASo4CgpSZXN1",
+            "bHRDb2RlEgsKB1N1Y2Nlc3MQABINCglOZWVkTG9naW4QARIOCgpBdXRoRmFp",
+            "bGVkEAJiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::IM.Protocol.PackageCategory), typeof(global::IM.Protocol.ResultCode), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SocketPackage), global::IM.Protocol.SocketPackage.Parser, new[]{ "Seq", "Category", "Content" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SocketResult), global::IM.Protocol.SocketResult.Parser, new[]{ "Category", "Code", "Message", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.LoginToken), global::IM.Protocol.LoginToken.Parser, new[]{ "UserID", "Token", "Version", "Appkey", "IsAdmin" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.LoginToken), global::IM.Protocol.LoginToken.Parser, new[]{ "UserID", "Token", "VersionCode", "Appkey", "IsAdmin", "VersionName" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendUserMessage), global::IM.Protocol.SendUserMessage.Parser, new[]{ "Receiver", "Type", "Content", "UserTags", "Sender" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedUserMessage), global::IM.Protocol.ReceivedUserMessage.Parser, new[]{ "MsgID", "Sender", "Type", "Content", "UserTags", "SendTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendChannelMessage), global::IM.Protocol.SendChannelMessage.Parser, new[]{ "ChannelID", "Type", "Content", "UserTags", "Sender" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
@@ -481,9 +482,10 @@ namespace IM.Protocol {
     public LoginToken(LoginToken other) : this() {
       userID_ = other.userID_;
       token_ = other.token_;
-      version_ = other.version_;
+      versionCode_ = other.versionCode_;
       appkey_ = other.appkey_;
       isAdmin_ = other.isAdmin_;
+      versionName_ = other.versionName_;
     }
 
     public LoginToken Clone() {
@@ -510,13 +512,13 @@ namespace IM.Protocol {
       }
     }
 
-    /// <summary>Field number for the "Version" field.</summary>
-    public const int VersionFieldNumber = 3;
-    private int version_;
-    public int Version {
-      get { return version_; }
+    /// <summary>Field number for the "VersionCode" field.</summary>
+    public const int VersionCodeFieldNumber = 3;
+    private int versionCode_;
+    public int VersionCode {
+      get { return versionCode_; }
       set {
-        version_ = value;
+        versionCode_ = value;
       }
     }
 
@@ -540,6 +542,16 @@ namespace IM.Protocol {
       }
     }
 
+    /// <summary>Field number for the "VersionName" field.</summary>
+    public const int VersionNameFieldNumber = 6;
+    private string versionName_ = "";
+    public string VersionName {
+      get { return versionName_; }
+      set {
+        versionName_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as LoginToken);
     }
@@ -553,9 +565,10 @@ namespace IM.Protocol {
       }
       if (UserID != other.UserID) return false;
       if (Token != other.Token) return false;
-      if (Version != other.Version) return false;
+      if (VersionCode != other.VersionCode) return false;
       if (Appkey != other.Appkey) return false;
       if (IsAdmin != other.IsAdmin) return false;
+      if (VersionName != other.VersionName) return false;
       return true;
     }
 
@@ -563,9 +576,10 @@ namespace IM.Protocol {
       int hash = 1;
       if (UserID.Length != 0) hash ^= UserID.GetHashCode();
       if (Token.Length != 0) hash ^= Token.GetHashCode();
-      if (Version != 0) hash ^= Version.GetHashCode();
+      if (VersionCode != 0) hash ^= VersionCode.GetHashCode();
       if (Appkey.Length != 0) hash ^= Appkey.GetHashCode();
       if (IsAdmin != false) hash ^= IsAdmin.GetHashCode();
+      if (VersionName.Length != 0) hash ^= VersionName.GetHashCode();
       return hash;
     }
 
@@ -582,9 +596,9 @@ namespace IM.Protocol {
         output.WriteRawTag(18);
         output.WriteString(Token);
       }
-      if (Version != 0) {
+      if (VersionCode != 0) {
         output.WriteRawTag(24);
-        output.WriteInt32(Version);
+        output.WriteInt32(VersionCode);
       }
       if (Appkey.Length != 0) {
         output.WriteRawTag(34);
@@ -593,6 +607,10 @@ namespace IM.Protocol {
       if (IsAdmin != false) {
         output.WriteRawTag(40);
         output.WriteBool(IsAdmin);
+      }
+      if (VersionName.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(VersionName);
       }
     }
 
@@ -604,14 +622,17 @@ namespace IM.Protocol {
       if (Token.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Token);
       }
-      if (Version != 0) {
-        size += 1 + pb::CodedOutputStream.ComputeInt32Size(Version);
+      if (VersionCode != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(VersionCode);
       }
       if (Appkey.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Appkey);
       }
       if (IsAdmin != false) {
         size += 1 + 1;
+      }
+      if (VersionName.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(VersionName);
       }
       return size;
     }
@@ -626,14 +647,17 @@ namespace IM.Protocol {
       if (other.Token.Length != 0) {
         Token = other.Token;
       }
-      if (other.Version != 0) {
-        Version = other.Version;
+      if (other.VersionCode != 0) {
+        VersionCode = other.VersionCode;
       }
       if (other.Appkey.Length != 0) {
         Appkey = other.Appkey;
       }
       if (other.IsAdmin != false) {
         IsAdmin = other.IsAdmin;
+      }
+      if (other.VersionName.Length != 0) {
+        VersionName = other.VersionName;
       }
     }
 
@@ -653,7 +677,7 @@ namespace IM.Protocol {
             break;
           }
           case 24: {
-            Version = input.ReadInt32();
+            VersionCode = input.ReadInt32();
             break;
           }
           case 34: {
@@ -662,6 +686,10 @@ namespace IM.Protocol {
           }
           case 40: {
             IsAdmin = input.ReadBool();
+            break;
+          }
+          case 50: {
+            VersionName = input.ReadString();
             break;
           }
         }

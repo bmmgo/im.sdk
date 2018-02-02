@@ -41,9 +41,10 @@ message SocketResult{
 message LoginToken{
 	string UserID = 1;
 	string Token = 2;
-	int32 Version = 3;
+	int32 VersionCode = 3;
 	string Appkey = 4;
 	bool IsAdmin = 5;
+	string VersionName = 6;
 }
 message SendUserMessage{
 	string Receiver = 1;

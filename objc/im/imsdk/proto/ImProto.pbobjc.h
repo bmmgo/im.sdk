@@ -47,6 +47,10 @@ typedef GPB_ENUM(PackageCategory) {
   PackageCategory_SendToGroup = 11,
   PackageCategory_ReceivedGroupMsg = 12,
   PackageCategory_Result = 99,
+  PackageCategory_AdminSend = 199,
+  PackageCategory_SubUserLogin = 200,
+  PackageCategory_UnsubUserLogin = 201,
+  PackageCategory_PubUserLogin = 202,
 };
 
 GPBEnumDescriptor *PackageCategory_EnumDescriptor(void);
@@ -156,9 +160,10 @@ void SetSocketResult_Code_RawValue(SocketResult *message, int32_t value);
 typedef GPB_ENUM(LoginToken_FieldNumber) {
   LoginToken_FieldNumber_UserId = 1,
   LoginToken_FieldNumber_Token = 2,
-  LoginToken_FieldNumber_Version = 3,
+  LoginToken_FieldNumber_VersionCode = 3,
   LoginToken_FieldNumber_Appkey = 4,
   LoginToken_FieldNumber_IsAdmin = 5,
+  LoginToken_FieldNumber_VersionName = 6,
 };
 
 @interface LoginToken : GPBMessage
@@ -167,11 +172,13 @@ typedef GPB_ENUM(LoginToken_FieldNumber) {
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *token;
 
-@property(nonatomic, readwrite) int32_t version;
+@property(nonatomic, readwrite) int32_t versionCode;
 
 @property(nonatomic, readwrite, copy, null_resettable) NSString *appkey;
 
 @property(nonatomic, readwrite) BOOL isAdmin;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *versionName;
 
 @end
 
@@ -210,6 +217,7 @@ typedef GPB_ENUM(ReceivedUserMessage_FieldNumber) {
   ReceivedUserMessage_FieldNumber_Type = 3,
   ReceivedUserMessage_FieldNumber_Content = 4,
   ReceivedUserMessage_FieldNumber_UserTags = 5,
+  ReceivedUserMessage_FieldNumber_SendTime = 6,
 };
 
 @interface ReceivedUserMessage : GPBMessage
@@ -225,6 +233,8 @@ typedef GPB_ENUM(ReceivedUserMessage_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSData*> *userTags;
 /// The number of items in @c userTags without causing the array to be created.
 @property(nonatomic, readonly) NSUInteger userTags_Count;
+
+@property(nonatomic, readwrite) int32_t sendTime;
 
 @end
 
@@ -264,6 +274,7 @@ typedef GPB_ENUM(ReceivedChannelMessage_FieldNumber) {
   ReceivedChannelMessage_FieldNumber_Type = 4,
   ReceivedChannelMessage_FieldNumber_Content = 5,
   ReceivedChannelMessage_FieldNumber_UserTags = 6,
+  ReceivedChannelMessage_FieldNumber_SendTime = 7,
 };
 
 @interface ReceivedChannelMessage : GPBMessage
@@ -281,6 +292,8 @@ typedef GPB_ENUM(ReceivedChannelMessage_FieldNumber) {
 @property(nonatomic, readwrite, strong, null_resettable) NSMutableDictionary<NSString*, NSData*> *userTags;
 /// The number of items in @c userTags without causing the array to be created.
 @property(nonatomic, readonly) NSUInteger userTags_Count;
+
+@property(nonatomic, readwrite) int32_t sendTime;
 
 @end
 
@@ -349,6 +362,7 @@ typedef GPB_ENUM(ReceivedGroupMessage_FieldNumber) {
   ReceivedGroupMessage_FieldNumber_Type = 4,
   ReceivedGroupMessage_FieldNumber_Content = 5,
   ReceivedGroupMessage_FieldNumber_UserTags = 6,
+  ReceivedGroupMessage_FieldNumber_SendTime = 7,
 };
 
 @interface ReceivedGroupMessage : GPBMessage
@@ -367,7 +381,35 @@ typedef GPB_ENUM(ReceivedGroupMessage_FieldNumber) {
 /// The number of items in @c userTags without causing the array to be created.
 @property(nonatomic, readonly) NSUInteger userTags_Count;
 
+@property(nonatomic, readwrite) int32_t sendTime;
+
 @end
+
+#pragma mark - AdminMessage
+
+typedef GPB_ENUM(AdminMessage_FieldNumber) {
+  AdminMessage_FieldNumber_Receiver = 1,
+  AdminMessage_FieldNumber_Category = 2,
+  AdminMessage_FieldNumber_MessageContent = 3,
+};
+
+@interface AdminMessage : GPBMessage
+
+@property(nonatomic, readwrite, copy, null_resettable) NSString *receiver;
+
+@property(nonatomic, readwrite) PackageCategory category;
+
+@property(nonatomic, readwrite, copy, null_resettable) NSData *messageContent;
+
+@end
+
+/// Fetches the raw value of a @c AdminMessage's @c category property, even
+/// if the value was not defined by the enum at the time the code was generated.
+int32_t AdminMessage_Category_RawValue(AdminMessage *message);
+/// Sets the raw value of an @c AdminMessage's @c category property, allowing
+/// it to be set to a value that was not defined by the enum at the time the code
+/// was generated.
+void SetAdminMessage_Category_RawValue(AdminMessage *message, int32_t value);
 
 NS_ASSUME_NONNULL_END
 

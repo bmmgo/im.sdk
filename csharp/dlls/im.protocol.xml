@@ -37,14 +37,17 @@
         <member name="F:IM.Protocol.LoginToken.TokenFieldNumber">
             <summary>Field number for the "Token" field.</summary>
         </member>
-        <member name="F:IM.Protocol.LoginToken.VersionFieldNumber">
-            <summary>Field number for the "Version" field.</summary>
+        <member name="F:IM.Protocol.LoginToken.VersionCodeFieldNumber">
+            <summary>Field number for the "VersionCode" field.</summary>
         </member>
         <member name="F:IM.Protocol.LoginToken.AppkeyFieldNumber">
             <summary>Field number for the "Appkey" field.</summary>
         </member>
         <member name="F:IM.Protocol.LoginToken.IsAdminFieldNumber">
             <summary>Field number for the "IsAdmin" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.LoginToken.VersionNameFieldNumber">
+            <summary>Field number for the "VersionName" field.</summary>
         </member>
         <member name="F:IM.Protocol.SendUserMessage.ReceiverFieldNumber">
             <summary>Field number for the "Receiver" field.</summary>
