@@ -176,12 +176,14 @@ public class SocketClient implements ReceiveListener {
         return send(sp.toByteArray());
     }
 
-    public void login(String appkey, String userId, String token) {
+    public void login(String appkey, String userId, String token, int versionCode, String versionName) {
         ImProto.LoginToken loginToken = ImProto.LoginToken
                 .newBuilder()
                 .setAppkey(appkey)
                 .setUserID(userId)
                 .setToken(token)
+                .setVersionCode(versionCode)
+                .setVersionName(versionName)
                 .build();
         send(ImProto.PackageCategory.Login, loginToken);
     }
