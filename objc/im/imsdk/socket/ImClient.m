@@ -42,12 +42,14 @@
     [self loginWithAppkey:appkey userId:userId secrect:token];
 }
 
--(void)loginWithAppkey:(NSString *)appkey userId:(NSString *)userId secrect:(NSString *)secrect
+-(void)loginWithAppkey:(NSString *)appkey userId:(NSString *)userId secrect:(NSString *)secrect versionCode:(int) versionCode versionName:(NSString *)versionName
 {
     LoginToken *token = [LoginToken new];
     token.appkey = appkey;
     token.userId = userId;
     token.token = secrect;
+    token.versionCode = versionCode;
+    token.versionName = versionName;
     [self send:PackageCategory_Login with:token.data];
 }
 

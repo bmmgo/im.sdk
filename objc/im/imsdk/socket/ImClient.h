@@ -38,7 +38,7 @@
 @property(nonatomic,retain) id<ImClientDelegate> delegate;
 -(void)start;
 -(void)stop;
--(void)loginWithAppkey:(NSString *)appkey userId:(NSString *)userId secrect:(NSString *)secrect;
+-(void)loginWithAppkey:(NSString *)appkey userId:(NSString *)userId secrect:(NSString *)secrect versionCode:(int) versionCode versionName:(NSString *)versionName;
 -(void)bindToChannel:(NSString *)channel;
 -(void)unbindToChannel:(NSString *)channel;
 -(void)sendToChannel:(SendChannelMessage *)message;
