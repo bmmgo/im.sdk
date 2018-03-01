@@ -39,7 +39,8 @@
 {
     NSLog(@"connect success");
     [[self delegate] connected];
-    [self loginWithAppkey:appkey userId:userId secrect:token];
+    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
+    [self loginWithAppkey:appkey userId:userId secrect:token versionCode:[[infoDictionary objectForKey:@"CFBundleVersion"] integerValue] versionName:[infoDictionary objectForKey:@"CFBundleShortVersionString"]];
 }
 
 -(void)loginWithAppkey:(NSString *)appkey userId:(NSString *)userId secrect:(NSString *)secrect versionCode:(int) versionCode versionName:(NSString *)versionName
