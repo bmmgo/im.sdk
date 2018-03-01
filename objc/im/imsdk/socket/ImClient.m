@@ -75,6 +75,22 @@
     NSLog(@"bind to user:%@",message.content);
 }
 
+-(void)bindToGroup:(NSString *)groupId{
+    UserGroup *userGroup = [UserGroup new];
+    [[userGroup groupIdsArray] addObject:groupId];
+    [self send:PackageCategory_BindToGroup with:userGroup.data];
+}
+
+-(void)unbindToGroup:(NSString *)groupId{
+    UserGroup *userGroup = [UserGroup new];
+    [[userGroup groupIdsArray] addObject:groupId];
+    [self send:PackageCategory_UnbindToGroup with:userGroup.data];
+}
+
+-(void)sendToGroup:(SendGroupMessage *)message{
+    [self send:PackageCategory_SendToGroup with:message.data];
+}
+
 -(void)stop{
     
 }
@@ -96,15 +112,26 @@
     switch (package.category) {
         case PackageCategory_ReceivedChannelMsg:
         {
-            ReceivedChannelMessage *msg = [ReceivedChannelMessage parseFromData:package.content error:nil];
-            if([(NSObject *)delegate respondsToSelector:@selector(receivedChannelMessage:)] == YES ){
+            if([delegate respondsToSelector:@selector(receivedChannelMessage:)] == YES ){
+                ReceivedChannelMessage *msg = [ReceivedChannelMessage parseFromData:package.content error:nil];
+                NSLog(@"received channel msg:%@",msg.content);
                 [[self delegate] receivedChannelMessage:msg];
             }
-            NSLog(@"received channel msg:%@",msg.content);
             break;
         }
         case PackageCategory_ReceivedUserMsg:
-            [[self delegate] receivedUserMessage:[ReceivedUserMessage parseFromData:package.content error:nil]];
+            if([delegate respondsToSelector:@selector(receivedUserMessage:)]==YES){
+                ReceivedUserMessage *msg = [ReceivedUserMessage parseFromData:package.content error:nil];
+                NSLog(@"received user msg:%@",msg);
+                [[self delegate] receivedUserMessage:msg];
+            }
+            break;
+        case PackageCategory_ReceivedGroupMsg:
+            if([delegate respondsToSelector:@selector(receivedGroupMessage:)]==YES){
+                ReceivedGroupMessage *msg= [ReceivedGroupMessage parseFromData:package.content error:nil];
+                NSLog(@"received group msg:%@",msg.content);
+                [[self delegate] receivedGroupMessage:[ReceivedGroupMessage parseFromData:package.content error:nil]];
+            }
             break;
         case PackageCategory_Result:
             [self processResult:package];
@@ -125,16 +152,7 @@
             break;
         case PackageCategory_BindToChannel:
             NSLog(@"bind to channel success");
-            // just for test
-            SendChannelMessage *msg=[SendChannelMessage new];
-            msg.channelId = @"1";
-            msg.content= @"test";
-            [self sendToChannel:msg];
-            ///////
             break;
-            //        case PackageCategory_UnbindToChannel:
-            //            NSLog(@"unbind to channel success");
-            //            break;
     }
 }
 

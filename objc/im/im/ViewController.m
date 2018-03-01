@@ -36,8 +36,15 @@
     if(result){
         // login success,then bind to channel and send a channel message
         [imClient bindToChannel:@"1"];
+        [imClient bindToGroup:@"1"];
     }
 }
+
+-(void)receivedUserMessage:(ReceivedUserMessage *)message{}
+
+-(void)receivedChannelMessage:(ReceivedChannelMessage *)message{}
+
+-(void)receivedGroupMessage:(ReceivedGroupMessage *)message{}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -16,6 +16,7 @@
 -(void)loginResult:(bool) result message:(NSString *)message;
 -(void)receivedChannelMessage:(ReceivedChannelMessage *)message;
 -(void)receivedUserMessage:(ReceivedUserMessage *)message;
+-(void)receivedGroupMessage:(ReceivedGroupMessage *)message;
 -(void)connected;
 @end
 
@@ -42,6 +43,9 @@
 -(void)unbindToChannel:(NSString *)channel;
 -(void)sendToChannel:(SendChannelMessage *)message;
 -(void)sendToUser:(SendUserMessage *)message;
+-(void)bindToGroup:(NSString *)groupId;
+-(void)unbindToGroup:(NSString *)groupId;
+-(void)sendToGroup:(SendGroupMessage *)message;
 
 @end
 
