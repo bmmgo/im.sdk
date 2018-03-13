@@ -11,6 +11,7 @@ import java.net.Socket;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
+import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import IM.Protocol.ImProto;
@@ -20,6 +21,8 @@ import IM.Protocol.ImProto;
  */
 public class SocketClient implements ReceiveListener {
     private boolean mClosed = false;
+    private AtomicBoolean mConnecting = new AtomicBoolean(false);
+    private AtomicBoolean mConnected = new AtomicBoolean(false);
     private Socket mSocket;
     private ContextWriter mWriter;
     private ContextReader mReader;
@@ -39,7 +42,7 @@ public class SocketClient implements ReceiveListener {
         IP = ip;
         Port = port;
         mClosed = false;
-        new Thread(connector).start();
+        ReconnectIfNeed();
     }
 
     public void close() {
@@ -54,6 +57,12 @@ public class SocketClient implements ReceiveListener {
         }
     }
 
+    private void ReconnectIfNeed() {
+        if (mConnecting.compareAndSet(false, true)) {
+            new Thread(connector).start();
+        }
+    }
+
     Runnable connector = new Runnable() {
         @Override
         public void run() {
@@ -62,14 +71,23 @@ public class SocketClient implements ReceiveListener {
     };
 
     private void ConnectInternal() {
-        if (mClosed) return;
+        if (mClosed) {
+            mConnecting.set(false);
+            return;
+        }
+        if (mConnected.get()) {
+            mConnecting.set(false);
+            return;
+        }
         try {
             mSocket = new Socket(IP, Port);
             mReader.reset();
-            StartHeart();
-            StartRead();
+            mConnected.set(true);
             if (mSocketListener != null)
                 mSocketListener.onConnected(this);
+            mConnecting.set(false);
+            StartHeart();
+            StartRead();
             return;
         } catch (IOException e) {
             raiseOnError(e.getMessage());
@@ -81,7 +99,8 @@ public class SocketClient implements ReceiveListener {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        new Thread(connector).start();
+        mConnecting.set(false);
+        ReconnectIfNeed();
     }
 
     private void ReadLoop() {
@@ -94,9 +113,11 @@ public class SocketClient implements ReceiveListener {
         } catch (IOException e) {
             raiseOnError(e.getMessage());
         }
-        if (mSocketListener != null)
-            mSocketListener.onDisconnected(this);
-        new Thread(connector).start();
+        if (mConnected.compareAndSet(true, false)) {
+            if (mSocketListener != null)
+                mSocketListener.onDisconnected(this);
+        }
+        ReconnectIfNeed();
     }
 
     private boolean send(final byte[] bytes) {
@@ -119,9 +140,11 @@ public class SocketClient implements ReceiveListener {
             e.printStackTrace();
         }
         if (!flag) {
-            if (mSocketListener != null)
-                mSocketListener.onDisconnected(this);
-            new Thread(connector).start();
+            if (mConnected.compareAndSet(true, false)) {
+                if (mSocketListener != null)
+                    mSocketListener.onDisconnected(this);
+            }
+            ReconnectIfNeed();
         }
     }
 
@@ -139,11 +162,12 @@ public class SocketClient implements ReceiveListener {
             @Override
             public void run() {
                 while (!mClosed) {
-                    sendHeart();
-                    try {
-                        Thread.sleep(60000);
-                    } catch (InterruptedException e) {
-                        e.printStackTrace();
+                    if (sendHeart()) {
+                        try {
+                            Thread.sleep(30000);
+                        } catch (InterruptedException e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
@@ -161,8 +185,8 @@ public class SocketClient implements ReceiveListener {
         }
     }
 
-    public void sendHeart() {
-        send(ImProto.PackageCategory.Ping, null);
+    public boolean sendHeart() {
+        return send(ImProto.PackageCategory.Ping, null);
     }
 
     private boolean send(ImProto.PackageCategory category, GeneratedMessage message) {
