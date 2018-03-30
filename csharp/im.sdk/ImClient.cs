@@ -201,20 +201,16 @@ namespace im.sdk
         /// <param name="userId"></param>
         /// <param name="secrect"></param>
         /// <param name="isAdmin"></param>
-        public void Login(string appkey, string userId, string secrect, bool isAdmin = false)
+        public void Login(string appkey, string userId, string token, bool isAdmin = false)
         {
             var loginToken = new LoginToken();
             loginToken.Appkey = appkey;
             loginToken.UserID = userId;
-            loginToken.Token = Md5(loginToken.Appkey + loginToken.UserID + secrect).ToLower();
+            loginToken.Token = token;
             loginToken.IsAdmin = isAdmin;
             Send(PackageCategory.Login, loginToken);
         }
 
-        private string Md5(string from)
-        {
-            return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(from, "MD5");
-        }
         /// <summary>
         /// 频道订阅
         /// </summary>

@@ -31,6 +31,7 @@ enum ResultCode{
 	Success = 0;
 	NeedLogin = 1;
 	AuthFailed = 2;
+	NeedAdmin = 3;
 }
 message SocketResult{
 	PackageCategory Category = 1;

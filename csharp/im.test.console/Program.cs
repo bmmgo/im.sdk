@@ -94,7 +94,14 @@ namespace im.test.console
         private static void ImClient_OnConnected(ImClient obj)
         {
             Console.WriteLine("connected");
-            obj.Login("www.bmmgo.com", Guid.NewGuid().ToString("N"), "41f7d5a8942ba6956a9e6e9d70aaf7a8", true);
+            var userId = Guid.NewGuid().ToString("N");
+            var isAdmin = true;
+            var token = Md5("www.bmmgo.com" + userId + "41f7d5a8942ba6956a9e6e9d70aaf7a8" + (isAdmin ? "1" : "")).ToLower();
+            obj.Login("www.bmmgo.com", userId, token, isAdmin);
+        }
+        private static string Md5(string from)
+        {
+            return System.Web.Security.FormsAuthentication.HashPasswordForStoringInConfigFile(from, "MD5");
         }
 
         private static void ImClient_OnLogin(ImClient arg1, bool arg2, string arg3)

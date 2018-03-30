@@ -73,9 +73,9 @@ namespace IM.Protocol {
             "b0NoYW5uZWwQCBIPCgtCaW5kVG9Hcm91cBAJEhEKDVVuYmluZFRvR3JvdXAQ",
             "ChIPCgtTZW5kVG9Hcm91cBALEhQKEFJlY2VpdmVkR3JvdXBNc2cQDBIKCgZS",
             "ZXN1bHQQYxIOCglBZG1pblNlbmQQxwESEQoMU3ViVXNlckxvZ2luEMgBEhMK",
-            "DlVuc3ViVXNlckxvZ2luEMkBEhEKDFB1YlVzZXJMb2dpbhDKASo4CgpSZXN1",
+            "DlVuc3ViVXNlckxvZ2luEMkBEhEKDFB1YlVzZXJMb2dpbhDKASpHCgpSZXN1",
             "bHRDb2RlEgsKB1N1Y2Nlc3MQABINCglOZWVkTG9naW4QARIOCgpBdXRoRmFp",
-            "bGVkEAJiBnByb3RvMw=="));
+            "bGVkEAISDQoJTmVlZEFkbWluEANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::IM.Protocol.PackageCategory), typeof(global::IM.Protocol.ResultCode), }, new pbr::GeneratedClrTypeInfo[] {
@@ -122,6 +122,7 @@ namespace IM.Protocol {
     [pbr::OriginalName("Success")] Success = 0,
     [pbr::OriginalName("NeedLogin")] NeedLogin = 1,
     [pbr::OriginalName("AuthFailed")] AuthFailed = 2,
+    [pbr::OriginalName("NeedAdmin")] NeedAdmin = 3,
   }
 
   #endregion
