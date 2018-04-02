@@ -26,4 +26,5 @@
 @property(nonatomic,retain) id<SimpleSocketDelegate> delegate;
 -(void)connect:(NSString *) ip on:(int) port;
 -(bool)send:(NSData *)data;
+-(void)close;
 @end

@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StreamState.h"
 
 @protocol SendLoopDelegate<NSObject>
 @optional
@@ -15,13 +16,8 @@
 @end
 
 @interface SendLooper : NSObject<NSStreamDelegate>
-{
-@public
-    id<SendLoopDelegate> delegate;
-    bool isReady;
-}
 @property(nonatomic,assign) id<SendLoopDelegate> delegate;
-@property(nonatomic) bool isReady;
+@property(nonatomic) enum StreamState SendState;
 -(SendLooper *)initWithOutputStream:(NSOutputStream *)stream;
 -(bool)send:(NSData *)data;
 @end

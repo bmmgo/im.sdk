@@ -12,6 +12,10 @@
 {
     SimpleSocket *simpleSocket;
     FixLengthFrameConverter *frameConverter;
+    bool stoped;
+    NSOperationQueue *reconnectQueue;
+    bool logined;
+    int connecteFailedTimes;
 }
 
 @synthesize ip;
@@ -21,61 +25,111 @@
 @synthesize token;
 @synthesize delegate;
 
+-(instancetype)init{
+    self = [super init];
+    if(self){
+        connecteFailedTimes = 0;
+        reconnectQueue = [NSOperationQueue new];
+        reconnectQueue.maxConcurrentOperationCount = 1;
+        simpleSocket = [[SimpleSocket alloc] init];
+        frameConverter = [FixLengthFrameConverter new];
+        simpleSocket.delegate = self;
+    }
+    return self;
+}
+
 - (void)start
 {
-    simpleSocket = [[SimpleSocket alloc] init];
-    frameConverter = [FixLengthFrameConverter new];
-    simpleSocket.delegate = self;
-    [simpleSocket connect:ip on:port];
+    [reconnectQueue addOperationWithBlock:^{
+        stoped = NO;
+    }];
+    [self postConnect];
+}
+
+-(void)postConnect{
+    [reconnectQueue addOperationWithBlock:^{
+        if(stoped)return;
+        if(connecteFailedTimes >=10){
+            //重连超过10次，退出
+            connecteFailedTimes = 0;
+            stoped = YES;
+            return;
+        }
+        if(connecteFailedTimes != 0){
+            //不是第一次连接，需要停顿一下
+            [NSThread sleepForTimeInterval:5];
+        }
+        connecteFailedTimes ++;
+        NSLog(@"imsdk: reconnectQueue.operationCount %lu",(unsigned long)reconnectQueue.operationCount);
+        [simpleSocket connect:ip on:port];
+    }];
+}
+
+-(void)stop{
+    NSLog(@"imsdk: stop");
+    [reconnectQueue addOperationWithBlock:^{
+        stoped = YES;
+    }];
+    [simpleSocket close];
 }
 
 -(void)disconnected
 {
-    NSLog(@"Disconnected");
+    NSLog(@"imsdk: Disconnected");
     [frameConverter reset];
+    [self postConnect];
 }
 
 -(void)connected
 {
-    NSLog(@"connect success");
+    NSLog(@"imsdk: connect success");
+    connecteFailedTimes = 0;
     [[self delegate] connected];
-    NSDictionary *infoDictionary = [[NSBundle mainBundle] infoDictionary];
-    [self loginWithAppkey:appkey userId:userId secrect:token versionCode:[[infoDictionary objectForKey:@"CFBundleVersion"] integerValue] versionName:[infoDictionary objectForKey:@"CFBundleShortVersionString"]];
+    if(logined)
+        [self login];
 }
 
--(void)loginWithAppkey:(NSString *)appkey userId:(NSString *)userId secrect:(NSString *)secrect versionCode:(int) versionCode versionName:(NSString *)versionName
+-(void)login
 {
     LoginToken *token = [LoginToken new];
-    token.appkey = appkey;
-    token.userId = userId;
-    token.token = secrect;
-    token.versionCode = versionCode;
-    token.versionName = versionName;
+    token.appkey = self.appkey;
+    token.userId = self.userId;
+    token.token = self.token;
+    token.versionCode = self.versionCode;
+    token.versionName = self.versionName;
     [self send:PackageCategory_Login with:token.data];
+}
+
+-(void)logout{
+    self.appkey = nil;
+    self.userId = nil;
+    self.token = nil;
+    logined = false;
+    [self send:PackageCategory_Logout with:nil];
 }
 
 -(void)bindToChannel:(NSString *)channel{
     Channel *ch=[Channel new];
     ch.channelId = channel;
     [self send:PackageCategory_BindToChannel with:ch.data];
-    NSLog(@"bind to channel:%@",channel);
+    NSLog(@"imsdk: bind to channel:%@",channel);
 }
 
 -(void)unbindToChannel:(NSString *)channel{
     Channel *ch=[Channel new];
     ch.channelId = channel;
     [self send:PackageCategory_UnbindToChannel with:ch.data];
-    NSLog(@"unbind to channel:%@",channel);
+    NSLog(@"imsdk: unbind to channel:%@",channel);
 }
 
 -(void)sendToChannel:(SendChannelMessage *)message{
     [self send:PackageCategory_SendToChannel with:message.data];
-    NSLog(@"send to channel:%@",message.content);
+    NSLog(@"imsdk: send to channel:%@",message.content);
 }
 
 -(void)sendToUser:(SendUserMessage *)message{
     [self send:PackageCategory_SendToUser with:message.data];
-    NSLog(@"bind to user:%@",message.content);
+    NSLog(@"imsdk: bind to user:%@",message.content);
 }
 
 -(void)bindToGroup:(NSString *)groupId{
@@ -92,10 +146,6 @@
 
 -(void)sendToGroup:(SendGroupMessage *)message{
     [self send:PackageCategory_SendToGroup with:message.data];
-}
-
--(void)stop{
-    
 }
 
 -(void)receive:(NSData *)data
@@ -117,7 +167,7 @@
         {
             if([delegate respondsToSelector:@selector(receivedChannelMessage:)] == YES ){
                 ReceivedChannelMessage *msg = [ReceivedChannelMessage parseFromData:package.content error:nil];
-                NSLog(@"received channel msg:%@",msg.content);
+                NSLog(@"imsdk: received channel msg:%@",msg.content);
                 [[self delegate] receivedChannelMessage:msg];
             }
             break;
@@ -125,14 +175,14 @@
         case PackageCategory_ReceivedUserMsg:
             if([delegate respondsToSelector:@selector(receivedUserMessage:)]==YES){
                 ReceivedUserMessage *msg = [ReceivedUserMessage parseFromData:package.content error:nil];
-                NSLog(@"received user msg:%@",msg);
+                NSLog(@"rimsdk: eceived user msg:%@",msg);
                 [[self delegate] receivedUserMessage:msg];
             }
             break;
         case PackageCategory_ReceivedGroupMsg:
             if([delegate respondsToSelector:@selector(receivedGroupMessage:)]==YES){
                 ReceivedGroupMessage *msg= [ReceivedGroupMessage parseFromData:package.content error:nil];
-                NSLog(@"received group msg:%@",msg.content);
+                NSLog(@"imsdk: received group msg:%@",msg.content);
                 [[self delegate] receivedGroupMessage:[ReceivedGroupMessage parseFromData:package.content error:nil]];
             }
             break;
@@ -148,13 +198,17 @@
         case PackageCategory_Login:
             if(result.code == ResultCode_Success){
                 [self startHeart];
+                logined = YES;
+                NSLog(@"imsdk: login success");
                 [[self delegate] loginResult:YES message:nil];
             }else{
+                logined = NO;
+                NSLog(@"imsdk: login failed");
                 [[self delegate] loginResult:NO message:result.message];
             }
             break;
         case PackageCategory_BindToChannel:
-            NSLog(@"bind to channel success");
+            NSLog(@"imsdk: bind to channel success");
             break;
     }
 }

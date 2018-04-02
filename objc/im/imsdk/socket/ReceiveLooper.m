@@ -7,6 +7,7 @@
 //
 
 #import "ReceiveLooper.h"
+#import "StreamState.h"
 
 @implementation ReceiveLooper
 {
@@ -14,11 +15,11 @@
 }
 
 @synthesize delegate;
-@synthesize isReady;
 
 -(ReceiveLooper *)initWithOutputStream:(NSInputStream *)stream
 {
     inputStream=stream;
+    self.ReceiveState = Wait;
     return self;
 }
 
@@ -28,50 +29,45 @@
     {
         case NSStreamEventEndEncountered:
         {
-            NSLog(@"input socket closed");
+            NSLog(@"imsdk: input socket closed");
             [inputStream close];
-//            [outputStream close];
             [inputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
-//            [outputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
             break;
         }
         case NSStreamEventErrorOccurred:
-            NSLog(@"input socket error");
-            isReady = NO;
+            NSLog(@"imsdk: input socket error");
+            self.ReceiveState = Error;
             [[self delegate] error:nil];
             break;
         case NSStreamEventHasBytesAvailable:
             [self receivedData];
             break;
         case NSStreamEventOpenCompleted:
-            NSLog(@"input connect success");
-//            [self.delegate Connected];
-            isReady = YES;
+            NSLog(@"imsdk: input connect success");
+            self.ReceiveState = Success;
             [[self delegate] ready];
             break;
         case NSStreamEventHasSpaceAvailable:
-            NSLog(@"ready for receive");
+            NSLog(@"imsdk: ready for receive");
             break;
         case NSStreamEventNone:
         default:
-            NSLog(@"input socket event none");
+            NSLog(@"imsdk: input socket event none");
             break;
     }
 }
 
 -(void)receivedData
 {
-    NSLog(@"reading data from socket");
+    NSLog(@"imsdk: reading data from socket");
     uint8_t buf[1024];
     NSInteger len = [inputStream read:buf maxLength:sizeof(buf)];
     if(len == -1){
-        isReady = NO;
+        self.ReceiveState = Error;
         return;
     }
     NSData *data = [NSData dataWithBytes:buf length:len];
     [[self delegate] receive:data];
-//    [self.delegate Receive:data];
-    //NSString *msg = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
 
 @end

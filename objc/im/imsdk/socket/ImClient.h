@@ -36,9 +36,12 @@
 @property(copy) NSString *userId;
 @property(copy) NSString *token;
 @property(nonatomic,retain) id<ImClientDelegate> delegate;
+@property(nonatomic) int versionCode;
+@property(nonatomic) NSString * versionName;
 -(void)start;
 -(void)stop;
--(void)loginWithAppkey:(NSString *)appkey userId:(NSString *)userId secrect:(NSString *)secrect versionCode:(int) versionCode versionName:(NSString *)versionName;
+-(void)login;
+-(void)logout;
 -(void)bindToChannel:(NSString *)channel;
 -(void)unbindToChannel:(NSString *)channel;
 -(void)sendToChannel:(SendChannelMessage *)message;

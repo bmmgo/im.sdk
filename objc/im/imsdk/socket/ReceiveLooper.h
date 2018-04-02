@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "StreamState.h"
 
 @protocol ReceiveLoopDelegate<NSObject>
 @optional
@@ -18,11 +19,10 @@
 @interface ReceiveLooper : NSObject<NSStreamDelegate>
 {
 @public
-    id<ReceiveLoopDelegate> delegate;
-    bool isReady;
+    __unsafe_unretained id<ReceiveLoopDelegate> delegate;
 }
 @property(nonatomic,assign) id<ReceiveLoopDelegate> delegate;
-@property(nonatomic) bool isReady;
+@property(nonatomic) enum StreamState ReceiveState;
 
 -(ReceiveLooper *)initWithOutputStream:(NSInputStream *)stream;
 

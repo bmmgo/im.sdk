@@ -9,18 +9,28 @@
 #import "SimpleSocket.h"
 #import "SendLooper.h"
 #import "ReceiveLooper.h"
+#import "StreamState.h"
 
 @implementation SimpleSocket
 {
     SendLooper *sender;
     ReceiveLooper *receiver;
+    bool closed;
 }
 
 @synthesize delegate;
 
+-(instancetype)init{
+    self = [super init];
+    if(self){
+        closed = NO;
+    }
+    return self;
+}
+
 - (void)connect:(NSString *) ip on:(int) port
 {
-    NSLog(@"%@", [NSString stringWithFormat:@"start connect to ip:%@ port:%d\n", ip, port]);
+    NSLog(@"%@", [NSString stringWithFormat:@"imsdk: start connect to ip:%@ port:%d\n", ip, port]);
     
     NSInputStream *inputStream;
     NSOutputStream *outputStream;
@@ -43,13 +53,17 @@
     [outputStream open];
 }
 
+-(void)close{
+//    closed = YES;
+}
+
 -(bool)send:(NSData *)data{
     [sender send:data];
     return YES;
 }
 
 -(void)error:(NSError *)error{
-    if (!sender.isReady && !receiver.isReady)
+    if (sender.SendState == Error && receiver.ReceiveState == Error)
         [[self delegate] disconnected];
 }
 
@@ -58,7 +72,7 @@
 }
 
 -(void)ready{
-    if (sender.isReady && receiver.isReady)
+    if (sender.SendState == Success && receiver.ReceiveState == Success)
         [[self delegate] connected];
 }
 

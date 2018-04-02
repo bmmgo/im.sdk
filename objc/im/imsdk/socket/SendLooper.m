@@ -7,6 +7,7 @@
 //
 
 #import "SendLooper.h"
+#import "StreamState.h"
 
 @implementation SendLooper
 {
@@ -14,11 +15,11 @@
 }
 
 @synthesize delegate;
-@synthesize isReady;
 
 -(SendLooper *)initWithOutputStream:(NSOutputStream *)stream
 {
     outputStream=stream;
+    self.SendState = Wait;
     return self;
 }
 
@@ -28,47 +29,40 @@
     {
         case NSStreamEventEndEncountered:
         {
-            NSLog(@"output socket closed");
+            NSLog(@"imsdk: output socket closed");
             [outputStream close];
             [outputStream removeFromRunLoop:[NSRunLoop mainRunLoop] forMode:NSDefaultRunLoopMode];
             break;
         }
         case NSStreamEventErrorOccurred:
-            NSLog(@"output socket error");
-            isReady = NO;
+            NSLog(@"imsdk: output socket error");
+            self.SendState = Error;
             [[self delegate] error:nil];
             break;
         case NSStreamEventHasBytesAvailable:
-            //            [self receivedData];
             break;
         case NSStreamEventOpenCompleted:
-            NSLog(@"output connect success");
-            //            [self.delegate Connected];
-            //            isReady = YES;
-            //            [[self delegate] ready];
+            NSLog(@"imsdk: output connect success");
             break;
         case NSStreamEventHasSpaceAvailable:
-            NSLog(@"ready for send or send complete");
-            if(!isReady)
+            NSLog(@"imsdk: ready for send or send complete");
+            if(self.SendState != Success)
             {
-                isReady = YES;
+                self.SendState = Success;
                 [[self delegate] ready];
             }
             break;
         case NSStreamEventNone:
         default:
-            NSLog(@"output socket event none");
+            NSLog(@"imsdk: output socket event none");
             break;
     }
 }
 
 -(bool)send:(NSData *)data{
-    if(!isReady)
+    if(self.SendState != Success)
         return NO;
     int len = [outputStream write:data.bytes maxLength:data.length];
-//    NSString *base64 = [data base64EncodedStringWithOptions:0];
-//    NSLog(@"%@", base64);
-//    NSLog(@"send %d",len);
     return data.length == len;
 }
 
