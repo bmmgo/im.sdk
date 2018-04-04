@@ -1,5 +1,6 @@
 ﻿//protoc --csharp_out=. ImProto.proto
 //protoc --java_out=. ImProto.proto
+//protoc --objc_out=. ImProto.proto
 syntax = "proto3";
 package IM.Protocol;
 enum PackageCategory{
