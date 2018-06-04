@@ -89,7 +89,7 @@ public class SocketClient implements ReceiveListener {
             StartHeart();
             StartRead();
             return;
-        } catch (IOException e) {
+        } catch (Throwable e) {
             raiseOnError(e.getMessage());
         }
         if (mSocketListener != null)
