@@ -54,7 +54,7 @@ message SendUserMessage{
 	int32 Type = 2;
 	string Content = 3;
 	map<string,bytes> UserTags = 4;
-	string Sender = 5; //  used for admin
+	//string Sender = 5; //  used for admin
 	string MsgID = 6;
 }
 message ReceivedUserMessage{
@@ -70,7 +70,7 @@ message SendChannelMessage{
 	int32 Type = 2;
 	string Content = 3;
 	map<string,bytes> UserTags = 4;
-	string Sender = 5; //  used for admin
+	//string Sender = 5; //  used for admin
 	string MsgID = 6;
 }
 message ReceivedChannelMessage{
@@ -94,7 +94,7 @@ message SendGroupMessage{
 	int32 Type = 2;
 	string Content = 3;
 	map<string,bytes> UserTags = 4;
-	string Sender = 5; //  used for admin	
+	//string Sender = 5; //  used for admin	
 	string MsgID = 6;
 }
 message ReceivedGroupMessage{

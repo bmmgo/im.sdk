@@ -61,16 +61,13 @@
         <member name="F:IM.Protocol.SendUserMessage.UserTagsFieldNumber">
             <summary>Field number for the "UserTags" field.</summary>
         </member>
-        <member name="F:IM.Protocol.SendUserMessage.SenderFieldNumber">
-            <summary>Field number for the "Sender" field.</summary>
-        </member>
-        <member name="P:IM.Protocol.SendUserMessage.Sender">
-            <summary>
-              used for admin
-            </summary>
-        </member>
         <member name="F:IM.Protocol.SendUserMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
+        </member>
+        <member name="P:IM.Protocol.SendUserMessage.MsgID">
+            <summary>
+            string Sender = 5; //  used for admin
+            </summary>
         </member>
         <member name="F:IM.Protocol.ReceivedUserMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
@@ -102,16 +99,13 @@
         <member name="F:IM.Protocol.SendChannelMessage.UserTagsFieldNumber">
             <summary>Field number for the "UserTags" field.</summary>
         </member>
-        <member name="F:IM.Protocol.SendChannelMessage.SenderFieldNumber">
-            <summary>Field number for the "Sender" field.</summary>
-        </member>
-        <member name="P:IM.Protocol.SendChannelMessage.Sender">
-            <summary>
-              used for admin
-            </summary>
-        </member>
         <member name="F:IM.Protocol.SendChannelMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
+        </member>
+        <member name="P:IM.Protocol.SendChannelMessage.MsgID">
+            <summary>
+            string Sender = 5; //  used for admin
+            </summary>
         </member>
         <member name="F:IM.Protocol.ReceivedChannelMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
@@ -155,16 +149,13 @@
         <member name="F:IM.Protocol.SendGroupMessage.UserTagsFieldNumber">
             <summary>Field number for the "UserTags" field.</summary>
         </member>
-        <member name="F:IM.Protocol.SendGroupMessage.SenderFieldNumber">
-            <summary>Field number for the "Sender" field.</summary>
-        </member>
-        <member name="P:IM.Protocol.SendGroupMessage.Sender">
-            <summary>
-              used for admin	
-            </summary>
-        </member>
         <member name="F:IM.Protocol.SendGroupMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
+        </member>
+        <member name="P:IM.Protocol.SendGroupMessage.MsgID">
+            <summary>
+            string Sender = 5; //  used for admin	
+            </summary>
         </member>
         <member name="F:IM.Protocol.ReceivedGroupMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
