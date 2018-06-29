@@ -1,11 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Collections.Concurrent;
 using System.Threading;
 using System.Threading.Tasks;
 using Google.Protobuf;
-using Google.Protobuf.Collections;
 using IM.Protocol;
 
 namespace im.sdk
@@ -16,8 +13,9 @@ namespace im.sdk
     public class ImClient
     {
         private Thread _heartThread;
-        private bool _autoReconnect;
+        private readonly bool _autoReconnect;
         private SimpleSocket _socket;
+        private readonly ConcurrentDictionary<int, TaskCompletionSource<SocketResult>> _requests = new ConcurrentDictionary<int, TaskCompletionSource<SocketResult>>();
         /// <summary>
         /// 服务器ip地址
         /// </summary>
@@ -70,6 +68,14 @@ namespace im.sdk
         private void _socket_OnDisconnected(SimpleSocket obj)
         {
             OnDisconnected?.Invoke(this);
+            foreach (var requestKey in _requests.Keys)
+            {
+                if (_requests.TryRemove(requestKey, out TaskCompletionSource<SocketResult> request))
+                {
+                    request.TrySetCanceled();
+                    SeqGenerator.Instance.FreeSeq(requestKey);
+                }
+            }
             ReconnectIfNeed();
         }
 
@@ -118,6 +124,12 @@ namespace im.sdk
         private void ProcessSocketResult(SocketPackage package)
         {
             var result = SocketResult.Parser.ParseFrom(package.Content);
+            if (_requests.TryRemove(package.Seq, out TaskCompletionSource<SocketResult> request))
+            {
+                request.TrySetResult(result);
+                SeqGenerator.Instance.FreeSeq(package.Seq);
+            }
+
             switch (result.Category)
             {
                 case PackageCategory.Login:
@@ -179,57 +191,53 @@ namespace im.sdk
         private void ReceivedUserLogin(SocketPackage package)
         {
             var token = LoginToken.Parser.ParseFrom(package.Content);
-            OnReceivedUserLogin(this, token);
+            OnReceivedUserLogin?.Invoke(this, token);
         }
 
-        private void Send(PackageCategory category, IMessage msg = null)
+        private Task<SocketResult> Send(PackageCategory category, IMessage msg = null)
         {
-            //var seq = Interlocked.Increment(ref _seq);
-            //var completionSource = new TaskCompletionSource<SocketResult>();
-            //_taskCompletionSources.TryAdd(seq, completionSource);
-            _socket.Send(new SocketPackage { Seq = 0, Category = category, Content = msg == null ? ByteString.Empty : msg.ToByteString() }.ToByteArray());
-            //completionSource.Task.ContinueWith(t =>
-            //{
-            //    //var res = t.Result;
-            //    //Console.WriteLine("received {0},{1},{2} {3}", res.Category, res.Code, res.Message, DateTime.Now);
-            //});
+            var seq = SeqGenerator.Instance.GetSeq();
+            var completionSource = new TaskCompletionSource<SocketResult>();
+            _requests.TryAdd(seq, completionSource);
+            _socket.Send(new SocketPackage { Seq = seq, Category = category, Content = msg == null ? ByteString.Empty : msg.ToByteString() }.ToByteArray());
+            return completionSource.Task;
         }
         /// <summary>
         /// 登陆
         /// </summary>
         /// <param name="appkey"></param>
         /// <param name="userId"></param>
-        /// <param name="secrect"></param>
+        /// <param name="token"></param>
         /// <param name="isAdmin"></param>
-        public void Login(string appkey, string userId, string token, bool isAdmin = false)
+        public Task<SocketResult> Login(string appkey, string userId, string token, bool isAdmin = false)
         {
             var loginToken = new LoginToken();
             loginToken.Appkey = appkey;
             loginToken.UserID = userId;
             loginToken.Token = token;
             loginToken.IsAdmin = isAdmin;
-            Send(PackageCategory.Login, loginToken);
+            return Send(PackageCategory.Login, loginToken);
         }
 
         /// <summary>
         /// 频道订阅
         /// </summary>
         /// <param name="channel"></param>
-        public void BindToChannel(string channel)
+        public Task<SocketResult> BindToChannel(string channel)
         {
             var ch = new Channel();
             ch.ChannelID = channel;
-            Send(PackageCategory.BindToChannel, ch);
+            return Send(PackageCategory.BindToChannel, ch);
         }
         /// <summary>
         /// 取消频道订阅
         /// </summary>
         /// <param name="channel"></param>
-        public void UnbindToChannel(string channel)
+        public Task<SocketResult> UnbindToChannel(string channel)
         {
             var ch = new Channel();
             ch.ChannelID = channel;
-            Send(PackageCategory.UnbindToChannel, ch);
+            return Send(PackageCategory.UnbindToChannel, ch);
         }
         /// <summary>
         /// 发送频道消息
@@ -237,80 +245,126 @@ namespace im.sdk
         /// <param name="channel"></param>
         /// <param name="content"></param>
         /// <param name="type"></param>
-        public void SendToChannel(string channel, string content, int type)
+        public Task<SocketResult> SendToChannel(string channel, string content, int type)
         {
             var sendChannelMsg = new SendChannelMessage();
             sendChannelMsg.Content = content;
             sendChannelMsg.ChannelID = channel;
             sendChannelMsg.Type = type;
-            Send(PackageCategory.SendToChannel, sendChannelMsg);
+            return Send(PackageCategory.SendToChannel, sendChannelMsg);
         }
         /// <summary>
         /// 发送频道消息
         /// </summary>
         /// <param name="message"></param>
-        public void SendToChannel(SendChannelMessage message)
+        public Task<SocketResult> SendToChannel(SendChannelMessage message)
         {
-            Send(PackageCategory.SendToChannel, message);
+            return Send(PackageCategory.SendToChannel, message);
         }
         /// <summary>
         /// 发送私信
         /// </summary>
         /// <param name="message"></param>
-        public void SendToUser(SendUserMessage message)
+        public Task<SocketResult> SendToUser(SendUserMessage message)
         {
-            Send(PackageCategory.SendToUser, message);
+            return Send(PackageCategory.SendToUser, message);
         }
         /// <summary>
         /// send message to group
         /// </summary>
         /// <param name="message"></param>
-        public void SendToGroup(SendGroupMessage message)
+        public Task<SocketResult> SendToGroup(SendGroupMessage message)
         {
-            Send(PackageCategory.SendToGroup, message);
+            return Send(PackageCategory.SendToGroup, message);
+        }
+        /// <summary>
+        /// 推送用户消息
+        /// </summary>
+        /// <param name="sender">发送者</param>
+        /// <param name="message">消息</param>
+        /// <returns></returns>
+        public Task<SocketResult> PushUserMessage(string sender, SendUserMessage message)
+        {
+            var pushMessage = new PushMessage();
+            pushMessage.Receiver = message.Receiver;
+            pushMessage.Category = PackageCategory.SendToUser;
+            pushMessage.Sender = sender;
+            pushMessage.MessageContent = message.ToByteString();
+            return Send(PackageCategory.PushMsg, pushMessage);
+        }
+        /// <summary>
+        /// 推送群消息
+        /// </summary>
+        /// <param name="sender">发送者</param>
+        /// <param name="receiver">消息接收者</param>
+        /// <param name="message">消息</param>
+        /// <returns></returns>
+        public Task<SocketResult> PushGroupMessage(string sender, string receiver, SendGroupMessage message)
+        {
+            var pushMessage = new PushMessage();
+            pushMessage.Receiver = receiver;
+            pushMessage.Category = PackageCategory.SendToGroup;
+            pushMessage.Sender = sender;
+            pushMessage.MessageContent = message.ToByteString();
+            return Send(PackageCategory.PushMsg, pushMessage);
+        }
+        /// <summary>
+        /// 推送频道消息
+        /// </summary>
+        /// <param name="sender">发送者</param>
+        /// <param name="message">消息</param>
+        /// <returns></returns>
+        public Task<SocketResult> PushChannelMessage(string sender, SendChannelMessage message)
+        {
+            var pushMessage = new PushMessage();
+            pushMessage.Receiver = message.ChannelID;
+            pushMessage.Category = PackageCategory.SendToChannel;
+            pushMessage.Sender = sender;
+            pushMessage.MessageContent = message.ToByteString();
+            return Send(PackageCategory.PushMsg, pushMessage);
         }
 
-        /// <summary>
-        /// bind group to receive group message
-        /// </summary>
-        /// <param name="groupId"></param>
-        public void BindToGroup(string groupId)
-        {
-            var userGroup = new UserGroup();
-            userGroup.GroupIDs.Add(groupId);
-            Send(PackageCategory.BindToGroup, userGroup);
-        }
-        /// <summary>
-        /// unbind group
-        /// </summary>
-        /// <param name="groupId"></param>
-        public void UnbindToGroup(string groupId)
-        {
-            var userGroup = new UserGroup();
-            userGroup.GroupIDs.Add(groupId);
-            Send(PackageCategory.UnbindToGroup, userGroup);
-        }
-        /// <summary>
-        /// admin send message
-        /// </summary>
-        /// <param name="message"></param>
-        public void AdminSend(AdminMessage message)
-        {
-            Send(PackageCategory.AdminSend, message);
-        }
+        ///// <summary>
+        ///// bind group to receive group message
+        ///// </summary>
+        ///// <param name="groupId"></param>
+        //public Task<SocketResult> BindToGroup(string groupId)
+        //{
+        //    var userGroup = new UserGroup();
+        //    userGroup.GroupIDs.Add(groupId);
+        //    return Send(PackageCategory.BindToGroup, userGroup);
+        //}
+        ///// <summary>
+        ///// unbind group
+        ///// </summary>
+        ///// <param name="groupId"></param>
+        //public Task<SocketResult> UnbindToGroup(string groupId)
+        //{
+        //    var userGroup = new UserGroup();
+        //    userGroup.GroupIDs.Add(groupId);
+        //    return Send(PackageCategory.UnbindToGroup, userGroup);
+        //}
+        ///// <summary>
+        ///// admin send message
+        ///// </summary>
+        ///// <param name="message"></param>
+        //public Task<SocketResult> AdminSend(AdminMessage message)
+        //{
+        //    return Send(PackageCategory.AdminSend, message);
+        //}
         /// <summary>
         /// 订阅用户登陆
         /// </summary>
-        public void SubUserLogin()
+        public Task<SocketResult> SubUserLogin()
         {
-            Send(PackageCategory.SubUserLogin);
+            return Send(PackageCategory.SubUserLogin);
         }
         /// <summary>
         /// 取消订阅用户登陆
         /// </summary>
-        public void UnsubUserLogin()
+        public Task<SocketResult> UnsubUserLogin()
         {
-            Send(PackageCategory.UnsubUserLogin);
+            return Send(PackageCategory.UnsubUserLogin);
         }
 
         /// <summary>

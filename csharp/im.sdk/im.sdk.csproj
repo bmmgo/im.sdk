@@ -48,6 +48,7 @@
     <Compile Include="FixLengthConvert.cs" />
     <Compile Include="ImClient.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SeqGenerator.cs" />
     <Compile Include="SimpleSocket.cs" />
   </ItemGroup>
   <ItemGroup>

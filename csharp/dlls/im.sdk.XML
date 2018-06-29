@@ -60,7 +60,7 @@
             </summary>
             <param name="appkey"></param>
             <param name="userId"></param>
-            <param name="secrect"></param>
+            <param name="token"></param>
             <param name="isAdmin"></param>
         </member>
         <member name="M:im.sdk.ImClient.BindToChannel(System.String)">
@@ -101,23 +101,30 @@
             </summary>
             <param name="message"></param>
         </member>
-        <member name="M:im.sdk.ImClient.BindToGroup(System.String)">
+        <member name="M:im.sdk.ImClient.PushUserMessage(System.String,IM.Protocol.SendUserMessage)">
             <summary>
-            bind group to receive group message
+            推送用户消息
             </summary>
-            <param name="groupId"></param>
+            <param name="sender">发送者</param>
+            <param name="message">消息</param>
+            <returns></returns>
         </member>
-        <member name="M:im.sdk.ImClient.UnbindToGroup(System.String)">
+        <member name="M:im.sdk.ImClient.PushGroupMessage(System.String,System.String,IM.Protocol.SendGroupMessage)">
             <summary>
-            unbind group
+            推送群消息
             </summary>
-            <param name="groupId"></param>
+            <param name="sender">发送者</param>
+            <param name="receiver">消息接收者</param>
+            <param name="message">消息</param>
+            <returns></returns>
         </member>
-        <member name="M:im.sdk.ImClient.AdminSend(IM.Protocol.AdminMessage)">
+        <member name="M:im.sdk.ImClient.PushChannelMessage(System.String,IM.Protocol.SendChannelMessage)">
             <summary>
-            admin send message
+            推送频道消息
             </summary>
-            <param name="message"></param>
+            <param name="sender">发送者</param>
+            <param name="message">消息</param>
+            <returns></returns>
         </member>
         <member name="M:im.sdk.ImClient.SubUserLogin">
             <summary>

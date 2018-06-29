@@ -69,6 +69,9 @@
               used for admin
             </summary>
         </member>
+        <member name="F:IM.Protocol.SendUserMessage.MsgIDFieldNumber">
+            <summary>Field number for the "MsgID" field.</summary>
+        </member>
         <member name="F:IM.Protocol.ReceivedUserMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
         </member>
@@ -106,6 +109,9 @@
             <summary>
               used for admin
             </summary>
+        </member>
+        <member name="F:IM.Protocol.SendChannelMessage.MsgIDFieldNumber">
+            <summary>Field number for the "MsgID" field.</summary>
         </member>
         <member name="F:IM.Protocol.ReceivedChannelMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
@@ -157,6 +163,9 @@
               used for admin	
             </summary>
         </member>
+        <member name="F:IM.Protocol.SendGroupMessage.MsgIDFieldNumber">
+            <summary>Field number for the "MsgID" field.</summary>
+        </member>
         <member name="F:IM.Protocol.ReceivedGroupMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
         </member>
@@ -185,6 +194,18 @@
             <summary>Field number for the "Category" field.</summary>
         </member>
         <member name="F:IM.Protocol.AdminMessage.MessageContentFieldNumber">
+            <summary>Field number for the "MessageContent" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.PushMessage.ReceiverFieldNumber">
+            <summary>Field number for the "Receiver" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.PushMessage.SenderFieldNumber">
+            <summary>Field number for the "Sender" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.PushMessage.CategoryFieldNumber">
+            <summary>Field number for the "Category" field.</summary>
+        </member>
+        <member name="F:IM.Protocol.PushMessage.MessageContentFieldNumber">
             <summary>Field number for the "MessageContent" field.</summary>
         </member>
     </members>

@@ -18,6 +18,7 @@ enum PackageCategory{
 	SendToGroup = 11;
 	ReceivedGroupMsg = 12;	
 	Result = 99;
+	PushMsg = 198;
 	AdminSend = 199;
 	SubUserLogin = 200;
 	UnsubUserLogin = 201;
@@ -54,6 +55,7 @@ message SendUserMessage{
 	string Content = 3;
 	map<string,bytes> UserTags = 4;
 	string Sender = 5; //  used for admin
+	string MsgID = 6;
 }
 message ReceivedUserMessage{
 	string MsgID = 1;
@@ -69,6 +71,7 @@ message SendChannelMessage{
 	string Content = 3;
 	map<string,bytes> UserTags = 4;
 	string Sender = 5; //  used for admin
+	string MsgID = 6;
 }
 message ReceivedChannelMessage{
 	string MsgID = 1;
@@ -92,6 +95,7 @@ message SendGroupMessage{
 	string Content = 3;
 	map<string,bytes> UserTags = 4;
 	string Sender = 5; //  used for admin	
+	string MsgID = 6;
 }
 message ReceivedGroupMessage{
 	string MsgID = 1;
@@ -106,4 +110,10 @@ message AdminMessage{
 	string Receiver = 1;
 	PackageCategory Category = 2;
 	bytes MessageContent = 3;
+}
+message PushMessage{
+	string Receiver = 1;
+	string Sender = 2;
+	PackageCategory Category = 3;
+	bytes MessageContent = 4;
 }

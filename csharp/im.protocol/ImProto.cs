@@ -33,31 +33,32 @@ namespace IM.Protocol {
             "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4ASJ2CgpMb2dp",
             "blRva2VuEg4KBlVzZXJJRBgBIAEoCRINCgVUb2tlbhgCIAEoCRITCgtWZXJz",
             "aW9uQ29kZRgDIAEoBRIOCgZBcHBrZXkYBCABKAkSDwoHSXNBZG1pbhgFIAEo",
-            "CBITCgtWZXJzaW9uTmFtZRgGIAEoCSLBAQoPU2VuZFVzZXJNZXNzYWdlEhAK",
+            "CBITCgtWZXJzaW9uTmFtZRgGIAEoCSLQAQoPU2VuZFVzZXJNZXNzYWdlEhAK",
             "CFJlY2VpdmVyGAEgASgJEgwKBFR5cGUYAiABKAUSDwoHQ29udGVudBgDIAEo",
             "CRI8CghVc2VyVGFncxgEIAMoCzIqLklNLlByb3RvY29sLlNlbmRVc2VyTWVz",
-            "c2FnZS5Vc2VyVGFnc0VudHJ5Eg4KBlNlbmRlchgFIAEoCRovCg1Vc2VyVGFn",
-            "c0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoDDoCOAEi2AEKE1Jl",
-            "Y2VpdmVkVXNlck1lc3NhZ2USDQoFTXNnSUQYASABKAkSDgoGU2VuZGVyGAIg",
-            "ASgJEgwKBFR5cGUYAyABKAUSDwoHQ29udGVudBgEIAEoCRJACghVc2VyVGFn",
-            "cxgFIAMoCzIuLklNLlByb3RvY29sLlJlY2VpdmVkVXNlck1lc3NhZ2UuVXNl",
-            "clRhZ3NFbnRyeRIQCghTZW5kVGltZRgGIAEoBRovCg1Vc2VyVGFnc0VudHJ5",
-            "EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoDDoCOAEiyAEKElNlbmRDaGFu",
-            "bmVsTWVzc2FnZRIRCglDaGFubmVsSUQYASABKAkSDAoEVHlwZRgCIAEoBRIP",
-            "CgdDb250ZW50GAMgASgJEj8KCFVzZXJUYWdzGAQgAygLMi0uSU0uUHJvdG9j",
-            "b2wuU2VuZENoYW5uZWxNZXNzYWdlLlVzZXJUYWdzRW50cnkSDgoGU2VuZGVy",
-            "GAUgASgJGi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVl",
-            "GAIgASgMOgI4ASLxAQoWUmVjZWl2ZWRDaGFubmVsTWVzc2FnZRINCgVNc2dJ",
-            "RBgBIAEoCRIOCgZTZW5kZXIYAiABKAkSEQoJQ2hhbm5lbElEGAMgASgJEgwK",
-            "BFR5cGUYBCABKAUSDwoHQ29udGVudBgFIAEoCRJDCghVc2VyVGFncxgGIAMo",
-            "CzIxLklNLlByb3RvY29sLlJlY2VpdmVkQ2hhbm5lbE1lc3NhZ2UuVXNlclRh",
-            "Z3NFbnRyeRIQCghTZW5kVGltZRgHIAEoBRovCg1Vc2VyVGFnc0VudHJ5EgsK",
-            "A2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoDDoCOAEiHAoHQ2hhbm5lbBIRCglD",
-            "aGFubmVsSUQYASABKAkiLQoJVXNlckdyb3VwEg4KBlVzZXJJRBgBIAEoCRIQ",
-            "CghHcm91cElEcxgCIAMoCSLCAQoQU2VuZEdyb3VwTWVzc2FnZRIPCgdHcm91",
-            "cElEGAEgASgJEgwKBFR5cGUYAiABKAUSDwoHQ29udGVudBgDIAEoCRI9CghV",
-            "c2VyVGFncxgEIAMoCzIrLklNLlByb3RvY29sLlNlbmRHcm91cE1lc3NhZ2Uu",
-            "VXNlclRhZ3NFbnRyeRIOCgZTZW5kZXIYBSABKAkaLwoNVXNlclRhZ3NFbnRy",
+            "c2FnZS5Vc2VyVGFnc0VudHJ5Eg4KBlNlbmRlchgFIAEoCRINCgVNc2dJRBgG",
+            "IAEoCRovCg1Vc2VyVGFnc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgC",
+            "IAEoDDoCOAEi2AEKE1JlY2VpdmVkVXNlck1lc3NhZ2USDQoFTXNnSUQYASAB",
+            "KAkSDgoGU2VuZGVyGAIgASgJEgwKBFR5cGUYAyABKAUSDwoHQ29udGVudBgE",
+            "IAEoCRJACghVc2VyVGFncxgFIAMoCzIuLklNLlByb3RvY29sLlJlY2VpdmVk",
+            "VXNlck1lc3NhZ2UuVXNlclRhZ3NFbnRyeRIQCghTZW5kVGltZRgGIAEoBRov",
+            "Cg1Vc2VyVGFnc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoDDoC",
+            "OAEi1wEKElNlbmRDaGFubmVsTWVzc2FnZRIRCglDaGFubmVsSUQYASABKAkS",
+            "DAoEVHlwZRgCIAEoBRIPCgdDb250ZW50GAMgASgJEj8KCFVzZXJUYWdzGAQg",
+            "AygLMi0uSU0uUHJvdG9jb2wuU2VuZENoYW5uZWxNZXNzYWdlLlVzZXJUYWdz",
+            "RW50cnkSDgoGU2VuZGVyGAUgASgJEg0KBU1zZ0lEGAYgASgJGi8KDVVzZXJU",
+            "YWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4ASLxAQoW",
+            "UmVjZWl2ZWRDaGFubmVsTWVzc2FnZRINCgVNc2dJRBgBIAEoCRIOCgZTZW5k",
+            "ZXIYAiABKAkSEQoJQ2hhbm5lbElEGAMgASgJEgwKBFR5cGUYBCABKAUSDwoH",
+            "Q29udGVudBgFIAEoCRJDCghVc2VyVGFncxgGIAMoCzIxLklNLlByb3RvY29s",
+            "LlJlY2VpdmVkQ2hhbm5lbE1lc3NhZ2UuVXNlclRhZ3NFbnRyeRIQCghTZW5k",
+            "VGltZRgHIAEoBRovCg1Vc2VyVGFnc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2",
+            "YWx1ZRgCIAEoDDoCOAEiHAoHQ2hhbm5lbBIRCglDaGFubmVsSUQYASABKAki",
+            "LQoJVXNlckdyb3VwEg4KBlVzZXJJRBgBIAEoCRIQCghHcm91cElEcxgCIAMo",
+            "CSLRAQoQU2VuZEdyb3VwTWVzc2FnZRIPCgdHcm91cElEGAEgASgJEgwKBFR5",
+            "cGUYAiABKAUSDwoHQ29udGVudBgDIAEoCRI9CghVc2VyVGFncxgEIAMoCzIr",
+            "LklNLlByb3RvY29sLlNlbmRHcm91cE1lc3NhZ2UuVXNlclRhZ3NFbnRyeRIO",
+            "CgZTZW5kZXIYBSABKAkSDQoFTXNnSUQYBiABKAkaLwoNVXNlclRhZ3NFbnRy",
             "eRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAw6AjgBIusBChRSZWNlaXZl",
             "ZEdyb3VwTWVzc2FnZRINCgVNc2dJRBgBIAEoCRIOCgZTZW5kZXIYAiABKAkS",
             "DwoHR3JvdXBJRBgDIAEoCRIMCgRUeXBlGAQgASgFEg8KB0NvbnRlbnQYBSAB",
@@ -66,13 +67,16 @@ namespace IM.Protocol {
             "DVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4",
             "ASJoCgxBZG1pbk1lc3NhZ2USEAoIUmVjZWl2ZXIYASABKAkSLgoIQ2F0ZWdv",
             "cnkYAiABKA4yHC5JTS5Qcm90b2NvbC5QYWNrYWdlQ2F0ZWdvcnkSFgoOTWVz",
-            "c2FnZUNvbnRlbnQYAyABKAwqzAIKD1BhY2thZ2VDYXRlZ29yeRIICgRQaW5n",
-            "EAASCQoFTG9naW4QARIKCgZMb2dvdXQQAhIOCgpTZW5kVG9Vc2VyEAMSEQoN",
-            "U2VuZFRvQ2hhbm5lbBAEEhMKD1JlY2VpdmVkVXNlck1zZxAFEhYKElJlY2Vp",
-            "dmVkQ2hhbm5lbE1zZxAGEhEKDUJpbmRUb0NoYW5uZWwQBxITCg9VbmJpbmRU",
-            "b0NoYW5uZWwQCBIPCgtCaW5kVG9Hcm91cBAJEhEKDVVuYmluZFRvR3JvdXAQ",
-            "ChIPCgtTZW5kVG9Hcm91cBALEhQKEFJlY2VpdmVkR3JvdXBNc2cQDBIKCgZS",
-            "ZXN1bHQQYxIOCglBZG1pblNlbmQQxwESEQoMU3ViVXNlckxvZ2luEMgBEhMK",
+            "c2FnZUNvbnRlbnQYAyABKAwidwoLUHVzaE1lc3NhZ2USEAoIUmVjZWl2ZXIY",
+            "ASABKAkSDgoGU2VuZGVyGAIgASgJEi4KCENhdGVnb3J5GAMgASgOMhwuSU0u",
+            "UHJvdG9jb2wuUGFja2FnZUNhdGVnb3J5EhYKDk1lc3NhZ2VDb250ZW50GAQg",
+            "ASgMKtoCCg9QYWNrYWdlQ2F0ZWdvcnkSCAoEUGluZxAAEgkKBUxvZ2luEAES",
+            "CgoGTG9nb3V0EAISDgoKU2VuZFRvVXNlchADEhEKDVNlbmRUb0NoYW5uZWwQ",
+            "BBITCg9SZWNlaXZlZFVzZXJNc2cQBRIWChJSZWNlaXZlZENoYW5uZWxNc2cQ",
+            "BhIRCg1CaW5kVG9DaGFubmVsEAcSEwoPVW5iaW5kVG9DaGFubmVsEAgSDwoL",
+            "QmluZFRvR3JvdXAQCRIRCg1VbmJpbmRUb0dyb3VwEAoSDwoLU2VuZFRvR3Jv",
+            "dXAQCxIUChBSZWNlaXZlZEdyb3VwTXNnEAwSCgoGUmVzdWx0EGMSDAoHUHVz",
+            "aE1zZxDGARIOCglBZG1pblNlbmQQxwESEQoMU3ViVXNlckxvZ2luEMgBEhMK",
             "DlVuc3ViVXNlckxvZ2luEMkBEhEKDFB1YlVzZXJMb2dpbhDKASpHCgpSZXN1",
             "bHRDb2RlEgsKB1N1Y2Nlc3MQABINCglOZWVkTG9naW4QARIOCgpBdXRoRmFp",
             "bGVkEAISDQoJTmVlZEFkbWluEANiBnByb3RvMw=="));
@@ -82,15 +86,16 @@ namespace IM.Protocol {
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SocketPackage), global::IM.Protocol.SocketPackage.Parser, new[]{ "Seq", "Category", "Content" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SocketResult), global::IM.Protocol.SocketResult.Parser, new[]{ "Category", "Code", "Message", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.LoginToken), global::IM.Protocol.LoginToken.Parser, new[]{ "UserID", "Token", "VersionCode", "Appkey", "IsAdmin", "VersionName" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendUserMessage), global::IM.Protocol.SendUserMessage.Parser, new[]{ "Receiver", "Type", "Content", "UserTags", "Sender" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendUserMessage), global::IM.Protocol.SendUserMessage.Parser, new[]{ "Receiver", "Type", "Content", "UserTags", "Sender", "MsgID" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedUserMessage), global::IM.Protocol.ReceivedUserMessage.Parser, new[]{ "MsgID", "Sender", "Type", "Content", "UserTags", "SendTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendChannelMessage), global::IM.Protocol.SendChannelMessage.Parser, new[]{ "ChannelID", "Type", "Content", "UserTags", "Sender" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendChannelMessage), global::IM.Protocol.SendChannelMessage.Parser, new[]{ "ChannelID", "Type", "Content", "UserTags", "Sender", "MsgID" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedChannelMessage), global::IM.Protocol.ReceivedChannelMessage.Parser, new[]{ "MsgID", "Sender", "ChannelID", "Type", "Content", "UserTags", "SendTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.Channel), global::IM.Protocol.Channel.Parser, new[]{ "ChannelID" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.UserGroup), global::IM.Protocol.UserGroup.Parser, new[]{ "UserID", "GroupIDs" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendGroupMessage), global::IM.Protocol.SendGroupMessage.Parser, new[]{ "GroupID", "Type", "Content", "UserTags", "Sender" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendGroupMessage), global::IM.Protocol.SendGroupMessage.Parser, new[]{ "GroupID", "Type", "Content", "UserTags", "Sender", "MsgID" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedGroupMessage), global::IM.Protocol.ReceivedGroupMessage.Parser, new[]{ "MsgID", "Sender", "GroupID", "Type", "Content", "UserTags", "SendTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.AdminMessage), global::IM.Protocol.AdminMessage.Parser, new[]{ "Receiver", "Category", "MessageContent" }, null, null, null)
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.AdminMessage), global::IM.Protocol.AdminMessage.Parser, new[]{ "Receiver", "Category", "MessageContent" }, null, null, null),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.PushMessage), global::IM.Protocol.PushMessage.Parser, new[]{ "Receiver", "Sender", "Category", "MessageContent" }, null, null, null)
           }));
     }
     #endregion
@@ -112,6 +117,7 @@ namespace IM.Protocol {
     [pbr::OriginalName("SendToGroup")] SendToGroup = 11,
     [pbr::OriginalName("ReceivedGroupMsg")] ReceivedGroupMsg = 12,
     [pbr::OriginalName("Result")] Result = 99,
+    [pbr::OriginalName("PushMsg")] PushMsg = 198,
     [pbr::OriginalName("AdminSend")] AdminSend = 199,
     [pbr::OriginalName("SubUserLogin")] SubUserLogin = 200,
     [pbr::OriginalName("UnsubUserLogin")] UnsubUserLogin = 201,
@@ -724,6 +730,7 @@ namespace IM.Protocol {
       content_ = other.content_;
       userTags_ = other.userTags_.Clone();
       sender_ = other.sender_;
+      msgID_ = other.msgID_;
     }
 
     public SendUserMessage Clone() {
@@ -782,6 +789,16 @@ namespace IM.Protocol {
       }
     }
 
+    /// <summary>Field number for the "MsgID" field.</summary>
+    public const int MsgIDFieldNumber = 6;
+    private string msgID_ = "";
+    public string MsgID {
+      get { return msgID_; }
+      set {
+        msgID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as SendUserMessage);
     }
@@ -798,6 +815,7 @@ namespace IM.Protocol {
       if (Content != other.Content) return false;
       if (!UserTags.Equals(other.UserTags)) return false;
       if (Sender != other.Sender) return false;
+      if (MsgID != other.MsgID) return false;
       return true;
     }
 
@@ -808,6 +826,7 @@ namespace IM.Protocol {
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       hash ^= UserTags.GetHashCode();
       if (Sender.Length != 0) hash ^= Sender.GetHashCode();
+      if (MsgID.Length != 0) hash ^= MsgID.GetHashCode();
       return hash;
     }
 
@@ -833,6 +852,10 @@ namespace IM.Protocol {
         output.WriteRawTag(42);
         output.WriteString(Sender);
       }
+      if (MsgID.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(MsgID);
+      }
     }
 
     public int CalculateSize() {
@@ -849,6 +872,9 @@ namespace IM.Protocol {
       size += userTags_.CalculateSize(_map_userTags_codec);
       if (Sender.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Sender);
+      }
+      if (MsgID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MsgID);
       }
       return size;
     }
@@ -869,6 +895,9 @@ namespace IM.Protocol {
       userTags_.Add(other.userTags_);
       if (other.Sender.Length != 0) {
         Sender = other.Sender;
+      }
+      if (other.MsgID.Length != 0) {
+        MsgID = other.MsgID;
       }
     }
 
@@ -897,6 +926,10 @@ namespace IM.Protocol {
           }
           case 42: {
             Sender = input.ReadString();
+            break;
+          }
+          case 50: {
+            MsgID = input.ReadString();
             break;
           }
         }
@@ -1160,6 +1193,7 @@ namespace IM.Protocol {
       content_ = other.content_;
       userTags_ = other.userTags_.Clone();
       sender_ = other.sender_;
+      msgID_ = other.msgID_;
     }
 
     public SendChannelMessage Clone() {
@@ -1218,6 +1252,16 @@ namespace IM.Protocol {
       }
     }
 
+    /// <summary>Field number for the "MsgID" field.</summary>
+    public const int MsgIDFieldNumber = 6;
+    private string msgID_ = "";
+    public string MsgID {
+      get { return msgID_; }
+      set {
+        msgID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as SendChannelMessage);
     }
@@ -1234,6 +1278,7 @@ namespace IM.Protocol {
       if (Content != other.Content) return false;
       if (!UserTags.Equals(other.UserTags)) return false;
       if (Sender != other.Sender) return false;
+      if (MsgID != other.MsgID) return false;
       return true;
     }
 
@@ -1244,6 +1289,7 @@ namespace IM.Protocol {
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       hash ^= UserTags.GetHashCode();
       if (Sender.Length != 0) hash ^= Sender.GetHashCode();
+      if (MsgID.Length != 0) hash ^= MsgID.GetHashCode();
       return hash;
     }
 
@@ -1269,6 +1315,10 @@ namespace IM.Protocol {
         output.WriteRawTag(42);
         output.WriteString(Sender);
       }
+      if (MsgID.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(MsgID);
+      }
     }
 
     public int CalculateSize() {
@@ -1285,6 +1335,9 @@ namespace IM.Protocol {
       size += userTags_.CalculateSize(_map_userTags_codec);
       if (Sender.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Sender);
+      }
+      if (MsgID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MsgID);
       }
       return size;
     }
@@ -1305,6 +1358,9 @@ namespace IM.Protocol {
       userTags_.Add(other.userTags_);
       if (other.Sender.Length != 0) {
         Sender = other.Sender;
+      }
+      if (other.MsgID.Length != 0) {
+        MsgID = other.MsgID;
       }
     }
 
@@ -1333,6 +1389,10 @@ namespace IM.Protocol {
           }
           case 42: {
             Sender = input.ReadString();
+            break;
+          }
+          case 50: {
+            MsgID = input.ReadString();
             break;
           }
         }
@@ -1848,6 +1908,7 @@ namespace IM.Protocol {
       content_ = other.content_;
       userTags_ = other.userTags_.Clone();
       sender_ = other.sender_;
+      msgID_ = other.msgID_;
     }
 
     public SendGroupMessage Clone() {
@@ -1906,6 +1967,16 @@ namespace IM.Protocol {
       }
     }
 
+    /// <summary>Field number for the "MsgID" field.</summary>
+    public const int MsgIDFieldNumber = 6;
+    private string msgID_ = "";
+    public string MsgID {
+      get { return msgID_; }
+      set {
+        msgID_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as SendGroupMessage);
     }
@@ -1922,6 +1993,7 @@ namespace IM.Protocol {
       if (Content != other.Content) return false;
       if (!UserTags.Equals(other.UserTags)) return false;
       if (Sender != other.Sender) return false;
+      if (MsgID != other.MsgID) return false;
       return true;
     }
 
@@ -1932,6 +2004,7 @@ namespace IM.Protocol {
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       hash ^= UserTags.GetHashCode();
       if (Sender.Length != 0) hash ^= Sender.GetHashCode();
+      if (MsgID.Length != 0) hash ^= MsgID.GetHashCode();
       return hash;
     }
 
@@ -1957,6 +2030,10 @@ namespace IM.Protocol {
         output.WriteRawTag(42);
         output.WriteString(Sender);
       }
+      if (MsgID.Length != 0) {
+        output.WriteRawTag(50);
+        output.WriteString(MsgID);
+      }
     }
 
     public int CalculateSize() {
@@ -1973,6 +2050,9 @@ namespace IM.Protocol {
       size += userTags_.CalculateSize(_map_userTags_codec);
       if (Sender.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(Sender);
+      }
+      if (MsgID.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(MsgID);
       }
       return size;
     }
@@ -1993,6 +2073,9 @@ namespace IM.Protocol {
       userTags_.Add(other.userTags_);
       if (other.Sender.Length != 0) {
         Sender = other.Sender;
+      }
+      if (other.MsgID.Length != 0) {
+        MsgID = other.MsgID;
       }
     }
 
@@ -2021,6 +2104,10 @@ namespace IM.Protocol {
           }
           case 42: {
             Sender = input.ReadString();
+            break;
+          }
+          case 50: {
+            MsgID = input.ReadString();
             break;
           }
         }
@@ -2434,6 +2521,190 @@ namespace IM.Protocol {
             break;
           }
           case 26: {
+            MessageContent = input.ReadBytes();
+            break;
+          }
+        }
+      }
+    }
+
+  }
+
+  [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+  public sealed partial class PushMessage : pb::IMessage<PushMessage> {
+    private static readonly pb::MessageParser<PushMessage> _parser = new pb::MessageParser<PushMessage>(() => new PushMessage());
+    public static pb::MessageParser<PushMessage> Parser { get { return _parser; } }
+
+    public static pbr::MessageDescriptor Descriptor {
+      get { return global::IM.Protocol.ImProtoReflection.Descriptor.MessageTypes[12]; }
+    }
+
+    pbr::MessageDescriptor pb::IMessage.Descriptor {
+      get { return Descriptor; }
+    }
+
+    public PushMessage() {
+      OnConstruction();
+    }
+
+    partial void OnConstruction();
+
+    public PushMessage(PushMessage other) : this() {
+      receiver_ = other.receiver_;
+      sender_ = other.sender_;
+      category_ = other.category_;
+      messageContent_ = other.messageContent_;
+    }
+
+    public PushMessage Clone() {
+      return new PushMessage(this);
+    }
+
+    /// <summary>Field number for the "Receiver" field.</summary>
+    public const int ReceiverFieldNumber = 1;
+    private string receiver_ = "";
+    public string Receiver {
+      get { return receiver_; }
+      set {
+        receiver_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Sender" field.</summary>
+    public const int SenderFieldNumber = 2;
+    private string sender_ = "";
+    public string Sender {
+      get { return sender_; }
+      set {
+        sender_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    /// <summary>Field number for the "Category" field.</summary>
+    public const int CategoryFieldNumber = 3;
+    private global::IM.Protocol.PackageCategory category_ = 0;
+    public global::IM.Protocol.PackageCategory Category {
+      get { return category_; }
+      set {
+        category_ = value;
+      }
+    }
+
+    /// <summary>Field number for the "MessageContent" field.</summary>
+    public const int MessageContentFieldNumber = 4;
+    private pb::ByteString messageContent_ = pb::ByteString.Empty;
+    public pb::ByteString MessageContent {
+      get { return messageContent_; }
+      set {
+        messageContent_ = pb::ProtoPreconditions.CheckNotNull(value, "value");
+      }
+    }
+
+    public override bool Equals(object other) {
+      return Equals(other as PushMessage);
+    }
+
+    public bool Equals(PushMessage other) {
+      if (ReferenceEquals(other, null)) {
+        return false;
+      }
+      if (ReferenceEquals(other, this)) {
+        return true;
+      }
+      if (Receiver != other.Receiver) return false;
+      if (Sender != other.Sender) return false;
+      if (Category != other.Category) return false;
+      if (MessageContent != other.MessageContent) return false;
+      return true;
+    }
+
+    public override int GetHashCode() {
+      int hash = 1;
+      if (Receiver.Length != 0) hash ^= Receiver.GetHashCode();
+      if (Sender.Length != 0) hash ^= Sender.GetHashCode();
+      if (Category != 0) hash ^= Category.GetHashCode();
+      if (MessageContent.Length != 0) hash ^= MessageContent.GetHashCode();
+      return hash;
+    }
+
+    public override string ToString() {
+      return pb::JsonFormatter.ToDiagnosticString(this);
+    }
+
+    public void WriteTo(pb::CodedOutputStream output) {
+      if (Receiver.Length != 0) {
+        output.WriteRawTag(10);
+        output.WriteString(Receiver);
+      }
+      if (Sender.Length != 0) {
+        output.WriteRawTag(18);
+        output.WriteString(Sender);
+      }
+      if (Category != 0) {
+        output.WriteRawTag(24);
+        output.WriteEnum((int) Category);
+      }
+      if (MessageContent.Length != 0) {
+        output.WriteRawTag(34);
+        output.WriteBytes(MessageContent);
+      }
+    }
+
+    public int CalculateSize() {
+      int size = 0;
+      if (Receiver.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Receiver);
+      }
+      if (Sender.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeStringSize(Sender);
+      }
+      if (Category != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeEnumSize((int) Category);
+      }
+      if (MessageContent.Length != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeBytesSize(MessageContent);
+      }
+      return size;
+    }
+
+    public void MergeFrom(PushMessage other) {
+      if (other == null) {
+        return;
+      }
+      if (other.Receiver.Length != 0) {
+        Receiver = other.Receiver;
+      }
+      if (other.Sender.Length != 0) {
+        Sender = other.Sender;
+      }
+      if (other.Category != 0) {
+        Category = other.Category;
+      }
+      if (other.MessageContent.Length != 0) {
+        MessageContent = other.MessageContent;
+      }
+    }
+
+    public void MergeFrom(pb::CodedInputStream input) {
+      uint tag;
+      while ((tag = input.ReadTag()) != 0) {
+        switch(tag) {
+          default:
+            input.SkipLastField();
+            break;
+          case 10: {
+            Receiver = input.ReadString();
+            break;
+          }
+          case 18: {
+            Sender = input.ReadString();
+            break;
+          }
+          case 24: {
+            category_ = (global::IM.Protocol.PackageCategory) input.ReadEnum();
+            break;
+          }
+          case 34: {
             MessageContent = input.ReadBytes();
             break;
           }
