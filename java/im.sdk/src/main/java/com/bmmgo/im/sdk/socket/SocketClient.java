@@ -255,6 +255,7 @@ public class SocketClient implements ReceiveListener {
             case Ping:
                 break;
             case ReceivedUserMsg:
+                onReceivedUserMessage(socketPackage);
                 break;
             case ReceivedChannelMsg:
                 onReceivedChannelMessage(socketPackage);
@@ -282,6 +283,13 @@ public class SocketClient implements ReceiveListener {
         ImProto.ReceivedGroupMessage receivedGroupMessage = ImProto.ReceivedGroupMessage
                 .parseFrom(socketPackage.getContent());
         mSocketListener.onReceivedGroupMessage(receivedGroupMessage);
+    }
+
+    private void onReceivedUserMessage(ImProto.SocketPackage socketPackage) throws InvalidProtocolBufferException {
+        if (mSocketListener == null) return;
+        ImProto.ReceivedUserMessage receivedUserMessage = ImProto.ReceivedUserMessage
+                .parseFrom(socketPackage.getContent());
+        mSocketListener.onReceivedUserMessage(receivedUserMessage);
     }
 
     public void onReceivedSocketResult(ImProto.SocketPackage socketPackage) throws InvalidProtocolBufferException {
