@@ -33,65 +33,66 @@ namespace IM.Protocol {
             "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4ASJ2CgpMb2dp",
             "blRva2VuEg4KBlVzZXJJRBgBIAEoCRINCgVUb2tlbhgCIAEoCRITCgtWZXJz",
             "aW9uQ29kZRgDIAEoBRIOCgZBcHBrZXkYBCABKAkSDwoHSXNBZG1pbhgFIAEo",
-            "CBITCgtWZXJzaW9uTmFtZRgGIAEoCSLAAQoPU2VuZFVzZXJNZXNzYWdlEhAK",
+            "CBITCgtWZXJzaW9uTmFtZRgGIAEoCSLSAQoPU2VuZFVzZXJNZXNzYWdlEhAK",
             "CFJlY2VpdmVyGAEgASgJEgwKBFR5cGUYAiABKAUSDwoHQ29udGVudBgDIAEo",
             "CRI8CghVc2VyVGFncxgEIAMoCzIqLklNLlByb3RvY29sLlNlbmRVc2VyTWVz",
-            "c2FnZS5Vc2VyVGFnc0VudHJ5Eg0KBU1zZ0lEGAYgASgJGi8KDVVzZXJUYWdz",
-            "RW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4ASLYAQoTUmVj",
-            "ZWl2ZWRVc2VyTWVzc2FnZRINCgVNc2dJRBgBIAEoCRIOCgZTZW5kZXIYAiAB",
-            "KAkSDAoEVHlwZRgDIAEoBRIPCgdDb250ZW50GAQgASgJEkAKCFVzZXJUYWdz",
-            "GAUgAygLMi4uSU0uUHJvdG9jb2wuUmVjZWl2ZWRVc2VyTWVzc2FnZS5Vc2Vy",
-            "VGFnc0VudHJ5EhAKCFNlbmRUaW1lGAYgASgFGi8KDVVzZXJUYWdzRW50cnkS",
-            "CwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4ASLHAQoSU2VuZENoYW5u",
-            "ZWxNZXNzYWdlEhEKCUNoYW5uZWxJRBgBIAEoCRIMCgRUeXBlGAIgASgFEg8K",
-            "B0NvbnRlbnQYAyABKAkSPwoIVXNlclRhZ3MYBCADKAsyLS5JTS5Qcm90b2Nv",
-            "bC5TZW5kQ2hhbm5lbE1lc3NhZ2UuVXNlclRhZ3NFbnRyeRINCgVNc2dJRBgG",
-            "IAEoCRovCg1Vc2VyVGFnc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgC",
-            "IAEoDDoCOAEi8QEKFlJlY2VpdmVkQ2hhbm5lbE1lc3NhZ2USDQoFTXNnSUQY",
-            "ASABKAkSDgoGU2VuZGVyGAIgASgJEhEKCUNoYW5uZWxJRBgDIAEoCRIMCgRU",
-            "eXBlGAQgASgFEg8KB0NvbnRlbnQYBSABKAkSQwoIVXNlclRhZ3MYBiADKAsy",
-            "MS5JTS5Qcm90b2NvbC5SZWNlaXZlZENoYW5uZWxNZXNzYWdlLlVzZXJUYWdz",
-            "RW50cnkSEAoIU2VuZFRpbWUYByABKAUaLwoNVXNlclRhZ3NFbnRyeRILCgNr",
-            "ZXkYASABKAkSDQoFdmFsdWUYAiABKAw6AjgBIhwKB0NoYW5uZWwSEQoJQ2hh",
-            "bm5lbElEGAEgASgJIi0KCVVzZXJHcm91cBIOCgZVc2VySUQYASABKAkSEAoI",
-            "R3JvdXBJRHMYAiADKAkiwQEKEFNlbmRHcm91cE1lc3NhZ2USDwoHR3JvdXBJ",
-            "RBgBIAEoCRIMCgRUeXBlGAIgASgFEg8KB0NvbnRlbnQYAyABKAkSPQoIVXNl",
-            "clRhZ3MYBCADKAsyKy5JTS5Qcm90b2NvbC5TZW5kR3JvdXBNZXNzYWdlLlVz",
-            "ZXJUYWdzRW50cnkSDQoFTXNnSUQYBiABKAkaLwoNVXNlclRhZ3NFbnRyeRIL",
-            "CgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAw6AjgBIusBChRSZWNlaXZlZEdy",
-            "b3VwTWVzc2FnZRINCgVNc2dJRBgBIAEoCRIOCgZTZW5kZXIYAiABKAkSDwoH",
-            "R3JvdXBJRBgDIAEoCRIMCgRUeXBlGAQgASgFEg8KB0NvbnRlbnQYBSABKAkS",
-            "QQoIVXNlclRhZ3MYBiADKAsyLy5JTS5Qcm90b2NvbC5SZWNlaXZlZEdyb3Vw",
-            "TWVzc2FnZS5Vc2VyVGFnc0VudHJ5EhAKCFNlbmRUaW1lGAcgASgFGi8KDVVz",
-            "ZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgMOgI4ASJo",
-            "CgxBZG1pbk1lc3NhZ2USEAoIUmVjZWl2ZXIYASABKAkSLgoIQ2F0ZWdvcnkY",
-            "AiABKA4yHC5JTS5Qcm90b2NvbC5QYWNrYWdlQ2F0ZWdvcnkSFgoOTWVzc2Fn",
-            "ZUNvbnRlbnQYAyABKAwidwoLUHVzaE1lc3NhZ2USEAoIUmVjZWl2ZXIYASAB",
-            "KAkSDgoGU2VuZGVyGAIgASgJEi4KCENhdGVnb3J5GAMgASgOMhwuSU0uUHJv",
-            "dG9jb2wuUGFja2FnZUNhdGVnb3J5EhYKDk1lc3NhZ2VDb250ZW50GAQgASgM",
-            "KtoCCg9QYWNrYWdlQ2F0ZWdvcnkSCAoEUGluZxAAEgkKBUxvZ2luEAESCgoG",
-            "TG9nb3V0EAISDgoKU2VuZFRvVXNlchADEhEKDVNlbmRUb0NoYW5uZWwQBBIT",
-            "Cg9SZWNlaXZlZFVzZXJNc2cQBRIWChJSZWNlaXZlZENoYW5uZWxNc2cQBhIR",
-            "Cg1CaW5kVG9DaGFubmVsEAcSEwoPVW5iaW5kVG9DaGFubmVsEAgSDwoLQmlu",
-            "ZFRvR3JvdXAQCRIRCg1VbmJpbmRUb0dyb3VwEAoSDwoLU2VuZFRvR3JvdXAQ",
-            "CxIUChBSZWNlaXZlZEdyb3VwTXNnEAwSCgoGUmVzdWx0EGMSDAoHUHVzaE1z",
-            "ZxDGARIOCglBZG1pblNlbmQQxwESEQoMU3ViVXNlckxvZ2luEMgBEhMKDlVu",
-            "c3ViVXNlckxvZ2luEMkBEhEKDFB1YlVzZXJMb2dpbhDKASpHCgpSZXN1bHRD",
-            "b2RlEgsKB1N1Y2Nlc3MQABINCglOZWVkTG9naW4QARIOCgpBdXRoRmFpbGVk",
-            "EAISDQoJTmVlZEFkbWluEANiBnByb3RvMw=="));
+            "c2FnZS5Vc2VyVGFnc0VudHJ5Eg0KBU1zZ0lEGAYgASgJEhAKCFNlbmRUaW1l",
+            "GAcgASgFGi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVl",
+            "GAIgASgMOgI4ASLYAQoTUmVjZWl2ZWRVc2VyTWVzc2FnZRINCgVNc2dJRBgB",
+            "IAEoCRIOCgZTZW5kZXIYAiABKAkSDAoEVHlwZRgDIAEoBRIPCgdDb250ZW50",
+            "GAQgASgJEkAKCFVzZXJUYWdzGAUgAygLMi4uSU0uUHJvdG9jb2wuUmVjZWl2",
+            "ZWRVc2VyTWVzc2FnZS5Vc2VyVGFnc0VudHJ5EhAKCFNlbmRUaW1lGAYgASgF",
+            "Gi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIgASgM",
+            "OgI4ASLZAQoSU2VuZENoYW5uZWxNZXNzYWdlEhEKCUNoYW5uZWxJRBgBIAEo",
+            "CRIMCgRUeXBlGAIgASgFEg8KB0NvbnRlbnQYAyABKAkSPwoIVXNlclRhZ3MY",
+            "BCADKAsyLS5JTS5Qcm90b2NvbC5TZW5kQ2hhbm5lbE1lc3NhZ2UuVXNlclRh",
+            "Z3NFbnRyeRINCgVNc2dJRBgGIAEoCRIQCghTZW5kVGltZRgHIAEoBRovCg1V",
+            "c2VyVGFnc0VudHJ5EgsKA2tleRgBIAEoCRINCgV2YWx1ZRgCIAEoDDoCOAEi",
+            "8QEKFlJlY2VpdmVkQ2hhbm5lbE1lc3NhZ2USDQoFTXNnSUQYASABKAkSDgoG",
+            "U2VuZGVyGAIgASgJEhEKCUNoYW5uZWxJRBgDIAEoCRIMCgRUeXBlGAQgASgF",
+            "Eg8KB0NvbnRlbnQYBSABKAkSQwoIVXNlclRhZ3MYBiADKAsyMS5JTS5Qcm90",
+            "b2NvbC5SZWNlaXZlZENoYW5uZWxNZXNzYWdlLlVzZXJUYWdzRW50cnkSEAoI",
+            "U2VuZFRpbWUYByABKAUaLwoNVXNlclRhZ3NFbnRyeRILCgNrZXkYASABKAkS",
+            "DQoFdmFsdWUYAiABKAw6AjgBIhwKB0NoYW5uZWwSEQoJQ2hhbm5lbElEGAEg",
+            "ASgJIi0KCVVzZXJHcm91cBIOCgZVc2VySUQYASABKAkSEAoIR3JvdXBJRHMY",
+            "AiADKAki0wEKEFNlbmRHcm91cE1lc3NhZ2USDwoHR3JvdXBJRBgBIAEoCRIM",
+            "CgRUeXBlGAIgASgFEg8KB0NvbnRlbnQYAyABKAkSPQoIVXNlclRhZ3MYBCAD",
+            "KAsyKy5JTS5Qcm90b2NvbC5TZW5kR3JvdXBNZXNzYWdlLlVzZXJUYWdzRW50",
+            "cnkSDQoFTXNnSUQYBiABKAkSEAoIU2VuZFRpbWUYByABKAUaLwoNVXNlclRh",
+            "Z3NFbnRyeRILCgNrZXkYASABKAkSDQoFdmFsdWUYAiABKAw6AjgBIusBChRS",
+            "ZWNlaXZlZEdyb3VwTWVzc2FnZRINCgVNc2dJRBgBIAEoCRIOCgZTZW5kZXIY",
+            "AiABKAkSDwoHR3JvdXBJRBgDIAEoCRIMCgRUeXBlGAQgASgFEg8KB0NvbnRl",
+            "bnQYBSABKAkSQQoIVXNlclRhZ3MYBiADKAsyLy5JTS5Qcm90b2NvbC5SZWNl",
+            "aXZlZEdyb3VwTWVzc2FnZS5Vc2VyVGFnc0VudHJ5EhAKCFNlbmRUaW1lGAcg",
+            "ASgFGi8KDVVzZXJUYWdzRW50cnkSCwoDa2V5GAEgASgJEg0KBXZhbHVlGAIg",
+            "ASgMOgI4ASJoCgxBZG1pbk1lc3NhZ2USEAoIUmVjZWl2ZXIYASABKAkSLgoI",
+            "Q2F0ZWdvcnkYAiABKA4yHC5JTS5Qcm90b2NvbC5QYWNrYWdlQ2F0ZWdvcnkS",
+            "FgoOTWVzc2FnZUNvbnRlbnQYAyABKAwidwoLUHVzaE1lc3NhZ2USEAoIUmVj",
+            "ZWl2ZXIYASABKAkSDgoGU2VuZGVyGAIgASgJEi4KCENhdGVnb3J5GAMgASgO",
+            "MhwuSU0uUHJvdG9jb2wuUGFja2FnZUNhdGVnb3J5EhYKDk1lc3NhZ2VDb250",
+            "ZW50GAQgASgMKtoCCg9QYWNrYWdlQ2F0ZWdvcnkSCAoEUGluZxAAEgkKBUxv",
+            "Z2luEAESCgoGTG9nb3V0EAISDgoKU2VuZFRvVXNlchADEhEKDVNlbmRUb0No",
+            "YW5uZWwQBBITCg9SZWNlaXZlZFVzZXJNc2cQBRIWChJSZWNlaXZlZENoYW5u",
+            "ZWxNc2cQBhIRCg1CaW5kVG9DaGFubmVsEAcSEwoPVW5iaW5kVG9DaGFubmVs",
+            "EAgSDwoLQmluZFRvR3JvdXAQCRIRCg1VbmJpbmRUb0dyb3VwEAoSDwoLU2Vu",
+            "ZFRvR3JvdXAQCxIUChBSZWNlaXZlZEdyb3VwTXNnEAwSCgoGUmVzdWx0EGMS",
+            "DAoHUHVzaE1zZxDGARIOCglBZG1pblNlbmQQxwESEQoMU3ViVXNlckxvZ2lu",
+            "EMgBEhMKDlVuc3ViVXNlckxvZ2luEMkBEhEKDFB1YlVzZXJMb2dpbhDKASpH",
+            "CgpSZXN1bHRDb2RlEgsKB1N1Y2Nlc3MQABINCglOZWVkTG9naW4QARIOCgpB",
+            "dXRoRmFpbGVkEAISDQoJTmVlZEFkbWluEANiBnByb3RvMw=="));
       descriptor = pbr::FileDescriptor.FromGeneratedCode(descriptorData,
           new pbr::FileDescriptor[] { },
           new pbr::GeneratedClrTypeInfo(new[] {typeof(global::IM.Protocol.PackageCategory), typeof(global::IM.Protocol.ResultCode), }, new pbr::GeneratedClrTypeInfo[] {
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SocketPackage), global::IM.Protocol.SocketPackage.Parser, new[]{ "Seq", "Category", "Content" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SocketResult), global::IM.Protocol.SocketResult.Parser, new[]{ "Category", "Code", "Message", "UserTags" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.LoginToken), global::IM.Protocol.LoginToken.Parser, new[]{ "UserID", "Token", "VersionCode", "Appkey", "IsAdmin", "VersionName" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendUserMessage), global::IM.Protocol.SendUserMessage.Parser, new[]{ "Receiver", "Type", "Content", "UserTags", "MsgID" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendUserMessage), global::IM.Protocol.SendUserMessage.Parser, new[]{ "Receiver", "Type", "Content", "UserTags", "MsgID", "SendTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedUserMessage), global::IM.Protocol.ReceivedUserMessage.Parser, new[]{ "MsgID", "Sender", "Type", "Content", "UserTags", "SendTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendChannelMessage), global::IM.Protocol.SendChannelMessage.Parser, new[]{ "ChannelID", "Type", "Content", "UserTags", "MsgID" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendChannelMessage), global::IM.Protocol.SendChannelMessage.Parser, new[]{ "ChannelID", "Type", "Content", "UserTags", "MsgID", "SendTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedChannelMessage), global::IM.Protocol.ReceivedChannelMessage.Parser, new[]{ "MsgID", "Sender", "ChannelID", "Type", "Content", "UserTags", "SendTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.Channel), global::IM.Protocol.Channel.Parser, new[]{ "ChannelID" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.UserGroup), global::IM.Protocol.UserGroup.Parser, new[]{ "UserID", "GroupIDs" }, null, null, null),
-            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendGroupMessage), global::IM.Protocol.SendGroupMessage.Parser, new[]{ "GroupID", "Type", "Content", "UserTags", "MsgID" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
+            new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.SendGroupMessage), global::IM.Protocol.SendGroupMessage.Parser, new[]{ "GroupID", "Type", "Content", "UserTags", "MsgID", "SendTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.ReceivedGroupMessage), global::IM.Protocol.ReceivedGroupMessage.Parser, new[]{ "MsgID", "Sender", "GroupID", "Type", "Content", "UserTags", "SendTime" }, null, null, new pbr::GeneratedClrTypeInfo[] { null, }),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.AdminMessage), global::IM.Protocol.AdminMessage.Parser, new[]{ "Receiver", "Category", "MessageContent" }, null, null, null),
             new pbr::GeneratedClrTypeInfo(typeof(global::IM.Protocol.PushMessage), global::IM.Protocol.PushMessage.Parser, new[]{ "Receiver", "Sender", "Category", "MessageContent" }, null, null, null)
@@ -729,6 +730,7 @@ namespace IM.Protocol {
       content_ = other.content_;
       userTags_ = other.userTags_.Clone();
       msgID_ = other.msgID_;
+      sendTime_ = other.sendTime_;
     }
 
     public SendUserMessage Clone() {
@@ -787,6 +789,16 @@ namespace IM.Protocol {
       }
     }
 
+    /// <summary>Field number for the "SendTime" field.</summary>
+    public const int SendTimeFieldNumber = 7;
+    private int sendTime_;
+    public int SendTime {
+      get { return sendTime_; }
+      set {
+        sendTime_ = value;
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as SendUserMessage);
     }
@@ -803,6 +815,7 @@ namespace IM.Protocol {
       if (Content != other.Content) return false;
       if (!UserTags.Equals(other.UserTags)) return false;
       if (MsgID != other.MsgID) return false;
+      if (SendTime != other.SendTime) return false;
       return true;
     }
 
@@ -813,6 +826,7 @@ namespace IM.Protocol {
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       hash ^= UserTags.GetHashCode();
       if (MsgID.Length != 0) hash ^= MsgID.GetHashCode();
+      if (SendTime != 0) hash ^= SendTime.GetHashCode();
       return hash;
     }
 
@@ -838,6 +852,10 @@ namespace IM.Protocol {
         output.WriteRawTag(50);
         output.WriteString(MsgID);
       }
+      if (SendTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(SendTime);
+      }
     }
 
     public int CalculateSize() {
@@ -854,6 +872,9 @@ namespace IM.Protocol {
       size += userTags_.CalculateSize(_map_userTags_codec);
       if (MsgID.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MsgID);
+      }
+      if (SendTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SendTime);
       }
       return size;
     }
@@ -874,6 +895,9 @@ namespace IM.Protocol {
       userTags_.Add(other.userTags_);
       if (other.MsgID.Length != 0) {
         MsgID = other.MsgID;
+      }
+      if (other.SendTime != 0) {
+        SendTime = other.SendTime;
       }
     }
 
@@ -902,6 +926,10 @@ namespace IM.Protocol {
           }
           case 50: {
             MsgID = input.ReadString();
+            break;
+          }
+          case 56: {
+            SendTime = input.ReadInt32();
             break;
           }
         }
@@ -1165,6 +1193,7 @@ namespace IM.Protocol {
       content_ = other.content_;
       userTags_ = other.userTags_.Clone();
       msgID_ = other.msgID_;
+      sendTime_ = other.sendTime_;
     }
 
     public SendChannelMessage Clone() {
@@ -1223,6 +1252,16 @@ namespace IM.Protocol {
       }
     }
 
+    /// <summary>Field number for the "SendTime" field.</summary>
+    public const int SendTimeFieldNumber = 7;
+    private int sendTime_;
+    public int SendTime {
+      get { return sendTime_; }
+      set {
+        sendTime_ = value;
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as SendChannelMessage);
     }
@@ -1239,6 +1278,7 @@ namespace IM.Protocol {
       if (Content != other.Content) return false;
       if (!UserTags.Equals(other.UserTags)) return false;
       if (MsgID != other.MsgID) return false;
+      if (SendTime != other.SendTime) return false;
       return true;
     }
 
@@ -1249,6 +1289,7 @@ namespace IM.Protocol {
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       hash ^= UserTags.GetHashCode();
       if (MsgID.Length != 0) hash ^= MsgID.GetHashCode();
+      if (SendTime != 0) hash ^= SendTime.GetHashCode();
       return hash;
     }
 
@@ -1274,6 +1315,10 @@ namespace IM.Protocol {
         output.WriteRawTag(50);
         output.WriteString(MsgID);
       }
+      if (SendTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(SendTime);
+      }
     }
 
     public int CalculateSize() {
@@ -1290,6 +1335,9 @@ namespace IM.Protocol {
       size += userTags_.CalculateSize(_map_userTags_codec);
       if (MsgID.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MsgID);
+      }
+      if (SendTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SendTime);
       }
       return size;
     }
@@ -1310,6 +1358,9 @@ namespace IM.Protocol {
       userTags_.Add(other.userTags_);
       if (other.MsgID.Length != 0) {
         MsgID = other.MsgID;
+      }
+      if (other.SendTime != 0) {
+        SendTime = other.SendTime;
       }
     }
 
@@ -1338,6 +1389,10 @@ namespace IM.Protocol {
           }
           case 50: {
             MsgID = input.ReadString();
+            break;
+          }
+          case 56: {
+            SendTime = input.ReadInt32();
             break;
           }
         }
@@ -1853,6 +1908,7 @@ namespace IM.Protocol {
       content_ = other.content_;
       userTags_ = other.userTags_.Clone();
       msgID_ = other.msgID_;
+      sendTime_ = other.sendTime_;
     }
 
     public SendGroupMessage Clone() {
@@ -1911,6 +1967,16 @@ namespace IM.Protocol {
       }
     }
 
+    /// <summary>Field number for the "SendTime" field.</summary>
+    public const int SendTimeFieldNumber = 7;
+    private int sendTime_;
+    public int SendTime {
+      get { return sendTime_; }
+      set {
+        sendTime_ = value;
+      }
+    }
+
     public override bool Equals(object other) {
       return Equals(other as SendGroupMessage);
     }
@@ -1927,6 +1993,7 @@ namespace IM.Protocol {
       if (Content != other.Content) return false;
       if (!UserTags.Equals(other.UserTags)) return false;
       if (MsgID != other.MsgID) return false;
+      if (SendTime != other.SendTime) return false;
       return true;
     }
 
@@ -1937,6 +2004,7 @@ namespace IM.Protocol {
       if (Content.Length != 0) hash ^= Content.GetHashCode();
       hash ^= UserTags.GetHashCode();
       if (MsgID.Length != 0) hash ^= MsgID.GetHashCode();
+      if (SendTime != 0) hash ^= SendTime.GetHashCode();
       return hash;
     }
 
@@ -1962,6 +2030,10 @@ namespace IM.Protocol {
         output.WriteRawTag(50);
         output.WriteString(MsgID);
       }
+      if (SendTime != 0) {
+        output.WriteRawTag(56);
+        output.WriteInt32(SendTime);
+      }
     }
 
     public int CalculateSize() {
@@ -1978,6 +2050,9 @@ namespace IM.Protocol {
       size += userTags_.CalculateSize(_map_userTags_codec);
       if (MsgID.Length != 0) {
         size += 1 + pb::CodedOutputStream.ComputeStringSize(MsgID);
+      }
+      if (SendTime != 0) {
+        size += 1 + pb::CodedOutputStream.ComputeInt32Size(SendTime);
       }
       return size;
     }
@@ -1998,6 +2073,9 @@ namespace IM.Protocol {
       userTags_.Add(other.userTags_);
       if (other.MsgID.Length != 0) {
         MsgID = other.MsgID;
+      }
+      if (other.SendTime != 0) {
+        SendTime = other.SendTime;
       }
     }
 
@@ -2026,6 +2104,10 @@ namespace IM.Protocol {
           }
           case 50: {
             MsgID = input.ReadString();
+            break;
+          }
+          case 56: {
+            SendTime = input.ReadInt32();
             break;
           }
         }

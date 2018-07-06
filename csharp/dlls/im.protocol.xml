@@ -69,6 +69,9 @@
             string Sender = 5; //  used for admin
             </summary>
         </member>
+        <member name="F:IM.Protocol.SendUserMessage.SendTimeFieldNumber">
+            <summary>Field number for the "SendTime" field.</summary>
+        </member>
         <member name="F:IM.Protocol.ReceivedUserMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
         </member>
@@ -106,6 +109,9 @@
             <summary>
             string Sender = 5; //  used for admin
             </summary>
+        </member>
+        <member name="F:IM.Protocol.SendChannelMessage.SendTimeFieldNumber">
+            <summary>Field number for the "SendTime" field.</summary>
         </member>
         <member name="F:IM.Protocol.ReceivedChannelMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
@@ -156,6 +162,9 @@
             <summary>
             string Sender = 5; //  used for admin	
             </summary>
+        </member>
+        <member name="F:IM.Protocol.SendGroupMessage.SendTimeFieldNumber">
+            <summary>Field number for the "SendTime" field.</summary>
         </member>
         <member name="F:IM.Protocol.ReceivedGroupMessage.MsgIDFieldNumber">
             <summary>Field number for the "MsgID" field.</summary>
