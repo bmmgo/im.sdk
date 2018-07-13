@@ -212,6 +212,10 @@ public class SocketClient implements ReceiveListener {
         send(ImProto.PackageCategory.Login, loginToken);
     }
 
+    public void logout() {
+        send(ImProto.PackageCategory.Logout, null);
+    }
+
     public void joinChannel(String channelId) {
         ImProto.Channel channel = ImProto.Channel
                 .newBuilder()
